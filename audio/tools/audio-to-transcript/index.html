@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audio to Text Converter Online Free — Speech to Text &amp; Transcript Generator | Daily1Step</title>
+<meta name="description" content="100% In-browser AI audio to text transcriber. Convert MP3, WAV, M4A, OGG audio files and live mic recording into accurate text transcripts and subtitles (.srt, .vtt, .txt). Free &amp; private.">
+<link rel="canonical" href="https://bypyay.github.io/audiotools/tools/audio-to-text/">
+<meta property="og:title" content="Audio to Text Converter Online Free — Speech to Text &amp; Transcript Generator">
+<meta property="og:description" content="100% In-browser AI audio to text transcriber. Convert MP3, WAV, M4A, OGG audio files and live mic recording into accurate text transcripts and subtitles (.srt, .vtt, .txt). Free &amp; private.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bypyay.github.io/audiotools/tools/audio-to-text/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* Dedicated Audio to Transcript Studio Styles */
+.transcript-mode-nav {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  background: var(--bg-subtle, #f1f5f9);
+  padding: 6px;
+  border-radius: 12px;
+}
+.mode-nav-btn {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted, #64748b);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+.mode-nav-btn.active {
+  background: #ffffff;
+  color: var(--primary, #0284c7);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.transcript-workspace-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 28px;
+  margin-top: 24px;
+}
+@media (max-width: 960px) {
+  .transcript-workspace-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.player-card {
+  background: #ffffff;
+  border: 1.5px solid var(--border, #e2e8f0);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.transcript-editor-card {
+  background: #ffffff;
+  border: 1.5px solid var(--border, #e2e8f0);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.waveform-box {
+  background: #0f172a;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px 0;
+  position: relative;
+}
+#transcriptWaveform {
+  width: 100%;
+  height: 80px;
+  display: block;
+}
+
+.player-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.btn-play-hero {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #0284c7, #0d9488);
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+  transition: transform 0.15s;
+}
+.btn-play-hero:hover {
+  transform: scale(1.05);
+}
+
+.time-display-badge {
+  font-family: monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  background: #f1f5f9;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+/* AI Progress Bar */
+.ai-progress-container {
+  display: none;
+  background: #f0fdfa;
+  border: 1.5px solid #99f6e4;
+  border-radius: 12px;
+  padding: 18px;
+  margin: 16px 0;
+}
+.ai-progress-track {
+  width: 100%;
+  height: 8px;
+  background: #ccfbf1;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.ai-progress-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #0d9488, #0284c7);
+  transition: width 0.3s ease;
+}
+
+/* Stats Pill Bar */
+.transcript-stats-bar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid #e2e8f0;
+}
+.stat-pill {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #475569;
+}
+.stat-pill strong {
+  color: #0f172a;
+}
+
+/* Transcript Textarea */
+.transcript-textarea {
+  width: 100%;
+  height: 280px;
+  min-height: 220px;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1.5px solid #e2e8f0;
+  font-family: inherit;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #0f172a;
+  resize: vertical;
+  background: #fcfdfd;
+  transition: border-color 0.15s;
+}
+.transcript-textarea:focus {
+  outline: none;
+  border-color: #0284c7;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+/* Export Buttons Grid */
+.export-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 8px;
+  margin-top: 18px;
+}
+.btn-export-opt {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.15s;
+  font-family: inherit;
+}
+.btn-export-opt:hover {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #0284c7;
+}
+
+.live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0284c7;
+  background: #e0f2fe;
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+.live-pulse {
+  width: 8px;
+  height: 8px;
+  background: #0284c7;
+  border-radius: 50%;
+  animation: pulse 1.2s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(0.9); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.4; }
+  100% { transform: scale(0.9); opacity: 1; }
+}
+
+.engine-pill-group {
+  display: flex;
+  background: #f1f5f9;
+  border-radius: 8px;
+  padding: 3px;
+  gap: 4px;
+}
+.engine-pill {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.engine-pill.active {
+  background: #ffffff;
+  color: #0284c7;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Audio to Text Converter & Speech Transcriber",
+      "url": "https://bypyay.github.io/audiotools/tools/audio-to-text/",
+      "description": "In-browser AI audio to text transcriber. Convert audio files and live mic recordings into text transcripts and subtitles (.srt, .vtt, .txt). 100% Free and in-browser.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "All modern browsers",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Universal Daily1Step All Tools Top Bar -->
+<div class="daily1step-global-topbar" style="background:#0f172a; color:#f8fafc; padding:7px 18px; font-size:0.8rem; font-family:system-ui,-apple-system,sans-serif; display:flex; justify-content:space-between; align-items:center; z-index:99999; position:relative; border-bottom:1px solid #1e293b;">
+  <div style="display:flex; align-items:center; gap:8px;">
+    <a href="../../../index.html" style="color:#38bdf8; font-weight:800; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+      <i class="fa-solid fa-layer-group"></i> <span>Daily1Step All Tools (320+ Apps)</span>
+    </a>
+  </div>
+  <div style="display:flex; gap:12px; font-weight:700; overflow-x:auto; white-space:nowrap; padding:2px 0;">
+    <a href="../../../pdf/" style="color:#cbd5e1; text-decoration:none;">📄 PDF</a>
+    <a href="../../../calculator/" style="color:#cbd5e1; text-decoration:none;">🧮 Calculators</a>
+    <a href="../../../removebg/" style="color:#cbd5e1; text-decoration:none;">🪄 Remove BG</a>
+    <a href="../../../audio/" style="color:#cbd5e1; text-decoration:none;">🎙️ Audio</a>
+    <a href="../../../image/" style="color:#cbd5e1; text-decoration:none;">🖼️ Images</a>
+    <a href="../../../collage/" style="color:#cbd5e1; text-decoration:none;">🎨 Collage</a>
+    <a href="../../../gif/" style="color:#cbd5e1; text-decoration:none;">🎞️ GIF</a>
+  </div>
+</div>
+
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../index.html" class="brand">Daily1Step Audio<span class="dot">.</span></a>
+    <nav class="main-nav">
+      <a href="../../index.html">All Tools</a>
+      <a href="../../tools/audio-to-text/" class="active" style="color:var(--primary,#0284c7); font-weight:700;">Audio to Text</a>
+      <a href="../../tools/audio-cutter/">Cut Audio</a>
+      <a href="../../tools/merge-audio/">Merge Audio</a>
+      <a href="../../tools/compress-audio/">Compress</a>
+      <a href="../../tools/audio-recorder/">Voice Recorder</a>
+      <a href="../../about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="tool-page">
+  <div class="container">
+    <div class="breadcrumb" style="max-width:1100px; margin:0 auto 16px;">
+      <a href="../../index.html">Home</a> &gt; <a href="../../index.html">Audio Tools</a> &gt; <span>Audio to Text Converter</span>
+    </div>
+
+    <div class="tool-header">
+      <h1>Audio to Text Converter &amp; Transcriber</h1>
+      <p>Convert audio files (MP3, WAV, M4A, AAC, OGG) or live voice recording into accurate text transcripts and subtitles (.srt, .vtt, .txt) with zero server uploads.</p>
+    </div>
+
+    <!-- Mode Selector Tabs -->
+    <div class="transcript-mode-nav" style="max-width:800px; margin:0 auto 20px;">
+      <button type="button" class="mode-nav-btn active" id="tabUpload" onclick="setTranscribeMode('upload')">
+        <i class="fa-solid fa-file-audio"></i> Transcribe Audio File
+      </button>
+      <button type="button" class="mode-nav-btn" id="tabLive" onclick="setTranscribeMode('live')">
+        <i class="fa-solid fa-microphone"></i> Live Voice Dictation
+      </button>
+    </div>
+
+    <!-- 1. Dropzone for Audio Files -->
+    <div class="dropzone" id="audioDropzone" style="max-width:800px; margin:0 auto;">
+      <input type="file" id="audioFileInput" accept="audio/*,video/mp4,video/webm,.mp3,.wav,.m4a,.aac,.ogg,.flac,.mp4" style="display:none;">
+      <div class="dz-icon">
+        <i class="fa-solid fa-cloud-arrow-up" style="font-size:2.5rem; color:#0284c7;"></i>
+      </div>
+      <h3>Select or Drop Audio File</h3>
+      <p>Supports MP3, WAV, M4A, AAC, OGG, WEBM, FLAC, and MP4 files</p>
+    </div>
+
+    <!-- 2. Live Mic Record Section (Initially Hidden) -->
+    <div id="liveMicSection" style="display:none; max-width:800px; margin:0 auto; background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:32px; text-align:center;">
+      <div style="margin-bottom:16px;">
+        <button type="button" id="btnLiveMicToggle" class="btn-play-hero" style="width:68px; height:68px; margin:0 auto; font-size:1.6rem; background:linear-gradient(135deg, #ef4444, #dc2626);" onclick="toggleLiveMic()">
+          <i class="fa-solid fa-microphone"></i>
+        </button>
+      </div>
+      <h3 id="micStatusHeading" style="font-size:1.25rem; font-weight:800; margin-bottom:6px;">Click to Start Voice Dictation</h3>
+      <p id="micStatusDesc" style="font-size:0.9rem; color:#64748b;">Speak clearly into your microphone to convert your voice into text in real-time.</p>
+    </div>
+
+    <!-- Language, Model & Option Settings Bar -->
+    <div style="max-width:800px; margin:20px auto 0; background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:16px; display:flex; gap:16px; flex-wrap:wrap; justify-content:space-between; align-items:center;">
+      
+      <!-- Speech Language -->
+      <div style="display:flex; align-items:center; gap:8px;">
+        <label style="font-weight:700; font-size:0.88rem; color:#0f172a;"><i class="fa-solid fa-language" style="color:#0284c7;"></i> Language:</label>
+        <select id="speechLangSelect" class="calc-select" style="padding:6px 12px; border-radius:8px; border:1px solid #cbd5e1; font-family:inherit; font-weight:600;">
+          <option value="auto" selected>✨ Auto-Detect (Best for Hinglish)</option>
+          <option value="hi">Hindi (हिंदी)</option>
+          <option value="en">English (Global / Indian)</option>
+          <option value="es">Spanish (Español)</option>
+          <option value="fr">French (Français)</option>
+          <option value="de">German (Deutsch)</option>
+          <option value="it">Italian (Italiano)</option>
+          <option value="pt">Portuguese (Português)</option>
+          <option value="ru">Russian (Русский)</option>
+          <option value="ja">Japanese (日本語)</option>
+          <option value="zh">Chinese (中文)</option>
+          <option value="ar">Arabic (العربية)</option>
+          <option value="bn">Bengali (বাংলা)</option>
+          <option value="mr">Marathi (मराठी)</option>
+          <option value="ta">Tamil (தமிழ்)</option>
+          <option value="te">Telugu (తెలుగు)</option>
+          <option value="ur">Urdu (اردو)</option>
+        </select>
+      </div>
+
+      <!-- Model Quality Option -->
+      <div style="display:flex; align-items:center; gap:8px;">
+        <label style="font-weight:700; font-size:0.88rem; color:#0f172a;"><i class="fa-solid fa-brain" style="color:#0284c7;"></i> AI Model:</label>
+        <select id="whisperModelSelect" class="calc-select" style="padding:6px 12px; border-radius:8px; border:1px solid #cbd5e1; font-family:inherit; font-weight:600;">
+          <option value="Xenova/whisper-tiny" selected>⚡ Whisper Fast (~39MB)</option>
+          <option value="Xenova/whisper-base">🎯 Whisper Pro High-Accuracy (~73MB)</option>
+        </select>
+      </div>
+
+      <!-- Timestamps Toggle -->
+      <div style="display:flex; align-items:center; gap:12px;">
+        <label style="display:flex; align-items:center; gap:6px; font-weight:700; font-size:0.88rem; cursor:pointer;">
+          <input type="checkbox" id="chkTimestamps" checked onchange="updateTranscriptView()">
+          <span>Include Timestamps</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- AI Progress Container -->
+    <div id="aiProgressBox" class="ai-progress-container" style="max-width:800px; margin:20px auto 0;">
+      <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.9rem; font-weight:700; color:#0f766e;">
+        <span id="aiProgressText"><i class="fa-solid fa-gear fa-spin"></i> Initializing In-Browser AI Engine…</span>
+        <span id="aiProgressPct">0%</span>
+      </div>
+      <div class="ai-progress-track">
+        <div class="ai-progress-fill" id="aiProgressBar"></div>
+      </div>
+    </div>
+
+    <!-- Interactive Transcription Workspace (Revealed after audio load / mic start) -->
+    <div id="transcriptWorkspace" class="transcript-workspace-grid" style="display:none;">
+      <!-- Left Player Card -->
+      <div class="player-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <h3 style="font-size:1.1rem; font-weight:800; color:#0f172a; margin:0;" id="audioFileNameTitle">Audio Playback</h3>
+          <span id="transcribeLiveBadge" class="live-indicator" style="display:none;">
+            <span class="live-pulse"></span> Transcribing…
+          </span>
+        </div>
+
+        <div class="waveform-box">
+          <canvas id="transcriptWaveform"></canvas>
+        </div>
+
+        <div class="player-controls-row">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <button type="button" class="btn-play-hero" id="btnPlayPause" onclick="togglePlayPause()">
+              <i class="fa-solid fa-play" id="playIcon"></i>
+            </button>
+            <button type="button" class="btn-export-opt" onclick="seekRelative(-5)" title="Rewind 5s">
+              <i class="fa-solid fa-rotate-left"></i> 5s
+            </button>
+            <button type="button" class="btn-export-opt" onclick="seekRelative(5)" title="Forward 5s">
+              <i class="fa-solid fa-rotate-right"></i> 5s
+            </button>
+          </div>
+
+          <div class="time-display-badge">
+            <span id="currTimeText">00:00</span> / <span id="totalTimeText">00:00</span>
+          </div>
+
+          <div style="display:flex; align-items:center; gap:6px;">
+            <span style="font-size:0.8rem; font-weight:700; color:#64748b;">Speed:</span>
+            <select id="playbackSpeedSelect" onchange="setPlaybackSpeed(this.value)" style="padding:4px 8px; border-radius:6px; border:1px solid #cbd5e1; font-weight:700;">
+              <option value="0.75">0.75x</option>
+              <option value="1.0" selected>1.0x</option>
+              <option value="1.25">1.25x</option>
+              <option value="1.5">1.5x</option>
+              <option value="2.0">2.0x</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Transcribe Audio File CTA -->
+        <div style="margin-top:20px; padding-top:16px; border-top:1px solid #e2e8f0; display:flex; flex-direction:column; gap:10px;">
+          <button type="button" id="btnStartFileTranscription" class="btn-export-opt" style="width:100%; height:46px; background:linear-gradient(135deg, #0284c7, #0d9488); color:#fff; font-size:1rem; justify-content:center; box-shadow:0 4px 12px rgba(2,132,199,0.3);" onclick="startAudioFileTranscription()">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Transcribe Audio File with AI
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Transcript Editor Card -->
+      <div class="transcript-editor-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <h3 style="font-size:1.15rem; font-weight:800; margin:0; color:#0f172a;">Generated Transcript</h3>
+          <button type="button" class="btn-export-opt" style="padding:4px 10px; font-size:0.8rem;" onclick="copyTranscriptToClipboard()">
+            <i class="fa-solid fa-copy"></i> <span id="copyBtnLabel">Copy Text</span>
+          </button>
+        </div>
+
+        <!-- Live Stats -->
+        <div class="transcript-stats-bar">
+          <div class="stat-pill">Words: <strong id="statWordCount">0</strong></div>
+          <div class="stat-pill">Characters: <strong id="statCharCount">0</strong></div>
+          <div class="stat-pill">Reading Time: <strong id="statReadingTime">0 min</strong></div>
+        </div>
+
+        <!-- Editable Transcript Area -->
+        <textarea id="transcriptOutput" class="transcript-textarea" placeholder="Your transcribed text will appear here automatically with timestamps..."></textarea>
+
+        <!-- Quick Text Cleanup Actions -->
+        <div style="display:flex; gap:8px; margin-top:10px; flex-wrap:wrap;">
+          <button type="button" class="btn-export-opt" style="font-size:0.78rem; padding:4px 8px;" onclick="formatCapitalize()">
+            <i class="fa-solid fa-font"></i> Capitalize Sentences
+          </button>
+          <button type="button" class="btn-export-opt" style="font-size:0.78rem; padding:4px 8px;" onclick="formatCleanSpaces()">
+            <i class="fa-solid fa-broom"></i> Clean Spaces
+          </button>
+          <button type="button" class="btn-export-opt" style="font-size:0.78rem; padding:4px 8px; color:#ef4444;" onclick="clearTranscript()">
+            <i class="fa-solid fa-trash"></i> Clear Text
+          </button>
+        </div>
+
+        <!-- Export Buttons Grid -->
+        <div style="margin-top:auto; padding-top:16px;">
+          <div style="font-size:0.82rem; font-weight:800; text-transform:uppercase; color:#64748b; margin-bottom:8px;">
+            Export Transcript
+          </div>
+          <div class="export-buttons-grid">
+            <button type="button" class="btn-export-opt" onclick="exportTranscript('txt')">
+              <i class="fa-solid fa-file-lines"></i> Plain Text (.txt)
+            </button>
+            <button type="button" class="btn-export-opt" onclick="exportTranscript('srt')">
+              <i class="fa-solid fa-closed-captioning"></i> Subtitles (.srt)
+            </button>
+            <button type="button" class="btn-export-opt" onclick="exportTranscript('vtt')">
+              <i class="fa-solid fa-file-code"></i> WebVTT (.vtt)
+            </button>
+            <button type="button" class="btn-export-opt" onclick="exportTranscript('doc')">
+              <i class="fa-solid fa-file-word"></i> Word (.doc)
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Educational & FAQ Section -->
+    <article class="seo-article" style="margin-top:48px;">
+      <div class="content-container">
+        <h2>How to Convert Audio to Text in 3 Easy Steps</h2>
+        <div class="step-card-grid">
+          <div class="step-card">
+            <div class="step-num">1</div>
+            <h4>Upload or Record Audio</h4>
+            <p>Upload an MP3, WAV, M4A, or podcast file, or speak directly into your microphone.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">2</div>
+            <h4>Select Language &amp; AI Engine</h4>
+            <p>Choose Auto-Detect for Hinglish or select Hindi, English, Spanish, and 20+ other languages.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">3</div>
+            <h4>Edit &amp; Export Transcript</h4>
+            <p>Review the timestamped transcript, edit text, and download as TXT, SRT subtitles, or Word doc.</p>
+          </div>
+        </div>
+
+        <h2>Why Use Daily1Step Audio Transcriber?</h2>
+        <ul>
+          <li><strong>100% Private &amp; Secure:</strong> Runs directly inside your browser. Audio is never uploaded to external servers.</li>
+          <li><strong>Hinglish &amp; Indian Accent Support:</strong> Auto-detects mixed Hindi + English speech and produces clean text.</li>
+          <li><strong>Automatic Timestamps:</strong> Generates synchronized subtitle timecodes for YouTube and video editors.</li>
+          <li><strong>Export Subtitles (.SRT &amp; .VTT):</strong> Instantly create captions for your video content.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions (FAQ)</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Why choose Whisper Pro over Whisper Fast?</span>
+              <span style="font-size:1.2rem;">+</span>
+            </button>
+            <div class="faq-answer" style="display:none;">
+              <p>Whisper Pro (~73MB) has significantly higher accuracy for Hindi, Hinglish, background noise, and Indian accents. Whisper Fast (~39MB) is optimized for quick English speech.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>What audio formats are supported?</span>
+              <span style="font-size:1.2rem;">+</span>
+            </button>
+            <div class="faq-answer" style="display:none;">
+              <p>You can transcribe MP3, WAV, M4A, AAC, OGG, WEBM, FLAC, and MP4 video audio tracks.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Are my private recordings uploaded to any server?</span>
+              <span style="font-size:1.2rem;">+</span>
+            </button>
+            <div class="faq-answer" style="display:none;">
+              <p>No. All speech processing is executed locally on your device inside your web browser.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Daily1Step Audio Tools</h4>
+        <p style="font-size:.88rem; line-height:1.6; margin-top:8px;">Free, private, in-browser audio utility suite. Cut, merge, compress, boost volume, and transcribe speech to text with 0 server uploads.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Popular Audio Tools</h4>
+        <ul>
+          <li><a href="../../tools/audio-to-text/">Audio to Text / Transcript</a></li>
+          <li><a href="../../tools/audio-cutter/">Audio Cutter</a></li>
+          <li><a href="../../tools/merge-audio/">Audio Merger</a></li>
+          <li><a href="../../tools/compress-audio/">Audio Compressor</a></li>
+          <li><a href="../../tools/audio-recorder/">Voice Recorder</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Audio Effects</h4>
+        <ul>
+          <li><a href="../../tools/mp3-volume-booster/">Volume Booster</a></li>
+          <li><a href="../../tools/audio-speed-and-pitch-changer/">Speed &amp; Pitch</a></li>
+          <li><a href="../../tools/add-reverb-to-audio/">Reverb Effect</a></li>
+          <li><a href="../../tools/add-echo-to-audio/">Echo Effect</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company &amp; Legal</h4>
+        <ul>
+          <li><a href="../../about.html">About Us</a></li>
+          <li><a href="../../contact.html">Contact</a></li>
+          <li><a href="../../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../../terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Daily1Step Audio Tools. 100% Client-Side Processing.</div>
+      <div>
+        <a href="../../privacy-policy.html" style="margin-right:12px;">Privacy Policy</a>
+        <a href="../../terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../../assets/js/audio-core.js"></script>
+<script type="module">
+// ══════════════════════════════════════════════════════════════════
+// HIGH-ACCURACY IN-BROWSER WHISPER AI PIPELINE
+// ══════════════════════════════════════════════════════════════════
+let currentLoadedModelName = null;
+let whisperPipeline = null;
+let transformersModule = null;
+
+async function loadWhisperModel(modelName) {
+  if (whisperPipeline && currentLoadedModelName === modelName) {
+    return whisperPipeline;
+  }
+
+  const progressBox = document.getElementById('aiProgressBox');
+  const progressText = document.getElementById('aiProgressText');
+  const progressPct = document.getElementById('aiProgressPct');
+  const progressBar = document.getElementById('aiProgressBar');
+
+  progressBox.style.display = 'block';
+  progressText.innerHTML = `<i class="fa-solid fa-download fa-bounce"></i> Loading AI Speech Model (${modelName.split('/')[1]})...`;
+
+  if (!transformersModule) {
+    transformersModule = await import('https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2');
+    transformersModule.env.allowLocalModels = false;
+    transformersModule.env.useBrowserCache = true;
+  }
+
+  whisperPipeline = await transformersModule.pipeline('automatic-speech-recognition', modelName, {
+    quantized: true,
+    progress_callback: (d) => {
+      if (d.status === 'progress') {
+        const pct = Math.round(d.progress || 0);
+        progressPct.textContent = pct + '%';
+        progressBar.style.width = pct + '%';
+        if (d.file) {
+          progressText.innerHTML = `<i class="fa-solid fa-download fa-bounce"></i> Downloading AI Model: ${d.file} (${pct}%)`;
+        }
+      } else if (d.status === 'ready') {
+        progressText.innerHTML = '<i class="fa-solid fa-brain"></i> Model Ready! Processing audio…';
+      }
+    }
+  });
+
+  currentLoadedModelName = modelName;
+  return whisperPipeline;
+}
+
+// ══════════════════════════════════════════════════════════════════
+// HIGH-PRECISION RESAMPLING & AMPLITUDE NORMALIZATION
+// ══════════════════════════════════════════════════════════════════
+function resampleAndNormalizeTo16kHz(audioBuffer) {
+  const numChannels = audioBuffer.numberOfChannels;
+  const sampleRate = audioBuffer.sampleRate;
+  const length = audioBuffer.length;
+
+  // 1. Downmix to mono Float32Array
+  const mono = new Float32Array(length);
+  for (let c = 0; c < numChannels; c++) {
+    const channelData = audioBuffer.getChannelData(c);
+    for (let i = 0; i < length; i++) {
+      mono[i] += channelData[i] / numChannels;
+    }
+  }
+
+  // 2. Linear Interpolation to 16000Hz
+  let final16k;
+  if (sampleRate === 16000) {
+    final16k = mono;
+  } else {
+    const ratio = sampleRate / 16000;
+    const newLength = Math.round(length / ratio);
+    final16k = new Float32Array(newLength);
+
+    for (let i = 0; i < newLength; i++) {
+      const originPos = i * ratio;
+      const index = Math.floor(originPos);
+      const frac = originPos - index;
+      const s0 = mono[index] || 0;
+      const s1 = mono[index + 1] || s0;
+      final16k[i] = s0 + frac * (s1 - s0);
+    }
+  }
+
+  // 3. Peak Normalization to 0.95 (prevents whisper hallucination on low audio)
+  let maxAmp = 0;
+  for (let i = 0; i < final16k.length; i++) {
+    const abs = Math.abs(final16k[i]);
+    if (abs > maxAmp) maxAmp = abs;
+  }
+  if (maxAmp > 0 && maxAmp < 0.95) {
+    const gain = 0.95 / maxAmp;
+    for (let i = 0; i < final16k.length; i++) {
+      final16k[i] *= gain;
+    }
+  }
+
+  return final16k;
+}
+
+window.startAudioFileTranscription = async function() {
+  if (!window.currentAudioBuffer) {
+    alert("Please upload an audio file first.");
+    return;
+  }
+
+  const progressBox = document.getElementById('aiProgressBox');
+  const progressText = document.getElementById('aiProgressText');
+  const progressPct = document.getElementById('aiProgressPct');
+  const progressBar = document.getElementById('aiProgressBar');
+  const liveBadge = document.getElementById('transcribeLiveBadge');
+  const btn = document.getElementById('btnStartFileTranscription');
+
+  progressBox.style.display = 'block';
+  liveBadge.style.display = 'inline-flex';
+  btn.disabled = true;
+  btn.style.opacity = '0.6';
+
+  try {
+    const modelName = document.getElementById('whisperModelSelect').value || 'Xenova/whisper-tiny';
+    const pipeline = await loadWhisperModel(modelName);
+
+    // 1. Resample cleanly to 16kHz
+    progressText.innerHTML = '<i class="fa-solid fa-wave-square"></i> Resampling & normalizing audio to 16kHz PCM…';
+    progressBar.style.width = '35%';
+    progressPct.textContent = '35%';
+
+    const pcmData = resampleAndNormalizeTo16kHz(window.currentAudioBuffer);
+
+    // 2. Configure Language
+    const selectedLang = document.getElementById('speechLangSelect').value;
+    const langParam = (selectedLang === 'auto') ? null : selectedLang;
+
+    progressText.innerHTML = '<i class="fa-solid fa-brain fa-pulse"></i> AI Transcribing Speech & Timestamps…';
+    progressBar.style.width = '65%';
+    progressPct.textContent = '65%';
+
+    const transOptions = {
+      chunk_length_s: 30,
+      stride_length_s: 5,
+      return_timestamps: true,
+      task: 'transcribe'
+    };
+    if (langParam) {
+      transOptions.language = langParam;
+    }
+
+    const output = await pipeline(pcmData, transOptions);
+
+    // 3. Process Result
+    window.transcriptSegments = [];
+    if (output.chunks && output.chunks.length > 0) {
+      output.chunks.forEach(chunk => {
+        const start = chunk.timestamp ? chunk.timestamp[0] : 0;
+        const timeStr = AudioCore.formatTime(start);
+        const txt = chunk.text.trim();
+        if (txt) {
+          window.transcriptSegments.push({ time: timeStr, text: txt });
+        }
+      });
+    } else if (output.text && output.text.trim()) {
+      window.transcriptSegments.push({ time: '00:00', text: output.text.trim() });
+    }
+
+    window.updateTranscriptView();
+
+    progressBar.style.width = '100%';
+    progressPct.textContent = '100%';
+    progressText.innerHTML = '<i class="fa-solid fa-check-circle" style="color:#10b981;"></i> Transcription Complete!';
+
+    setTimeout(() => {
+      progressBox.style.display = 'none';
+    }, 2500);
+
+  } catch (err) {
+    console.error("Transcription error:", err);
+    progressText.innerHTML = `<i class="fa-solid fa-triangle-exclamation" style="color:#ef4444;"></i> ${err.message}`;
+    alert("Transcription error: " + err.message);
+  } finally {
+    liveBadge.style.display = 'none';
+    btn.disabled = false;
+    btn.style.opacity = '1';
+  }
+};
+</script>
+<script>
+// ══════════════════════════════════════════════════════════════════
+// UI & AUDIO PLAYER CONTROLLER
+// ══════════════════════════════════════════════════════════════════
+window.currentAudioBuffer = null;
+window.transcriptSegments = [];
+var audioElement = new Audio();
+var recognition = null;
+var isLiveRecording = false;
+var activeMode = 'upload';
+
+// Mode Switching
+function setTranscribeMode(mode) {
+  activeMode = mode;
+  document.querySelectorAll('.mode-nav-btn').forEach(function(b) { b.classList.remove('active'); });
+  if (mode === 'upload') {
+    document.getElementById('tabUpload').classList.add('active');
+    document.getElementById('audioDropzone').style.display = 'block';
+    document.getElementById('liveMicSection').style.display = 'none';
+  } else {
+    document.getElementById('tabLive').classList.add('active');
+    document.getElementById('audioDropzone').style.display = 'none';
+    document.getElementById('liveMicSection').style.display = 'block';
+    document.getElementById('transcriptWorkspace').style.display = 'grid';
+  }
+}
+
+// Dropzone & File Ingestion
+var dropzone = document.getElementById('audioDropzone');
+var fileInput = document.getElementById('audioFileInput');
+
+if (dropzone && fileInput) {
+  dropzone.addEventListener('click', function() { fileInput.click(); });
+  dropzone.addEventListener('dragover', function(e) { e.preventDefault(); dropzone.classList.add('dragover'); });
+  dropzone.addEventListener('dragleave', function() { dropzone.classList.remove('dragover'); });
+  dropzone.addEventListener('drop', function(e) {
+    e.preventDefault();
+    dropzone.classList.remove('dragover');
+    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+      loadAudioFile(e.dataTransfer.files[0]);
+    }
+  });
+  fileInput.addEventListener('change', function(e) {
+    if (e.target.files && e.target.files.length > 0) {
+      loadAudioFile(e.target.files[0]);
+    }
+  });
+}
+
+function loadAudioFile(file) {
+  document.getElementById('audioFileNameTitle').textContent = file.name;
+  var objectUrl = URL.createObjectURL(file);
+  audioElement.src = objectUrl;
+
+  AudioCore.decodeAudioFile(file).then(function(buffer) {
+    window.currentAudioBuffer = buffer;
+    document.getElementById('totalTimeText').textContent = AudioCore.formatTime(buffer.duration);
+    document.getElementById('transcriptWorkspace').style.display = 'grid';
+    drawWaveform();
+  }).catch(function(err) {
+    alert("Could not decode audio file: " + err.message);
+  });
+}
+
+// Waveform Visualizer
+function drawWaveform() {
+  var canvas = document.getElementById('transcriptWaveform');
+  if (!canvas || !window.currentAudioBuffer) return;
+  var ctx = canvas.getContext('2d');
+  canvas.width = canvas.parentElement.clientWidth || 500;
+  canvas.height = 80;
+
+  var data = window.currentAudioBuffer.getChannelData(0);
+  var step = Math.ceil(data.length / canvas.width);
+  var amp = canvas.height / 2;
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#0284c7';
+
+  for (var i = 0; i < canvas.width; i++) {
+    var min = 1.0;
+    var max = -1.0;
+    for (var j = 0; j < step; j++) {
+      var datum = data[(i * step) + j];
+      if (datum < min) min = datum;
+      if (datum > max) max = datum;
+    }
+    ctx.fillRect(i, (1 + min) * amp, 1, Math.max(1, (max - min) * amp));
+  }
+}
+
+// Audio Playback Controls
+function togglePlayPause() {
+  if (audioElement.paused) {
+    audioElement.play();
+    document.getElementById('playIcon').className = 'fa-solid fa-pause';
+  } else {
+    audioElement.pause();
+    document.getElementById('playIcon').className = 'fa-solid fa-play';
+  }
+}
+
+audioElement.addEventListener('timeupdate', function() {
+  document.getElementById('currTimeText').textContent = AudioCore.formatTime(audioElement.currentTime);
+});
+audioElement.addEventListener('ended', function() {
+  document.getElementById('playIcon').className = 'fa-solid fa-play';
+});
+
+function seekRelative(sec) {
+  audioElement.currentTime = Math.max(0, Math.min(audioElement.duration || 0, audioElement.currentTime + sec));
+}
+
+function setPlaybackSpeed(spd) {
+  audioElement.playbackRate = parseFloat(spd);
+}
+
+// Live Mic Dictation (Web Speech API)
+function initSpeechEngine() {
+  var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SpeechRecognition) {
+    alert("Live voice dictation requires a modern browser like Chrome, Edge, or Safari.");
+    return null;
+  }
+  var rec = new SpeechRecognition();
+  rec.continuous = true;
+  rec.interimResults = true;
+
+  var langMap = {
+    'auto': 'hi-IN',
+    'en': 'en-IN',
+    'hi': 'hi-IN',
+    'es': 'es-ES',
+    'fr': 'fr-FR',
+    'de': 'de-DE',
+    'it': 'it-IT',
+    'pt': 'pt-BR',
+    'ru': 'ru-RU',
+    'ja': 'ja-JP',
+    'zh': 'zh-CN',
+    'ar': 'ar-SA',
+    'bn': 'bn-IN',
+    'mr': 'mr-IN',
+    'ta': 'ta-IN',
+    'te': 'te-IN',
+    'ur': 'ur-PK'
+  };
+
+  var selected = document.getElementById('speechLangSelect').value || 'auto';
+  rec.lang = langMap[selected] || 'hi-IN';
+
+  rec.onresult = function(event) {
+    var interimTranscript = '';
+    for (var i = event.resultIndex; i < event.results.length; ++i) {
+      var transcript = event.results[i][0].transcript;
+      if (event.results[i].isFinal) {
+        var timeStr = AudioCore.formatTime(audioElement.currentTime || 0);
+        window.transcriptSegments.push({ time: timeStr, text: transcript.trim() });
+      } else {
+        interimTranscript += transcript;
+      }
+    }
+    updateTranscriptView(interimTranscript);
+  };
+
+  rec.onerror = function(e) {
+    console.warn("Speech recognition error:", e.error);
+  };
+
+  return rec;
+}
+
+function toggleLiveMic() {
+  var btn = document.getElementById('btnLiveMicToggle');
+  var heading = document.getElementById('micStatusHeading');
+  var badge = document.getElementById('transcribeLiveBadge');
+
+  if (!isLiveRecording) {
+    if (!recognition) recognition = initSpeechEngine();
+    if (!recognition) return;
+    try {
+      recognition.start();
+    } catch(e) {}
+    isLiveRecording = true;
+    btn.innerHTML = '<i class="fa-solid fa-stop"></i>';
+    btn.style.background = '#0f172a';
+    heading.textContent = 'Listening to your voice…';
+    badge.style.display = 'inline-flex';
+  } else {
+    if (recognition) recognition.stop();
+    isLiveRecording = false;
+    btn.innerHTML = '<i class="fa-solid fa-microphone"></i>';
+    btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+    heading.textContent = 'Dictation Paused';
+    badge.style.display = 'none';
+  }
+}
+
+// Transcript Formatting & Stats
+window.updateTranscriptView = function(interim) {
+  var withTimestamps = document.getElementById('chkTimestamps').checked;
+  var output = '';
+
+  (window.transcriptSegments || []).forEach(function(seg) {
+    if (withTimestamps) {
+      output += '[' + seg.time + '] ' + seg.text + '\n\n';
+    } else {
+      output += seg.text + ' ';
+    }
+  });
+
+  if (interim) {
+    output += (withTimestamps ? '... ' : '') + interim;
+  }
+
+  var textarea = document.getElementById('transcriptOutput');
+  textarea.value = output.trim();
+  updateStats();
+};
+
+function updateStats() {
+  var text = document.getElementById('transcriptOutput').value.trim();
+  var words = text ? text.split(/\s+/).filter(Boolean).length : 0;
+  var chars = text.length;
+  var readMin = Math.ceil(words / 200);
+
+  document.getElementById('statWordCount').textContent = words;
+  document.getElementById('statCharCount').textContent = chars;
+  document.getElementById('statReadingTime').textContent = readMin + ' min';
+}
+
+document.getElementById('transcriptOutput').addEventListener('input', updateStats);
+
+function copyTranscriptToClipboard() {
+  var textarea = document.getElementById('transcriptOutput');
+  textarea.select();
+  document.execCommand('copy');
+  var label = document.getElementById('copyBtnLabel');
+  label.textContent = 'Copied!';
+  setTimeout(function() { label.textContent = 'Copy Text'; }, 2000);
+}
+
+function clearTranscript() {
+  window.transcriptSegments = [];
+  document.getElementById('transcriptOutput').value = '';
+  updateStats();
+}
+
+function formatCapitalize() {
+  var textarea = document.getElementById('transcriptOutput');
+  var val = textarea.value;
+  val = val.replace(/(^\s*|\.\s*)([a-z])/g, function(m, p1, p2) { return p1 + p2.toUpperCase(); });
+  textarea.value = val;
+}
+
+function formatCleanSpaces() {
+  var textarea = document.getElementById('transcriptOutput');
+  textarea.value = textarea.value.replace(/[ \t]+/g, ' ').replace(/\n\s+/g, '\n').trim();
+  updateStats();
+}
+
+// Export Handlers (.txt, .srt, .vtt, .doc)
+function exportTranscript(fmt) {
+  var text = document.getElementById('transcriptOutput').value.trim();
+  if (!text) {
+    alert("Please transcribe or type text before exporting.");
+    return;
+  }
+
+  var filename = 'audio-transcript.' + fmt;
+  var mime = 'text/plain';
+  var content = text;
+
+  if (fmt === 'srt') {
+    content = '';
+    (window.transcriptSegments || []).forEach(function(seg, idx) {
+      var startSec = parseTimestamp(seg.time);
+      var endSec = startSec + 4;
+      content += (idx + 1) + '\n';
+      content += formatSrtTime(startSec) + ' --> ' + formatSrtTime(endSec) + '\n';
+      content += seg.text + '\n\n';
+    });
+  } else if (fmt === 'vtt') {
+    content = 'WEBVTT\n\n';
+    (window.transcriptSegments || []).forEach(function(seg, idx) {
+      var startSec = parseTimestamp(seg.time);
+      var endSec = startSec + 4;
+      content += formatVttTime(startSec) + ' --> ' + formatVttTime(endSec) + '\n';
+      content += seg.text + '\n\n';
+    });
+  } else if (fmt === 'doc') {
+    mime = 'application/msword';
+    content = '<html><body><h2>Audio Transcript</h2><p>' + text.replace(/\n/g, '<br>') + '</p></body></html>';
+  }
+
+  var blob = new Blob([content], { type: mime + ';charset=utf-8' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+function parseTimestamp(str) {
+  var parts = str.split(':');
+  if (parts.length === 2) {
+    return parseInt(parts[0]) * 60 + parseFloat(parts[1]);
+  }
+  return 0;
+}
+
+function formatSrtTime(sec) {
+  var hrs = Math.floor(sec / 3600);
+  var min = Math.floor((sec % 3600) / 60);
+  var s = Math.floor(sec % 60);
+  var ms = Math.floor((sec % 1) * 1000);
+  return pad(hrs,2) + ':' + pad(min,2) + ':' + pad(s,2) + ',' + pad(ms,3);
+}
+
+function formatVttTime(sec) {
+  var min = Math.floor(sec / 60);
+  var s = Math.floor(sec % 60);
+  var ms = Math.floor((sec % 1) * 1000);
+  return pad(min,2) + ':' + pad(s,2) + '.' + pad(ms,3);
+}
+
+function pad(num, size) {
+  var s = "0000" + num;
+  return s.substr(s.length - size);
+}
+
+// FAQ Accordion
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var ans = btn.nextElementSibling;
+    var isOpen = ans.style.display === 'block';
+    ans.style.display = isOpen ? 'none' : 'block';
+    btn.querySelector('span:last-child').textContent = isOpen ? '+' : '−';
+  });
+});
+</script>
+</body>
+</html>

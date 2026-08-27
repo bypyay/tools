@@ -1,0 +1,2249 @@
+[
+  {
+    "suite": "pdf",
+    "slug": "compare-pdf",
+    "title": "Compare PDF Online Free",
+    "desc": "Compare two PDF files side-by-side or with visual diff overlay online for free. Easily spot changes and revisions. Processed entirely in your browser.",
+    "url": "pdf/tools/compare-pdf/"
+  },
+  {
+    "suite": "pdf",
+    "slug": "compress-pdf",
+    "title": "Compress PDF Online Free",
+    "desc": "Reduce the file size of your PDF online, free. Choose a compression level and download a smaller PDF. Processed entirely in your browser.",
+    "url": "pdf/tools/compress-pdf/"
+  },
+  {
+    "suite": "pdf",
+    "slug": "crop-pdf",
+    "title": "Crop PDF Online Free",
+    "desc": "Crop PDF margins and trim white spaces online for free. Interactive visual crop rectangle and margin controls. Processed entirely in your browser.",
+    "url": "pdf/tools/crop-pdf/"
+  },
+  {
+    "suite": "pdf",
+    "slug": "delete-pages",
+    "title": "Delete Pages from PDF Online Free",
+    "desc": "Remove unwanted pages from a PDF, free and online. Click pages to mark them for deletion. Processed entirely in your browser.",
+    "url": "pdf/tools/delete-pages/"
+  },
+  {
+    "suite": "pdf",
+    "slug": "extract-images",
+    "title": "Extract Images from PDF Online Free",
+    "desc": "Extract all embedded photos and images from PDF documents online for free. Download as PNG/JPG or ZIP archive. Processed entirely in your browser.",
+    "url": "pdf/tools/extract-images/"
+  },
+  {
+    "suite": "pdf",
+    "slug": "extract-pages",
+    "title": "Extract PDF Pages Online Free",
+    "desc": "Extract specific pages or page ranges from your PDF document online for free. Visual page picker and range selection. Processed entirely in your browser.",
+    "url": "pdf/tools/extract-pages/"
+  },
+  {
+    "suite": "pdf",
+    "slug": "grayscale-pdf",
+    "title": "Convert PDF to Grayscale Online Free",
+    "desc": "Convert color PDF documents to Black &amp; White / Grayscale online for free. Save printer ink and toner. Processed entirely in your browser.",
+    "url": "pdf/tools/grayscale-pdf/"
+  },
+  {
+    "suite": "pdf",
+    "slug": "html-to-pdf",
+    "title": "HTML to PDF Converter Online Free",
+    "desc": "Convert HTML code, rich web pages, or markdown to PDF documents online for free. Custom page sizing and live preview. Processed entirely in your browser.",
+    "url": "pdf/tools/html-to-pdf/"
+  },
+  {
+    "suite": "pdf",
+    "slug": "jpg-to-pdf",
+    "title": "JPG to PDF Online Free",
+    "desc": "Combine JPG or PNG images into a single PDF file, free and online. Reorder images before converting. Processed entirely in your browser.",
+    "url": "pdf/tools/jpg-to-pdf/"
+  },
+  {
+    "suite": "pdf",
+    "slug": "merge-pdf",
+    "title": "Merge PDF Files Online Free",
+    "desc": "Combine multiple PDF files into one document online, free. Reorder pages before merging. Files are processed in your browser and never uploaded.",
+    "url": "pdf/tools/merge-pdf/"
+  },
+  {
+    "suite": "pdf",
+    "slug": "organize-pdf",
+    "title": "Organize PDF Online Free",
+    "desc": "Sort, reorder, delete, and rotate pages in your PDF online for free. Visual drag-and-drop page organizer. Processed entirely in your browser.",
+    "url": "pdf/tools/organize-pdf/"
+  },
+  {
+    "suite": "pdf",
+    "slug": "page-numbers",
+    "title": "Add Page Numbers to PDF Online Free",
+    "desc": "Add page numbers to every page of your PDF, free and online. Choose position, format and starting number. Processed entirely in your browser.",
+    "url": "pdf/tools/page-numbers/"
+  },
+  {
+    "suite": "pdf",
+    "slug": "pdf-to-jpg",
+    "title": "PDF to JPG Online Free",
+    "desc": "Convert every page of your PDF into a JPG image, free. Download all pages as a ZIP. Processed entirely in your browser.",
+    "url": "pdf/tools/pdf-to-jpg/"
+  },
+  {
+    "suite": "pdf",
+    "slug": "pdf-to-txt",
+    "title": "Convert PDF to Text Online Free",
+    "desc": "Extract text and content from PDF documents online for free. Download as TXT file or copy to clipboard instantly. Processed entirely in your browser.",
+    "url": "pdf/tools/pdf-to-txt/"
+  },
+  {
+    "suite": "pdf",
+    "slug": "pdf-to-word",
+    "title": "PDF to Word Online Free",
+    "desc": "Convert a text-based PDF into an editable Word (.docx) file, free and online. Processed entirely in your browser.",
+    "url": "pdf/tools/pdf-to-word/"
+  },
+  {
+    "suite": "pdf",
+    "slug": "protect-pdf",
+    "title": "Protect PDF Online Free",
+    "desc": "Protect your PDF with a password and encryption, free and online. Set user password and permissions. Processed entirely in your browser \u2014 your files never leave your device.",
+    "url": "pdf/tools/protect-pdf/"
+  },
+  {
+    "suite": "pdf",
+    "slug": "repair-pdf",
+    "title": "Repair PDF Online Free",
+    "desc": "Repair and recover damaged or corrupted PDF files online for free. Rebuild broken PDF structures and recover unreadable pages. Processed entirely in your browser.",
+    "url": "pdf/tools/repair-pdf/"
+  },
+  {
+    "suite": "pdf",
+    "slug": "rotate-pdf",
+    "title": "Rotate PDF Online Free",
+    "desc": "Rotate all or specific pages of a PDF, free and online. Processed entirely in your browser \u2014 no quality loss.",
+    "url": "pdf/tools/rotate-pdf/"
+  },
+  {
+    "suite": "pdf",
+    "slug": "sign-pdf",
+    "title": "Sign PDF Online Free",
+    "desc": "Sign PDF documents online for free. Draw your signature, type your name, or upload a signature image. Drag &amp; drop signature on any page. Processed entirely in your browser.",
+    "url": "pdf/tools/sign-pdf/"
+  },
+  {
+    "suite": "pdf",
+    "slug": "split-pdf",
+    "title": "Split PDF Files Online Free",
+    "desc": "Split a PDF into multiple files or extract specific page ranges, free and online. Files are processed in your browser and never uploaded.",
+    "url": "pdf/tools/split-pdf/"
+  },
+  {
+    "suite": "pdf",
+    "slug": "unlock-pdf",
+    "title": "Unlock PDF Online Free",
+    "desc": "Remove password protection and restrictions from a PDF, free and online. Processed entirely in your browser \u2014 your password is never sent anywhere.",
+    "url": "pdf/tools/unlock-pdf/"
+  },
+  {
+    "suite": "pdf",
+    "slug": "watermark-pdf",
+    "title": "Add Watermark to PDF Online Free",
+    "desc": "Stamp a text or image watermark on your PDF, free and online. Drag &amp; drop positioning with cursor, custom opacity, rotation, and live preview. Processed entirely in your browser.",
+    "url": "pdf/tools/watermark-pdf/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "401k-calculator",
+    "title": "401K Calculator",
+    "desc": "Free online 401k calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/401k-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "age-calculator",
+    "title": "Age Calculator",
+    "desc": "Free online age calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/age-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "amortization-calculator",
+    "title": "Amortization Calculator",
+    "desc": "Free online amortization calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/amortization-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "annuity-calculator",
+    "title": "Annuity Calculator",
+    "desc": "Free online annuity calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/annuity-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "annuity-payout-calculator",
+    "title": "Annuity Payout Calculator",
+    "desc": "Free online annuity payout calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/annuity-payout-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "anorexic-bmi-calculator",
+    "title": "Anorexic BMI Calculator",
+    "desc": "Free online anorexic bmi calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/anorexic-bmi-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "apr-calculator",
+    "title": "APR Calculator",
+    "desc": "Free online apr calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/apr-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "area-calculator",
+    "title": "Area Calculator",
+    "desc": "Free online area calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/area-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "army-body-fat-calculator",
+    "title": "Army Body Fat Calculator",
+    "desc": "Free online army body fat calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/army-body-fat-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "auto-lease-calculator",
+    "title": "Auto Lease Calculator",
+    "desc": "Free online auto lease calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/auto-lease-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "auto-loan-calculator",
+    "title": "Auto Loan Calculator",
+    "desc": "Free online auto loan calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/auto-loan-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "average-calculator",
+    "title": "Average Calculator",
+    "desc": "Free online average calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/average-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "average-return-calculator",
+    "title": "Average Return Calculator",
+    "desc": "Free online average return calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/average-return-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "bac-calculator",
+    "title": "BAC Calculator",
+    "desc": "Free online bac calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/bac-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "bandwidth-calculator",
+    "title": "Bandwidth Calculator",
+    "desc": "Free online bandwidth calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/bandwidth-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "base64-encode-decode",
+    "title": "Base64 Encode / Decode",
+    "desc": "Free online base64 encode / decode by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/base64-encode-decode/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "basic-calculator",
+    "title": "Basic Calculator",
+    "desc": "Free online basic calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/basic-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "big-number-calculator",
+    "title": "Big Number Calculator",
+    "desc": "Free online big number calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/big-number-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "binary-calculator",
+    "title": "Binary Calculator",
+    "desc": "Free online binary calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/binary-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "bmi-calculator",
+    "title": "BMI Calculator",
+    "desc": "Free online bmi calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/bmi-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "bmr-calculator",
+    "title": "BMR Calculator",
+    "desc": "Free online bmr calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/bmr-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "boat-loan-calculator",
+    "title": "Boat Loan Calculator",
+    "desc": "Free online boat loan calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/boat-loan-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "body-fat-calculator",
+    "title": "Body Fat Calculator",
+    "desc": "Free online body fat calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/body-fat-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "body-surface-area-calculator",
+    "title": "Body Surface Area Calculator",
+    "desc": "Free online body surface area calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/body-surface-area-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "body-type-calculator",
+    "title": "Body Type Calculator",
+    "desc": "Free online body type calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/body-type-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "bond-calculator",
+    "title": "Bond Calculator",
+    "desc": "Free online bond calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/bond-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "bra-size-calculator",
+    "title": "Bra Size Calculator",
+    "desc": "Free online bra size calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/bra-size-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "btu-calculator",
+    "title": "BTU Calculator",
+    "desc": "Free online btu calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/btu-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "budget-calculator",
+    "title": "Budget Calculator",
+    "desc": "Free online budget calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/budget-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "business-loan-calculator",
+    "title": "Business Loan Calculator",
+    "desc": "Free online business loan calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/business-loan-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "calorie-calculator",
+    "title": "Calorie Calculator",
+    "desc": "Free online calorie calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/calorie-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "calories-burned-calculator",
+    "title": "Calories Burned Calculator",
+    "desc": "Free online calories burned calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/calories-burned-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "canadian-mortgage-calculator",
+    "title": "Canadian Mortgage Calculator",
+    "desc": "Free online canadian mortgage calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/canadian-mortgage-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "carbohydrate-calculator",
+    "title": "Carbohydrate Calculator",
+    "desc": "Free online carbohydrate calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/carbohydrate-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "cash-back-or-low-interest-calculator",
+    "title": "Cash Back or Low Interest Calculator",
+    "desc": "Free online cash back or low interest calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/cash-back-or-low-interest-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "cd-calculator",
+    "title": "CD Calculator",
+    "desc": "Free online cd calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/cd-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "circle-calculator",
+    "title": "Circle Calculator",
+    "desc": "Free online circle calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/circle-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "college-cost-calculator",
+    "title": "College Cost Calculator",
+    "desc": "Free online college cost calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/college-cost-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "commission-calculator",
+    "title": "Commission Calculator",
+    "desc": "Free online commission calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/commission-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "common-factor-calculator",
+    "title": "Common Factor Calculator",
+    "desc": "Free online common factor calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/common-factor-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "compound-interest-calculator",
+    "title": "Compound Interest Calculator",
+    "desc": "Free online compound interest calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/compound-interest-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "conception-calculator",
+    "title": "Conception Calculator",
+    "desc": "Free online conception calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/conception-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "concrete-calculator",
+    "title": "Concrete Calculator",
+    "desc": "Calculate volume and weight of concrete needed for slabs, square footings, walls, round columns, circular tubes, and stairs. Includes 3D shape diagrams, metric and imperial units (meters, cm, feet, inches), 60lb/80lb/50kg bag counts, and cost estimation.",
+    "url": "calculator/tools/concrete-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "confidence-interval-calculator",
+    "title": "Confidence Interval Calculator",
+    "desc": "Free online confidence interval calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/confidence-interval-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "conversion-calculator",
+    "title": "Conversion Calculator",
+    "desc": "Free online conversion calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/conversion-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "credit-card-calculator",
+    "title": "Credit Card Calculator",
+    "desc": "Free online credit card calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/credit-card-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "credit-card-payoff-calculator",
+    "title": "Credit Cards Payoff Calculator",
+    "desc": "Free online credit cards payoff calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/credit-card-payoff-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "currency-calculator",
+    "title": "Currency Calculator",
+    "desc": "Free online currency calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/currency-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "date-calculator",
+    "title": "Date Calculator",
+    "desc": "Free online date calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/date-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "day-counter",
+    "title": "Day Counter",
+    "desc": "Free online day counter by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/day-counter/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "day-of-the-week-calculator",
+    "title": "Day of the Week Calculator",
+    "desc": "Free online day of the week calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/day-of-the-week-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "debt-consolidation-calculator",
+    "title": "Debt Consolidation Calculator",
+    "desc": "Free online debt consolidation calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/debt-consolidation-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "debt-payoff-calculator",
+    "title": "Debt Payoff Calculator",
+    "desc": "Free online debt payoff calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/debt-payoff-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "debt-ratio-calculator",
+    "title": "Debt-to-Income Ratio Calculator",
+    "desc": "Free online debt-to-income ratio calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/debt-ratio-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "density-calculator",
+    "title": "Density Calculator",
+    "desc": "Free online density calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/density-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "depreciation-calculator",
+    "title": "Depreciation Calculator",
+    "desc": "Free online depreciation calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/depreciation-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "dew-point-calculator",
+    "title": "Dew Point Calculator",
+    "desc": "Free online dew point calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/dew-point-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "dice-roller",
+    "title": "Dice Roller",
+    "desc": "Free online dice roller by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/dice-roller/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "discount-calculator",
+    "title": "Discount Calculator",
+    "desc": "Free online discount calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/discount-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "distance-calculator",
+    "title": "Distance Calculator",
+    "desc": "Free online distance calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/distance-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "down-payment-calculator",
+    "title": "Down Payment Calculator",
+    "desc": "Free online down payment calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/down-payment-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "due-date-calculator",
+    "title": "Due Date Calculator",
+    "desc": "Free online due date calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/due-date-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "electricity-calculator",
+    "title": "Electricity Calculator",
+    "desc": "Free online electricity calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/electricity-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "engine-horsepower-calculator",
+    "title": "Engine Horsepower Calculator",
+    "desc": "Free online engine horsepower calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/engine-horsepower-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "estate-tax-calculator",
+    "title": "Estate Tax Calculator",
+    "desc": "Free online estate tax calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/estate-tax-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "exponent-calculator",
+    "title": "Exponent Calculator",
+    "desc": "Free online exponent calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/exponent-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "factor-calculator",
+    "title": "Factor Calculator",
+    "desc": "Free online factor calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/factor-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "fat-intake-calculator",
+    "title": "Fat Intake Calculator",
+    "desc": "Free online fat intake calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/fat-intake-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "fha-loan-calculator",
+    "title": "FHA Loan Calculator",
+    "desc": "Free online fha loan calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/fha-loan-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "finance-calculator",
+    "title": "Finance Calculator",
+    "desc": "Free online finance calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/finance-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "fraction-calculator",
+    "title": "Fraction Calculator",
+    "desc": "Free online fraction calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/fraction-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "fuel-cost-calculator",
+    "title": "Fuel Cost Calculator",
+    "desc": "Free online fuel cost calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/fuel-cost-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "future-value-calculator",
+    "title": "Future Value Calculator",
+    "desc": "Free online future value calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/future-value-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "gas-mileage-calculator",
+    "title": "Gas Mileage Calculator",
+    "desc": "Free online gas mileage calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/gas-mileage-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "gcf-calculator",
+    "title": "Greatest Common Factor Calculator",
+    "desc": "Free online greatest common factor calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/gcf-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "gdp-calculator",
+    "title": "GDP Calculator",
+    "desc": "Free online gdp calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/gdp-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "gfr-calculator",
+    "title": "GFR Calculator",
+    "desc": "Free online gfr calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/gfr-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "golf-handicap-calculator",
+    "title": "Golf Handicap Calculator",
+    "desc": "Free online golf handicap calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/golf-handicap-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "gpa-calculator",
+    "title": "GPA Calculator",
+    "desc": "Free online gpa calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/gpa-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "grade-calculator",
+    "title": "Grade Calculator",
+    "desc": "Free online grade calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/grade-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "gravel-calculator",
+    "title": "Gravel Calculator",
+    "desc": "Free online gravel calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/gravel-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "half-life-calculator",
+    "title": "Half-Life Calculator",
+    "desc": "Free online half-life calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/half-life-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "healthy-weight-calculator",
+    "title": "Healthy Weight Calculator",
+    "desc": "Free online healthy weight calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/healthy-weight-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "heat-index-calculator",
+    "title": "Heat Index Calculator",
+    "desc": "Free online heat index calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/heat-index-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "height-calculator",
+    "title": "Height Calculator",
+    "desc": "Free online height calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/height-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "heloc-calculator",
+    "title": "HELOC Calculator",
+    "desc": "Free online heloc calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/heloc-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "hex-calculator",
+    "title": "Hex Calculator",
+    "desc": "Free online hex calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/hex-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "home-equity-loan-calculator",
+    "title": "Home Equity Loan Calculator",
+    "desc": "Free online home equity loan calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/home-equity-loan-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "horsepower-calculator",
+    "title": "Horsepower Calculator",
+    "desc": "Free online horsepower calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/horsepower-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "hours-calculator",
+    "title": "Hours Calculator",
+    "desc": "Free online hours calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/hours-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "house-affordability-calculator",
+    "title": "House Affordability Calculator",
+    "desc": "Free online house affordability calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/house-affordability-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "ideal-weight-calculator",
+    "title": "Ideal Weight Calculator",
+    "desc": "Free online ideal weight calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/ideal-weight-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "income-tax-calculator",
+    "title": "Income Tax Calculator",
+    "desc": "Estimate your federal and state income tax liabilities, effective tax rate, and take-home net pay.",
+    "url": "calculator/tools/income-tax-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "inflation-calculator",
+    "title": "Inflation Calculator",
+    "desc": "Free online inflation calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/inflation-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "interest-calculator",
+    "title": "Interest Calculator",
+    "desc": "Free online interest calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/interest-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "interest-rate-calculator",
+    "title": "Interest Rate Calculator",
+    "desc": "Free online interest rate calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/interest-rate-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "investment-calculator",
+    "title": "Investment Calculator",
+    "desc": "Free online investment calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/investment-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "ip-subnet-calculator",
+    "title": "IP Subnet Calculator",
+    "desc": "Free online ip subnet calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/ip-subnet-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "ira-calculator",
+    "title": "IRA Calculator",
+    "desc": "Free online ira calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/ira-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "irr-calculator",
+    "title": "IRR Calculator",
+    "desc": "Free online irr calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/irr-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "lcm-calculator",
+    "title": "Least Common Multiple Calculator",
+    "desc": "Free online least common multiple calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/lcm-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "lean-body-mass-calculator",
+    "title": "Lean Body Mass Calculator",
+    "desc": "Free online lean body mass calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/lean-body-mass-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "lease-calculator",
+    "title": "Lease Calculator",
+    "desc": "Free online lease calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/lease-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "loan-calculator",
+    "title": "Loan Calculator",
+    "desc": "Free online loan calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/loan-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "log-calculator",
+    "title": "Log Calculator",
+    "desc": "Free online log calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/log-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "long-division-calculator",
+    "title": "Long Division Calculator",
+    "desc": "Free online long division calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/long-division-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "love-calculator",
+    "title": "Love Calculator",
+    "desc": "Free online love calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/love-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "macro-calculator",
+    "title": "Macro Calculator",
+    "desc": "Free online macro calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/macro-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "margin-calculator",
+    "title": "Margin Calculator",
+    "desc": "Free online margin calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/margin-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "marriage-calculator",
+    "title": "Marriage Tax Calculator",
+    "desc": "Free online marriage tax calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/marriage-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "mass-calculator",
+    "title": "Mass Calculator",
+    "desc": "Free online mass calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/mass-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "matrix-calculator",
+    "title": "Matrix Calculator",
+    "desc": "Free online matrix calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/matrix-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "mean-median-mode-range-calculator",
+    "title": "Mean, Median, Mode, Range Calculator",
+    "desc": "Free online mean, median, mode, range calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/mean-median-mode-range-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "mileage-calculator",
+    "title": "Mileage Calculator",
+    "desc": "Free online mileage calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/mileage-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "molarity-calculator",
+    "title": "Molarity Calculator",
+    "desc": "Free online molarity calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/molarity-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "molecular-weight-calculator",
+    "title": "Molecular Weight Calculator",
+    "desc": "Free online molecular weight calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/molecular-weight-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "mortgage-amortization-calculator",
+    "title": "Mortgage Amortization Calculator",
+    "desc": "Free online mortgage amortization calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/mortgage-amortization-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "mortgage-calculator",
+    "title": "Mortgage Calculator",
+    "desc": "Free online mortgage calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/mortgage-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "mortgage-calculator-uk",
+    "title": "Mortgage Calculator UK",
+    "desc": "Free online mortgage calculator uk by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/mortgage-calculator-uk/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "mortgage-payoff-calculator",
+    "title": "Mortgage Payoff Calculator",
+    "desc": "Free online mortgage payoff calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/mortgage-payoff-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "mulch-calculator",
+    "title": "Mulch Calculator",
+    "desc": "Free online mulch calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/mulch-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "mutual-fund-calculator",
+    "title": "Mutual Fund Calculator",
+    "desc": "Free online mutual fund calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/mutual-fund-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "number-sequence-calculator",
+    "title": "Number Sequence Calculator",
+    "desc": "Free online number sequence calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/number-sequence-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "ohms-law-calculator",
+    "title": "Ohms Law Calculator",
+    "desc": "Free online ohms law calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/ohms-law-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "one-rep-max-calculator",
+    "title": "One Rep Max Calculator",
+    "desc": "Free online one rep max calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/one-rep-max-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "overweight-calculator",
+    "title": "Overweight Calculator",
+    "desc": "Free online overweight calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/overweight-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "ovulation-calculator",
+    "title": "Ovulation Calculator",
+    "desc": "Free online ovulation calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/ovulation-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "p-value-calculator",
+    "title": "P-value Calculator",
+    "desc": "Free online p-value calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/p-value-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "pace-calculator",
+    "title": "Pace Calculator",
+    "desc": "Free online pace calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/pace-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "password-generator",
+    "title": "Password Generator",
+    "desc": "Free online password generator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/password-generator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "payback-period-calculator",
+    "title": "Payback Period Calculator",
+    "desc": "Free online payback period calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/payback-period-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "payment-calculator",
+    "title": "Payment Calculator",
+    "desc": "Free online payment calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/payment-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "pension-calculator",
+    "title": "Pension Calculator",
+    "desc": "Free online pension calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/pension-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "percent-calculator",
+    "title": "Percentage Calculator",
+    "desc": "Free online percentage calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/percent-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "percent-error-calculator",
+    "title": "Percent Error Calculator",
+    "desc": "Free online percent error calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/percent-error-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "percent-off-calculator",
+    "title": "Percent Off Calculator",
+    "desc": "Free online percent off calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/percent-off-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "percentage-calculator",
+    "title": "Percentage Calculator",
+    "desc": "Calculate percent of values, percentage change, increase, decrease, and percentage differences effortlessly.",
+    "url": "calculator/tools/percentage-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "period-calculator",
+    "title": "Period Calculator",
+    "desc": "Free online period calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/period-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "permutation-and-combination-calculator",
+    "title": "Permutation and Combination Calculator",
+    "desc": "Free online permutation and combination calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/permutation-and-combination-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "personal-loan-calculator",
+    "title": "Personal Loan Calculator",
+    "desc": "Free online personal loan calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/personal-loan-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "pregnancy-calculator",
+    "title": "Pregnancy Calculator",
+    "desc": "Free online pregnancy calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/pregnancy-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "pregnancy-conception-calculator",
+    "title": "Pregnancy Conception Calculator",
+    "desc": "Free online pregnancy conception calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/pregnancy-conception-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "pregnancy-due-date-calculator",
+    "title": "Pregnancy Due Date Calculator",
+    "desc": "Calculate expected baby delivery due date and trimester timeline based on your Last Menstrual Period (LMP).",
+    "url": "calculator/tools/pregnancy-due-date-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "pregnancy-weight-gain-calculator",
+    "title": "Pregnancy Weight Gain Calculator",
+    "desc": "Free online pregnancy weight gain calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/pregnancy-weight-gain-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "present-value-calculator",
+    "title": "Present Value Calculator",
+    "desc": "Free online present value calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/present-value-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "prime-factorization-calculator",
+    "title": "Prime Factorization Calculator",
+    "desc": "Free online prime factorization calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/prime-factorization-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "probability-calculator",
+    "title": "Probability Calculator",
+    "desc": "Free online probability calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/probability-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "protein-calculator",
+    "title": "Protein Calculator",
+    "desc": "Free online protein calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/protein-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "pythagorean-theorem-calculator",
+    "title": "Pythagorean Theorem Calculator",
+    "desc": "Free online pythagorean theorem calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/pythagorean-theorem-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "quadratic-formula-calculator",
+    "title": "Quadratic Formula Calculator",
+    "desc": "Free online quadratic formula calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/quadratic-formula-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "random-number-generator",
+    "title": "Random Number Generator",
+    "desc": "Free online random number generator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/random-number-generator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "ratio-calculator",
+    "title": "Ratio Calculator",
+    "desc": "Free online ratio calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/ratio-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "real-estate-calculator",
+    "title": "Real Estate Calculator",
+    "desc": "Free online real estate calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/real-estate-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "refinance-calculator",
+    "title": "Refinance Calculator",
+    "desc": "Free online refinance calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/refinance-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "rent-calculator",
+    "title": "Rent Calculator",
+    "desc": "Free online rent calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/rent-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "rent-vs-buy-calculator",
+    "title": "Rent vs. Buy Calculator",
+    "desc": "Free online rent vs. buy calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/rent-vs-buy-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "rental-property-calculator",
+    "title": "Rental Property Calculator",
+    "desc": "Free online rental property calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/rental-property-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "repayment-calculator",
+    "title": "Repayment Calculator",
+    "desc": "Free online repayment calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/repayment-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "resistor-calculator",
+    "title": "Resistor Calculator",
+    "desc": "Free online resistor calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/resistor-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "retirement-calculator",
+    "title": "Retirement Calculator",
+    "desc": "Free online retirement calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/retirement-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "right-triangle-calculator",
+    "title": "Right Triangle Calculator",
+    "desc": "Free online right triangle calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/right-triangle-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "rmd-calculator",
+    "title": "RMD Calculator",
+    "desc": "Free online rmd calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/rmd-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "roi-calculator",
+    "title": "ROI Calculator",
+    "desc": "Free online roi calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/roi-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "roman-numeral-converter",
+    "title": "Roman Numeral Converter",
+    "desc": "Free online roman numeral converter by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/roman-numeral-converter/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "roofing-calculator",
+    "title": "Roofing Calculator",
+    "desc": "Free online roofing calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/roofing-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "root-calculator",
+    "title": "Root Calculator",
+    "desc": "Free online root calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/root-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "roth-ira-calculator",
+    "title": "Roth IRA Calculator",
+    "desc": "Free online roth ira calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/roth-ira-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "rounding-calculator",
+    "title": "Rounding Calculator",
+    "desc": "Free online rounding calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/rounding-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "salary-calculator",
+    "title": "Salary Calculator",
+    "desc": "Free online salary calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/salary-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "sales-tax-calculator",
+    "title": "Sales Tax Calculator",
+    "desc": "Free online sales tax calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/sales-tax-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "sample-size-calculator",
+    "title": "Sample Size Calculator",
+    "desc": "Free online sample size calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/sample-size-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "savings-calculator",
+    "title": "Savings Calculator",
+    "desc": "Free online savings calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/savings-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "scientific-calculator",
+    "title": "Scientific Calculator",
+    "desc": "Free online scientific calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/scientific-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "scientific-notation-calculator",
+    "title": "Scientific Notation Calculator",
+    "desc": "Free online scientific notation calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/scientific-notation-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "shoe-size-conversion",
+    "title": "Shoe Size Conversion",
+    "desc": "Free online shoe size conversion by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/shoe-size-conversion/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "simple-interest-calculator",
+    "title": "Simple Interest Calculator",
+    "desc": "Free online simple interest calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/simple-interest-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "sleep-calculator",
+    "title": "Sleep Calculator",
+    "desc": "Free online sleep calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/sleep-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "slope-calculator",
+    "title": "Slope Calculator",
+    "desc": "Free online slope calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/slope-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "social-security-calculator",
+    "title": "Social Security Calculator",
+    "desc": "Free online social security calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/social-security-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "speed-calculator",
+    "title": "Speed Calculator",
+    "desc": "Free online speed calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/speed-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "square-footage-calculator",
+    "title": "Square Footage Calculator",
+    "desc": "Free online square footage calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/square-footage-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "stair-calculator",
+    "title": "Stair Calculator",
+    "desc": "Free online stair calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/stair-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "standard-deviation-calculator",
+    "title": "Standard Deviation Calculator",
+    "desc": "Free online standard deviation calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/standard-deviation-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "statistics-calculator",
+    "title": "Statistics Calculator",
+    "desc": "Free online statistics calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/statistics-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "student-loan-calculator",
+    "title": "Student Loan Calculator",
+    "desc": "Free online student loan calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/student-loan-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "surface-area-calculator",
+    "title": "Surface Area Calculator",
+    "desc": "Free online surface area calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/surface-area-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "take-home-pay-calculator",
+    "title": "Take-Home-Paycheck Calculator",
+    "desc": "Free online take-home-paycheck calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/take-home-pay-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "target-heart-rate-calculator",
+    "title": "Target Heart Rate Calculator",
+    "desc": "Free online target heart rate calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/target-heart-rate-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "tax-calculator",
+    "title": "Income Tax Calculator",
+    "desc": "Free online income tax calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/tax-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "tdee-calculator",
+    "title": "TDEE Calculator",
+    "desc": "Free online tdee calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/tdee-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "tile-calculator",
+    "title": "Tile Calculator",
+    "desc": "Free online tile calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/tile-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "time-calculator",
+    "title": "Time Calculator",
+    "desc": "Free online time calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/time-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "time-card-calculator",
+    "title": "Time Card Calculator",
+    "desc": "Free online time card calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/time-card-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "time-duration-calculator",
+    "title": "Time Duration Calculator",
+    "desc": "Free online time duration calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/time-duration-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "time-zone-calculator",
+    "title": "Time Zone Calculator",
+    "desc": "Free online time zone calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/time-zone-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "tip-calculator",
+    "title": "Tip Calculator",
+    "desc": "Free online tip calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/tip-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "tire-size-calculator",
+    "title": "Tire Size Calculator",
+    "desc": "Free online tire size calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/tire-size-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "triangle-calculator",
+    "title": "Triangle Calculator",
+    "desc": "Free online triangle calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/triangle-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "url-encode-decode",
+    "title": "URL Encode / Decode",
+    "desc": "Free online url encode / decode by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/url-encode-decode/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "va-mortgage-calculator",
+    "title": "VA Mortgage Calculator",
+    "desc": "Free online va mortgage calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/va-mortgage-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "vat-calculator",
+    "title": "VAT Calculator",
+    "desc": "Free online vat calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/vat-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "voltage-drop-calculator",
+    "title": "Voltage Drop Calculator",
+    "desc": "Free online voltage drop calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/voltage-drop-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "volume-calculator",
+    "title": "Volume Calculator",
+    "desc": "Free online volume calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/volume-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "weight-calculator",
+    "title": "Weight Calculator",
+    "desc": "Free online weight calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/weight-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "weight-watchers-points-calculator",
+    "title": "Weight Watcher Points Calculator",
+    "desc": "Free online weight watcher points calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/weight-watchers-points-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "wind-chill-calculator",
+    "title": "Wind Chill Calculator",
+    "desc": "Free online wind chill calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/wind-chill-calculator/"
+  },
+  {
+    "suite": "calculator",
+    "slug": "z-score-calculator",
+    "title": "Z-score Calculator",
+    "desc": "Free online z-score calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+    "url": "calculator/tools/z-score-calculator/"
+  },
+  {
+    "suite": "removebg",
+    "slug": "remove-background",
+    "title": "AI Background Remover Studio",
+    "desc": "Remove image background instantly in 100% HD with Google MediaPipe AI, magic brush, and custom backgrounds.",
+    "url": "removebg/"
+  },
+  {
+    "suite": "audio",
+    "slug": "add-background-music-to-audio",
+    "title": "Add Background Music to Audio Online",
+    "desc": "Mix an existing voice recording with a background music track online. Adjust the volume ratio (ducking) to ensure speech stays clear and download unified MP3.",
+    "url": "audio/tools/add-background-music-to-audio/"
+  },
+  {
+    "suite": "audio",
+    "slug": "add-echo-to-audio",
+    "title": "Add Echo Effect to Audio Online",
+    "desc": "Add rich echo and delay effects to vocal tracks and music online. Choose slapback, room delay, canyon echo, and adjust delay time and feedback decay in real time.",
+    "url": "audio/tools/add-echo-to-audio/"
+  },
+  {
+    "suite": "audio",
+    "slug": "add-music-to-photo",
+    "title": "Add Music to Photo Online",
+    "desc": "Combine a photo and audio song into an MP4 video clip online. Choose 1:1 Square (Instagram), 9:16 (TikTok/Reels/Shorts), or 16:9 (YouTube) format.",
+    "url": "audio/tools/add-music-to-photo/"
+  },
+  {
+    "suite": "audio",
+    "slug": "add-reverb-to-audio",
+    "title": "Add Reverb to Audio Online",
+    "desc": "Add realistic acoustic space and convolution reverb to dry vocals and instruments. Choose from Studio Booth, Warm Room, Concert Hall, Cathedral, and Deep Cave presets.",
+    "url": "audio/tools/add-reverb-to-audio/"
+  },
+  {
+    "suite": "audio",
+    "slug": "audio-cutter",
+    "title": "Audio Cutter Online Free",
+    "desc": "Cut, trim, and split MP3, WAV, AAC, and audio files online for free. Drag interactive waveform handles, preview in real-time, and download instant high-quality audio.",
+    "url": "audio/tools/audio-cutter/"
+  },
+  {
+    "suite": "audio",
+    "slug": "audio-looper",
+    "title": "Audio Looper Online",
+    "desc": "Loop music loops, drum beats, nature sounds, and meditation tracks online. Set repeat counts (2x to 50x) with seamless crossfade looping to eliminate clicks.",
+    "url": "audio/tools/audio-looper/"
+  },
+  {
+    "suite": "audio",
+    "slug": "audio-recorder",
+    "title": "Online Voice Recorder",
+    "desc": "Record clear voice memos, podcast interviews, and vocal takes directly from your microphone online. Live audio waveform monitor, pause/resume, and instant MP3/WAV download.",
+    "url": "audio/tools/audio-recorder/"
+  },
+  {
+    "suite": "audio",
+    "slug": "audio-recorder-with-background-music",
+    "title": "Record Voice with Background Music Online",
+    "desc": "Record your voice live while hearing and mixing background music. Pick from lo-fi, acoustic, ambient, or upload your own track. Export mixed high-res MP3.",
+    "url": "audio/tools/audio-recorder-with-background-music/"
+  },
+  {
+    "suite": "audio",
+    "slug": "audio-speed-and-pitch-changer",
+    "title": "Audio Speed & Pitch Changer Online",
+    "desc": "Simultaneously adjust audio speed and musical pitch online. Modify playback tempo and pitch key independently with real-time waveform preview and instant download.",
+    "url": "audio/tools/audio-speed-and-pitch-changer/"
+  },
+  {
+    "suite": "audio",
+    "slug": "audio-speed-changer-online",
+    "title": "Change Audio Speed Online Free",
+    "desc": "Speed up or slow down songs, podcasts, and voice recordings online. Adjust tempo from 0.25x (slow motion) to 3.0x (fast forward) with optional pitch preservation.",
+    "url": "audio/tools/audio-speed-changer-online/"
+  },
+  {
+    "suite": "audio",
+    "slug": "audio-to-text",
+    "title": "Audio to Text Converter Online Free",
+    "desc": "100% In-browser AI audio to text transcriber. Convert MP3, WAV, M4A, OGG audio files and live mic recording into accurate text transcripts and subtitles (.srt, .vtt, .txt). Free &amp; private.",
+    "url": "audio/tools/audio-to-text/"
+  },
+  {
+    "suite": "audio",
+    "slug": "audio-to-transcript",
+    "title": "Audio to Text Converter Online Free",
+    "desc": "100% In-browser AI audio to text transcriber. Convert MP3, WAV, M4A, OGG audio files and live mic recording into accurate text transcripts and subtitles (.srt, .vtt, .txt). Free &amp; private.",
+    "url": "audio/tools/audio-to-transcript/"
+  },
+  {
+    "suite": "audio",
+    "slug": "combine-video-with-audio",
+    "title": "Combine Video with Audio Online",
+    "desc": "Merge any audio track with any video file online. Replace bad video sound or layer background music on top of existing video audio and export MP4.",
+    "url": "audio/tools/combine-video-with-audio/"
+  },
+  {
+    "suite": "audio",
+    "slug": "compress-audio",
+    "title": "Compress Audio Online Free",
+    "desc": "Reduce audio file size online without noticeable quality loss. Downsample bitrates (64k, 96k, 128k, 192k) and sample rates to make audio lightweight for sharing.",
+    "url": "audio/tools/compress-audio/"
+  },
+  {
+    "suite": "audio",
+    "slug": "convert-audio",
+    "title": "Online Audio Converter",
+    "desc": "Convert audio files between all popular formats online for free. Convert WAV to MP3, M4A to MP3, AAC to WAV, and OGG to MP3 in your web browser.",
+    "url": "audio/tools/convert-audio/"
+  },
+  {
+    "suite": "audio",
+    "slug": "edit-mp3-tags-online",
+    "title": "Edit MP3 Tags Online Free",
+    "desc": "Edit MP3 metadata tags online. Modify Song Title, Artist, Album, Year, Genre, Track Number, and embed custom Album Cover Art directly into your MP3 files.",
+    "url": "audio/tools/edit-mp3-tags-online/"
+  },
+  {
+    "suite": "audio",
+    "slug": "extract-audio-from-video",
+    "title": "Extract Audio from Video Online Free",
+    "desc": "Extract sound and music tracks from MP4, WebM, MKV, MOV, and AVI videos online for free. Fast browser-based extraction with MP3 and WAV export.",
+    "url": "audio/tools/extract-audio-from-video/"
+  },
+  {
+    "suite": "audio",
+    "slug": "merge-audio",
+    "title": "Merge Audio Files Online Free",
+    "desc": "Combine and merge multiple audio files into a single song or podcast track online. Drag to reorder tracks, add smooth crossfades, and export high-quality MP3.",
+    "url": "audio/tools/merge-audio/"
+  },
+  {
+    "suite": "audio",
+    "slug": "mp3-bitrate-changer",
+    "title": "MP3 Bitrate Changer Online",
+    "desc": "Change MP3 audio bitrate online to optimize audio fidelity or reduce size. Re-encode MP3s to 64, 96, 128, 160, 192, 256, or 320 kbps instantly.",
+    "url": "audio/tools/mp3-bitrate-changer/"
+  },
+  {
+    "suite": "audio",
+    "slug": "mp3-volume-booster",
+    "title": "Increase Audio Volume Online",
+    "desc": "Boost low audio volume and amplify quiet MP3, WAV, and audio files online. Increase loudness up to 500% (+20dB) with built-in soft-clipping limiter to prevent distortion.",
+    "url": "audio/tools/mp3-volume-booster/"
+  },
+  {
+    "suite": "audio",
+    "slug": "music-pitch-changer",
+    "title": "Change Audio Pitch Online",
+    "desc": "Change audio pitch and transpose musical keys online for free. Shift pitch by semitones (-12 to +12) or fine-tune cents without altering the song speed or tempo.",
+    "url": "audio/tools/music-pitch-changer/"
+  },
+  {
+    "suite": "audio",
+    "slug": "remove-silence-from-audio",
+    "title": "Remove Silence from Audio Online",
+    "desc": "Automatically detect and remove dead pauses and quiet silence gaps from podcasts, voice-overs, and audio recordings. Speed up listening and clean up takes instantly.",
+    "url": "audio/tools/remove-silence-from-audio/"
+  },
+  {
+    "suite": "audio",
+    "slug": "reverse-audio",
+    "title": "Reverse Audio Online Free",
+    "desc": "Play any song or voice clip backwards online. Invert audio waveforms to create mysterious reverse sound effects, backwards music, and backward vocal tracks.",
+    "url": "audio/tools/reverse-audio/"
+  },
+  {
+    "suite": "audio",
+    "slug": "ringtone-maker",
+    "title": "Online Ringtone Maker",
+    "desc": "Turn any song into a custom ringtone online. Select a 30-second chorus, add smooth fade-in and fade-out effects, and download for iPhone (M4R) or Android (MP3).",
+    "url": "audio/tools/ringtone-maker/"
+  },
+  {
+    "suite": "audio",
+    "slug": "video-to-mp3",
+    "title": "Video to MP3 Converter Online Free",
+    "desc": "Convert video clips to high-bitrate MP3 audio online. Drop MP4, MOV, or WebM files and download clean 320 kbps, 192 kbps, or 128 kbps MP3 files in seconds.",
+    "url": "audio/tools/video-to-mp3/"
+  },
+  {
+    "suite": "image",
+    "slug": "add-border-image",
+    "title": "Add Border to Photo Online",
+    "desc": "Add stylish white photo frames, vintage borders, or custom colored borders to photos with adjustable border thickness.",
+    "url": "image/tools/add-border-image/"
+  },
+  {
+    "suite": "image",
+    "slug": "add-name-date-photo",
+    "title": "Add Name and Date on Photo Online",
+    "desc": "Stamp candidate Name and Date of Photo (DOP) or Date of Birth (DOB) at the bottom of exam photos online. Required for SSC, Police, and state recruitment forms.",
+    "url": "image/tools/add-name-date-photo/"
+  },
+  {
+    "suite": "image",
+    "slug": "blur-censor-image",
+    "title": "Blur & Censor Image Online",
+    "desc": "Hide sensitive personal information, blur faces, pixelate license plates, or blackout private text on documents with interactive brush.",
+    "url": "image/tools/blur-censor-image/"
+  },
+  {
+    "suite": "image",
+    "slug": "bulk-image-resizer",
+    "title": "Bulk Image Resizer Online",
+    "desc": "Resize dozens of JPG, PNG, and WebP photos simultaneously. Set max dimensions or percentage and download all resized photos in a ZIP.",
+    "url": "image/tools/bulk-image-resizer/"
+  },
+  {
+    "suite": "image",
+    "slug": "compress-image-kb",
+    "title": "Compress Image to Specific KB Online Free",
+    "desc": "Reduce image size to exact KB (20KB, 50KB, 100KB, 200KB, etc.) online for free. Perfect for government exam forms, passport applications, and websites. 100% browser-based.",
+    "url": "image/tools/compress-image-kb/"
+  },
+  {
+    "suite": "image",
+    "slug": "crop-image",
+    "title": "Crop Image Online Free",
+    "desc": "Crop JPG, PNG, and WebP images online with interactive circular, 1:1 square, 16:9 widescreen, and freeform bounding boxes.",
+    "url": "image/tools/crop-image/"
+  },
+  {
+    "suite": "image",
+    "slug": "exam-photo-resizer",
+    "title": "Govt Exam Photo Resizer",
+    "desc": "1-click photo and signature resizer for Indian government competitive exams (SSC CGL/CHSL, UPSC, IBPS Bank, Railway RRB, and PAN Card).",
+    "url": "image/tools/exam-photo-resizer/"
+  },
+  {
+    "suite": "image",
+    "slug": "exif-metadata-remover",
+    "title": "Remove EXIF Metadata Online Free",
+    "desc": "Strip hidden GPS coordinates, camera serial numbers, shooting date/time, and device tags from photos before sharing online.",
+    "url": "image/tools/exif-metadata-remover/"
+  },
+  {
+    "suite": "image",
+    "slug": "favicon-generator",
+    "title": "Favicon Generator Online Free",
+    "desc": "Generate complete website favicon packages from your logo. Generates 16x16, 32x32, 48x48, and Apple Touch Icon (180x180) in a ZIP.",
+    "url": "image/tools/favicon-generator/"
+  },
+  {
+    "suite": "image",
+    "slug": "grayscale-image",
+    "title": "Convert Image to Grayscale Online",
+    "desc": "Convert full-color photographs into artistic Black and White or monochrome grayscale online for free.",
+    "url": "image/tools/grayscale-image/"
+  },
+  {
+    "suite": "image",
+    "slug": "heic-to-jpg",
+    "title": "HEIC to JPG Converter Online",
+    "desc": "Convert Apple iPhone and iPad .HEIC and .HEIF photos to high-quality JPG format online without uploading files to a server.",
+    "url": "image/tools/heic-to-jpg/"
+  },
+  {
+    "suite": "image",
+    "slug": "image-color-picker",
+    "title": "Image Color Picker Online",
+    "desc": "Click anywhere on your photo to sample exact pixel colors. Copies HEX code, RGB, and HSL values directly to your clipboard.",
+    "url": "image/tools/image-color-picker/"
+  },
+  {
+    "suite": "image",
+    "slug": "image-to-jpg",
+    "title": "Image to JPG Converter",
+    "desc": "Universal image converter to JPG. Convert any picture format into high quality JPEG format in seconds.",
+    "url": "image/tools/image-to-jpg/"
+  },
+  {
+    "suite": "image",
+    "slug": "image-to-text-ocr",
+    "title": "Image to Text OCR Online Free",
+    "desc": "Extract editable text from images, scanned documents, receipts, and screenshots using neural OCR engine. 100% private in your browser.",
+    "url": "image/tools/image-to-text-ocr/"
+  },
+  {
+    "suite": "image",
+    "slug": "increase-image-kb",
+    "title": "Increase Image Size in KB Online",
+    "desc": "Increase image size in KB without distorting quality to meet minimum upload requirements for government job portals, exam forms, and visa applications.",
+    "url": "image/tools/increase-image-kb/"
+  },
+  {
+    "suite": "image",
+    "slug": "instagram-grid-maker",
+    "title": "Instagram 3x3 Grid Maker",
+    "desc": "Slice panorama photos into 3x3, 3x2, or 3x1 numbered square tiles for giant Instagram feed grids. Download all tiles packaged in a ZIP.",
+    "url": "image/tools/instagram-grid-maker/"
+  },
+  {
+    "suite": "image",
+    "slug": "join-images",
+    "title": "Join Images Online Free",
+    "desc": "Stitch and combine multiple photos side-by-side (horizontally) or stacked top-to-bottom (vertically) into a single image.",
+    "url": "image/tools/join-images/"
+  },
+  {
+    "suite": "image",
+    "slug": "jpg-to-png",
+    "title": "JPG to PNG Converter Online Free",
+    "desc": "Convert JPG and JPEG pictures to lossless PNG format online for crisp graphics and logo editing.",
+    "url": "image/tools/jpg-to-png/"
+  },
+  {
+    "suite": "image",
+    "slug": "merge-photo-signature",
+    "title": "Merge Photo and Signature Online",
+    "desc": "Combine candidate photograph and handwritten signature into a single unified image file for online application portals.",
+    "url": "image/tools/merge-photo-signature/"
+  },
+  {
+    "suite": "image",
+    "slug": "passport-photo-maker",
+    "title": "Online Passport Photo Maker",
+    "desc": "Create standard passport photos online for free. Supports 3.5x4.5cm, 35x45mm, 2x2 inch visa sizes with white/blue background and printable 4x6 / A4 multi-photo sheets.",
+    "url": "image/tools/passport-photo-maker/"
+  },
+  {
+    "suite": "image",
+    "slug": "png-to-jpg",
+    "title": "PNG to JPG Converter Online Free",
+    "desc": "Convert transparent or high-res PNG images to standard JPG format with clean white background fill and quality control.",
+    "url": "image/tools/png-to-jpg/"
+  },
+  {
+    "suite": "image",
+    "slug": "resize-image-cm-mm",
+    "title": "Resize Image in CM, MM, Inches Online",
+    "desc": "Resize photos to exact real-world print dimensions (cm, mm, inch) with 150, 300, 600 DPI resolution settings.",
+    "url": "image/tools/resize-image-cm-mm/"
+  },
+  {
+    "suite": "image",
+    "slug": "resize-image-pixels",
+    "title": "Resize Image in Pixels Online",
+    "desc": "Resize JPG, PNG, and WebP image dimensions in exact pixels with aspect ratio preservation and percentage scaling.",
+    "url": "image/tools/resize-image-pixels/"
+  },
+  {
+    "suite": "image",
+    "slug": "rotate-flip-image",
+    "title": "Rotate and Flip Image Online",
+    "desc": "Rotate photos 90 degrees clockwise, 180 degrees, or flip horizontally and vertically in 1 click online.",
+    "url": "image/tools/rotate-flip-image/"
+  },
+  {
+    "suite": "image",
+    "slug": "split-image",
+    "title": "Split Image into Pieces Online",
+    "desc": "Slice any picture into custom rows and columns grid and download all cut tiles in a ZIP archive.",
+    "url": "image/tools/split-image/"
+  },
+  {
+    "suite": "image",
+    "slug": "watermark-image",
+    "title": "Watermark Image Online Free",
+    "desc": "Stamp text or logo watermarks on photos with interactive click & drag positioning. Protect your copyright against unauthorized copying.",
+    "url": "image/tools/watermark-image/"
+  },
+  {
+    "suite": "image",
+    "slug": "webp-to-jpg",
+    "title": "WEBP to JPG Converter Online Free",
+    "desc": "Convert modern WebP images downloaded from the web into standard JPG format for easy viewing and offline sharing.",
+    "url": "image/tools/webp-to-jpg/"
+  },
+  {
+    "suite": "collage",
+    "slug": "10-photo-collage",
+    "title": "10 Photo Collage Maker",
+    "desc": "Combine 10 photos into a structured photo collage. Great for top 10 memories, family timelines, and portfolios.",
+    "url": "collage/tools/10-photo-collage/"
+  },
+  {
+    "suite": "collage",
+    "slug": "12-photo-collage",
+    "title": "12 Photo Collage Maker",
+    "desc": "Create a 12-picture collage for baby first year milestones, monthly calendar recaps, or annual memory boards.",
+    "url": "collage/tools/12-photo-collage/"
+  },
+  {
+    "suite": "collage",
+    "slug": "3-photo-collage",
+    "title": "3 Photo Collage Maker Online",
+    "desc": "Create a 3 photo collage online. Choose from 1 large hero + 2 small stacked pictures, 3 vertical strips, or horizontal rows.",
+    "url": "collage/tools/3-photo-collage/"
+  },
+  {
+    "suite": "collage",
+    "slug": "30-photo-collage",
+    "title": "30 Photo Collage Maker",
+    "desc": "Combine 30 pictures into a dense, high-resolution photo wall mosaic with custom gaps and 4K print export.",
+    "url": "collage/tools/30-photo-collage/"
+  },
+  {
+    "suite": "collage",
+    "slug": "4-photos-in-one-frame",
+    "title": "4 Photos in One Frame",
+    "desc": "Create a classic 2x2 grid collage, 4-photo filmstrip, or hero layout with four pictures in high definition.",
+    "url": "collage/tools/4-photos-in-one-frame/"
+  },
+  {
+    "suite": "collage",
+    "slug": "5-photo-collage",
+    "title": "5 Photo Collage Maker",
+    "desc": "Arrange 5 pictures in modern magazine layout or balanced grid. Adjust rounded corners, spacing, and download 4K.",
+    "url": "collage/tools/5-photo-collage/"
+  },
+  {
+    "suite": "collage",
+    "slug": "6-photo-collage",
+    "title": "6 Photo Collage Maker Online",
+    "desc": "Combine six photos into a neat 2x3 or 3x2 grid, or 1 featured photo surrounded by five smaller snapshots.",
+    "url": "collage/tools/6-photo-collage/"
+  },
+  {
+    "suite": "collage",
+    "slug": "8-picture-collage",
+    "title": "8 Picture Collage Maker",
+    "desc": "Create an 8-picture photo collage. Perfect for yearly recaps, event galleries, and travel highlights.",
+    "url": "collage/tools/8-picture-collage/"
+  },
+  {
+    "suite": "collage",
+    "slug": "9-photo-collage",
+    "title": "9 Photo Collage Maker",
+    "desc": "Create a 3x3 Best Nine collage for Instagram or photo albums. Seamless borders, background colors, and instant export.",
+    "url": "collage/tools/9-photo-collage/"
+  },
+  {
+    "suite": "collage",
+    "slug": "anniversary-photo-collage",
+    "title": "Anniversary Photo Collage Maker",
+    "desc": "Celebrate relationship milestones with romantic anniversary photo collages. Custom text captions, dates, and HD export.",
+    "url": "collage/tools/anniversary-photo-collage/"
+  },
+  {
+    "suite": "collage",
+    "slug": "birthday-collage-maker",
+    "title": "Birthday Photo Collage Maker",
+    "desc": "Create celebratory birthday photo collages with festive layouts, stickers, colorful backgrounds, and birthday captions.",
+    "url": "collage/tools/birthday-collage-maker/"
+  },
+  {
+    "suite": "collage",
+    "slug": "christmas-collage",
+    "title": "Christmas Photo Collage Maker",
+    "desc": "Create festive Christmas holiday photo cards and winter collages with seasonal gradient backgrounds and 4K downloads.",
+    "url": "collage/tools/christmas-collage/"
+  },
+  {
+    "suite": "collage",
+    "slug": "collage-maker",
+    "title": "Photo Collage Maker Studio",
+    "desc": "Free online photo collage maker studio with 100+ modern grid layouts, custom aspect ratios, aesthetic backgrounds, text overlays, and 4K ultra HD export.",
+    "url": "collage/tools/collage-maker/"
+  },
+  {
+    "suite": "collage",
+    "slug": "combine-2-photos-in-one-frame",
+    "title": "Combine 2 Photos in One Frame Online",
+    "desc": "Combine two pictures side-by-side or stacked vertically into a single frame. Customize borders, filters, captions, and export in 4K.",
+    "url": "collage/tools/combine-2-photos-in-one-frame/"
+  },
+  {
+    "suite": "collage",
+    "slug": "couple-photo-collage",
+    "title": "Couple Photo Collage Maker",
+    "desc": "Combine relationship photos into romantic couple collages. Perfect for Valentine Day, date nights, and cute keepsakes.",
+    "url": "collage/tools/couple-photo-collage/"
+  },
+  {
+    "suite": "collage",
+    "slug": "family-photo-collage",
+    "title": "Family Photo Collage Maker",
+    "desc": "Gather family memories into a beautiful multi-generation photo collage for living room prints, gifts, and reunions.",
+    "url": "collage/tools/family-photo-collage/"
+  },
+  {
+    "suite": "collage",
+    "slug": "heart-photo-collage",
+    "title": "Heart Photo Collage Maker",
+    "desc": "Create a stunning heart-shaped photo collage for Valentine Day, anniversaries, couples, and romantic gifts.",
+    "url": "collage/tools/heart-photo-collage/"
+  },
+  {
+    "suite": "collage",
+    "slug": "instagram-collage-maker",
+    "title": "Instagram Collage Maker",
+    "desc": "Create Instagram-ready photo collages formatted in 1:1 square, 4:5 portrait, and 9:16 Reels/Story sizes with 4K export.",
+    "url": "collage/tools/instagram-collage-maker/"
+  },
+  {
+    "suite": "collage",
+    "slug": "photo-grid-maker",
+    "title": "Photo Grid Maker Online",
+    "desc": "Build custom photo grids with any number of rows and columns (2x2, 3x3, 4x4, 5x5). Control cell gaps and borders.",
+    "url": "collage/tools/photo-grid-maker/"
+  },
+  {
+    "suite": "collage",
+    "slug": "picture-montage-maker",
+    "title": "Picture Montage Maker",
+    "desc": "Blend photos into an artistic photo montage with magazine layouts, aesthetic gradient backgrounds, and text layers.",
+    "url": "collage/tools/picture-montage-maker/"
+  },
+  {
+    "suite": "collage",
+    "slug": "wedding-photo-collage",
+    "title": "Wedding Photo Collage Maker",
+    "desc": "Design timeless wedding and engagement photo collages with luxury triptychs, elegant margins, and 4K print quality.",
+    "url": "collage/tools/wedding-photo-collage/"
+  },
+  {
+    "suite": "gif",
+    "slug": "compress-gif-to-256kb",
+    "title": "Compress GIF to 256KB, 512KB, 1MB, 2MB Online Free",
+    "desc": "Compress GIFs to exact target file limits (256KB, 512KB, 1MB, 2MB, 5MB) for profile avatars, emojis, and forum uploads.",
+    "url": "gif/tools/compress-gif-to-256kb/"
+  },
+  {
+    "suite": "gif",
+    "slug": "gif-compressor",
+    "title": "GIF Compressor Online Free",
+    "desc": "Compress animated GIFs online without noticeable quality loss. Reduce file size with Low, Medium, and High compression presets.",
+    "url": "gif/tools/gif-compressor/"
+  },
+  {
+    "suite": "gif",
+    "slug": "gif-compressor-for-discord",
+    "title": "Compress GIF for Discord",
+    "desc": "Compress GIFs specifically for Discord. 1-click presets for 256KB custom animated emojis, 10MB Nitro attachments, and animated banner sizes.",
+    "url": "gif/tools/gif-compressor-for-discord/"
+  },
+  {
+    "suite": "gif",
+    "slug": "gif-cropper",
+    "title": "Crop GIF Online Free",
+    "desc": "Crop animated GIFs online. Cut out black bars, crop to 1:1 square avatar, 16:9 widescreen, or custom bounding box across all animation frames.",
+    "url": "gif/tools/gif-cropper/"
+  },
+  {
+    "suite": "gif",
+    "slug": "gif-editor",
+    "title": "GIF Editor Online Free",
+    "desc": "All-in-one online GIF editor. Crop, rotate, flip, adjust speed, reverse playback, and add captions in a unified web workspace.",
+    "url": "gif/tools/gif-editor/"
+  },
+  {
+    "suite": "gif",
+    "slug": "gif-maker",
+    "title": "GIF Maker Online Free",
+    "desc": "Create high-quality animated GIFs from photos, PNG, JPG, and existing images online. Adjust frame speed, canvas dimensions, and add text animations 100% in your browser.",
+    "url": "gif/tools/gif-maker/"
+  },
+  {
+    "suite": "gif",
+    "slug": "gif-optimizer",
+    "title": "GIF Optimizer Online Free",
+    "desc": "Full manual control over GIF optimization: reduce color palette (256, 128, 64, 32 colors), drop duplicate frames, and scale dimensions.",
+    "url": "gif/tools/gif-optimizer/"
+  },
+  {
+    "suite": "gif",
+    "slug": "gif-resizer",
+    "title": "GIF Resizer Online Free",
+    "desc": "Resize GIF dimensions in pixels or percentage with aspect ratio preservation. Scales all animation frames smoothly.",
+    "url": "gif/tools/gif-resizer/"
+  },
+  {
+    "suite": "gif",
+    "slug": "gif-speed-changer",
+    "title": "GIF Speed Changer Online",
+    "desc": "Change GIF playback speed from 0.25x (slow motion) up to 4.0x (fast forward) with smooth frame delay adjustments.",
+    "url": "gif/tools/gif-speed-changer/"
+  },
+  {
+    "suite": "gif",
+    "slug": "gif-to-mp4",
+    "title": "GIF to MP4 Converter Online Free",
+    "desc": "Convert animated GIFs into MP4 video format for easy sharing on Instagram, TikTok, WhatsApp, and YouTube Shorts.",
+    "url": "gif/tools/gif-to-mp4/"
+  },
+  {
+    "suite": "gif",
+    "slug": "gif-to-pdf",
+    "title": "GIF to PDF Converter Online",
+    "desc": "Export all frames of an animated GIF into a printable multi-page PDF document or storyboard contact sheet.",
+    "url": "gif/tools/gif-to-pdf/"
+  },
+  {
+    "suite": "gif",
+    "slug": "gif-to-webp",
+    "title": "GIF to WebP Converter Online Free",
+    "desc": "Convert bulky animated GIFs into modern Animated WebP format. Achieve up to 70% smaller file sizes with higher color fidelity.",
+    "url": "gif/tools/gif-to-webp/"
+  },
+  {
+    "suite": "gif",
+    "slug": "reverse-gif",
+    "title": "Reverse GIF Online Free",
+    "desc": "Invert the frame sequence of any animated GIF to play in reverse backward motion or create a boomerang ping-pong loop.",
+    "url": "gif/tools/reverse-gif/"
+  },
+  {
+    "suite": "gif",
+    "slug": "rotate-flip-gif",
+    "title": "Rotate & Flip GIF Online",
+    "desc": "Rotate animated GIFs 90 degrees clockwise, 180 degrees, or flip horizontally and vertically across all frames in 1 click.",
+    "url": "gif/tools/rotate-flip-gif/"
+  },
+  {
+    "suite": "gif",
+    "slug": "split-gif-frames",
+    "title": "Split GIF into Frames Online",
+    "desc": "Deconstruct animated GIFs into individual still image frames. Preview every frame and download all frames packaged in a ZIP file.",
+    "url": "gif/tools/split-gif-frames/"
+  },
+  {
+    "suite": "gif",
+    "slug": "video-to-gif",
+    "title": "Video to GIF Converter Online",
+    "desc": "Convert MP4, WebM, MOV, and MKV video clips to animated GIF online for free. Set start and end trim timestamps, resolution, and frame rate.",
+    "url": "gif/tools/video-to-gif/"
+  },
+  {
+    "suite": "gif",
+    "slug": "watermark-gif",
+    "title": "Watermark GIF Online Free",
+    "desc": "Stamp custom logo PNGs or copyright text watermarks onto animated GIFs with transparency and draggable positioning.",
+    "url": "gif/tools/watermark-gif/"
+  },
+  {
+    "suite": "gif",
+    "slug": "write-text-on-gif",
+    "title": "Add Text to GIF Online Free",
+    "desc": "Add animated text overlays, captions, or meme top/bottom banners to GIFs with custom fonts, colors, and shadow outlines.",
+    "url": "gif/tools/write-text-on-gif/"
+  }
+]

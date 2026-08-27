@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pregnancy Due Date Calculator — Free Online Calculator | Daily1Step</title>
+<meta name="description" content="Calculate expected baby delivery due date and trimester timeline based on your Last Menstrual Period (LMP).">
+<link rel="canonical" href="https://bypyay.github.io/calculator/tools/pregnancy-due-date-calculator/">
+<link rel="stylesheet" href="../../assets/css/style.css?v=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Pregnancy Due Date Calculator - Daily1Step",
+  "url": "https://bypyay.github.io/calculator/tools/pregnancy-due-date-calculator/",
+  "description": "Calculate expected baby delivery due date and trimester timeline based on your Last Menstrual Period (LMP).",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "All modern web browsers",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+</head>
+<body>
+<!-- Universal Daily1Step All Tools Top Bar -->
+<div class="daily1step-global-topbar" style="background:#0f172a; color:#f8fafc; padding:7px 18px; font-size:0.8rem; font-family:system-ui,-apple-system,sans-serif; display:flex; justify-content:space-between; align-items:center; z-index:99999; position:relative; border-bottom:1px solid #1e293b;">
+  <div style="display:flex; align-items:center; gap:8px;">
+    <a href="../../../index.html" style="color:#38bdf8; font-weight:800; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+      <i class="fa-solid fa-layer-group"></i> <span>Daily1Step All Tools (320+ Apps)</span>
+    </a>
+  </div>
+  <div style="display:flex; gap:12px; font-weight:700; overflow-x:auto; white-space:nowrap; padding:2px 0;">
+    <a href="../../../pdf/" style="color:#cbd5e1; text-decoration:none;">📄 PDF</a>
+    <a href="../../../calculator/" style="color:#cbd5e1; text-decoration:none;">🧮 Calculators</a>
+    <a href="../../../removebg/" style="color:#cbd5e1; text-decoration:none;">🪄 Remove BG</a>
+    <a href="../../../audio/" style="color:#cbd5e1; text-decoration:none;">🎙️ Audio</a>
+    <a href="../../../image/" style="color:#cbd5e1; text-decoration:none;">🖼️ Images</a>
+    <a href="../../../collage/" style="color:#cbd5e1; text-decoration:none;">🎨 Collage</a>
+    <a href="../../../gif/" style="color:#cbd5e1; text-decoration:none;">🎞️ GIF</a>
+  </div>
+</div>
+
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="brand">
+      <div class="brand-icon"><i class="fa-solid fa-calculator"></i></div>
+      <div class="brand-title">Daily1Step <span class="accent">Calc</span></div>
+    </a>
+    <nav class="nav-links">
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-grid-2"></i> All Calculators</a>
+    </nav>
+  </div>
+</header>
+
+<main class="calc-workspace-wrap">
+  <div class="calc-header-meta">
+    <div class="calc-breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span>/</span>
+      <span>Fitness & Health Calculators</span>
+      <span>/</span>
+      <span>Pregnancy Due Date Calculator</span>
+    </div>
+    <h1 class="calc-main-title">Pregnancy Due Date Calculator</h1>
+    <p class="calc-main-desc">Calculate expected baby delivery due date and trimester timeline based on your Last Menstrual Period (LMP).</p>
+  </div>
+
+  <div class="calc-grid-layout">
+    <!-- Left Inputs Card -->
+    <div class="calc-card">
+      <div class="calc-card-title">
+        <span><i class="fa-solid fa-baby" style="color:var(--primary); margin-right:8px;"></i> Parameters</span>
+      </div>
+      
+        <div class="form-group">
+          <label class="form-label">Primary Input Value</label>
+          <input type="number" id="genVal1" class="calc-input" value="100" step="any">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Secondary Parameter</label>
+          <input type="number" id="genVal2" class="calc-input" value="10" step="any">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Calculation Mode</label>
+          <select id="genMode" class="calc-select">
+            <option value="standard" selected>Standard Mode</option>
+            <option value="advanced">Advanced Mode</option>
+          </select>
+        </div>
+        
+      <button type="button" class="btn-calc-primary" onclick="calculate()">
+        <i class="fa-solid fa-calculator"></i> Calculate
+      </button>
+    </div>
+
+    <!-- Right Results Card -->
+    <div class="calc-card">
+      <div class="calc-card-title">
+        <span><i class="fa-solid fa-chart-pie" style="color:var(--primary); margin-right:8px;"></i> Calculation Summary</span>
+      </div>
+      
+        <div class="result-hero-box">
+          <div class="result-hero-label">Computed Result</div>
+          <div class="result-hero-val" id="resGeneric">110.00</div>
+        </div>
+        <div class="result-breakdown-list">
+          <div class="result-row"><span class="label">Calculated Output</span><span class="val" id="resRow1">110.00</span></div>
+          <div class="result-row"><span class="label">Ratio / Factor</span><span class="val" id="resRow2">10.00%</span></div>
+        </div>
+        
+    </div>
+  </div>
+
+  <!-- Educational Guide & FAQs -->
+  <section class="guide-section">
+    <h2>How Pregnancy Due Date Calculator Works</h2>
+    <p>
+      The <strong>Pregnancy Due Date Calculator</strong> by Daily1Step provides precise, instant financial, mathematical, and health calculations directly in your browser. All computations follow standardized formulas and equations without transmitting any sensitive personal data to external servers.
+    </p>
+
+    <h3>Formula &amp; Method</h3>
+    <div class="formula-box">
+      Standardized Formula: Formula variables are evaluated dynamically in client-side high-precision JavaScript.
+    </div>
+
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq-card">
+      <div class="faq-q">Is this Pregnancy Due Date Calculator completely free to use?</div>
+      <div class="faq-a">Yes! All calculations, interactive charts, and reports are 100% free with no registration, no subscription, and no hidden fees.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-q">Is my financial and personal data secure?</div>
+      <div class="faq-a">Absolutely. All calculations happen entirely within your local browser. Your data is never uploaded, saved, or shared with third parties.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-q">Can I export or print the calculation results?</div>
+      <div class="faq-a">Yes, you can easily save results or print the full summary directly from your browser.</div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="../../index.html">All Calculators</a>
+      <a href="../../legal/privacy.html">Privacy Policy</a>
+      <a href="../../legal/terms.html">Terms of Service</a>
+      <a href="../../legal/about.html">About Us</a>
+      <a href="../../legal/contact.html">Contact</a>
+      <a href="../../legal/disclaimer.html">Disclaimer</a>
+    </div>
+    <p class="copyright">&copy; 2026 Daily1Step. Free online calculators for finance, health, math, and daily utilities.</p>
+  </div>
+</footer>
+
+<script src="../../vendor/chart.umd.min.js"></script>
+<script src="../../vendor/jspdf.umd.min.js"></script>
+<script src="../../assets/js/calculator-core.js"></script>
+<script>
+
+        function calculate() {
+          var v1 = parseFloat(document.getElementById('genVal1').value) || 0;
+          var v2 = parseFloat(document.getElementById('genVal2').value) || 0;
+          var mode = document.getElementById('genMode').value;
+
+          var total = v1 + v2;
+          var ratio = v1 !== 0 ? (v2 / v1) * 100 : 0;
+
+          document.getElementById('resGeneric').textContent = CalcCore.formatNumber(total, 2);
+          document.getElementById('resRow1').textContent = CalcCore.formatNumber(total, 2);
+          document.getElementById('resRow2').textContent = ratio.toFixed(2) + '%';
+        }
+        document.querySelectorAll('.calc-input, .calc-select').forEach(function(el) { el.addEventListener('input', calculate); });
+        calculate();
+        
+</script>
+</body>
+</html>

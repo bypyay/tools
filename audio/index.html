@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily1Step Audio Tools — Free Online Audio Editor, Cutter & Converter</title>
+<meta name="description" content="Edit, merge, cut, boost volume, change pitch, and compress audio files online for free. 100% private, browser-based Web Audio tools with no uploads.">
+<link rel="canonical" href="https://bypyay.github.io/audiotools/">
+<meta property="og:title" content="Daily1Step Audio Tools — Free Online Audio Editor, Cutter & Converter">
+<meta property="og:description" content="Edit, merge, cut, boost volume, change pitch, and compress audio files online for free. 100% private, browser-based Web Audio tools with no uploads.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bypyay.github.io/audiotools/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<!-- Universal Daily1Step All Tools Top Bar -->
+<div class="daily1step-global-topbar" style="background:#0f172a; color:#f8fafc; padding:7px 18px; font-size:0.8rem; font-family:system-ui,-apple-system,sans-serif; display:flex; justify-content:space-between; align-items:center; z-index:99999; position:relative; border-bottom:1px solid #1e293b;">
+  <div style="display:flex; align-items:center; gap:8px;">
+    <a href="../index.html" style="color:#38bdf8; font-weight:800; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+      <i class="fa-solid fa-layer-group"></i> <span>Daily1Step All Tools (320+ Apps)</span>
+    </a>
+  </div>
+  <div style="display:flex; gap:12px; font-weight:700; overflow-x:auto; white-space:nowrap; padding:2px 0;">
+    <a href="../pdf/" style="color:#cbd5e1; text-decoration:none;">📄 PDF</a>
+    <a href="../calculator/" style="color:#cbd5e1; text-decoration:none;">🧮 Calculators</a>
+    <a href="../removebg/" style="color:#cbd5e1; text-decoration:none;">🪄 Remove BG</a>
+    <a href="../audio/" style="color:#cbd5e1; text-decoration:none;">🎙️ Audio</a>
+    <a href="../image/" style="color:#cbd5e1; text-decoration:none;">🖼️ Images</a>
+    <a href="../collage/" style="color:#cbd5e1; text-decoration:none;">🎨 Collage</a>
+    <a href="../gif/" style="color:#cbd5e1; text-decoration:none;">🎞️ GIF</a>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">Daily1Step Audio<span class="dot">.</span></a>
+    <nav class="main-nav">
+      <a href="index.html">All Tools</a>
+      <a href="tools/audio-cutter/">Cut Audio</a>
+      <a href="tools/merge-audio/">Merge Audio</a>
+      <a href="tools/mp3-volume-booster/">Volume Booster</a>
+      <a href="tools/compress-audio/">Compress Audio</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Daily1Step Audio Tools",
+  "url": "https://bypyay.github.io/audiotools/",
+  "description": "Free online audio tools suite. Cut, merge, volume boost, pitch shift, compress, and edit audio files directly in your web browser with 100% privacy.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://bypyay.github.io/audiotools/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<section class="hero">
+  <div class="container">
+    <h1>Every Audio Tool You Need, In One Place</h1>
+    <p>Cut, merge, boost volume, change pitch &amp; speed, compress, and record audio &mdash; 100% free, no signup, and processed directly inside your web browser.</p>
+  </div>
+</section>
+
+<!-- Ad Slot Top -->
+<div class="container">
+  <div class="ad-slot-wrap">
+    <span>Advertisement</span>
+  </div>
+</div>
+
+<section class="container" id="tools">
+  <div class="tool-controls-wrap">
+    <div class="tool-search-box">
+      <span class="search-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </span>
+      <input type="text" id="toolSearchInput" placeholder="Search 24 audio tools (e.g. cut, merge, volume booster, pitch)..." autocomplete="off">
+    </div>
+
+    <div class="category-tabs" id="categoryTabs">
+      
+    <button class="category-tab active" data-category="all">
+      <span>🌟 All Audio Tools</span>
+      <span class="tab-count">24</span>
+    </button>
+    
+    <button class="category-tab" data-category="cut">
+      <span>✂️ Cut & Trim</span>
+      <span class="tab-count">5</span>
+    </button>
+    
+    <button class="category-tab" data-category="effects">
+      <span>🎚️ Effects & Speed</span>
+      <span class="tab-count">7</span>
+    </button>
+    
+    <button class="category-tab" data-category="record">
+      <span>🎙️ Record & Mix</span>
+      <span class="tab-count">4</span>
+    </button>
+    
+    <button class="category-tab" data-category="video">
+      <span>🎬 Video & Music</span>
+      <span class="tab-count">4</span>
+    </button>
+    
+    <button class="category-tab" data-category="convert">
+      <span>🗜️ Convert & Tags</span>
+      <span class="tab-count">4</span>
+    </button>
+    
+    </div>
+  </div>
+
+  <div class="tool-grid" id="mainToolGrid">
+    <a href="tools/audio-to-text/" class="tool-card" data-category="record" data-title="audio to text (transcript generator)" data-desc="convert audio recordings, podcasts, voice notes, and mp3 files into text transcripts and subtitles (.srt, .vtt, .txt). 100% free and in-browser.">
+      <div class="icon" style="background:#0284c7;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
+      <h3>Audio to Text (Transcript Generator)</h3>
+      <p>Convert audio recordings, podcasts, voice notes, and MP3 files into text transcripts and subtitles (.srt, .vtt, .txt). 100% free and in-browser.</p>
+    </a>
+    
+    <a href="tools/audio-cutter/" class="tool-card" data-category="cut" data-title="audio cutter & trimmer" data-desc="cut, trim, and split mp3, wav, aac, and audio files online for free. drag interactive waveform handles, preview in real-time, and download instant high-quality audio.">
+      <div class="icon" style="background:#6366f1;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></div>
+      <h3>Audio Cutter & Trimmer</h3>
+      <p>Cut, trim, and split MP3, WAV, AAC, and audio files online for free. Drag interactive waveform handles, preview in real-time, and download instant high-quality audio.</p>
+    </a>
+    
+    <a href="tools/merge-audio/" class="tool-card" data-category="cut" data-title="merge audio files" data-desc="combine and merge multiple audio files into a single song or podcast track online. drag to reorder tracks, add smooth crossfades, and export high-quality mp3.">
+      <div class="icon" style="background:#8b5cf6;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v3a2 2 0 0 1-2 2H3"/><path d="M21 8h-3a2 2 0 0 1-2-2V3"/><path d="M3 16h3a2 2 0 0 1 2 2v3"/><path d="M16 21v-3a2 2 0 0 1 2-2h3"/><line x1="12" y1="8" x2="12" y2="16"/></svg></div>
+      <h3>Merge Audio Files</h3>
+      <p>Combine and merge multiple audio files into a single song or podcast track online. Drag to reorder tracks, add smooth crossfades, and export high-quality MP3.</p>
+    </a>
+    
+    <a href="tools/ringtone-maker/" class="tool-card" data-category="cut" data-title="ringtone maker" data-desc="turn any song into a custom ringtone online. select a 30-second chorus, add smooth fade-in and fade-out effects, and download for iphone (m4r) or android (mp3).">
+      <div class="icon" style="background:#ec4899;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+      <h3>Ringtone Maker</h3>
+      <p>Turn any song into a custom ringtone online. Select a 30-second chorus, add smooth fade-in and fade-out effects, and download for iPhone (M4R) or Android (MP3).</p>
+    </a>
+    
+    <a href="tools/remove-silence-from-audio/" class="tool-card" data-category="cut" data-title="remove silence from audio" data-desc="automatically detect and remove dead pauses and quiet silence gaps from podcasts, voice-overs, and audio recordings. speed up listening and clean up takes instantly.">
+      <div class="icon" style="background:#06b6d4;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="1" y1="1" x2="23" y2="23"/><path d="M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6"/></svg></div>
+      <h3>Remove Silence from Audio</h3>
+      <p>Automatically detect and remove dead pauses and quiet silence gaps from podcasts, voice-overs, and audio recordings. Speed up listening and clean up takes instantly.</p>
+    </a>
+    
+    <a href="tools/reverse-audio/" class="tool-card" data-category="cut" data-title="reverse audio" data-desc="play any song or voice clip backwards online. invert audio waveforms to create mysterious reverse sound effects, backwards music, and backward vocal tracks.">
+      <div class="icon" style="background:#f59e0b;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="11 17 6 12 11 7"/><polyline points="18 17 13 12 18 7"/></svg></div>
+      <h3>Reverse Audio</h3>
+      <p>Play any song or voice clip backwards online. Invert audio waveforms to create mysterious reverse sound effects, backwards music, and backward vocal tracks.</p>
+    </a>
+    
+    <a href="tools/mp3-volume-booster/" class="tool-card" data-category="effects" data-title="increase audio volume (mp3 booster)" data-desc="boost low audio volume and amplify quiet mp3, wav, and audio files online. increase loudness up to 500% (+20db) with built-in soft-clipping limiter to prevent distortion.">
+      <div class="icon" style="background:#10b981;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></div>
+      <h3>Increase Audio Volume (MP3 Booster)</h3>
+      <p>Boost low audio volume and amplify quiet MP3, WAV, and audio files online. Increase loudness up to 500% (+20dB) with built-in soft-clipping limiter to prevent distortion.</p>
+    </a>
+    
+    <a href="tools/audio-speed-changer-online/" class="tool-card" data-category="effects" data-title="change audio speed" data-desc="speed up or slow down songs, podcasts, and voice recordings online. adjust tempo from 0.25x (slow motion) to 3.0x (fast forward) with optional pitch preservation.">
+      <div class="icon" style="background:#3b82f6;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <h3>Change Audio Speed</h3>
+      <p>Speed up or slow down songs, podcasts, and voice recordings online. Adjust tempo from 0.25x (slow motion) to 3.0x (fast forward) with optional pitch preservation.</p>
+    </a>
+    
+    <a href="tools/music-pitch-changer/" class="tool-card" data-category="effects" data-title="change audio pitch (key transposer)" data-desc="change audio pitch and transpose musical keys online for free. shift pitch by semitones (-12 to +12) or fine-tune cents without altering the song speed or tempo.">
+      <div class="icon" style="background:#8b5cf6;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+      <h3>Change Audio Pitch (Key Transposer)</h3>
+      <p>Change audio pitch and transpose musical keys online for free. Shift pitch by semitones (-12 to +12) or fine-tune cents without altering the song speed or tempo.</p>
+    </a>
+    
+    <a href="tools/audio-speed-and-pitch-changer/" class="tool-card" data-category="effects" data-title="speed & pitch changer" data-desc="simultaneously adjust audio speed and musical pitch online. modify playback tempo and pitch key independently with real-time waveform preview and instant download.">
+      <div class="icon" style="background:#a855f7;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8"/><path d="m8 12 4-4 4 4"/></svg></div>
+      <h3>Speed & Pitch Changer</h3>
+      <p>Simultaneously adjust audio speed and musical pitch online. Modify playback tempo and pitch key independently with real-time waveform preview and instant download.</p>
+    </a>
+    
+    <a href="tools/add-echo-to-audio/" class="tool-card" data-category="effects" data-title="add echo to audio" data-desc="add rich echo and delay effects to vocal tracks and music online. choose slapback, room delay, canyon echo, and adjust delay time and feedback decay in real time.">
+      <div class="icon" style="background:#d97706;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h2a8 8 0 0 1 8 8v2"/><path d="M2 7h2a13 13 0 0 1 13 13v2"/><path d="M2 2h2a18 18 0 0 1 18 18v2"/></svg></div>
+      <h3>Add Echo to Audio</h3>
+      <p>Add rich echo and delay effects to vocal tracks and music online. Choose slapback, room delay, canyon echo, and adjust delay time and feedback decay in real time.</p>
+    </a>
+    
+    <a href="tools/add-reverb-to-audio/" class="tool-card" data-category="effects" data-title="add reverb to audio" data-desc="add realistic acoustic space and convolution reverb to dry vocals and instruments. choose from studio booth, warm room, concert hall, cathedral, and deep cave presets.">
+      <div class="icon" style="background:#4f46e5;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+      <h3>Add Reverb to Audio</h3>
+      <p>Add realistic acoustic space and convolution reverb to dry vocals and instruments. Choose from Studio Booth, Warm Room, Concert Hall, Cathedral, and Deep Cave presets.</p>
+    </a>
+    
+    <a href="tools/audio-looper/" class="tool-card" data-category="effects" data-title="audio looper" data-desc="loop music loops, drum beats, nature sounds, and meditation tracks online. set repeat counts (2x to 50x) with seamless crossfade looping to eliminate clicks.">
+      <div class="icon" style="background:#059669;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div>
+      <h3>Audio Looper</h3>
+      <p>Loop music loops, drum beats, nature sounds, and meditation tracks online. Set repeat counts (2x to 50x) with seamless crossfade looping to eliminate clicks.</p>
+    </a>
+    
+    <a href="tools/audio-recorder/" class="tool-card" data-category="record" data-title="online voice recorder" data-desc="record clear voice memos, podcast interviews, and vocal takes directly from your microphone online. live audio waveform monitor, pause/resume, and instant mp3/wav download.">
+      <div class="icon" style="background:#e11d48;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
+      <h3>Online Voice Recorder</h3>
+      <p>Record clear voice memos, podcast interviews, and vocal takes directly from your microphone online. Live audio waveform monitor, pause/resume, and instant MP3/WAV download.</p>
+    </a>
+    
+    <a href="tools/audio-recorder-with-background-music/" class="tool-card" data-category="record" data-title="voice recorder with background music" data-desc="record your voice live while hearing and mixing background music. pick from lo-fi, acoustic, ambient, or upload your own track. export mixed high-res mp3.">
+      <div class="icon" style="background:#c026d3;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M9 18V5l12-2v13"/></svg></div>
+      <h3>Voice Recorder with Background Music</h3>
+      <p>Record your voice live while hearing and mixing background music. Pick from lo-fi, acoustic, ambient, or upload your own track. Export mixed high-res MP3.</p>
+    </a>
+    
+    <a href="tools/add-background-music-to-audio/" class="tool-card" data-category="record" data-title="add background music to audio" data-desc="mix an existing voice recording with a background music track online. adjust the volume ratio (ducking) to ensure speech stays clear and download unified mp3.">
+      <div class="icon" style="background:#0284c7;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="15.5" r="2.5"/><path d="M8 17V5l12-2v12"/></svg></div>
+      <h3>Add Background Music to Audio</h3>
+      <p>Mix an existing voice recording with a background music track online. Adjust the volume ratio (ducking) to ensure speech stays clear and download unified MP3.</p>
+    </a>
+    
+    <a href="tools/extract-audio-from-video/" class="tool-card" data-category="video" data-title="extract audio from video" data-desc="extract sound and music tracks from mp4, webm, mkv, mov, and avi videos online for free. fast browser-based extraction with mp3 and wav export.">
+      <div class="icon" style="background:#e5322d;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg></div>
+      <h3>Extract Audio from Video</h3>
+      <p>Extract sound and music tracks from MP4, WebM, MKV, MOV, and AVI videos online for free. Fast browser-based extraction with MP3 and WAV export.</p>
+    </a>
+    
+    <a href="tools/video-to-mp3/" class="tool-card" data-category="video" data-title="video to mp3 converter" data-desc="convert video clips to high-bitrate mp3 audio online. drop mp4, mov, or webm files and download clean 320 kbps, 192 kbps, or 128 kbps mp3 files in seconds.">
+      <div class="icon" style="background:#ea580c;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+      <h3>Video to MP3 Converter</h3>
+      <p>Convert video clips to high-bitrate MP3 audio online. Drop MP4, MOV, or WebM files and download clean 320 kbps, 192 kbps, or 128 kbps MP3 files in seconds.</p>
+    </a>
+    
+    <a href="tools/combine-video-with-audio/" class="tool-card" data-category="video" data-title="combine video with audio" data-desc="merge any audio track with any video file online. replace bad video sound or layer background music on top of existing video audio and export mp4.">
+      <div class="icon" style="background:#7c3aed;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="m10 15 5-3-5-3v6z"/></svg></div>
+      <h3>Combine Video with Audio</h3>
+      <p>Merge any audio track with any video file online. Replace bad video sound or layer background music on top of existing video audio and export MP4.</p>
+    </a>
+    
+    <a href="tools/add-music-to-photo/" class="tool-card" data-category="video" data-title="add music to photo" data-desc="combine a photo and audio song into an mp4 video clip online. choose 1:1 square (instagram), 9:16 (tiktok/reels/shorts), or 16:9 (youtube) format.">
+      <div class="icon" style="background:#db2777;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+      <h3>Add Music to Photo</h3>
+      <p>Combine a photo and audio song into an MP4 video clip online. Choose 1:1 Square (Instagram), 9:16 (TikTok/Reels/Shorts), or 16:9 (YouTube) format.</p>
+    </a>
+    
+    <a href="tools/compress-audio/" class="tool-card" data-category="convert" data-title="compress audio" data-desc="reduce audio file size online without noticeable quality loss. downsample bitrates (64k, 96k, 128k, 192k) and sample rates to make audio lightweight for sharing.">
+      <div class="icon" style="background:#e5322d;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m8 17 4 4 4-4"/></svg></div>
+      <h3>Compress Audio</h3>
+      <p>Reduce audio file size online without noticeable quality loss. Downsample bitrates (64k, 96k, 128k, 192k) and sample rates to make audio lightweight for sharing.</p>
+    </a>
+    
+    <a href="tools/convert-audio/" class="tool-card" data-category="convert" data-title="audio converter" data-desc="convert audio files between all popular formats online for free. convert wav to mp3, m4a to mp3, aac to wav, and ogg to mp3 in your web browser.">
+      <div class="icon" style="background:#16a34a;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M21 21v-5h-5"/></svg></div>
+      <h3>Audio Converter</h3>
+      <p>Convert audio files between all popular formats online for free. Convert WAV to MP3, M4A to MP3, AAC to WAV, and OGG to MP3 in your web browser.</p>
+    </a>
+    
+    <a href="tools/mp3-bitrate-changer/" class="tool-card" data-category="convert" data-title="mp3 bitrate changer" data-desc="change mp3 audio bitrate online to optimize audio fidelity or reduce size. re-encode mp3s to 64, 96, 128, 160, 192, 256, or 320 kbps instantly.">
+      <div class="icon" style="background:#d97706;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="6" y1="6" x2="6" y2="10"/><line x1="10" y1="6" x2="10" y2="8"/><line x1="14" y1="6" x2="14" y2="10"/><line x1="18" y1="6" x2="18" y2="8"/></svg></div>
+      <h3>MP3 Bitrate Changer</h3>
+      <p>Change MP3 audio bitrate online to optimize audio fidelity or reduce size. Re-encode MP3s to 64, 96, 128, 160, 192, 256, or 320 kbps instantly.</p>
+    </a>
+    
+    <a href="tools/edit-mp3-tags-online/" class="tool-card" data-category="convert" data-title="edit mp3 tags online (id3 editor)" data-desc="edit mp3 metadata tags online. modify song title, artist, album, year, genre, track number, and embed custom album cover art directly into your mp3 files.">
+      <div class="icon" style="background:#4f46e5;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div>
+      <h3>Edit MP3 Tags Online (ID3 Editor)</h3>
+      <p>Edit MP3 metadata tags online. Modify Song Title, Artist, Album, Year, Genre, Track Number, and embed custom Album Cover Art directly into your MP3 files.</p>
+    </a>
+    
+  </div>
+
+  <div id="noResultsMsg" style="display:none; text-align:center; padding:50px 20px; color:var(--ink-soft);">
+    <p style="font-size:1.4rem; font-weight:700; color:var(--ink); margin-bottom:6px;">No audio tools found</p>
+    <p>Try searching for different keywords like "cut", "volume", "pitch", "merge", or "compress".</p>
+  </div>
+</section>
+
+<!-- Ad Slot Middle -->
+<div class="container">
+  <div class="ad-slot-wrap">
+    <span>Advertisement</span>
+  </div>
+</div>
+
+<article class="seo-article">
+  <div class="content-container">
+    <h2>Why Choose Daily1Step Audio Tools?</h2>
+    <p>Daily1Step Audio runs entirely in your web browser. Unlike conventional audio converter portals that require you to upload private audio to cloud servers, all processing on Daily1Step happens on your device using client-side JavaScript, Web Audio API, and WebAssembly.</p>
+
+    <div class="step-card-grid">
+      <div class="step-card">
+        <div class="step-num">⚡</div>
+        <h4>Instant Local Speed</h4>
+        <p>No waiting in queue. Your files are rendered and encoded in real-time by your device hardware.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">🔒</div>
+        <h4>100% Privacy &amp; Security</h4>
+        <p>Your songs, podcast takes, and voice recordings never leave your computer or phone.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">🎛️</div>
+        <h4>23 Studio-Grade Tools</h4>
+        <p>Everything you need: trimming, sequencing, volume boosting, pitch shifting, reverb, and tagging.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">💯</div>
+        <h4>Always 100% Free</h4>
+        <p>No subscription fees, no limits, no watermarks, and no registration required.</p>
+      </div>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      
+    <div class="faq-item">
+      <button class="faq-question" type="button">
+        <span>Are all audio tools on Daily1Step free?</span>
+        <span style="font-size:1.2rem;">+</span>
+      </button>
+      <div class="faq-answer" style="display:none;">
+        <p>Yes! All 23 audio tools are 100% free to use with zero hidden limits, subscriptions, or watermarks.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" type="button">
+        <span>Are my audio files uploaded to a server?</span>
+        <span style="font-size:1.2rem;">+</span>
+      </button>
+      <div class="faq-answer" style="display:none;">
+        <p>No! Daily1Step uses cutting-edge HTML5 Web Audio API technology to execute all processing locally in your browser memory. Your files never leave your computer or smartphone.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" type="button">
+        <span>Can I use these tools on mobile (Android / iPhone)?</span>
+        <span style="font-size:1.2rem;">+</span>
+      </button>
+      <div class="faq-answer" style="display:none;">
+        <p>Yes! Our responsive web application works flawlessly on mobile browsers including Safari, Chrome, Edge, and Firefox.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" type="button">
+        <span>What audio formats are supported?</span>
+        <span style="font-size:1.2rem;">+</span>
+      </button>
+      <div class="faq-answer" style="display:none;">
+        <p>We support MP3, WAV, AAC, M4A, OGG, FLAC, and WebM audio, as well as MP4 video audio extraction.</p>
+      </div>
+    </div>
+    
+    </div>
+  </div>
+</article>
+
+<script>
+(function() {
+  var searchInput = document.getElementById('toolSearchInput');
+  var categoryTabs = document.querySelectorAll('.category-tab');
+  var toolCards = document.querySelectorAll('.tool-card');
+  var noResults = document.getElementById('noResultsMsg');
+  var currentCategory = 'all';
+
+  function filterTools() {
+    var query = (searchInput.value || '').trim().toLowerCase();
+    var visibleCount = 0;
+
+    toolCards.forEach(function(card) {
+      var cat = card.getAttribute('data-category');
+      var title = card.getAttribute('data-title');
+      var desc = card.getAttribute('data-desc');
+
+      var matchesCat = (currentCategory === 'all' || cat === currentCategory);
+      var matchesQuery = !query || title.indexOf(query) !== -1 || desc.indexOf(query) !== -1;
+
+      if (matchesCat && matchesQuery) {
+        card.style.display = 'flex';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (noResults) {
+      noResults.style.display = (visibleCount === 0) ? 'block' : 'none';
+    }
+  }
+
+  categoryTabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      categoryTabs.forEach(function(t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+      currentCategory = tab.getAttribute('data-category');
+      filterTools();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', filterTools);
+  }
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var ans = btn.nextElementSibling;
+      var isOpen = ans.style.display === 'block';
+      ans.style.display = isOpen ? 'none' : 'block';
+      btn.querySelector('span:last-child').textContent = isOpen ? '+' : '−';
+    });
+  });
+})();
+</script>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Daily1Step Audio Tools</h4>
+        <p style="font-size:.88rem; line-height:1.6; margin-top:8px;">Fast, private, and 100% browser-based audio editing tools. Cut, merge, boost, convert, and edit audio files directly in your web browser with zero server uploads.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Popular Tools</h4>
+        <ul>
+          <li><a href="tools/audio-cutter/">Audio Cutter & Trimmer</a></li>
+          <li><a href="tools/merge-audio/">Merge Audio Files</a></li>
+          <li><a href="tools/mp3-volume-booster/">MP3 Volume Booster</a></li>
+          <li><a href="tools/audio-speed-changer-online/">Change Audio Speed</a></li>
+          <li><a href="tools/compress-audio/">Compress Audio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Effects & Recording</h4>
+        <ul>
+          <li><a href="tools/music-pitch-changer/">Audio Pitch Changer</a></li>
+          <li><a href="tools/audio-recorder/">Online Voice Recorder</a></li>
+          <li><a href="tools/ringtone-maker/">Ringtone Maker</a></li>
+          <li><a href="tools/add-reverb-to-audio/">Add Reverb to Audio</a></li>
+          <li><a href="tools/video-to-mp3/">Video to MP3 Converter</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company & Legal</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Daily1Step Audio. All rights reserved. 100% Browser-Based Processing.</div>
+      <div>
+        <a href="privacy-policy.html" style="margin-right:12px;">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="vendor/lame.min.js"></script>
+<script src="vendor/browser-id3-writer.min.js"></script>
+<script src="vendor/jsmediatags.min.js"></script>
+<script src="assets/js/audio-core.js"></script>
+</body>
+</html>

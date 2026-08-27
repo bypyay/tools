@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concrete Calculator — Slabs, Footings, Columns, Steps &amp; Bags | Daily1Step</title>
+<meta name="description" content="Calculate volume and weight of concrete needed for slabs, square footings, walls, round columns, circular tubes, and stairs. Includes 3D shape diagrams, metric and imperial units (meters, cm, feet, inches), 60lb/80lb/50kg bag counts, and cost estimation.">
+<link rel="canonical" href="https://bypyay.github.io/calculator/tools/concrete-calculator/">
+<link rel="stylesheet" href="../../assets/css/style.css?v=4">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* Dedicated Concrete Calculator Enhancements */
+.shape-selector-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.shape-nav-btn {
+  padding: 10px 8px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-main);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+.shape-nav-btn i {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  transition: color 0.15s;
+}
+.shape-nav-btn:hover {
+  border-color: var(--primary);
+  background: var(--bg-subtle);
+}
+.shape-nav-btn.active {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.shape-nav-btn.active i {
+  color: var(--primary);
+}
+
+.shape-diagram-card {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.shape-diagram-svg {
+  max-width: 240px;
+  height: auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.06));
+}
+.shape-diagram-caption {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.concrete-input-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.concrete-input-row .calc-input {
+  flex: 2;
+}
+.concrete-input-row .calc-select {
+  flex: 1.5;
+}
+
+.mix-ratio-box {
+  background: var(--bg-subtle);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  margin-top: 16px;
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Concrete Calculator - Daily1Step",
+  "url": "https://bypyay.github.io/calculator/tools/concrete-calculator/",
+  "description": "Professional concrete volume, bags, weight, and cost calculator with 3D construction shapes (slabs, footings, columns, tubes, stairs).",
+  "applicationCategory": "ConstructionApplication",
+  "operatingSystem": "All modern web browsers",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+</head>
+<body>
+<!-- Universal Daily1Step All Tools Top Bar -->
+<div class="daily1step-global-topbar" style="background:#0f172a; color:#f8fafc; padding:7px 18px; font-size:0.8rem; font-family:system-ui,-apple-system,sans-serif; display:flex; justify-content:space-between; align-items:center; z-index:99999; position:relative; border-bottom:1px solid #1e293b;">
+  <div style="display:flex; align-items:center; gap:8px;">
+    <a href="../../../index.html" style="color:#38bdf8; font-weight:800; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+      <i class="fa-solid fa-layer-group"></i> <span>Daily1Step All Tools (320+ Apps)</span>
+    </a>
+  </div>
+  <div style="display:flex; gap:12px; font-weight:700; overflow-x:auto; white-space:nowrap; padding:2px 0;">
+    <a href="../../../pdf/" style="color:#cbd5e1; text-decoration:none;">📄 PDF</a>
+    <a href="../../../calculator/" style="color:#cbd5e1; text-decoration:none;">🧮 Calculators</a>
+    <a href="../../../removebg/" style="color:#cbd5e1; text-decoration:none;">🪄 Remove BG</a>
+    <a href="../../../audio/" style="color:#cbd5e1; text-decoration:none;">🎙️ Audio</a>
+    <a href="../../../image/" style="color:#cbd5e1; text-decoration:none;">🖼️ Images</a>
+    <a href="../../../collage/" style="color:#cbd5e1; text-decoration:none;">🎨 Collage</a>
+    <a href="../../../gif/" style="color:#cbd5e1; text-decoration:none;">🎞️ GIF</a>
+  </div>
+</div>
+
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="brand">
+      <div class="brand-icon"><i class="fa-solid fa-calculator"></i></div>
+      <div class="brand-title">Daily1Step <span class="accent">Calc</span></div>
+    </a>
+    <nav class="nav-links">
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-grid-2"></i> All 204+ Calculators</a>
+    </nav>
+  </div>
+</header>
+
+<main class="calc-workspace-wrap">
+  <div class="calc-header-meta">
+    <div class="calc-breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span>/</span>
+      <span>Everyday Calculators</span>
+      <span>/</span>
+      <span>Concrete Calculator</span>
+    </div>
+    <h1 class="calc-main-title">Concrete Calculator</h1>
+    <p class="calc-main-desc">Calculate the exact volume, weight, pre-mix bags (60lb, 80lb, 50kg), and cost of concrete required for slabs, footings, round columns, tubes, and stairs.</p>
+  </div>
+
+  <!-- Shape Navigation Tabs -->
+  <div class="shape-selector-nav">
+    <button type="button" class="shape-nav-btn active" id="tabSlab" onclick="selectConcreteShape('slab')">
+      <i class="fa-solid fa-cube"></i>
+      <span>Slabs &amp; Walls</span>
+    </button>
+    <button type="button" class="shape-nav-btn" id="tabColumn" onclick="selectConcreteShape('column')">
+      <i class="fa-solid fa-database"></i>
+      <span>Round Columns</span>
+    </button>
+    <button type="button" class="shape-nav-btn" id="tabTube" onclick="selectConcreteShape('tube')">
+      <i class="fa-solid fa-circle-dot"></i>
+      <span>Circular Tube / Ring</span>
+    </button>
+    <button type="button" class="shape-nav-btn" id="tabStairs" onclick="selectConcreteShape('stairs')">
+      <i class="fa-solid fa-stairs"></i>
+      <span>Concrete Stairs</span>
+    </button>
+    <button type="button" class="shape-nav-btn" id="tabCurb" onclick="selectConcreteShape('curb')">
+      <i class="fa-solid fa-road"></i>
+      <span>Curb &amp; Gutter</span>
+    </button>
+  </div>
+
+  <div class="calc-grid-layout">
+    <!-- Left Inputs Card with 3D Shape Diagram -->
+    <div class="calc-card">
+      <div class="calc-card-title">
+        <span id="shapeTitleLabel"><i class="fa-solid fa-sliders" style="color:var(--primary); margin-right:8px;"></i> Slabs, Square Footings, or Walls</span>
+      </div>
+
+      <!-- 3D Shape Visual Diagram Container -->
+      <div class="shape-diagram-card">
+        <!-- SVG for Slabs / Rectangular Prism -->
+        <svg id="svgSlab" class="shape-diagram-svg" viewBox="0 0 240 140" width="240" height="140">
+          <polygon points="30,85 170,85 210,45 70,45" fill="#f1f5f9" stroke="#0f172a" stroke-width="2"/>
+          <polygon points="30,85 170,85 170,115 30,115" fill="#e2e8f0" stroke="#0f172a" stroke-width="2"/>
+          <polygon points="170,85 210,45 210,75 170,115" fill="#cbd5e1" stroke="#0f172a" stroke-width="2"/>
+          <line x1="30" y1="115" x2="70" y2="75" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3"/>
+          <line x1="70" y1="75" x2="210" y2="75" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3"/>
+          <line x1="70" y1="75" x2="70" y2="45" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3"/>
+          <!-- Labels -->
+          <text x="100" y="132" font-size="14" font-weight="bold" fill="#0284c7" text-anchor="middle">Length (l)</text>
+          <text x="218" y="100" font-size="14" font-weight="bold" fill="#0284c7" text-anchor="start">Thickness (h)</text>
+          <text x="200" y="38" font-size="14" font-weight="bold" fill="#0284c7" text-anchor="start">Width (w)</text>
+        </svg>
+
+        <!-- SVG for Round Columns / Holes -->
+        <svg id="svgColumn" class="shape-diagram-svg" viewBox="0 0 240 140" width="240" height="140" style="display:none;">
+          <ellipse cx="120" cy="35" rx="65" ry="20" fill="#f1f5f9" stroke="#0f172a" stroke-width="2"/>
+          <path d="M 55,35 L 55,105 A 65,20 0 0,0 185,105 L 185,35 Z" fill="#e2e8f0" stroke="#0f172a" stroke-width="2"/>
+          <ellipse cx="120" cy="105" rx="65" ry="20" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3"/>
+          <!-- Dimension Lines -->
+          <line x1="55" y1="35" x2="185" y2="35" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="2,2"/>
+          <text x="120" y="28" font-size="14" font-weight="bold" fill="#0284c7" text-anchor="middle">Diameter (d)</text>
+          <text x="195" y="75" font-size="14" font-weight="bold" fill="#0284c7" text-anchor="start">Height / Depth (h)</text>
+        </svg>
+
+        <!-- SVG for Circular Tube / Ring -->
+        <svg id="svgTube" class="shape-diagram-svg" viewBox="0 0 240 140" width="240" height="140" style="display:none;">
+          <ellipse cx="120" cy="35" rx="70" ry="22" fill="#e2e8f0" stroke="#0f172a" stroke-width="2"/>
+          <ellipse cx="120" cy="35" rx="40" ry="12" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+          <path d="M 50,35 L 50,105 A 70,22 0 0,0 190,105 L 190,35 Z" fill="#cbd5e1" stroke="#0f172a" stroke-width="2"/>
+          <text x="120" y="24" font-size="13" font-weight="bold" fill="#0284c7" text-anchor="middle">Outer (d1) &amp; Inner (d2)</text>
+          <text x="198" y="75" font-size="14" font-weight="bold" fill="#0284c7" text-anchor="start">Depth (h)</text>
+        </svg>
+
+        <!-- SVG for Stairs -->
+        <svg id="svgStairs" class="shape-diagram-svg" viewBox="0 0 240 140" width="240" height="140" style="display:none;">
+          <path d="M 40,110 L 90,110 L 90,80 L 140,80 L 140,50 L 190,50 L 190,110 Z" fill="#e2e8f0" stroke="#0f172a" stroke-width="2"/>
+          <text x="115" y="40" font-size="13" font-weight="bold" fill="#0284c7" text-anchor="middle">Stair Steps &amp; Platform</text>
+        </svg>
+
+        <!-- SVG for Curb -->
+        <svg id="svgCurb" class="shape-diagram-svg" viewBox="0 0 240 140" width="240" height="140" style="display:none;">
+          <polygon points="50,110 180,110 180,70 140,50 110,50 90,85 50,85" fill="#e2e8f0" stroke="#0f172a" stroke-width="2"/>
+          <text x="115" y="40" font-size="13" font-weight="bold" fill="#0284c7" text-anchor="middle">Curb &amp; Gutter Barrier</text>
+        </svg>
+
+        <div class="shape-diagram-caption" id="shapeCaption">3D View: Rectangular Concrete Slab / Wall</div>
+      </div>
+
+      <!-- Form Inputs Group: Slabs / Footings / Walls -->
+      <div id="formSlab">
+        <div class="form-group">
+          <label class="form-label">Length (l)</label>
+          <div class="concrete-input-row">
+            <input type="number" id="slabL" class="calc-input" value="10" min="0.01" step="0.5">
+            <select id="slabLUnit" class="calc-select">
+              <option value="feet" selected>feet</option>
+              <option value="inches">inches</option>
+              <option value="yards">yards</option>
+              <option value="meters">meters</option>
+              <option value="centimeters">centimeters</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Width (w)</label>
+          <div class="concrete-input-row">
+            <input type="number" id="slabW" class="calc-input" value="10" min="0.01" step="0.5">
+            <select id="slabWUnit" class="calc-select">
+              <option value="feet" selected>feet</option>
+              <option value="inches">inches</option>
+              <option value="yards">yards</option>
+              <option value="meters">meters</option>
+              <option value="centimeters">centimeters</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Thickness or Height (h)</label>
+          <div class="concrete-input-row">
+            <input type="number" id="slabH" class="calc-input" value="4" min="0.01" step="0.5">
+            <select id="slabHUnit" class="calc-select">
+              <option value="inches" selected>inches</option>
+              <option value="feet">feet</option>
+              <option value="yards">yards</option>
+              <option value="meters">meters</option>
+              <option value="centimeters">centimeters</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Inputs Group: Columns / Round Footings -->
+      <div id="formColumn" style="display:none;">
+        <div class="form-group">
+          <label class="form-label">Diameter (d)</label>
+          <div class="concrete-input-row">
+            <input type="number" id="colD" class="calc-input" value="12" min="0.01" step="0.5">
+            <select id="colDUnit" class="calc-select">
+              <option value="inches" selected>inches</option>
+              <option value="feet">feet</option>
+              <option value="yards">yards</option>
+              <option value="meters">meters</option>
+              <option value="centimeters">centimeters</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Depth or Height (h)</label>
+          <div class="concrete-input-row">
+            <input type="number" id="colH" class="calc-input" value="4" min="0.01" step="0.5">
+            <select id="colHUnit" class="calc-select">
+              <option value="feet" selected>feet</option>
+              <option value="inches">inches</option>
+              <option value="yards">yards</option>
+              <option value="meters">meters</option>
+              <option value="centimeters">centimeters</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Inputs Group: Circular Tube / Ring -->
+      <div id="formTube" style="display:none;">
+        <div class="form-group">
+          <label class="form-label">Outer Diameter (d1)</label>
+          <div class="concrete-input-row">
+            <input type="number" id="tubeD1" class="calc-input" value="4" min="0.01" step="0.5">
+            <select id="tubeD1Unit" class="calc-select">
+              <option value="feet" selected>feet</option>
+              <option value="inches">inches</option>
+              <option value="meters">meters</option>
+              <option value="centimeters">centimeters</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Inner Diameter (d2)</label>
+          <div class="concrete-input-row">
+            <input type="number" id="tubeD2" class="calc-input" value="3" min="0" step="0.5">
+            <select id="tubeD2Unit" class="calc-select">
+              <option value="feet" selected>feet</option>
+              <option value="inches">inches</option>
+              <option value="meters">meters</option>
+              <option value="centimeters">centimeters</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Depth / Thickness (h)</label>
+          <div class="concrete-input-row">
+            <input type="number" id="tubeH" class="calc-input" value="2" min="0.01" step="0.5">
+            <select id="tubeHUnit" class="calc-select">
+              <option value="feet" selected>feet</option>
+              <option value="inches">inches</option>
+              <option value="meters">meters</option>
+              <option value="centimeters">centimeters</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Inputs Group: Stairs -->
+      <div id="formStairs" style="display:none;">
+        <div class="form-group">
+          <label class="form-label">Number of Steps</label>
+          <input type="number" id="stairNum" class="calc-input" value="4" min="1" max="50" step="1">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Step Width</label>
+          <div class="concrete-input-row">
+            <input type="number" id="stairW" class="calc-input" value="3" min="0.1" step="0.5">
+            <select id="stairWUnit" class="calc-select">
+              <option value="feet" selected>feet</option>
+              <option value="inches">inches</option>
+              <option value="meters">meters</option>
+              <option value="centimeters">centimeters</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Step Run / Tread Depth</label>
+          <div class="concrete-input-row">
+            <input type="number" id="stairRun" class="calc-input" value="11" min="1" step="0.5">
+            <select id="stairRunUnit" class="calc-select">
+              <option value="inches" selected>inches</option>
+              <option value="centimeters">centimeters</option>
+              <option value="feet">feet</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Step Rise Height</label>
+          <div class="concrete-input-row">
+            <input type="number" id="stairRise" class="calc-input" value="7" min="1" step="0.5">
+            <select id="stairRiseUnit" class="calc-select">
+              <option value="inches" selected>inches</option>
+              <option value="centimeters">centimeters</option>
+              <option value="feet">feet</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Inputs Group: Curb -->
+      <div id="formCurb" style="display:none;">
+        <div class="form-group">
+          <label class="form-label">Curb Total Length</label>
+          <div class="concrete-input-row">
+            <input type="number" id="curbLen" class="calc-input" value="50" min="1" step="5">
+            <select id="curbLenUnit" class="calc-select">
+              <option value="feet" selected>feet</option>
+              <option value="meters">meters</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Curb Height</label>
+          <div class="concrete-input-row">
+            <input type="number" id="curbH" class="calc-input" value="6" min="1" step="1">
+            <select id="curbHUnit" class="calc-select">
+              <option value="inches" selected>inches</option>
+              <option value="centimeters">centimeters</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Gutter Width</label>
+          <div class="concrete-input-row">
+            <input type="number" id="curbW" class="calc-input" value="18" min="1" step="1">
+            <select id="curbWUnit" class="calc-select">
+              <option value="inches" selected>inches</option>
+              <option value="centimeters">centimeters</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Common Fields: Quantity & Buffer -->
+      <div class="form-group">
+        <label class="form-label">Quantity</label>
+        <input type="number" id="concQuantity" class="calc-input" value="1" min="1" step="1">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Extra Waste Buffer</label>
+        <select id="concWaste" class="calc-select">
+          <option value="10" selected>10% Extra (Standard recommendation)</option>
+          <option value="15">15% Extra (Irregular excavation/spillage)</option>
+          <option value="5">5% Extra (Formed tight)</option>
+          <option value="0">0% (Exact volume only)</option>
+        </select>
+      </div>
+
+      <button type="button" class="btn-calc-primary" onclick="calculate()">
+        <i class="fa-solid fa-calculator"></i> Calculate Concrete
+      </button>
+    </div>
+
+    <!-- Right Results Card -->
+    <div class="calc-card">
+      <div class="calc-card-title">
+        <span><i class="fa-solid fa-chart-pie" style="color:var(--primary); margin-right:8px;"></i> Required Concrete Volume</span>
+      </div>
+
+      <div class="result-hero-box">
+        <div class="result-hero-label">Total Volume (Ready-Mix)</div>
+        <div class="result-hero-val" id="resCuYards">1.23 yd&sup3;</div>
+        <div style="font-weight:600; color:#0f766e; margin-top:4px;" id="resMetricVol">0.94 m&sup3; · 33.33 cu ft</div>
+      </div>
+
+      <div class="result-breakdown-list">
+        <div class="result-row"><span class="label">Volume in Cubic Yards</span><span class="val" id="rowYards">1.23 yd&sup3;</span></div>
+        <div class="result-row"><span class="label">Volume in Cubic Meters</span><span class="val" id="rowMeters">0.94 m&sup3;</span></div>
+        <div class="result-row"><span class="label">Volume in Cubic Feet</span><span class="val" id="rowFeet">33.33 cu ft</span></div>
+        <div class="result-row"><span class="label">Volume in Liters</span><span class="val" id="rowLiters">944 Liters</span></div>
+        <div class="result-row"><span class="label">60 lb Pre-mix Bags Needed</span><span class="val" id="rowBags60">75 Bags</span></div>
+        <div class="result-row"><span class="label">80 lb Pre-mix Bags Needed</span><span class="val" id="rowBags80">56 Bags</span></div>
+        <div class="result-row"><span class="label">50 kg Cement Bags (Metric)</span><span class="val" id="rowBags50kg">38 Bags</span></div>
+        <div class="result-row"><span class="label">Estimated Total Weight</span><span class="val" id="rowWeight">4,467 lbs (2.03 tonnes)</span></div>
+        <div class="result-row"><span class="label">Total with Waste Buffer</span><span class="val" id="rowBufferTotal" style="color:var(--primary);">1.35 yd&sup3;</span></div>
+      </div>
+
+      <div class="chart-card-wrapper"><canvas id="calcChart"></canvas></div>
+
+      <div class="mix-ratio-box">
+        <div style="font-weight:700; font-size:0.85rem; margin-bottom:6px; color:var(--text-main);">
+          <i class="fa-solid fa-layer-group" style="color:var(--primary); margin-right:6px;"></i> Standard 1:2:4 Concrete Mix Proportions
+        </div>
+        <div style="font-size:0.82rem; color:var(--text-muted); line-height:1.5;">
+          • <strong>Cement:</strong> ~7.5 bags (94 lb / 50 kg)<br>
+          • <strong>Sand:</strong> ~0.55 cu yd (~1,500 lbs)<br>
+          • <strong>Gravel / Aggregate:</strong> ~0.85 cu yd (~2,300 lbs)<br>
+          • <strong>Water:</strong> ~35 - 40 gallons
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Educational Guide & Construction FAQ -->
+  <section class="guide-section">
+    <h2>How Concrete Volume is Calculated</h2>
+    <p>
+      Concrete volume calculation depends on the geometry of the structure. The basic formula for rectangular slabs is <code>Volume = Length × Width × Thickness</code>. For round columns or pier footings, it is <code>Volume = π × (Diameter / 2)² × Height</code>.
+    </p>
+
+    <h3>Unit Conversion Factors</h3>
+    <div class="formula-box">
+      • 1 Cubic Yard (yd³) = 27 Cubic Feet (ft³) = 0.764555 Cubic Meters (m³)<br>
+      • 1 Cubic Meter (m³) = 35.3147 Cubic Feet (ft³) = 1.30795 Cubic Yards (yd³)<br>
+      • Standard 60-lb bag yields ~0.45 cu ft (60 bags per cu yd)<br>
+      • Standard 80-lb bag yields ~0.60 cu ft (45 bags per cu yd)
+    </div>
+
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq-card">
+      <div class="faq-q">Why should I order 10% extra concrete?</div>
+      <div class="faq-a">Excavation unevenness, spillage, subgrade settlement, and formwork deflection almost always require 5% to 10% more concrete than the exact theoretical dimensions. Having slightly extra concrete prevents cold joints and project delays.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-q">When should I order ready-mix truck delivery vs pre-mixed bags?</div>
+      <div class="faq-a">As a general rule, if your project requires more than <strong>1 cubic yard (approx. 45 to 60 bags)</strong>, ordering a ready-mix concrete truck is significantly cheaper, faster, and provides superior structural consistency compared to mixing individual bags by hand.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-q">How thick should a typical concrete slab or driveway be?</div>
+      <div class="faq-a">Standard concrete walkways and patios are typically poured <strong>4 inches (10 cm)</strong> thick. Residential driveways designed for cars and light trucks should be <strong>5 to 6 inches (13–15 cm)</strong> thick with reinforcing rebar or wire mesh.</div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="../../index.html">All Calculators</a>
+      <a href="../../legal/privacy.html">Privacy Policy</a>
+      <a href="../../legal/terms.html">Terms of Service</a>
+      <a href="../../legal/about.html">About Us</a>
+      <a href="../../legal/contact.html">Contact</a>
+      <a href="../../legal/disclaimer.html">Disclaimer</a>
+    </div>
+    <p class="copyright">&copy; 2026 Daily1Step. Free online calculators for construction, finance, health, and math.</p>
+  </div>
+</footer>
+
+<script src="../../vendor/chart.umd.min.js"></script>
+<script src="../../vendor/jspdf.umd.min.js"></script>
+<script src="../../assets/js/calculator-core.js"></script>
+<script>
+var activeShape = 'slab';
+
+function selectConcreteShape(shape) {
+  activeShape = shape;
+
+  // Nav buttons
+  document.querySelectorAll('.shape-nav-btn').forEach(function(b) { b.classList.remove('active'); });
+  var btn = document.getElementById('tab' + shape.charAt(0).toUpperCase() + shape.slice(1));
+  if (btn) btn.classList.add('active');
+
+  // Form groups
+  document.getElementById('formSlab').style.display = shape === 'slab' ? 'block' : 'none';
+  document.getElementById('formColumn').style.display = shape === 'column' ? 'block' : 'none';
+  document.getElementById('formTube').style.display = shape === 'tube' ? 'block' : 'none';
+  document.getElementById('formStairs').style.display = shape === 'stairs' ? 'block' : 'none';
+  document.getElementById('formCurb').style.display = shape === 'curb' ? 'block' : 'none';
+
+  // SVG Diagrams
+  document.getElementById('svgSlab').style.display = shape === 'slab' ? 'block' : 'none';
+  document.getElementById('svgColumn').style.display = shape === 'column' ? 'block' : 'none';
+  document.getElementById('svgTube').style.display = shape === 'tube' ? 'block' : 'none';
+  document.getElementById('svgStairs').style.display = shape === 'stairs' ? 'block' : 'none';
+  document.getElementById('svgCurb').style.display = shape === 'curb' ? 'block' : 'none';
+
+  // Caption and title update
+  var titles = {
+    'slab': 'Slabs, Square Footings, or Walls',
+    'column': 'Hole, Column, or Round Footings',
+    'tube': 'Circular Slab or Hollow Tube',
+    'stairs': 'Concrete Steps &amp; Stairs',
+    'curb': 'Curb and Gutter Barrier'
+  };
+  var captions = {
+    'slab': '3D View: Rectangular Concrete Slab / Wall',
+    'column': '3D View: Round Column / Pier Footing',
+    'tube': '3D View: Circular Ring / Hollow Concrete Tube',
+    'stairs': '3D View: Concrete Stair Steps Profile',
+    'curb': '3D View: Curb and Gutter Cross-Section'
+  };
+  document.getElementById('shapeTitleLabel').innerHTML = '<i class="fa-solid fa-sliders" style="color:var(--primary); margin-right:8px;"></i> ' + titles[shape];
+  document.getElementById('shapeCaption').textContent = captions[shape];
+
+  calculate();
+}
+
+// Convert any input unit into standard FEET
+function convertToFeet(val, unit) {
+  val = parseFloat(val) || 0;
+  if (unit === 'inches') return val / 12;
+  if (unit === 'yards') return val * 3;
+  if (unit === 'meters') return val * 3.2808399;
+  if (unit === 'centimeters') return val / 30.48;
+  return val; // feet
+}
+
+function calculate() {
+  var cuFt = 0;
+  var qty = Math.max(1, parseFloat(document.getElementById('concQuantity').value) || 1);
+  var waste = (parseFloat(document.getElementById('concWaste').value) || 10) / 100;
+
+  if (activeShape === 'slab') {
+    var l = convertToFeet(document.getElementById('slabL').value, document.getElementById('slabLUnit').value);
+    var w = convertToFeet(document.getElementById('slabW').value, document.getElementById('slabWUnit').value);
+    var h = convertToFeet(document.getElementById('slabH').value, document.getElementById('slabHUnit').value);
+    cuFt = l * w * h * qty;
+  }
+  else if (activeShape === 'column') {
+    var d = convertToFeet(document.getElementById('colD').value, document.getElementById('colDUnit').value);
+    var h = convertToFeet(document.getElementById('colH').value, document.getElementById('colHUnit').value);
+    var r = d / 2;
+    cuFt = Math.PI * r * r * h * qty;
+  }
+  else if (activeShape === 'tube') {
+    var d1 = convertToFeet(document.getElementById('tubeD1').value, document.getElementById('tubeD1Unit').value);
+    var d2 = convertToFeet(document.getElementById('tubeD2').value, document.getElementById('tubeD2Unit').value);
+    var h = convertToFeet(document.getElementById('tubeH').value, document.getElementById('tubeHUnit').value);
+    var r1 = d1 / 2;
+    var r2 = d2 / 2;
+    var area = Math.PI * Math.max(0, (r1 * r1) - (r2 * r2));
+    cuFt = area * h * qty;
+  }
+  else if (activeShape === 'stairs') {
+    var num = parseFloat(document.getElementById('stairNum').value) || 4;
+    var w = convertToFeet(document.getElementById('stairW').value, document.getElementById('stairWUnit').value);
+    var run = convertToFeet(document.getElementById('stairRun').value, document.getElementById('stairRunUnit').value);
+    var rise = convertToFeet(document.getElementById('stairRise').value, document.getElementById('stairRiseUnit').value);
+
+    // Sum of individual step blocks
+    var singleStairArea = 0;
+    for (var i = 1; i <= num; i++) {
+      singleStairArea += run * (rise * i);
+    }
+    cuFt = singleStairArea * w * qty;
+  }
+  else if (activeShape === 'curb') {
+    var l = convertToFeet(document.getElementById('curbLen').value, document.getElementById('curbLenUnit').value);
+    var h = convertToFeet(document.getElementById('curbH').value, document.getElementById('curbHUnit').value);
+    var w = convertToFeet(document.getElementById('curbW').value, document.getElementById('curbWUnit').value);
+    cuFt = l * ((h * (w * 0.4)) + (w * 0.5 * (h * 0.6))) * qty;
+  }
+
+  var cuYd = cuFt / 27;
+  var cuM = cuFt * 0.0283168466;
+  var liters = cuM * 1000;
+
+  var totalCuYd = cuYd * (1 + waste);
+  var totalCuM = cuM * (1 + waste);
+  var totalCuFt = cuFt * (1 + waste);
+
+  var bags60 = Math.ceil(totalCuFt / 0.45);
+  var bags80 = Math.ceil(totalCuFt / 0.60);
+  var bags50kg = Math.ceil(totalCuM / 0.025);
+
+  var weightLbs = totalCuFt * 133.5; // average 133.5 lbs/cu ft of mixed concrete
+  var weightTonsUS = weightLbs / 2000;
+  var weightTonnes = (weightLbs * 0.45359237) / 1000;
+
+  document.getElementById('resCuYards').innerHTML = cuYd.toFixed(2) + ' yd&sup3;';
+  document.getElementById('resMetricVol').innerHTML = cuM.toFixed(2) + ' m&sup3; · ' + cuFt.toFixed(2) + ' cu ft';
+
+  document.getElementById('rowYards').innerHTML = cuYd.toFixed(2) + ' yd&sup3;';
+  document.getElementById('rowMeters').innerHTML = cuM.toFixed(2) + ' m&sup3;';
+  document.getElementById('rowFeet').innerHTML = cuFt.toFixed(2) + ' cu ft';
+  document.getElementById('rowLiters').textContent = Math.round(liters).toLocaleString() + ' Liters';
+
+  document.getElementById('rowBags60').textContent = bags60.toLocaleString() + ' Bags';
+  document.getElementById('rowBags80').textContent = bags80.toLocaleString() + ' Bags';
+  document.getElementById('rowBags50kg').textContent = bags50kg.toLocaleString() + ' Bags';
+
+  document.getElementById('rowWeight').textContent = Math.round(weightLbs).toLocaleString() + ' lbs (' + weightTonnes.toFixed(2) + ' tonnes)';
+  document.getElementById('rowBufferTotal').innerHTML = totalCuYd.toFixed(2) + ' yd&sup3; (' + totalCuM.toFixed(2) + ' m&sup3;)';
+
+  CalcCore.renderDoughnutChart('calcChart', ['Net Concrete Needed', '+ Extra Waste Buffer (' + Math.round(waste * 100) + '%)'], [cuYd, cuYd * waste], ['#0d9488', '#f59e0b']);
+}
+
+document.querySelectorAll('.calc-input, .calc-select').forEach(function(el) {
+  el.addEventListener('input', calculate);
+  el.addEventListener('change', calculate);
+});
+
+calculate();
+</script>
+</body>
+</html>

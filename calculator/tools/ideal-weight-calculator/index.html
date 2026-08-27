@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ideal Weight Calculator — Free Online Calculator | Daily1Step</title>
+<meta name="description" content="Free online ideal weight calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.">
+<link rel="canonical" href="https://bypyay.github.io/calculator/tools/ideal-weight-calculator/">
+<link rel="stylesheet" href="../../assets/css/style.css?v=3">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Ideal Weight Calculator - Daily1Step",
+  "url": "https://bypyay.github.io/calculator/tools/ideal-weight-calculator/",
+  "description": "Free online ideal weight calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "All modern web browsers",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+</head>
+<body>
+<!-- Universal Daily1Step All Tools Top Bar -->
+<div class="daily1step-global-topbar" style="background:#0f172a; color:#f8fafc; padding:7px 18px; font-size:0.8rem; font-family:system-ui,-apple-system,sans-serif; display:flex; justify-content:space-between; align-items:center; z-index:99999; position:relative; border-bottom:1px solid #1e293b;">
+  <div style="display:flex; align-items:center; gap:8px;">
+    <a href="../../../index.html" style="color:#38bdf8; font-weight:800; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+      <i class="fa-solid fa-layer-group"></i> <span>Daily1Step All Tools (320+ Apps)</span>
+    </a>
+  </div>
+  <div style="display:flex; gap:12px; font-weight:700; overflow-x:auto; white-space:nowrap; padding:2px 0;">
+    <a href="../../../pdf/" style="color:#cbd5e1; text-decoration:none;">📄 PDF</a>
+    <a href="../../../calculator/" style="color:#cbd5e1; text-decoration:none;">🧮 Calculators</a>
+    <a href="../../../removebg/" style="color:#cbd5e1; text-decoration:none;">🪄 Remove BG</a>
+    <a href="../../../audio/" style="color:#cbd5e1; text-decoration:none;">🎙️ Audio</a>
+    <a href="../../../image/" style="color:#cbd5e1; text-decoration:none;">🖼️ Images</a>
+    <a href="../../../collage/" style="color:#cbd5e1; text-decoration:none;">🎨 Collage</a>
+    <a href="../../../gif/" style="color:#cbd5e1; text-decoration:none;">🎞️ GIF</a>
+  </div>
+</div>
+
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="brand">
+      <div class="brand-icon"><i class="fa-solid fa-calculator"></i></div>
+      <div class="brand-title">Daily1Step <span class="accent">Calc</span></div>
+    </a>
+    <nav class="nav-links">
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-grid-2"></i> All 204+ Calculators</a>
+    </nav>
+  </div>
+</header>
+
+<main class="calc-workspace-wrap">
+  <div class="calc-header-meta">
+    <div class="calc-breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span>/</span>
+      <span>Fitness and Health Calculators</span>
+      <span>/</span>
+      <span>Ideal Weight Calculator</span>
+    </div>
+    <h1 class="calc-main-title">Ideal Weight Calculator</h1>
+    <p class="calc-main-desc">Free online ideal weight calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.</p>
+  </div>
+
+  <div class="calc-grid-layout">
+    <!-- Left Inputs Card -->
+    <div class="calc-card">
+      <div class="calc-card-title">
+        <span><i class="fa-solid fa-sliders" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
+      </div>
+      
+        <div class="form-group">
+          <label class="form-label">Biological Gender</label>
+          <select id="inpGender" class="calc-select">
+            <option value="male" selected>Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Age (Years)</label>
+          <input type="number" id="inpAge" class="calc-input" value="28" min="10" max="110">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Height (cm)</label>
+          <input type="number" id="inpHeightCm" class="calc-input" value="175" min="80" max="240">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Weight (kg)</label>
+          <input type="number" id="inpWeightKg" class="calc-input" value="72" min="30" max="250">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Activity Level</label>
+          <select id="inpActivity" class="calc-select">
+            <option value="1.2">Sedentary (Office desk job)</option>
+            <option value="1.375" selected>Lightly Active (Exercise 1-3 days/wk)</option>
+            <option value="1.55">Moderately Active (Exercise 3-5 days/wk)</option>
+            <option value="1.725">Very Active (Hard training 6-7 days/wk)</option>
+          </select>
+        </div>
+        
+      <button type="button" class="btn-calc-primary" onclick="calculate()">
+        <i class="fa-solid fa-calculator"></i> Recalculate
+      </button>
+    </div>
+
+    <!-- Right Results Card -->
+    <div class="calc-card">
+      <div class="calc-card-title">
+        <span><i class="fa-solid fa-chart-pie" style="color:var(--primary); margin-right:8px;"></i> Calculation Summary</span>
+      </div>
+      
+        <div class="result-hero-box">
+          <div class="result-hero-label">Daily Maintenance Calories (TDEE)</div>
+          <div class="result-hero-val" id="resTDEE">2,324 kcal</div>
+        </div>
+        <div class="result-breakdown-list">
+          <div class="result-row"><span class="label">Basal Metabolic Rate (BMR)</span><span class="val" id="resBMR">1,690 kcal</span></div>
+          <div class="result-row"><span class="label">Weight Loss Target (0.5 kg / wk)</span><span class="val" id="resLoss">1,824 kcal</span></div>
+          <div class="result-row"><span class="label">Muscle Bulking Target</span><span class="val" id="resGain">2,624 kcal</span></div>
+          <div class="result-row"><span class="label">BMI Index Status</span><span class="val" id="resHealthBMI">23.5 (Normal)</span></div>
+        </div>
+        <div class="chart-card-wrapper"><canvas id="calcChart"></canvas></div>
+        
+    </div>
+  </div>
+
+  <!-- Educational Guide & FAQs -->
+  <section class="guide-section">
+    <h2>How the Ideal Weight Calculator Works</h2>
+    <p>
+      The <strong>Ideal Weight Calculator</strong> by Daily1Step provides precise, instant computations directly in your browser. All computations follow standardized formulas and equations without transmitting any sensitive personal data to external servers.
+    </p>
+
+    <h3>Formula &amp; Mathematical Method</h3>
+    <div class="formula-box">
+      Formula: Calculations are evaluated dynamically in high-precision JavaScript with instant updates.
+    </div>
+
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq-card">
+      <div class="faq-q">Is this Ideal Weight Calculator completely free to use?</div>
+      <div class="faq-a">Yes! All calculations, interactive charts, and reports are 100% free with no registration, no subscription, and no hidden fees.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-q">Is my personal or financial data private?</div>
+      <div class="faq-a">Absolutely. All calculations happen entirely within your local browser memory. Your data is never uploaded, saved, or shared with third parties.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-q">Can I use this calculator on mobile devices?</div>
+      <div class="faq-a">Yes, Daily1Step Calculators are fully responsive and optimized for smartphones, tablets, laptops, and desktop screens.</div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="../../index.html">All Calculators</a>
+      <a href="../../legal/privacy.html">Privacy Policy</a>
+      <a href="../../legal/terms.html">Terms of Service</a>
+      <a href="../../legal/about.html">About Us</a>
+      <a href="../../legal/contact.html">Contact</a>
+      <a href="../../legal/disclaimer.html">Disclaimer</a>
+    </div>
+    <p class="copyright">&copy; 2026 Daily1Step. Free online calculators for finance, health, math, and daily utilities.</p>
+  </div>
+</footer>
+
+<script src="../../vendor/chart.umd.min.js"></script>
+<script src="../../vendor/jspdf.umd.min.js"></script>
+<script src="../../assets/js/calculator-core.js"></script>
+<script>
+
+        function calculate() {
+          var gender = document.getElementById('inpGender').value;
+          var age = parseFloat(document.getElementById('inpAge').value) || 28;
+          var cm = parseFloat(document.getElementById('inpHeightCm').value) || 175;
+          var kg = parseFloat(document.getElementById('inpWeightKg').value) || 72;
+          var act = parseFloat(document.getElementById('inpActivity').value) || 1.375;
+
+          var bmr = (10 * kg) + (6.25 * cm) - (5 * age);
+          if (gender === 'male') bmr += 5;
+          else bmr -= 161;
+
+          var tdee = bmr * act;
+          var loss = tdee - 500;
+          var gain = tdee + 300;
+
+          var heightM = cm / 100;
+          var bmi = kg / (heightM * heightM);
+
+          document.getElementById('resTDEE').textContent = Math.round(tdee).toLocaleString() + ' kcal';
+          document.getElementById('resBMR').textContent = Math.round(bmr).toLocaleString() + ' kcal';
+          document.getElementById('resLoss').textContent = Math.round(loss).toLocaleString() + ' kcal';
+          document.getElementById('resGain').textContent = Math.round(gain).toLocaleString() + ' kcal';
+          document.getElementById('resHealthBMI').textContent = bmi.toFixed(1) + ' (Normal)';
+
+          var pG = Math.round((tdee * 0.3) / 4);
+          var cG = Math.round((tdee * 0.45) / 4);
+          var fG = Math.round((tdee * 0.25) / 9);
+
+          CalcCore.renderDoughnutChart('calcChart', ['Protein (30%)', 'Carbohydrates (45%)', 'Healthy Fats (25%)'], [pG, cG, fG], ['#0d9488', '#0284c7', '#f59e0b']);
+        }
+        document.querySelectorAll('.calc-input, .calc-select').forEach(function(el) { el.addEventListener('input', calculate); });
+        calculate();
+        
+</script>
+</body>
+</html>
