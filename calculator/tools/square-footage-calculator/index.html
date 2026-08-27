@@ -3,405 +3,218 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Square Footage Calculator — Free Online Calculator | Daily1Step</title>
-<meta name="description" content="Free online square footage calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.">
-<link rel="canonical" href="https://bypyay.github.io/calculator/tools/square-footage-calculator/">
-<link rel="stylesheet" href="../../assets/css/style.css?v=3">
+<title>Square Footage Calculator — Multi-Room & Flooring Cost | Daily1Step</title>
+<meta name="description" content="Calculate square footage for rooms, homes, landscaping, and construction. Supports rectangles, circles, triangles, waste factors, and material cost.">
+<link rel="canonical" href="https://bypyay.github.io/tools/calculator/tools/square-footage-calculator/">
+<link rel="stylesheet" href="../../assets/css/style.css?v=4">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Square Footage Calculator - Daily1Step",
-  "url": "https://bypyay.github.io/calculator/tools/square-footage-calculator/",
-  "description": "Free online square footage calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All modern web browsers",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
-</script>
 </head>
 <body>
 <!-- Daily1Step FROZEN SUPER-NAVBAR START -->
 <style id="d1s-frozen-bar-style">
-/* ══════════════════════════════════════════════════════════════════
-   Daily1Step FROZEN SUPER-NAVBAR (Sticky, Animated & Click-Magnetic)
-   ══════════════════════════════════════════════════════════════════ */
-.d1s-frozen-topbar-wrap {
-  position: sticky !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  width: 100% !important;
-  z-index: 2147483647 !important;
-  background: rgba(11, 17, 33, 0.96) !important;
-  backdrop-filter: blur(20px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  border-bottom: 1.5px solid rgba(255, 255, 255, 0.12) !important;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35) !important;
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-}
-.d1s-frozen-inner {
-  max-width: 1560px !important;
-  margin: 0 auto !important;
-  padding: 0 16px !important;
-  height: 56px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 12px !important;
-}
-.d1s-brand-group {
-  display: flex !important;
-  align-items: center !important;
-  gap: 10px !important;
-  flex-shrink: 0 !important;
-  text-decoration: none !important;
-}
-.d1s-logo-badge {
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  padding: 7px 15px !important;
-  border-radius: 30px !important;
-  background: linear-gradient(135deg, #0284c7 0%, #7c3aed 100%) !important;
-  color: #ffffff !important;
-  font-weight: 800 !important;
-  font-size: 0.95rem !important;
-  letter-spacing: -0.2px !important;
-  box-shadow: 0 2px 12px rgba(2, 132, 199, 0.45) !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
-  position: relative !important;
-  overflow: hidden !important;
-}
-.d1s-logo-badge::after {
-  content: '' !important;
-  position: absolute !important;
-  top: -50% !important;
-  left: -60% !important;
-  width: 40% !important;
-  height: 200% !important;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent) !important;
-  transform: rotate(25deg) !important;
-  animation: d1s-shimmer-sweep 3.5s infinite !important;
-}
-.d1s-logo-badge:hover {
-  transform: scale(1.05) !important;
-  box-shadow: 0 4px 18px rgba(124, 58, 237, 0.65) !important;
-}
-@keyframes d1s-shimmer-sweep {
-  0% { left: -70%; }
-  30% { left: 140%; }
-  100% { left: 140%; }
-}
-.d1s-pulse-tag {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  background: rgba(239, 68, 68, 0.16) !important;
-  border: 1px solid rgba(239, 68, 68, 0.45) !important;
-  color: #fca5a5 !important;
-  padding: 4px 10px !important;
-  border-radius: 14px !important;
-  font-size: 0.74rem !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.5px !important;
-  text-transform: uppercase !important;
-}
-.d1s-live-dot {
-  width: 8px !important;
-  height: 8px !important;
-  border-radius: 50% !important;
-  background: #ef4444 !important;
-  box-shadow: 0 0 10px #ef4444 !important;
-  animation: d1s-dot-blink 1.2s infinite ease-in-out !important;
-}
-@keyframes d1s-dot-blink {
-  0%, 100% { transform: scale(0.8); opacity: 0.5; }
-  50% { transform: scale(1.35); opacity: 1; }
-}
-.d1s-nav-scroll {
-  display: flex !important;
-  align-items: center !important;
-  gap: 7px !important;
-  overflow-x: auto !important;
-  scrollbar-width: none !important;
-  -webkit-overflow-scrolling: touch !important;
-  padding: 4px 0 !important;
-}
-.d1s-nav-scroll::-webkit-scrollbar { display: none !important; }
-.d1s-nav-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 7px !important;
-  padding: 8px 13px !important;
-  border-radius: 10px !important;
-  font-size: 0.84rem !important;
-  font-weight: 700 !important;
-  color: #cbd5e1 !important;
-  text-decoration: none !important;
-  white-space: nowrap !important;
-  background: rgba(255, 255, 255, 0.06) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-}
-.d1s-nav-btn:hover {
-  transform: translateY(-2.5px) scale(1.05) !important;
-  color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.16) !important;
-  border-color: rgba(255, 255, 255, 0.35) !important;
-}
-.d1s-nav-btn:active {
-  transform: scale(0.96) !important;
-}
-.d1s-nav-btn.btn-home:hover { box-shadow: 0 4px 16px rgba(2, 132, 199, 0.6) !important; border-color: #38bdf8 !important; }
-.d1s-nav-btn.btn-pdf:hover, .d1s-nav-btn.btn-pdf.active { background: rgba(239, 68, 68, 0.24) !important; border-color: #ef4444 !important; color: #fff !important; box-shadow: 0 4px 16px rgba(239, 68, 68, 0.5) !important; }
-.d1s-nav-btn.btn-calc:hover, .d1s-nav-btn.btn-calc.active { background: rgba(59, 130, 246, 0.24) !important; border-color: #3b82f6 !important; color: #fff !important; box-shadow: 0 4px 16px rgba(59, 130, 246, 0.5) !important; }
-.d1s-nav-btn.btn-bg:hover, .d1s-nav-btn.btn-bg.active { background: rgba(168, 85, 247, 0.28) !important; border-color: #a855f7 !important; color: #fff !important; box-shadow: 0 4px 16px rgba(168, 85, 247, 0.55) !important; }
-.d1s-nav-btn.btn-audio:hover, .d1s-nav-btn.btn-audio.active { background: rgba(6, 182, 212, 0.24) !important; border-color: #06b6d4 !important; color: #fff !important; box-shadow: 0 4px 16px rgba(6, 182, 212, 0.5) !important; }
-.d1s-nav-btn.btn-image:hover, .d1s-nav-btn.btn-image.active { background: rgba(16, 185, 129, 0.24) !important; border-color: #10b981 !important; color: #fff !important; box-shadow: 0 4px 16px rgba(16, 185, 129, 0.5) !important; }
-.d1s-nav-btn.btn-collage:hover, .d1s-nav-btn.btn-collage.active { background: rgba(236, 72, 153, 0.24) !important; border-color: #ec4899 !important; color: #fff !important; box-shadow: 0 4px 16px rgba(236, 72, 153, 0.5) !important; }
-.d1s-nav-btn.btn-gif:hover, .d1s-nav-btn.btn-gif.active { background: rgba(245, 158, 11, 0.24) !important; border-color: #f59e0b !important; color: #fff !important; box-shadow: 0 4px 16px rgba(245, 158, 11, 0.5) !important; }
-.d1s-count {
-  font-size: 0.7rem !important;
-  font-weight: 800 !important;
-  padding: 2px 6px !important;
-  border-radius: 6px !important;
-  background: rgba(255, 255, 255, 0.18) !important;
-  color: #fff !important;
-}
-@media (max-width: 900px) {
-  .d1s-pulse-tag { display: none !important; }
-  .d1s-frozen-inner { height: 50px !important; padding: 0 10px !important; }
-  .d1s-nav-btn { padding: 6px 10px !important; font-size: 0.78rem !important; }
-  .d1s-logo-badge { font-size: 0.86rem !important; padding: 6px 11px !important; }
-}
+.d1s-frozen-topbar-wrap { position: sticky !important; top: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; z-index: 2147483647 !important; background: rgba(11, 17, 33, 0.96) !important; backdrop-filter: blur(20px) saturate(180%) !important; -webkit-backdrop-filter: blur(20px) saturate(180%) !important; border-bottom: 1.5px solid rgba(255, 255, 255, 0.12) !important; box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35) !important; font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important; }
+.d1s-frozen-inner { max-width: 1560px !important; margin: 0 auto !important; padding: 0 16px !important; height: 56px !important; display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 12px !important; }
+.d1s-brand-group { display: flex !important; align-items: center !important; gap: 10px !important; flex-shrink: 0 !important; text-decoration: none !important; }
+.d1s-logo-badge { display: flex !important; align-items: center !important; gap: 8px !important; padding: 7px 15px !important; border-radius: 30px !important; background: linear-gradient(135deg, #0284c7 0%, #7c3aed 100%) !important; color: #ffffff !important; font-weight: 800 !important; font-size: 0.95rem !important; box-shadow: 0 2px 12px rgba(2, 132, 199, 0.45) !important; }
+.d1s-pulse-tag { display: inline-flex !important; align-items: center !important; gap: 6px !important; background: rgba(239, 68, 68, 0.16) !important; border: 1px solid rgba(239, 68, 68, 0.45) !important; color: #fca5a5 !important; padding: 4px 10px !important; border-radius: 14px !important; font-size: 0.74rem !important; font-weight: 800 !important; }
+.d1s-live-dot { width: 8px !important; height: 8px !important; border-radius: 50% !important; background: #ef4444 !important; }
+.d1s-nav-scroll { display: flex !important; align-items: center !important; gap: 7px !important; overflow-x: auto !important; scrollbar-width: none !important; }
+.d1s-nav-btn { display: inline-flex !important; align-items: center !important; gap: 7px !important; padding: 8px 13px !important; border-radius: 10px !important; font-size: 0.84rem !important; font-weight: 700 !important; color: #cbd5e1 !important; text-decoration: none !important; background: rgba(255, 255, 255, 0.06) !important; border: 1px solid rgba(255, 255, 255, 0.1) !important; }
+.d1s-nav-btn.btn-calc.active { background: rgba(59, 130, 246, 0.24) !important; border-color: #3b82f6 !important; color: #fff !important; }
+.d1s-count { font-size: 0.7rem !important; font-weight: 800 !important; padding: 2px 6px !important; border-radius: 6px !important; background: rgba(255, 255, 255, 0.18) !important; color: #fff !important; }
 </style>
 <div class="d1s-frozen-topbar-wrap">
   <div class="d1s-frozen-inner">
     <div style="display:flex; align-items:center; gap:8px;">
-      <a href="../../../index.html" class="d1s-brand-group" title="Daily1Step All Tools Platform">
-        <div class="d1s-logo-badge">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          <span>Daily1Step</span>
-        </div>
-      </a>
+      <a href="../../../index.html" class="d1s-brand-group"><div class="d1s-logo-badge"><span>Daily1Step</span></div></a>
       <span class="d1s-pulse-tag"><span class="d1s-live-dot"></span> 320+ Free Apps</span>
     </div>
-
     <nav class="d1s-nav-scroll">
-      <a href="../../../index.html" class="d1s-nav-btn btn-home" title="All Tools Hub">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        <span>All Tools</span>
-      </a>
-      <a href="../../../pdf/" class="d1s-nav-btn btn-pdf" title="PDF Tools Suite">
-        <span style="color:#ef4444;">📄</span>
-        <span>PDF</span>
-        <span class="d1s-count">22</span>
-      </a>
-      <a href="../../../calculator/" class="d1s-nav-btn btn-calc active" title="207+ Calculators">
-        <span style="color:#3b82f6;">🧮</span>
-        <span>Calculators</span>
-        <span class="d1s-count">207+</span>
-      </a>
-      <a href="../../../removebg/" class="d1s-nav-btn btn-bg" title="AI Background Remover">
-        <span style="color:#a855f7;">🪄</span>
-        <span>Remove BG</span>
-        <span class="d1s-count" style="background:#a855f7; color:#fff;">AI</span>
-      </a>
-      <a href="../../../audio/" class="d1s-nav-btn btn-audio" title="Audio Editor & Whisper Speech to Text">
-        <span style="color:#06b6d4;">🎙️</span>
-        <span>Audio</span>
-        <span class="d1s-count">25</span>
-      </a>
-      <a href="../../../image/" class="d1s-nav-btn btn-image" title="Image Resizer, Compressor & Passport Photo">
-        <span style="color:#10b981;">🖼️</span>
-        <span>Images</span>
-        <span class="d1s-count">27</span>
-      </a>
-      <a href="../../../collage/" class="d1s-nav-btn btn-collage" title="Collage Maker Studio PRO">
-        <span style="color:#ec4899;">🎨</span>
-        <span>Collage</span>
-        <span class="d1s-count" style="background:#ec4899; color:#fff;">PRO</span>
-      </a>
-      <a href="../../../gif/" class="d1s-nav-btn btn-gif" title="Animated GIF Maker & Compressor">
-        <span style="color:#f59e0b;">🎞️</span>
-        <span>GIF</span>
-        <span class="d1s-count">18</span>
-      </a>
+      <a href="../../../index.html" class="d1s-nav-btn"><span>All Tools</span></a>
+      <a href="../../../pdf/" class="d1s-nav-btn"><span>📄 PDF</span></a>
+      <a href="../../../calculator/" class="d1s-nav-btn btn-calc active"><span>🧮 Calculators</span><span class="d1s-count">207+</span></a>
+      <a href="../../../removebg/" class="d1s-nav-btn"><span>🪄 Remove BG</span></a>
+      <a href="../../../audio/" class="d1s-nav-btn"><span>🎙️ Audio</span></a>
+      <a href="../../../image/" class="d1s-nav-btn"><span>🖼️ Images</span></a>
+      <a href="../../../collage/" class="d1s-nav-btn"><span>🎨 Collage</span></a>
+      <a href="../../../gif/" class="d1s-nav-btn"><span>🎞️ GIF</span></a>
     </nav>
   </div>
 </div>
 <!-- Daily1Step FROZEN SUPER-NAVBAR END -->
 
-
-
 <header class="site-header">
   <div class="header-inner">
-    <a href="../../index.html" class="brand">
-      <div class="brand-icon"><i class="fa-solid fa-calculator"></i></div>
-      <div class="brand-title">Daily1Step <span class="accent">Calc</span></div>
-    </a>
-    <nav class="nav-links">
-      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-grid-2"></i> All 204+ Calculators</a>
-    </nav>
+    <a href="../../index.html" class="brand"><div class="brand-icon"><i class="fa-solid fa-calculator"></i></div><div class="brand-title">Daily1Step <span class="accent">Calc</span></div></a>
+    <nav class="nav-links"><a href="../../index.html" class="nav-link"><i class="fa-solid fa-layer-group"></i> All 204+ Calculators</a></nav>
   </div>
 </header>
 
 <main class="calc-workspace-wrap">
   <div class="calc-header-meta">
-    <div class="calc-breadcrumb">
-      <a href="../../index.html">Home</a>
-      <span>/</span>
-      <span>Other Calculators</span>
-      <span>/</span>
-      <span>Square Footage Calculator</span>
-    </div>
-    <h1 class="calc-main-title">Square Footage Calculator</h1>
-    <p class="calc-main-desc">Free online square footage calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.</p>
+    <div class="calc-breadcrumb"><a href="../../index.html">Home</a> / <a href="../../index.html#cat-construction">Construction</a> / <span>Square Footage Calculator</span></div>
+    <h1 class="calc-main-title">Square Footage & Flooring Calculator</h1>
+    <p class="calc-main-desc">Calculate exact surface area for rooms, flooring, painting, and construction. Supports multiple shapes, waste buffer, and cost estimates.</p>
   </div>
 
   <div class="calc-grid-layout">
-    <!-- Left Inputs Card -->
     <div class="calc-card">
-      <div class="calc-card-title">
-        <span><i class="fa-solid fa-sliders" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
+      <div class="calc-top-controls">
+        <div class="calc-control-group">
+          <span class="calc-control-label">Measurement Unit:</span>
+          <select id="selUnit" class="calc-select-mini" onchange="calculate()">
+            <option value="feet">Feet (ft)</option>
+            <option value="inches">Inches (in)</option>
+            <option value="meters">Meters (m)</option>
+            <option value="yards">Yards (yd)</option>
+            <option value="cm">Centimeters (cm)</option>
+          </select>
+        </div>
+        <div class="calc-control-group">
+          <span class="calc-control-label">Area Shape:</span>
+          <select id="selShape" class="calc-select-mini" onchange="changeShape()">
+            <option value="rect">Rectangle / Square</option>
+            <option value="circle">Circle / Round</option>
+            <option value="triangle">Triangle</option>
+          </select>
+        </div>
       </div>
-      
+
+      <div id="shapeInputs">
+        <div class="form-group" id="grpDim1">
+          <label class="form-label" id="lblDim1">Length</label>
+          <div class="input-with-affix">
+            <input type="number" id="inpDim1" class="calc-input has-suffix" value="20" min="0.1" step="0.5">
+            <span class="input-affix suffix unit-label">ft</span>
+          </div>
+        </div>
+        <div class="form-group" id="grpDim2">
+          <label class="form-label" id="lblDim2">Width</label>
+          <div class="input-with-affix">
+            <input type="number" id="inpDim2" class="calc-input has-suffix" value="15" min="0.1" step="0.5">
+            <span class="input-affix suffix unit-label">ft</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
         <div class="form-group">
-          <label class="form-label">Start Date / Date of Birth</label>
-          <input type="date" id="inpStartDate" class="calc-input" value="1998-05-15">
+          <label class="form-label">Waste Buffer (%)</label>
+          <div class="input-with-affix">
+            <input type="number" id="inpWaste" class="calc-input has-suffix" value="10" min="0" max="30" step="1">
+            <span class="input-affix suffix">%</span>
+          </div>
         </div>
         <div class="form-group">
-          <label class="form-label">End / Target Date</label>
-          <input type="date" id="inpEndDate" class="calc-input">
+          <label class="form-label">Price per Unit Area</label>
+          <div class="input-with-affix">
+            <span class="input-affix prefix">$</span>
+            <input type="number" id="inpUnitPrice" class="calc-input has-prefix" value="4.50" min="0" step="0.5">
+          </div>
         </div>
-        
+      </div>
+
       <button type="button" class="btn-calc-primary" onclick="calculate()">
-        <i class="fa-solid fa-calculator"></i> Recalculate
+        <i class="fa-solid fa-ruler-combined"></i> Calculate Square Footage
       </button>
     </div>
 
-    <!-- Right Results Card -->
     <div class="calc-card">
-      <div class="calc-card-title">
-        <span><i class="fa-solid fa-chart-pie" style="color:var(--primary); margin-right:8px;"></i> Calculation Summary</span>
+      <div class="calc-card-title"><span><i class="fa-solid fa-chart-pie" style="color:var(--primary); margin-right:8px;"></i> Area &amp; Material Summary</span></div>
+
+      <div class="result-hero-box">
+        <div class="result-hero-label">Total Square Footage</div>
+        <div class="result-hero-val" id="resSqFt">300.0 sq ft</div>
+        <div id="resWithWaste" style="font-size:0.88rem; color:#0f766e; margin-top:6px; font-weight:700;">
+          With 10% Waste Factor: <span id="resTotalWasteSqFt">330.0 sq ft</span>
+        </div>
       </div>
-      
-        <div class="result-hero-box">
-          <div class="result-hero-label">Exact Duration / Age</div>
-          <div class="result-hero-val" id="resYears">28 Years</div>
-          <div style="font-weight:600; color:#0f766e; margin-top:4px;" id="resFullTime">28 years 3 months 3 days</div>
+
+      <div class="result-breakdown-list">
+        <div class="result-row"><span class="label">Square Meters (m²)</span><span class="val" id="resSqM">27.87 m²</span></div>
+        <div class="result-row"><span class="label">Square Yards (yd²)</span><span class="val" id="resSqYd">33.33 yd²</span></div>
+        <div class="result-row"><span class="label">Square Inches (in²)</span><span class="val" id="resSqIn">43,200 in²</span></div>
+        <div class="result-row"><span class="label">Total Material Cost (with waste)</span><span class="val" id="resTotalCost" style="color:var(--primary); font-weight:800;">$1,485.00</span></div>
+      </div>
+
+      <div class="milestones-wrap">
+        <div class="milestones-title"><i class="fa-solid fa-box" style="color:#f59e0b;"></i> Material Estimation Helpers</div>
+        <div class="milestones-grid">
+          <div class="milestone-box"><div class="milestone-label">Flooring Boxes (20 sq ft/box)</div><div class="milestone-val" id="resBoxes">17 Boxes</div></div>
+          <div class="milestone-box"><div class="milestone-label">Paint Needed (400 sq ft/gal)</div><div class="milestone-val" id="resPaint">0.8 Gallons</div></div>
         </div>
-        <div class="result-breakdown-list">
-          <div class="result-row"><span class="label">Total Months</span><span class="val" id="resMonths">339 Months</span></div>
-          <div class="result-row"><span class="label">Total Weeks</span><span class="val" id="resWeeks">1,475 Weeks</span></div>
-          <div class="result-row"><span class="label">Total Days</span><span class="val" id="resDays">10,323 Days</span></div>
-          <div class="result-row"><span class="label">Total Hours</span><span class="val" id="resHours">247,752 Hours</span></div>
-          <div class="result-row"><span class="label">Next Milestone / Birthday</span><span class="val" id="resNext">In 265 Days</span></div>
-        </div>
-        
+      </div>
     </div>
   </div>
-
-  <!-- Educational Guide & FAQs -->
-  <section class="guide-section">
-    <h2>How the Square Footage Calculator Works</h2>
-    <p>
-      The <strong>Square Footage Calculator</strong> by Daily1Step provides precise, instant computations directly in your browser. All computations follow standardized formulas and equations without transmitting any sensitive personal data to external servers.
-    </p>
-
-    <h3>Formula &amp; Mathematical Method</h3>
-    <div class="formula-box">
-      Formula: Calculations are evaluated dynamically in high-precision JavaScript with instant updates.
-    </div>
-
-    <h3>Frequently Asked Questions</h3>
-    <div class="faq-card">
-      <div class="faq-q">Is this Square Footage Calculator completely free to use?</div>
-      <div class="faq-a">Yes! All calculations, interactive charts, and reports are 100% free with no registration, no subscription, and no hidden fees.</div>
-    </div>
-    <div class="faq-card">
-      <div class="faq-q">Is my personal or financial data private?</div>
-      <div class="faq-a">Absolutely. All calculations happen entirely within your local browser memory. Your data is never uploaded, saved, or shared with third parties.</div>
-    </div>
-    <div class="faq-card">
-      <div class="faq-q">Can I use this calculator on mobile devices?</div>
-      <div class="faq-a">Yes, Daily1Step Calculators are fully responsive and optimized for smartphones, tablets, laptops, and desktop screens.</div>
-    </div>
-  </section>
 </main>
 
 <footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-links">
-      <a href="../../index.html">All Calculators</a>
-      <a href="../../legal/privacy.html">Privacy Policy</a>
-      <a href="../../legal/terms.html">Terms of Service</a>
-      <a href="../../legal/about.html">About Us</a>
-      <a href="../../legal/contact.html">Contact</a>
-      <a href="../../legal/disclaimer.html">Disclaimer</a>
-    </div>
-    <p class="copyright">&copy; 2026 Daily1Step. Free online calculators for finance, health, math, and daily utilities.</p>
-  </div>
+  <div class="footer-inner"><p class="copyright">&copy; 2026 Daily1Step. Free online calculators.</p></div>
 </footer>
 
-<script src="../../vendor/chart.umd.min.js"></script>
-<script src="../../vendor/jspdf.umd.min.js"></script>
 <script src="../../assets/js/calculator-core.js"></script>
 <script>
+function changeShape() {
+  var s = document.getElementById('selShape').value;
+  var l1 = document.getElementById('lblDim1');
+  var l2 = document.getElementById('lblDim2');
+  var g2 = document.getElementById('grpDim2');
+  if (s === 'circle') {
+    l1.textContent = 'Radius';
+    g2.style.display = 'none';
+  } else if (s === 'triangle') {
+    l1.textContent = 'Base';
+    l2.textContent = 'Height';
+    g2.style.display = 'block';
+  } else {
+    l1.textContent = 'Length';
+    l2.textContent = 'Width';
+    g2.style.display = 'block';
+  }
+  calculate();
+}
 
-        document.getElementById('inpEndDate').valueAsDate = new Date();
-        function calculate() {
-          var sVal = document.getElementById('inpStartDate').value;
-          var eVal = document.getElementById('inpEndDate').value;
-          if (!sVal || !eVal) return;
+function calculate() {
+  var u = document.getElementById('selUnit').value;
+  var s = document.getElementById('selShape').value;
+  var d1 = parseFloat(document.getElementById('inpDim1').value) || 0;
+  var d2 = parseFloat(document.getElementById('inpDim2').value) || 0;
+  var waste = (parseFloat(document.getElementById('inpWaste').value) || 0) / 100;
+  var unitPrice = parseFloat(document.getElementById('inpUnitPrice').value) || 0;
 
-          var s = new Date(sVal);
-          var e = new Date(eVal);
-          var diffMs = e - s;
-          if (diffMs < 0) {
-            document.getElementById('resYears').textContent = 'Invalid Range';
-            return;
-          }
+  document.querySelectorAll('.unit-label').forEach(function(el) { el.textContent = u; });
 
-          var years = e.getFullYear() - s.getFullYear();
-          var months = e.getMonth() - s.getMonth();
-          var days = e.getDate() - s.getDate();
-          if (days < 0) {
-            months--;
-            var prevM = new Date(e.getFullYear(), e.getMonth(), 0);
-            days += prevM.getDate();
-          }
-          if (months < 0) {
-            years--;
-            months += 12;
-          }
+  var toFeet = { feet: 1, inches: 1/12, meters: 3.28084, yards: 3, cm: 0.0328084 };
+  var f1 = d1 * toFeet[u];
+  var f2 = d2 * toFeet[u];
 
-          var totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-          var totalWeeks = Math.floor(totalDays / 7);
-          var totalMonths = years * 12 + months;
-          var totalHours = totalDays * 24;
+  var sqft = 0;
+  if (s === 'circle') {
+    sqft = Math.PI * f1 * f1;
+  } else if (s === 'triangle') {
+    sqft = 0.5 * f1 * f2;
+  } else {
+    sqft = f1 * f2;
+  }
 
-          document.getElementById('resYears').textContent = years + ' Years';
-          document.getElementById('resFullTime').textContent = years + ' years, ' + months + ' months, ' + days + ' days';
-          document.getElementById('resMonths').textContent = totalMonths.toLocaleString() + ' Months';
-          document.getElementById('resWeeks').textContent = totalWeeks.toLocaleString() + ' Weeks';
-          document.getElementById('resDays').textContent = totalDays.toLocaleString() + ' Days';
-          document.getElementById('resHours').textContent = totalHours.toLocaleString() + ' Hours';
+  var totalSqftWaste = sqft * (1 + waste);
+  var sqM = sqft * 0.092903;
+  var sqYd = sqft / 9;
+  var sqIn = sqft * 144;
+  var cost = totalSqftWaste * unitPrice;
 
-          var nextBday = new Date(e.getFullYear(), s.getMonth(), s.getDate());
-          if (nextBday < e) nextBday.setFullYear(e.getFullYear() + 1);
-          var daysToNext = Math.ceil((nextBday - e) / (1000 * 60 * 60 * 24));
-          document.getElementById('resNext').textContent = 'In ' + daysToNext + ' Days';
-        }
-        document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculate); });
-        calculate();
-        
+  document.getElementById('resSqFt').textContent = sqft.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' sq ft';
+  document.getElementById('resTotalWasteSqFt').textContent = totalSqftWaste.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' sq ft';
+  document.getElementById('resSqM').textContent = sqM.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' m²';
+  document.getElementById('resSqYd').textContent = sqYd.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' yd²';
+  document.getElementById('resSqIn').textContent = Math.round(sqIn).toLocaleString('en-US') + ' in²';
+  document.getElementById('resTotalCost').textContent = CalcCore.formatCurrency(cost);
+  document.getElementById('resBoxes').textContent = Math.ceil(totalSqftWaste / 20) + ' Boxes';
+  document.getElementById('resPaint').textContent = (totalSqftWaste / 400).toFixed(1) + ' Gal';
+}
+
+document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculate); });
+document.addEventListener('DOMContentLoaded', calculate);
 </script>
 </body>
 </html>

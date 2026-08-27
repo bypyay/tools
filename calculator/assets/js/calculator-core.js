@@ -1,13 +1,46 @@
 /**
- * Daily1Step Calculator Core — Utility Functions & Chart Helpers
+ * Daily1Step Calculator Core — Enterprise-Grade Calculation & Chart Engine
+ * Supports Multi-Currency, Data Tables, Growth Charts, Amortization, CSV Export & Printing
  */
 
 var CalcCore = (function() {
   'use strict';
 
-  function formatCurrency(val, currencySymbol) {
+  var currencySymbols = {
+    'USD': '$',
+    'INR': '₹',
+    'EUR': '€',
+    'GBP': '£',
+    'AUD': 'A$',
+    'CAD': 'C$',
+    'AED': 'AED ',
+    'JPY': '¥',
+    'CNY': '¥'
+  };
+
+  var activeCurrency = 'USD';
+
+  function setCurrency(code) {
+    if (currencySymbols[code]) {
+      activeCurrency = code;
+    }
+  }
+
+  function getCurrencySymbol() {
+    return currencySymbols[activeCurrency] || '$';
+  }
+
+  function formatCurrency(val, currencyCode) {
     if (isNaN(val) || val === null || val === undefined) return '$0.00';
-    var sym = currencySymbol || '$';
+    var code = currencyCode || activeCurrency;
+    var sym = currencySymbols[code] || '$';
+    
+    // Support Indian number system formatting (Lakhs/Crores)
+    if (code === 'INR') {
+      try {
+        return sym + Number(val).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      } catch(e) {}
+    }
     return sym + Number(val).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   }
 
@@ -56,6 +89,16 @@ var CalcCore = (function() {
               font: { family: "'Plus Jakarta Sans', sans-serif", size: 12, weight: 600 },
               padding: 14
             }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                var val = context.raw || 0;
+                var total = context.dataset.data.reduce(function(a, b) { return a + b; }, 0);
+                var pct = total > 0 ? ((val / total) * 100).toFixed(1) + '%' : '';
+                return ' ' + context.label + ': ' + formatCurrency(val) + ' (' + pct + ')';
+              }
+            }
           }
         },
         cutout: '65%'
@@ -97,11 +140,141 @@ var CalcCore = (function() {
           },
           y: {
             grid: { color: '#f1f5f9' },
-            ticks: { font: { family: "'Plus Jakarta Sans', sans-serif", size: 11 } }
+            ticks: {
+              font: { family: "'Plus Jakarta Sans', sans-serif", size: 11 },
+              callback: function(value) {
+                if (value >= 1000000) return getCurrencySymbol() + (value / 1000000).toFixed(1) + 'M';
+                if (value >= 1000) return getCurrencySymbol() + (value / 1000).toFixed(0) + 'k';
+                return getCurrencySymbol() + value;
+              }
+            }
           }
         }
       }
     });
+  }
+
+  // Render Area / Growth Chart for Financial Planning
+  function renderGrowthAreaChart(canvasId, labels, investedData, interestData, totalData) {
+    var canvas = document.getElementById(canvasId);
+    if (!canvas || typeof Chart === 'undefined') return;
+
+    if (chartInstances[canvasId]) {
+      chartInstances[canvasId].destroy();
+    }
+
+    chartInstances[canvasId] = new Chart(canvas, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'Total Accumulated Wealth',
+            data: totalData,
+            borderColor: '#0284c7',
+            backgroundColor: 'rgba(2, 132, 199, 0.15)',
+            fill: true,
+            tension: 0.35,
+            borderWidth: 3
+          },
+          {
+            label: 'Total Capital Invested',
+            data: investedData,
+            borderColor: '#0d9488',
+            backgroundColor: 'rgba(13, 148, 136, 0.25)',
+            fill: true,
+            tension: 0.2,
+            borderWidth: 2
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: {
+            position: 'top',
+            labels: { font: { family: "'Plus Jakarta Sans', sans-serif", size: 12, weight: 700 } }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(ctx) {
+                return ' ' + ctx.dataset.label + ': ' + formatCurrency(ctx.raw);
+              }
+            }
+          }
+        },
+        scales: {
+          x: { grid: { display: false } },
+          y: {
+            grid: { color: '#f1f5f9' },
+            ticks: {
+              callback: function(v) {
+                if (v >= 1000000) return getCurrencySymbol() + (v / 1000000).toFixed(1) + 'M';
+                if (v >= 1000) return getCurrencySymbol() + (v / 1000).toFixed(0) + 'k';
+                return getCurrencySymbol() + v;
+              }
+            }
+          }
+        }
+      }
+    });
+  }
+
+  // Render Amortization or Growth Data Table
+  function renderTable(containerId, headers, rows) {
+    var container = document.getElementById(containerId);
+    if (!container) return;
+
+    var html = '<div class="calc-table-responsive"><table class="calc-data-table"><thead><tr>';
+    headers.forEach(function(h) {
+      html += '<th>' + h + '</th>';
+    });
+    html += '</tr></thead><tbody>';
+
+    rows.forEach(function(r) {
+      html += '<tr>';
+      r.forEach(function(cell) {
+        html += '<td>' + cell + '</td>';
+      });
+      html += '</tr>';
+    });
+
+    html += '</tbody></table></div>';
+    container.innerHTML = html;
+  }
+
+  // Export Data to CSV File
+  function exportCSV(filename, headers, rows) {
+    var csvContent = 'data:text/csv;charset=utf-8,';
+    csvContent += headers.map(function(h) { return '"' + h + '"'; }).join(',') + '\r\n';
+
+    rows.forEach(function(row) {
+      csvContent += row.map(function(c) {
+        var str = String(c).replace(/"/g, '""');
+        return '"' + str + '"';
+      }).join(',') + '\r\n';
+    });
+
+    var encodedUri = encodeURI(csvContent);
+    var link = document.createElement('a');
+    link.setAttribute('href', encodedUri);
+    link.setAttribute('download', (filename || 'calculation-schedule') + '.csv');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  // Print Clean Report
+  function printReport() {
+    window.print();
+  }
+
+  // Calculate Rule of 72
+  function calculateRuleOf72(rate) {
+    if (!rate || rate <= 0) return 'N/A';
+    return (72 / rate).toFixed(1) + ' Years';
   }
 
   // Live filter for homepage tools
@@ -126,7 +299,6 @@ var CalcCore = (function() {
         }
       });
 
-      // Show / hide section headers if all cards in group are hidden
       document.querySelectorAll('.category-group-section').forEach(function(sec) {
         var secCards = sec.querySelectorAll('.tool-card');
         var anyVisible = false;
@@ -156,8 +328,15 @@ var CalcCore = (function() {
     formatCurrency: formatCurrency,
     formatNumber: formatNumber,
     formatPercent: formatPercent,
+    setCurrency: setCurrency,
+    getCurrencySymbol: getCurrencySymbol,
     renderDoughnutChart: renderDoughnutChart,
     renderLineChart: renderLineChart,
+    renderGrowthAreaChart: renderGrowthAreaChart,
+    renderTable: renderTable,
+    exportCSV: exportCSV,
+    printReport: printReport,
+    calculateRuleOf72: calculateRuleOf72,
     initToolSearch: initToolSearch,
     filterCategory: filterCategory
   };

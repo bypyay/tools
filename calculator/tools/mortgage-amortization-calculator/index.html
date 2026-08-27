@@ -3,34 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mortgage Amortization Calculator — Free Online Calculator | Daily1Step</title>
-<meta name="description" content="Free online mortgage amortization calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.">
-<link rel="canonical" href="https://bypyay.github.io/calculator/tools/mortgage-amortization-calculator/">
-<link rel="stylesheet" href="../../assets/css/style.css?v=3">
+<title>Mortgage Amortization Schedule Calculator — Advanced Financial Calculator | Daily1Step</title>
+<meta name="description" content="Complete month-by-month and annual amortization schedule with principal payoff, interest tracking, and CSV export.">
+<link rel="canonical" href="https://bypyay.github.io/tools/calculator/tools/mortgage-amortization-calculator/">
+<link rel="stylesheet" href="../../assets/css/style.css?v=4">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Mortgage Amortization Calculator - Daily1Step",
-  "url": "https://bypyay.github.io/calculator/tools/mortgage-amortization-calculator/",
-  "description": "Free online mortgage amortization calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All modern web browsers",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  "name": "Mortgage Amortization Schedule Calculator - Daily1Step",
+  "url": "https://bypyay.github.io/tools/calculator/tools/mortgage-amortization-calculator/",
+  "description": "Complete month-by-month and annual amortization schedule with principal payoff, interest tracking, and CSV export.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All modern web browsers"
 }
 </script>
 </head>
 <body>
 <!-- Daily1Step FROZEN SUPER-NAVBAR START -->
 <style id="d1s-frozen-bar-style">
-/* ══════════════════════════════════════════════════════════════════
-   Daily1Step FROZEN SUPER-NAVBAR (Sticky, Animated & Click-Magnetic)
-   ══════════════════════════════════════════════════════════════════ */
 .d1s-frozen-topbar-wrap {
   position: sticky !important;
   top: 0 !important;
@@ -155,17 +147,7 @@
   background: rgba(255, 255, 255, 0.16) !important;
   border-color: rgba(255, 255, 255, 0.35) !important;
 }
-.d1s-nav-btn:active {
-  transform: scale(0.96) !important;
-}
-.d1s-nav-btn.btn-home:hover { box-shadow: 0 4px 16px rgba(2, 132, 199, 0.6) !important; border-color: #38bdf8 !important; }
-.d1s-nav-btn.btn-pdf:hover, .d1s-nav-btn.btn-pdf.active { background: rgba(239, 68, 68, 0.24) !important; border-color: #ef4444 !important; color: #fff !important; box-shadow: 0 4px 16px rgba(239, 68, 68, 0.5) !important; }
-.d1s-nav-btn.btn-calc:hover, .d1s-nav-btn.btn-calc.active { background: rgba(59, 130, 246, 0.24) !important; border-color: #3b82f6 !important; color: #fff !important; box-shadow: 0 4px 16px rgba(59, 130, 246, 0.5) !important; }
-.d1s-nav-btn.btn-bg:hover, .d1s-nav-btn.btn-bg.active { background: rgba(168, 85, 247, 0.28) !important; border-color: #a855f7 !important; color: #fff !important; box-shadow: 0 4px 16px rgba(168, 85, 247, 0.55) !important; }
-.d1s-nav-btn.btn-audio:hover, .d1s-nav-btn.btn-audio.active { background: rgba(6, 182, 212, 0.24) !important; border-color: #06b6d4 !important; color: #fff !important; box-shadow: 0 4px 16px rgba(6, 182, 212, 0.5) !important; }
-.d1s-nav-btn.btn-image:hover, .d1s-nav-btn.btn-image.active { background: rgba(16, 185, 129, 0.24) !important; border-color: #10b981 !important; color: #fff !important; box-shadow: 0 4px 16px rgba(16, 185, 129, 0.5) !important; }
-.d1s-nav-btn.btn-collage:hover, .d1s-nav-btn.btn-collage.active { background: rgba(236, 72, 153, 0.24) !important; border-color: #ec4899 !important; color: #fff !important; box-shadow: 0 4px 16px rgba(236, 72, 153, 0.5) !important; }
-.d1s-nav-btn.btn-gif:hover, .d1s-nav-btn.btn-gif.active { background: rgba(245, 158, 11, 0.24) !important; border-color: #f59e0b !important; color: #fff !important; box-shadow: 0 4px 16px rgba(245, 158, 11, 0.5) !important; }
+.d1s-nav-btn.btn-calc.active { background: rgba(59, 130, 246, 0.24) !important; border-color: #3b82f6 !important; color: #fff !important; box-shadow: 0 4px 16px rgba(59, 130, 246, 0.5) !important; }
 .d1s-count {
   font-size: 0.7rem !important;
   font-weight: 800 !important;
@@ -238,8 +220,6 @@
 </div>
 <!-- Daily1Step FROZEN SUPER-NAVBAR END -->
 
-
-
 <header class="site-header">
   <div class="header-inner">
     <a href="../../index.html" class="brand">
@@ -247,7 +227,7 @@
       <div class="brand-title">Daily1Step <span class="accent">Calc</span></div>
     </a>
     <nav class="nav-links">
-      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-grid-2"></i> All 204+ Calculators</a>
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-layer-group"></i> All 204+ Calculators</a>
     </nav>
   </div>
 </header>
@@ -257,81 +237,244 @@
     <div class="calc-breadcrumb">
       <a href="../../index.html">Home</a>
       <span>/</span>
-      <span>Financial Calculators</span>
+      <a href="../../index.html#cat-financial">Financial Calculators</a>
       <span>/</span>
-      <span>Mortgage Amortization Calculator</span>
+      <span>Mortgage Amortization Schedule Calculator</span>
     </div>
-    <h1 class="calc-main-title">Mortgage Amortization Calculator</h1>
-    <p class="calc-main-desc">Free online mortgage amortization calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.</p>
+    <h1 class="calc-main-title">Mortgage Amortization Schedule Calculator</h1>
+    <p class="calc-main-desc">Complete month-by-month and annual amortization schedule with principal payoff, interest tracking, and CSV export.</p>
   </div>
 
   <div class="calc-grid-layout">
     <!-- Left Inputs Card -->
     <div class="calc-card">
-      <div class="calc-card-title">
-        <span><i class="fa-solid fa-sliders" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
+      <div class="calc-top-controls">
+        <div class="calc-control-group">
+          <i class="fa-solid fa-earth-americas" style="color:var(--primary);"></i>
+          <span class="calc-control-label">Currency:</span>
+          <select id="selCurrency" class="calc-select-mini" onchange="onCurrencyChange()">
+            
+      <option value="USD" selected>USD ($)</option>
+      <option value="GBP" >GBP (£)</option>
+      <option value="CAD" >CAD (C$)</option>
+      <option value="EUR" >EUR (€)</option>
+      <option value="INR" >INR (₹)</option>
+      <option value="AUD" >AUD (A$)</option>
+    
+          </select>
+        </div>
+        <div class="calc-control-group">
+          <span class="calc-control-label">Pay Frequency:</span>
+          <select id="selPayFreq" class="calc-select-mini" onchange="calculate()">
+            <option value="12">Monthly</option>
+            <option value="26">Bi-Weekly (Accelerated)</option>
+          </select>
+        </div>
       </div>
-      
+
+      <div class="form-group">
+        <label class="form-label">Home Purchase Price / Value</label>
+        <div class="input-with-affix">
+          <span class="input-affix prefix curr-sym">$</span>
+          <input type="number" id="inpHomePrice" class="calc-input has-prefix" value="350000" min="10000" step="5000">
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1.5fr 1fr; gap:10px;">
         <div class="form-group">
-          <label class="form-label">Start Date / Date of Birth</label>
-          <input type="date" id="inpStartDate" class="calc-input" value="1998-05-15">
+          <label class="form-label">Down Payment</label>
+          <div class="input-with-affix">
+            <span class="input-affix prefix curr-sym">$</span>
+            <input type="number" id="inpDownAmt" class="calc-input has-prefix" value="70000" min="0" step="1000" oninput="syncDownPct()">
+          </div>
         </div>
         <div class="form-group">
-          <label class="form-label">End / Target Date</label>
-          <input type="date" id="inpEndDate" class="calc-input">
+          <label class="form-label">Down (%)</label>
+          <div class="input-with-affix">
+            <input type="number" id="inpDownPct" class="calc-input has-suffix" value="20" min="0" max="100" step="0.5" oninput="syncDownAmt()">
+            <span class="input-affix suffix">%</span>
+          </div>
         </div>
-        
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div class="form-group">
+          <label class="form-label">Loan Term</label>
+          <select id="selTerm" class="calc-input" onchange="calculate()">
+            <option value="30" selected>30 Years (Fixed)</option>
+            <option value="25" >25 Years</option>
+            <option value="20" >20 Years</option>
+            <option value="15" >15 Years</option>
+            <option value="10" >10 Years</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Interest Rate</label>
+          <div class="input-with-affix">
+            <input type="number" id="inpInterestRate" class="calc-input has-suffix" value="6.25" min="0.5" max="25" step="0.05">
+            <span class="input-affix suffix">%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Advanced Mortgage & Prepayment Options -->
+      <div class="adv-accordion">
+        <button type="button" class="adv-toggle-btn" onclick="toggleAdvPanel()">
+          <span><i class="fa-solid fa-house-chimney" style="color:var(--primary); margin-right:6px;"></i> Taxes, Insurance &amp; Extra Prepayments</span>
+          <i id="advIcon" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="advPanel" class="adv-panel" style="display:none;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+            <div class="form-group">
+              <label class="form-label">Property Taxes (Annual)</label>
+              <div class="input-with-affix">
+                <span class="input-affix prefix curr-sym">$</span>
+                <input type="number" id="inpTax" class="calc-input has-prefix" value="3800" min="0" step="100">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Home Insurance (Annual)</label>
+              <div class="input-with-affix">
+                <span class="input-affix prefix curr-sym">$</span>
+                <input type="number" id="inpIns" class="calc-input has-prefix" value="1200" min="0" step="50">
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+            <div class="form-group">
+              <label class="form-label">HOA / Maintenance (Monthly)</label>
+              <div class="input-with-affix">
+                <span class="input-affix prefix curr-sym">$</span>
+                <input type="number" id="inpHoa" class="calc-input has-prefix" value="0" min="0" step="10">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Extra Prepayment (Monthly)</label>
+              <div class="input-with-affix">
+                <span class="input-affix prefix curr-sym">$</span>
+                <input type="number" id="inpExtraPay" class="calc-input has-prefix" value="0" min="0" step="50">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Annual Extra Lump-Sum Prepayment</label>
+            <div class="input-with-affix">
+              <span class="input-affix prefix curr-sym">$</span>
+              <input type="number" id="inpAnnualExtra" class="calc-input has-prefix" value="0" min="0" step="500">
+            </div>
+          </div>
+        </div>
+      </div>
+
       <button type="button" class="btn-calc-primary" onclick="calculate()">
-        <i class="fa-solid fa-calculator"></i> Recalculate
+        <i class="fa-solid fa-calculator"></i> Calculate Mortgage Repayment
       </button>
     </div>
 
     <!-- Right Results Card -->
     <div class="calc-card">
-      <div class="calc-card-title">
-        <span><i class="fa-solid fa-chart-pie" style="color:var(--primary); margin-right:8px;"></i> Calculation Summary</span>
+      <div class="calc-card-title" style="display:flex; justify-content:space-between; align-items:center;">
+        <span><i class="fa-solid fa-receipt" style="color:var(--primary); margin-right:8px;"></i> Monthly Breakdown</span>
+        <span id="resBadgeTerm" style="font-size:0.75rem; background:var(--primary-light); color:var(--primary); font-weight:800; padding:3px 8px; border-radius:10px;">30 YR FIXED</span>
       </div>
-      
-        <div class="result-hero-box">
-          <div class="result-hero-label">Exact Duration / Age</div>
-          <div class="result-hero-val" id="resYears">28 Years</div>
-          <div style="font-weight:600; color:#0f766e; margin-top:4px;" id="resFullTime">28 years 3 months 3 days</div>
+
+      <div class="result-hero-box">
+        <div class="result-hero-label">Total Monthly Payment</div>
+        <div class="result-hero-val" id="resTotalMonthly">$0.00</div>
+        <div id="resExtraSavings" style="font-size:0.86rem; color:#0f766e; margin-top:6px; font-weight:700; display:none;">
+          🎉 Extra payments save <span id="resInterestSaved">$0.00</span> in interest and pay off <span id="resTimeSaved">0 years</span> early!
         </div>
-        <div class="result-breakdown-list">
-          <div class="result-row"><span class="label">Total Months</span><span class="val" id="resMonths">339 Months</span></div>
-          <div class="result-row"><span class="label">Total Weeks</span><span class="val" id="resWeeks">1,475 Weeks</span></div>
-          <div class="result-row"><span class="label">Total Days</span><span class="val" id="resDays">10,323 Days</span></div>
-          <div class="result-row"><span class="label">Total Hours</span><span class="val" id="resHours">247,752 Hours</span></div>
-          <div class="result-row"><span class="label">Next Milestone / Birthday</span><span class="val" id="resNext">In 265 Days</span></div>
+      </div>
+
+      <div class="result-breakdown-list">
+        <div class="result-row"><span class="label">Principal &amp; Interest (P&amp;I)</span><span class="val" id="resPiMonthly">$0.00</span></div>
+        <div class="result-row"><span class="label">Property Tax (Monthly)</span><span class="val" id="resTaxMonthly">$0.00</span></div>
+        <div class="result-row"><span class="label">Homeowners Insurance (Monthly)</span><span class="val" id="resInsMonthly">$0.00</span></div>
+        <div class="result-row" id="rowHoa"><span class="label">HOA Dues (Monthly)</span><span class="val" id="resHoaMonthly">$0.00</span></div>
+        <div class="result-row" id="rowPmi" style="display:none;"><span class="label">PMI (Private Mortgage Insurance)</span><span class="val" id="resPmiMonthly" style="color:var(--warning);">$0.00</span></div>
+        <div class="result-row"><span class="label">Total Borrowed (Loan Amount)</span><span class="val" id="resLoanTotal">$0.00</span></div>
+        <div class="result-row"><span class="label">Total Interest Paid Over Loan</span><span class="val" id="resInterestTotal" style="color:var(--danger);">$0.00</span></div>
+        <div class="result-row"><span class="label">Total Overall Cost (P + I + Tax)</span><span class="val" id="resOverallCost">$0.00</span></div>
+      </div>
+
+      <!-- Financial Milestones -->
+      <div class="milestones-wrap">
+        <div class="milestones-title"><i class="fa-solid fa-clock-rotate-left" style="color:#0284c7;"></i> Loan Payoff &amp; Equity Insights</div>
+        <div class="milestones-grid">
+          <div class="milestone-box">
+            <div class="milestone-label">Payoff Date</div>
+            <div class="milestone-val" id="msPayoffDate">--</div>
+          </div>
+          <div class="milestone-box">
+            <div class="milestone-label">Interest vs Loan</div>
+            <div class="milestone-val" id="msIntRatio">--</div>
+          </div>
+          <div class="milestone-box">
+            <div class="milestone-label">Loan-to-Value (LTV)</div>
+            <div class="milestone-val" id="msLtv">--</div>
+          </div>
         </div>
-        
+      </div>
+
+      <div style="margin-top:20px;">
+        <div class="chart-header-tabs">
+          <span style="font-size:0.82rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Visual Amortization</span>
+          <div class="chart-tabs-nav">
+            <button type="button" id="tabChartMonthly" class="chart-tab-btn active" onclick="switchMortgageChart('pie')">Payment Breakdown</button>
+            <button type="button" id="tabChartBalance" class="chart-tab-btn" onclick="switchMortgageChart('curve')">Payoff Curve</button>
+          </div>
+        </div>
+        <div class="chart-card-wrapper" style="height:250px;">
+          <canvas id="calcChart"></canvas>
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- Full Amortization Schedule -->
+  <section class="schedule-section">
+    <div class="schedule-header">
+      <div>
+        <h3><i class="fa-solid fa-calendar-days" style="color:var(--primary); margin-right:8px;"></i> Annual Amortization Schedule</h3>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-top:2px;">Yearly breakdown of principal reduction, interest paid, and remaining balance.</p>
+      </div>
+      <div class="table-actions">
+        <button type="button" class="btn-table-action" onclick="downloadMortgageCSV()">
+          <i class="fa-solid fa-download"></i> Download CSV
+        </button>
+        <button type="button" class="btn-table-action" onclick="CalcCore.printReport()">
+          <i class="fa-solid fa-print"></i> Print Report
+        </button>
+      </div>
+    </div>
+    <div id="scheduleContainer"></div>
+  </section>
+
   <!-- Educational Guide & FAQs -->
   <section class="guide-section">
-    <h2>How the Mortgage Amortization Calculator Works</h2>
+    <h2>How Mortgage Amortization &amp; Extra Prepayments Work</h2>
     <p>
-      The <strong>Mortgage Amortization Calculator</strong> by Daily1Step provides precise, instant computations directly in your browser. All computations follow standardized formulas and equations without transmitting any sensitive personal data to external servers.
+      A mortgage is an amortized loan where each monthly payment is split between <strong>interest</strong> (the bank's fee) and <strong>principal</strong> (paying down your loan balance). Early in the loan, most of your payment goes toward interest. Over time, more goes toward equity.
     </p>
 
-    <h3>Formula &amp; Mathematical Method</h3>
+    <h3>Mathematical Mortgage Equation</h3>
     <div class="formula-box">
-      Formula: Calculations are evaluated dynamically in high-precision JavaScript with instant updates.
+      M = P × [ r(1 + r)^n ] / [ (1 + r)^n - 1 ]
     </div>
+    <p>
+      Where <strong>P</strong> is the principal loan amount, <strong>r</strong> is the monthly interest rate (annual rate divided by 12), and <strong>n</strong> is the total number of monthly payments.
+    </p>
 
     <h3>Frequently Asked Questions</h3>
     <div class="faq-card">
-      <div class="faq-q">Is this Mortgage Amortization Calculator completely free to use?</div>
-      <div class="faq-a">Yes! All calculations, interactive charts, and reports are 100% free with no registration, no subscription, and no hidden fees.</div>
+      <div class="faq-q">What is PMI (Private Mortgage Insurance)?</div>
+      <div class="faq-a">If your down payment is less than 20% of the home's purchase price, lenders typically require PMI to protect against default. PMI usually costs between 0.5% to 1.5% of the original loan balance annually and automatically cancels once you build 20% equity.</div>
     </div>
     <div class="faq-card">
-      <div class="faq-q">Is my personal or financial data private?</div>
-      <div class="faq-a">Absolutely. All calculations happen entirely within your local browser memory. Your data is never uploaded, saved, or shared with third parties.</div>
-    </div>
-    <div class="faq-card">
-      <div class="faq-q">Can I use this calculator on mobile devices?</div>
-      <div class="faq-a">Yes, Daily1Step Calculators are fully responsive and optimized for smartphones, tablets, laptops, and desktop screens.</div>
+      <div class="faq-q">How do extra prepayments save money?</div>
+      <div class="faq-a">Every extra dollar you pay goes 100% toward principal reduction, instantly reducing future compounding interest for all subsequent months and shaving years off your total mortgage.</div>
     </div>
   </section>
 </main>
@@ -351,57 +494,218 @@
 </footer>
 
 <script src="../../vendor/chart.umd.min.js"></script>
-<script src="../../vendor/jspdf.umd.min.js"></script>
 <script src="../../assets/js/calculator-core.js"></script>
 <script>
+var activeChart = 'pie';
+var tableDataCache = { headers: [], rows: [] };
 
-        document.getElementById('inpEndDate').valueAsDate = new Date();
-        function calculate() {
-          var sVal = document.getElementById('inpStartDate').value;
-          var eVal = document.getElementById('inpEndDate').value;
-          if (!sVal || !eVal) return;
+function toggleAdvPanel() {
+  var p = document.getElementById('advPanel');
+  var icon = document.getElementById('advIcon');
+  if (p.style.display === 'none') {
+    p.style.display = 'flex';
+    icon.className = 'fa-solid fa-chevron-up';
+  } else {
+    p.style.display = 'none';
+    icon.className = 'fa-solid fa-chevron-down';
+  }
+}
 
-          var s = new Date(sVal);
-          var e = new Date(eVal);
-          var diffMs = e - s;
-          if (diffMs < 0) {
-            document.getElementById('resYears').textContent = 'Invalid Range';
-            return;
-          }
+function onCurrencyChange() {
+  var c = document.getElementById('selCurrency').value;
+  CalcCore.setCurrency(c);
+  var sym = CalcCore.getCurrencySymbol();
+  document.querySelectorAll('.curr-sym').forEach(function(el) { el.textContent = sym; });
+  calculate();
+}
 
-          var years = e.getFullYear() - s.getFullYear();
-          var months = e.getMonth() - s.getMonth();
-          var days = e.getDate() - s.getDate();
-          if (days < 0) {
-            months--;
-            var prevM = new Date(e.getFullYear(), e.getMonth(), 0);
-            days += prevM.getDate();
-          }
-          if (months < 0) {
-            years--;
-            months += 12;
-          }
+function syncDownPct() {
+  var price = parseFloat(document.getElementById('inpHomePrice').value) || 0;
+  var downAmt = parseFloat(document.getElementById('inpDownAmt').value) || 0;
+  if (price > 0) {
+    document.getElementById('inpDownPct').value = ((downAmt / price) * 100).toFixed(1);
+  }
+  calculate();
+}
 
-          var totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-          var totalWeeks = Math.floor(totalDays / 7);
-          var totalMonths = years * 12 + months;
-          var totalHours = totalDays * 24;
+function syncDownAmt() {
+  var price = parseFloat(document.getElementById('inpHomePrice').value) || 0;
+  var downPct = parseFloat(document.getElementById('inpDownPct').value) || 0;
+  document.getElementById('inpDownAmt').value = Math.round(price * (downPct / 100));
+  calculate();
+}
 
-          document.getElementById('resYears').textContent = years + ' Years';
-          document.getElementById('resFullTime').textContent = years + ' years, ' + months + ' months, ' + days + ' days';
-          document.getElementById('resMonths').textContent = totalMonths.toLocaleString() + ' Months';
-          document.getElementById('resWeeks').textContent = totalWeeks.toLocaleString() + ' Weeks';
-          document.getElementById('resDays').textContent = totalDays.toLocaleString() + ' Days';
-          document.getElementById('resHours').textContent = totalHours.toLocaleString() + ' Hours';
+function switchMortgageChart(type) {
+  activeChart = type;
+  document.getElementById('tabChartMonthly').classList.toggle('active', type === 'pie');
+  document.getElementById('tabChartBalance').classList.toggle('active', type === 'curve');
+  calculate();
+}
 
-          var nextBday = new Date(e.getFullYear(), s.getMonth(), s.getDate());
-          if (nextBday < e) nextBday.setFullYear(e.getFullYear() + 1);
-          var daysToNext = Math.ceil((nextBday - e) / (1000 * 60 * 60 * 24));
-          document.getElementById('resNext').textContent = 'In ' + daysToNext + ' Days';
-        }
-        document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculate); });
-        calculate();
-        
+function calculate() {
+  var price = parseFloat(document.getElementById('inpHomePrice').value) || 0;
+  var downAmt = parseFloat(document.getElementById('inpDownAmt').value) || 0;
+  var termYrs = parseInt(document.getElementById('selTerm').value) || 30;
+  var annualRate = (parseFloat(document.getElementById('inpInterestRate').value) || 6.5) / 100;
+  var annualTax = parseFloat(document.getElementById('inpTax').value) || 0;
+  var annualIns = parseFloat(document.getElementById('inpIns').value) || 0;
+  var monthlyHoa = parseFloat(document.getElementById('inpHoa').value) || 0;
+  var extraMonthly = parseFloat(document.getElementById('inpExtraPay').value) || 0;
+  var extraAnnual = parseFloat(document.getElementById('inpAnnualExtra').value) || 0;
+  var payFreq = parseInt(document.getElementById('selPayFreq').value) || 12;
+
+  var loanAmt = Math.max(0, price - downAmt);
+  var downPct = price > 0 ? (downAmt / price) * 100 : 0;
+  var totalMonths = termYrs * 12;
+  var monthlyRate = annualRate / 12;
+
+  // Standard Monthly P&I
+  var monthlyPI = 0;
+  if (monthlyRate > 0 && totalMonths > 0) {
+    monthlyPI = loanAmt * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+  } else if (totalMonths > 0) {
+    monthlyPI = loanAmt / totalMonths;
+  }
+
+  // Monthly Tax & Insurance
+  var monthlyTax = annualTax / 12;
+  var monthlyIns = annualIns / 12;
+
+  // PMI if down payment < 20%
+  var monthlyPmi = 0;
+  if (downPct < 20 && loanAmt > 0) {
+    monthlyPmi = (loanAmt * 0.0075) / 12; // ~0.75% avg PMI
+    document.getElementById('rowPmi').style.display = 'flex';
+    document.getElementById('resPmiMonthly').textContent = CalcCore.formatCurrency(monthlyPmi);
+  } else {
+    document.getElementById('rowPmi').style.display = 'none';
+  }
+
+  var totalMonthly = monthlyPI + monthlyTax + monthlyIns + monthlyHoa + monthlyPmi + extraMonthly;
+
+  document.getElementById('resTotalMonthly').textContent = CalcCore.formatCurrency(totalMonthly);
+  document.getElementById('resPiMonthly').textContent = CalcCore.formatCurrency(monthlyPI);
+  document.getElementById('resTaxMonthly').textContent = CalcCore.formatCurrency(monthlyTax);
+  document.getElementById('resInsMonthly').textContent = CalcCore.formatCurrency(monthlyIns);
+  document.getElementById('resHoaMonthly').textContent = CalcCore.formatCurrency(monthlyHoa);
+  document.getElementById('resLoanTotal').textContent = CalcCore.formatCurrency(loanAmt);
+  document.getElementById('resBadgeTerm').textContent = termYrs + ' YR FIXED';
+
+  // Run full amortization with prepayment tracking
+  var simStandard = runAmortization(loanAmt, monthlyPI, monthlyRate, totalMonths, 0, 0);
+  var simPrepay = runAmortization(loanAmt, monthlyPI, monthlyRate, totalMonths, extraMonthly, extraAnnual);
+
+  var totalInterestPaid = simPrepay.totalInterest;
+  document.getElementById('resInterestTotal').textContent = CalcCore.formatCurrency(totalInterestPaid);
+  document.getElementById('resOverallCost').textContent = CalcCore.formatCurrency(loanAmt + totalInterestPaid + (annualTax * (simPrepay.monthsPaid / 12)) + (annualIns * (simPrepay.monthsPaid / 12)));
+
+  // Prepayment Savings Banner
+  if (extraMonthly > 0 || extraAnnual > 0) {
+    var intSaved = Math.max(0, simStandard.totalInterest - simPrepay.totalInterest);
+    var monthsSaved = Math.max(0, simStandard.monthsPaid - simPrepay.monthsPaid);
+    var yrsSaved = (monthsSaved / 12).toFixed(1);
+    document.getElementById('resExtraSavings').style.display = 'block';
+    document.getElementById('resInterestSaved').textContent = CalcCore.formatCurrency(intSaved);
+    document.getElementById('resTimeSaved').textContent = yrsSaved + ' years (' + monthsSaved + ' months)';
+  } else {
+    document.getElementById('resExtraSavings').style.display = 'none';
+  }
+
+  // Milestones & Metrics
+  var payoffDate = new Date();
+  payoffDate.setMonth(payoffDate.getMonth() + simPrepay.monthsPaid);
+  document.getElementById('msPayoffDate').textContent = payoffDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+  document.getElementById('msIntRatio').textContent = loanAmt > 0 ? ((totalInterestPaid / loanAmt) * 100).toFixed(0) + '%' : '0%';
+  document.getElementById('msLtv').textContent = (100 - downPct).toFixed(1) + '%';
+
+  // Render Charts
+  if (activeChart === 'pie') {
+    CalcCore.renderDoughnutChart('calcChart', ['Principal & Interest', 'Property Tax', 'Home Insurance', 'HOA / Other'], [monthlyPI, monthlyTax, monthlyIns, monthlyHoa + monthlyPmi], ['#0d9488', '#0284c7', '#f59e0b', '#ec4899']);
+  } else {
+    CalcCore.renderLineChart('calcChart', simPrepay.chartLabels, [
+      { label: 'Remaining Balance', data: simPrepay.balanceCurve, borderColor: '#0284c7', backgroundColor: 'rgba(2,132,199,0.1)', fill: true, tension: 0.2 },
+      { label: 'Total Principal Paid', data: simPrepay.principalCurve, borderColor: '#0d9488', backgroundColor: 'transparent', tension: 0.2 }
+    ]);
+  }
+
+  // Render Amortization Table
+  var headers = ['Year', 'Starting Balance', 'Principal Paid', 'Interest Paid', 'Ending Balance'];
+  tableDataCache = { headers: headers, rows: simPrepay.tableRows };
+  CalcCore.renderTable('scheduleContainer', headers, simPrepay.tableRows);
+}
+
+function runAmortization(balance, pmt, r, maxMonths, extraMo, extraYr) {
+  var bal = balance;
+  var totalInt = 0;
+  var totalPrin = 0;
+  var mCount = 0;
+
+  var chartLabels = ['Start'];
+  var balanceCurve = [Math.round(bal)];
+  var principalCurve = [0];
+  var tableRows = [];
+
+  var currentYearStart = bal;
+  var yearPrin = 0;
+  var yearInt = 0;
+
+  for (var m = 1; m <= maxMonths; m++) {
+    if (bal <= 0) break;
+    mCount++;
+
+    var intPayment = bal * r;
+    var prinPayment = Math.min(bal, (pmt - intPayment) + extraMo);
+    if (m % 12 === 0) {
+      prinPayment = Math.min(bal, prinPayment + extraYr);
+    }
+
+    bal = Math.max(0, bal - prinPayment);
+    totalInt += intPayment;
+    totalPrin += prinPayment;
+    yearPrin += prinPayment;
+    yearInt += intPayment;
+
+    if (m % 12 === 0 || bal <= 0) {
+      var yrNum = Math.ceil(m / 12);
+      chartLabels.push('Yr ' + yrNum);
+      balanceCurve.push(Math.round(bal));
+      principalCurve.push(Math.round(totalPrin));
+
+      tableRows.push([
+        'Year ' + yrNum,
+        CalcCore.formatCurrency(currentYearStart),
+        CalcCore.formatCurrency(yearPrin),
+        CalcCore.formatCurrency(yearInt),
+        CalcCore.formatCurrency(bal)
+      ]);
+
+      currentYearStart = bal;
+      yearPrin = 0;
+      yearInt = 0;
+    }
+  }
+
+  return {
+    totalInterest: totalInt,
+    monthsPaid: mCount,
+    chartLabels: chartLabels,
+    balanceCurve: balanceCurve,
+    principalCurve: principalCurve,
+    tableRows: tableRows
+  };
+}
+
+function downloadMortgageCSV() {
+  CalcCore.exportCSV('mortgage-amortization-schedule', tableDataCache.headers, tableDataCache.rows);
+}
+
+document.querySelectorAll('.calc-input').forEach(function(el) {
+  el.addEventListener('input', calculate);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  calculate();
+});
 </script>
 </body>
 </html>

@@ -3,440 +3,312 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scientific Calculator — Free Online Calculator | Daily1Step</title>
-<meta name="description" content="Free online scientific calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.">
-<link rel="canonical" href="https://bypyay.github.io/calculator/tools/scientific-calculator/">
-<link rel="stylesheet" href="../../assets/css/style.css?v=3">
+<title>Scientific Calculator — Free Advanced Online Calculator | Daily1Step</title>
+<meta name="description" content="Free online scientific calculator with trigonometric, logarithmic, exponential, memory functions, radians/degrees, and calculation history tape.">
+<link rel="canonical" href="https://bypyay.github.io/tools/calculator/tools/scientific-calculator/">
+<link rel="stylesheet" href="../../assets/css/style.css?v=4">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Scientific Calculator - Daily1Step",
-  "url": "https://bypyay.github.io/calculator/tools/scientific-calculator/",
-  "description": "Free online scientific calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All modern web browsers",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
-</script>
 </head>
 <body>
 <!-- Daily1Step FROZEN SUPER-NAVBAR START -->
 <style id="d1s-frozen-bar-style">
-/* ══════════════════════════════════════════════════════════════════
-   Daily1Step FROZEN SUPER-NAVBAR (Sticky, Animated & Click-Magnetic)
-   ══════════════════════════════════════════════════════════════════ */
-.d1s-frozen-topbar-wrap {
-  position: sticky !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  width: 100% !important;
-  z-index: 2147483647 !important;
-  background: rgba(11, 17, 33, 0.96) !important;
-  backdrop-filter: blur(20px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  border-bottom: 1.5px solid rgba(255, 255, 255, 0.12) !important;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35) !important;
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-}
-.d1s-frozen-inner {
-  max-width: 1560px !important;
-  margin: 0 auto !important;
-  padding: 0 16px !important;
-  height: 56px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 12px !important;
-}
-.d1s-brand-group {
-  display: flex !important;
-  align-items: center !important;
-  gap: 10px !important;
-  flex-shrink: 0 !important;
-  text-decoration: none !important;
-}
-.d1s-logo-badge {
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  padding: 7px 15px !important;
-  border-radius: 30px !important;
-  background: linear-gradient(135deg, #0284c7 0%, #7c3aed 100%) !important;
-  color: #ffffff !important;
-  font-weight: 800 !important;
-  font-size: 0.95rem !important;
-  letter-spacing: -0.2px !important;
-  box-shadow: 0 2px 12px rgba(2, 132, 199, 0.45) !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
-  position: relative !important;
-  overflow: hidden !important;
-}
-.d1s-logo-badge::after {
-  content: '' !important;
-  position: absolute !important;
-  top: -50% !important;
-  left: -60% !important;
-  width: 40% !important;
-  height: 200% !important;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent) !important;
-  transform: rotate(25deg) !important;
-  animation: d1s-shimmer-sweep 3.5s infinite !important;
-}
-.d1s-logo-badge:hover {
-  transform: scale(1.05) !important;
-  box-shadow: 0 4px 18px rgba(124, 58, 237, 0.65) !important;
-}
-@keyframes d1s-shimmer-sweep {
-  0% { left: -70%; }
-  30% { left: 140%; }
-  100% { left: 140%; }
-}
-.d1s-pulse-tag {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  background: rgba(239, 68, 68, 0.16) !important;
-  border: 1px solid rgba(239, 68, 68, 0.45) !important;
-  color: #fca5a5 !important;
-  padding: 4px 10px !important;
-  border-radius: 14px !important;
-  font-size: 0.74rem !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.5px !important;
-  text-transform: uppercase !important;
-}
-.d1s-live-dot {
-  width: 8px !important;
-  height: 8px !important;
-  border-radius: 50% !important;
-  background: #ef4444 !important;
-  box-shadow: 0 0 10px #ef4444 !important;
-  animation: d1s-dot-blink 1.2s infinite ease-in-out !important;
-}
-@keyframes d1s-dot-blink {
-  0%, 100% { transform: scale(0.8); opacity: 0.5; }
-  50% { transform: scale(1.35); opacity: 1; }
-}
-.d1s-nav-scroll {
-  display: flex !important;
-  align-items: center !important;
-  gap: 7px !important;
-  overflow-x: auto !important;
-  scrollbar-width: none !important;
-  -webkit-overflow-scrolling: touch !important;
-  padding: 4px 0 !important;
-}
-.d1s-nav-scroll::-webkit-scrollbar { display: none !important; }
-.d1s-nav-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 7px !important;
-  padding: 8px 13px !important;
-  border-radius: 10px !important;
-  font-size: 0.84rem !important;
-  font-weight: 700 !important;
-  color: #cbd5e1 !important;
-  text-decoration: none !important;
-  white-space: nowrap !important;
-  background: rgba(255, 255, 255, 0.06) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-}
-.d1s-nav-btn:hover {
-  transform: translateY(-2.5px) scale(1.05) !important;
-  color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.16) !important;
-  border-color: rgba(255, 255, 255, 0.35) !important;
-}
-.d1s-nav-btn:active {
-  transform: scale(0.96) !important;
-}
-.d1s-nav-btn.btn-home:hover { box-shadow: 0 4px 16px rgba(2, 132, 199, 0.6) !important; border-color: #38bdf8 !important; }
-.d1s-nav-btn.btn-pdf:hover, .d1s-nav-btn.btn-pdf.active { background: rgba(239, 68, 68, 0.24) !important; border-color: #ef4444 !important; color: #fff !important; box-shadow: 0 4px 16px rgba(239, 68, 68, 0.5) !important; }
-.d1s-nav-btn.btn-calc:hover, .d1s-nav-btn.btn-calc.active { background: rgba(59, 130, 246, 0.24) !important; border-color: #3b82f6 !important; color: #fff !important; box-shadow: 0 4px 16px rgba(59, 130, 246, 0.5) !important; }
-.d1s-nav-btn.btn-bg:hover, .d1s-nav-btn.btn-bg.active { background: rgba(168, 85, 247, 0.28) !important; border-color: #a855f7 !important; color: #fff !important; box-shadow: 0 4px 16px rgba(168, 85, 247, 0.55) !important; }
-.d1s-nav-btn.btn-audio:hover, .d1s-nav-btn.btn-audio.active { background: rgba(6, 182, 212, 0.24) !important; border-color: #06b6d4 !important; color: #fff !important; box-shadow: 0 4px 16px rgba(6, 182, 212, 0.5) !important; }
-.d1s-nav-btn.btn-image:hover, .d1s-nav-btn.btn-image.active { background: rgba(16, 185, 129, 0.24) !important; border-color: #10b981 !important; color: #fff !important; box-shadow: 0 4px 16px rgba(16, 185, 129, 0.5) !important; }
-.d1s-nav-btn.btn-collage:hover, .d1s-nav-btn.btn-collage.active { background: rgba(236, 72, 153, 0.24) !important; border-color: #ec4899 !important; color: #fff !important; box-shadow: 0 4px 16px rgba(236, 72, 153, 0.5) !important; }
-.d1s-nav-btn.btn-gif:hover, .d1s-nav-btn.btn-gif.active { background: rgba(245, 158, 11, 0.24) !important; border-color: #f59e0b !important; color: #fff !important; box-shadow: 0 4px 16px rgba(245, 158, 11, 0.5) !important; }
-.d1s-count {
-  font-size: 0.7rem !important;
-  font-weight: 800 !important;
-  padding: 2px 6px !important;
-  border-radius: 6px !important;
-  background: rgba(255, 255, 255, 0.18) !important;
-  color: #fff !important;
-}
-@media (max-width: 900px) {
-  .d1s-pulse-tag { display: none !important; }
-  .d1s-frozen-inner { height: 50px !important; padding: 0 10px !important; }
-  .d1s-nav-btn { padding: 6px 10px !important; font-size: 0.78rem !important; }
-  .d1s-logo-badge { font-size: 0.86rem !important; padding: 6px 11px !important; }
-}
+.d1s-frozen-topbar-wrap { position: sticky !important; top: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; z-index: 2147483647 !important; background: rgba(11, 17, 33, 0.96) !important; backdrop-filter: blur(20px) saturate(180%) !important; -webkit-backdrop-filter: blur(20px) saturate(180%) !important; border-bottom: 1.5px solid rgba(255, 255, 255, 0.12) !important; box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35) !important; font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important; }
+.d1s-frozen-inner { max-width: 1560px !important; margin: 0 auto !important; padding: 0 16px !important; height: 56px !important; display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 12px !important; }
+.d1s-brand-group { display: flex !important; align-items: center !important; gap: 10px !important; flex-shrink: 0 !important; text-decoration: none !important; }
+.d1s-logo-badge { display: flex !important; align-items: center !important; gap: 8px !important; padding: 7px 15px !important; border-radius: 30px !important; background: linear-gradient(135deg, #0284c7 0%, #7c3aed 100%) !important; color: #ffffff !important; font-weight: 800 !important; font-size: 0.95rem !important; box-shadow: 0 2px 12px rgba(2, 132, 199, 0.45) !important; }
+.d1s-pulse-tag { display: inline-flex !important; align-items: center !important; gap: 6px !important; background: rgba(239, 68, 68, 0.16) !important; border: 1px solid rgba(239, 68, 68, 0.45) !important; color: #fca5a5 !important; padding: 4px 10px !important; border-radius: 14px !important; font-size: 0.74rem !important; font-weight: 800 !important; }
+.d1s-live-dot { width: 8px !important; height: 8px !important; border-radius: 50% !important; background: #ef4444 !important; }
+.d1s-nav-scroll { display: flex !important; align-items: center !important; gap: 7px !important; overflow-x: auto !important; scrollbar-width: none !important; }
+.d1s-nav-btn { display: inline-flex !important; align-items: center !important; gap: 7px !important; padding: 8px 13px !important; border-radius: 10px !important; font-size: 0.84rem !important; font-weight: 700 !important; color: #cbd5e1 !important; text-decoration: none !important; background: rgba(255, 255, 255, 0.06) !important; border: 1px solid rgba(255, 255, 255, 0.1) !important; }
+.d1s-nav-btn.btn-calc.active { background: rgba(59, 130, 246, 0.24) !important; border-color: #3b82f6 !important; color: #fff !important; }
+.d1s-count { font-size: 0.7rem !important; font-weight: 800 !important; padding: 2px 6px !important; border-radius: 6px !important; background: rgba(255, 255, 255, 0.18) !important; color: #fff !important; }
 </style>
 <div class="d1s-frozen-topbar-wrap">
   <div class="d1s-frozen-inner">
     <div style="display:flex; align-items:center; gap:8px;">
-      <a href="../../../index.html" class="d1s-brand-group" title="Daily1Step All Tools Platform">
-        <div class="d1s-logo-badge">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          <span>Daily1Step</span>
-        </div>
-      </a>
+      <a href="../../../index.html" class="d1s-brand-group"><div class="d1s-logo-badge"><span>Daily1Step</span></div></a>
       <span class="d1s-pulse-tag"><span class="d1s-live-dot"></span> 320+ Free Apps</span>
     </div>
-
     <nav class="d1s-nav-scroll">
-      <a href="../../../index.html" class="d1s-nav-btn btn-home" title="All Tools Hub">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        <span>All Tools</span>
-      </a>
-      <a href="../../../pdf/" class="d1s-nav-btn btn-pdf" title="PDF Tools Suite">
-        <span style="color:#ef4444;">📄</span>
-        <span>PDF</span>
-        <span class="d1s-count">22</span>
-      </a>
-      <a href="../../../calculator/" class="d1s-nav-btn btn-calc active" title="207+ Calculators">
-        <span style="color:#3b82f6;">🧮</span>
-        <span>Calculators</span>
-        <span class="d1s-count">207+</span>
-      </a>
-      <a href="../../../removebg/" class="d1s-nav-btn btn-bg" title="AI Background Remover">
-        <span style="color:#a855f7;">🪄</span>
-        <span>Remove BG</span>
-        <span class="d1s-count" style="background:#a855f7; color:#fff;">AI</span>
-      </a>
-      <a href="../../../audio/" class="d1s-nav-btn btn-audio" title="Audio Editor & Whisper Speech to Text">
-        <span style="color:#06b6d4;">🎙️</span>
-        <span>Audio</span>
-        <span class="d1s-count">25</span>
-      </a>
-      <a href="../../../image/" class="d1s-nav-btn btn-image" title="Image Resizer, Compressor & Passport Photo">
-        <span style="color:#10b981;">🖼️</span>
-        <span>Images</span>
-        <span class="d1s-count">27</span>
-      </a>
-      <a href="../../../collage/" class="d1s-nav-btn btn-collage" title="Collage Maker Studio PRO">
-        <span style="color:#ec4899;">🎨</span>
-        <span>Collage</span>
-        <span class="d1s-count" style="background:#ec4899; color:#fff;">PRO</span>
-      </a>
-      <a href="../../../gif/" class="d1s-nav-btn btn-gif" title="Animated GIF Maker & Compressor">
-        <span style="color:#f59e0b;">🎞️</span>
-        <span>GIF</span>
-        <span class="d1s-count">18</span>
-      </a>
+      <a href="../../../index.html" class="d1s-nav-btn"><span>All Tools</span></a>
+      <a href="../../../pdf/" class="d1s-nav-btn"><span>📄 PDF</span></a>
+      <a href="../../../calculator/" class="d1s-nav-btn btn-calc active"><span>🧮 Calculators</span><span class="d1s-count">207+</span></a>
+      <a href="../../../removebg/" class="d1s-nav-btn"><span>🪄 Remove BG</span></a>
+      <a href="../../../audio/" class="d1s-nav-btn"><span>🎙️ Audio</span></a>
+      <a href="../../../image/" class="d1s-nav-btn"><span>🖼️ Images</span></a>
+      <a href="../../../collage/" class="d1s-nav-btn"><span>🎨 Collage</span></a>
+      <a href="../../../gif/" class="d1s-nav-btn"><span>🎞️ GIF</span></a>
     </nav>
   </div>
 </div>
 <!-- Daily1Step FROZEN SUPER-NAVBAR END -->
 
-
-
 <header class="site-header">
   <div class="header-inner">
-    <a href="../../index.html" class="brand">
-      <div class="brand-icon"><i class="fa-solid fa-calculator"></i></div>
-      <div class="brand-title">Daily1Step <span class="accent">Calc</span></div>
-    </a>
-    <nav class="nav-links">
-      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-grid-2"></i> All 204+ Calculators</a>
-    </nav>
+    <a href="../../index.html" class="brand"><div class="brand-icon"><i class="fa-solid fa-calculator"></i></div><div class="brand-title">Daily1Step <span class="accent">Calc</span></div></a>
+    <nav class="nav-links"><a href="../../index.html" class="nav-link"><i class="fa-solid fa-layer-group"></i> All 204+ Calculators</a></nav>
   </div>
 </header>
 
 <main class="calc-workspace-wrap">
   <div class="calc-header-meta">
-    <div class="calc-breadcrumb">
-      <a href="../../index.html">Home</a>
-      <span>/</span>
-      <span>Math Calculators</span>
-      <span>/</span>
-      <span>Scientific Calculator</span>
-    </div>
-    <h1 class="calc-main-title">Scientific Calculator</h1>
-    <p class="calc-main-desc">Free online scientific calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.</p>
+    <div class="calc-breadcrumb"><a href="../../index.html">Home</a> / <a href="../../index.html#cat-math">Math</a> / <span>Scientific Calculator</span></div>
+    <h1 class="calc-main-title">Professional Scientific Calculator</h1>
+    <p class="calc-main-desc">High-precision scientific and engineering calculator with trigonometry (DEG/RAD), logarithms, powers, factorials, memory registers, and calculation history.</p>
   </div>
 
-  <div class="calc-grid-layout">
-    <!-- Left Inputs Card -->
+  <div class="calc-grid-layout" style="grid-template-columns:1.6fr 1fr;">
+    <!-- Keypad Card -->
     <div class="calc-card">
-      <div class="calc-card-title">
-        <span><i class="fa-solid fa-sliders" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
+      <!-- Screen Display -->
+      <div class="sci-screen">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+          <div style="display:flex; gap:6px;">
+            <button type="button" id="btnAngleMode" onclick="toggleAngleMode()" style="padding:2px 8px; border-radius:4px; font-size:0.75rem; font-weight:800; background:#1e293b; color:#38bdf8; border:1px solid #334155; cursor:pointer;">DEG</button>
+            <span id="memIndicator" style="display:none; padding:2px 6px; border-radius:4px; font-size:0.75rem; font-weight:800; background:#334155; color:#a855f7;">M</span>
+          </div>
+          <div class="sci-expr" id="sciExpr"></div>
+        </div>
+        <div class="sci-val" id="sciVal">0</div>
       </div>
-      
-        <div style="background:#0f172a; padding:16px; border-radius:12px; margin-bottom:14px; text-align:right;">
-          <div id="sciHistory" style="color:#94a3b8; font-size:0.85rem; font-family:'JetBrains Mono', monospace; min-height:18px;"></div>
-          <div id="sciDisplay" style="color:#ffffff; font-size:2rem; font-weight:700; font-family:'JetBrains Mono', monospace; overflow-x:auto;">0</div>
-        </div>
-        <div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:6px;">
-          <button class="unit-btn" onclick="sciOp('sin')">sin</button>
-          <button class="unit-btn" onclick="sciOp('cos')">cos</button>
-          <button class="unit-btn" onclick="sciOp('tan')">tan</button>
-          <button class="unit-btn" onclick="sciOp('log')">log</button>
-          <button class="unit-btn" onclick="sciOp('ln')">ln</button>
 
-          <button class="unit-btn" onclick="sciOp('sqrt')">&radic;</button>
-          <button class="unit-btn" onclick="sciOp('sq')">x&sup2;</button>
-          <button class="unit-btn" onclick="sciOp('pow')">x^y</button>
-          <button class="unit-btn" onclick="sciOp('pi')">&pi;</button>
-          <button class="unit-btn" onclick="sciOp('e')">e</button>
+      <!-- Memory Row -->
+      <div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:6px; margin-bottom:8px;">
+        <button type="button" class="sci-btn" style="height:36px; font-size:0.8rem; background:#f1f5f9;" onclick="memClear()">MC</button>
+        <button type="button" class="sci-btn" style="height:36px; font-size:0.8rem; background:#f1f5f9;" onclick="memRecall()">MR</button>
+        <button type="button" class="sci-btn" style="height:36px; font-size:0.8rem; background:#f1f5f9;" onclick="memAdd()">M+</button>
+        <button type="button" class="sci-btn" style="height:36px; font-size:0.8rem; background:#f1f5f9;" onclick="memSub()">M-</button>
+        <button type="button" class="sci-btn" style="height:36px; font-size:0.8rem; background:#f1f5f9;" onclick="memStore()">MS</button>
+      </div>
 
-          <button class="unit-btn" style="background:#fee2e2; color:#ef4444;" onclick="sciClear()">C</button>
-          <button class="unit-btn" onclick="sciInput('(')">(</button>
-          <button class="unit-btn" onclick="sciInput(')')">)</button>
-          <button class="unit-btn" onclick="sciOp('fact')">n!</button>
-          <button class="unit-btn" onclick="sciInput('/')">&divide;</button>
+      <!-- Functions & Keypad -->
+      <div class="sci-keypad-grid">
+        <!-- Row 1 -->
+        <button type="button" class="sci-btn btn-fn" onclick="sciFn('sin')">sin</button>
+        <button type="button" class="sci-btn btn-fn" onclick="sciFn('cos')">cos</button>
+        <button type="button" class="sci-btn btn-fn" onclick="sciFn('tan')">tan</button>
+        <button type="button" class="sci-btn btn-fn" onclick="sciFn('log')">log₁₀</button>
+        <button type="button" class="sci-btn btn-fn" onclick="sciFn('ln')">ln</button>
 
-          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('7')">7</button>
-          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('8')">8</button>
-          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('9')">9</button>
-          <button class="unit-btn" onclick="sciInput('*')">&times;</button>
-          <button class="unit-btn" onclick="sciOp('recip')">1/x</button>
+        <!-- Row 2 -->
+        <button type="button" class="sci-btn btn-fn" onclick="sciFn('asin')">sin⁻¹</button>
+        <button type="button" class="sci-btn btn-fn" onclick="sciFn('acos')">cos⁻¹</button>
+        <button type="button" class="sci-btn btn-fn" onclick="sciFn('atan')">tan⁻¹</button>
+        <button type="button" class="sci-btn btn-fn" onclick="sciFn('sqrt')">√x</button>
+        <button type="button" class="sci-btn btn-fn" onclick="sciFn('cbrt')">∛x</button>
 
-          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('4')">4</button>
-          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('5')">5</button>
-          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('6')">6</button>
-          <button class="unit-btn" onclick="sciInput('-')">&minus;</button>
-          <button class="unit-btn" onclick="sciOp('abs')">|x|</button>
+        <!-- Row 3 -->
+        <button type="button" class="sci-btn btn-fn" onclick="sciFn('sq')">x²</button>
+        <button type="button" class="sci-btn btn-fn" onclick="sciOp('^')">xʸ</button>
+        <button type="button" class="sci-btn btn-fn" onclick="sciConst('pi')">π</button>
+        <button type="button" class="sci-btn btn-fn" onclick="sciConst('e')">e</button>
+        <button type="button" class="sci-btn btn-fn" onclick="sciFn('fact')">n!</button>
 
-          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('1')">1</button>
-          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('2')">2</button>
-          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('3')">3</button>
-          <button class="unit-btn" onclick="sciInput('+')">+</button>
-          <button class="unit-btn" onclick="sciOp('neg')">&plusmn;</button>
+        <!-- Row 4 -->
+        <button type="button" class="sci-btn btn-clear" onclick="sciClear()">AC</button>
+        <button type="button" class="sci-btn" onclick="sciBack()">⌫</button>
+        <button type="button" class="sci-btn" onclick="sciKey('(')">(</button>
+        <button type="button" class="sci-btn" onclick="sciKey(')')">)</button>
+        <button type="button" class="sci-btn btn-op" onclick="sciOp('/')">÷</button>
 
-          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('0')">0</button>
-          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('.')">.</button>
-          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('00')">00</button>
-          <button class="unit-btn" style="grid-column:span 2; background:var(--primary); color:#fff;" onclick="sciEval()">=</button>
-        </div>
-        
-      <button type="button" class="btn-calc-primary" onclick="calculate()">
-        <i class="fa-solid fa-calculator"></i> Recalculate
-      </button>
+        <!-- Row 5 -->
+        <button type="button" class="sci-btn" onclick="sciKey('7')">7</button>
+        <button type="button" class="sci-btn" onclick="sciKey('8')">8</button>
+        <button type="button" class="sci-btn" onclick="sciKey('9')">9</button>
+        <button type="button" class="sci-btn btn-op" onclick="sciOp('*')">×</button>
+        <button type="button" class="sci-btn btn-fn" onclick="sciFn('recip')">1/x</button>
+
+        <!-- Row 6 -->
+        <button type="button" class="sci-btn" onclick="sciKey('4')">4</button>
+        <button type="button" class="sci-btn" onclick="sciKey('5')">5</button>
+        <button type="button" class="sci-btn" onclick="sciKey('6')">6</button>
+        <button type="button" class="sci-btn btn-op" onclick="sciOp('-')">−</button>
+        <button type="button" class="sci-btn btn-fn" onclick="sciFn('abs')">|x|</button>
+
+        <!-- Row 7 -->
+        <button type="button" class="sci-btn" onclick="sciKey('1')">1</button>
+        <button type="button" class="sci-btn" onclick="sciKey('2')">2</button>
+        <button type="button" class="sci-btn" onclick="sciKey('3')">3</button>
+        <button type="button" class="sci-btn btn-op" onclick="sciOp('+')">+</button>
+        <button type="button" class="sci-btn btn-fn" onclick="sciFn('neg')">±</button>
+
+        <!-- Row 8 -->
+        <button type="button" class="sci-btn" onclick="sciKey('0')">0</button>
+        <button type="button" class="sci-btn" onclick="sciKey('.')">.</button>
+        <button type="button" class="sci-btn" onclick="sciFn('pct')">%</button>
+        <button type="button" class="sci-btn btn-eq" style="grid-column:span 2;" onclick="sciEval()">=</button>
+      </div>
     </div>
 
-    <!-- Right Results Card -->
+    <!-- Right History Tape Card -->
     <div class="calc-card">
-      <div class="calc-card-title">
-        <span><i class="fa-solid fa-chart-pie" style="color:var(--primary); margin-right:8px;"></i> Calculation Summary</span>
+      <div class="calc-card-title" style="display:flex; justify-content:space-between; align-items:center;">
+        <span><i class="fa-solid fa-clock-rotate-left" style="color:var(--primary); margin-right:8px;"></i> Calculation History</span>
+        <button type="button" onclick="clearHistory()" style="border:none; background:transparent; color:var(--danger); font-size:0.8rem; font-weight:700; cursor:pointer;">Clear Tape</button>
       </div>
-      
-        <div class="result-hero-box">
-          <div class="result-hero-label">Calculation Output</div>
-          <div class="result-hero-val" id="sciResult">0</div>
-        </div>
-        <div class="result-breakdown-list">
-          <div class="result-row"><span class="label">Trigonometry Angle</span><span class="val">Degrees &amp; Radians</span></div>
-          <div class="result-row"><span class="label">Precision</span><span class="val">12 Significant Digits</span></div>
-        </div>
-        
+      <div id="historyList" style="max-height:460px; overflow-y:auto; display:flex; flex-direction:column; gap:8px;">
+        <div style="font-size:0.85rem; color:var(--text-muted); text-align:center; padding:30px 0;">No calculations yet. Enter equations on keypad or your computer keyboard.</div>
+      </div>
     </div>
   </div>
-
-  <!-- Educational Guide & FAQs -->
-  <section class="guide-section">
-    <h2>How the Scientific Calculator Works</h2>
-    <p>
-      The <strong>Scientific Calculator</strong> by Daily1Step provides precise, instant computations directly in your browser. All computations follow standardized formulas and equations without transmitting any sensitive personal data to external servers.
-    </p>
-
-    <h3>Formula &amp; Mathematical Method</h3>
-    <div class="formula-box">
-      Formula: Calculations are evaluated dynamically in high-precision JavaScript with instant updates.
-    </div>
-
-    <h3>Frequently Asked Questions</h3>
-    <div class="faq-card">
-      <div class="faq-q">Is this Scientific Calculator completely free to use?</div>
-      <div class="faq-a">Yes! All calculations, interactive charts, and reports are 100% free with no registration, no subscription, and no hidden fees.</div>
-    </div>
-    <div class="faq-card">
-      <div class="faq-q">Is my personal or financial data private?</div>
-      <div class="faq-a">Absolutely. All calculations happen entirely within your local browser memory. Your data is never uploaded, saved, or shared with third parties.</div>
-    </div>
-    <div class="faq-card">
-      <div class="faq-q">Can I use this calculator on mobile devices?</div>
-      <div class="faq-a">Yes, Daily1Step Calculators are fully responsive and optimized for smartphones, tablets, laptops, and desktop screens.</div>
-    </div>
-  </section>
 </main>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-links">
-      <a href="../../index.html">All Calculators</a>
-      <a href="../../legal/privacy.html">Privacy Policy</a>
-      <a href="../../legal/terms.html">Terms of Service</a>
-      <a href="../../legal/about.html">About Us</a>
-      <a href="../../legal/contact.html">Contact</a>
-      <a href="../../legal/disclaimer.html">Disclaimer</a>
-    </div>
-    <p class="copyright">&copy; 2026 Daily1Step. Free online calculators for finance, health, math, and daily utilities.</p>
-  </div>
-</footer>
+<footer class="site-footer"><div class="footer-inner"><p class="copyright">&copy; 2026 Daily1Step.</p></div></footer>
 
-<script src="../../vendor/chart.umd.min.js"></script>
-<script src="../../vendor/jspdf.umd.min.js"></script>
-<script src="../../assets/js/calculator-core.js"></script>
 <script>
+var expr = '';
+var currentVal = '0';
+var angleMode = 'DEG'; // 'DEG' or 'RAD'
+var memoryVal = 0;
+var historyItems = [];
+var isNewCalc = true;
 
-        var currExpr = '';
-        function sciInput(char) {
-          currExpr += char;
-          document.getElementById('sciDisplay').textContent = currExpr;
-        }
-        function sciClear() {
-          currExpr = '';
-          document.getElementById('sciDisplay').textContent = '0';
-          document.getElementById('sciHistory').textContent = '';
-          document.getElementById('sciResult').textContent = '0';
-        }
-        function sciOp(op) {
-          try {
-            var v = eval(currExpr || '0');
-            var res = 0;
-            if (op === 'sin') res = Math.sin(v * Math.PI / 180);
-            else if (op === 'cos') res = Math.cos(v * Math.PI / 180);
-            else if (op === 'tan') res = Math.tan(v * Math.PI / 180);
-            else if (op === 'log') res = Math.log10(v);
-            else if (op === 'ln') res = Math.log(v);
-            else if (op === 'sqrt') res = Math.sqrt(v);
-            else if (op === 'sq') res = v * v;
-            else if (op === 'pi') res = Math.PI;
-            else if (op === 'e') res = Math.E;
-            else if (op === 'recip') res = 1 / v;
-            else if (op === 'abs') res = Math.abs(v);
-            else if (op === 'neg') res = -v;
-            else if (op === 'pow') { currExpr += '**'; document.getElementById('sciDisplay').textContent = currExpr; return; }
+function updateScreen() {
+  document.getElementById('sciExpr').textContent = expr;
+  document.getElementById('sciVal').textContent = currentVal;
+  document.getElementById('btnAngleMode').textContent = angleMode;
+  document.getElementById('memIndicator').style.display = memoryVal !== 0 ? 'inline-block' : 'none';
+}
 
-            currExpr = String(res);
-            document.getElementById('sciDisplay').textContent = currExpr;
-            document.getElementById('sciResult').textContent = currExpr;
-          } catch(e) {
-            document.getElementById('sciDisplay').textContent = 'Error';
-          }
-        }
-        function sciEval() {
-          try {
-            document.getElementById('sciHistory').textContent = currExpr + ' =';
-            var res = eval(currExpr);
-            document.getElementById('sciDisplay').textContent = res;
-            document.getElementById('sciResult').textContent = res;
-            currExpr = String(res);
-          } catch(e) {
-            document.getElementById('sciDisplay').textContent = 'Error';
-          }
-        }
-        
+function toggleAngleMode() {
+  angleMode = angleMode === 'DEG' ? 'RAD' : 'DEG';
+  updateScreen();
+}
+
+function sciKey(char) {
+  if (isNewCalc && !['+', '-', '*', '/', '^'].includes(char)) {
+    currentVal = '';
+    expr = '';
+    isNewCalc = false;
+  }
+  if (currentVal === '0' && char !== '.') currentVal = '';
+  currentVal += char;
+  updateScreen();
+}
+
+function sciOp(op) {
+  isNewCalc = false;
+  expr += (currentVal || '0') + ' ' + op + ' ';
+  currentVal = '0';
+  updateScreen();
+}
+
+function sciConst(c) {
+  isNewCalc = false;
+  if (c === 'pi') currentVal = String(Math.PI);
+  if (c === 'e') currentVal = String(Math.E);
+  updateScreen();
+}
+
+function sciClear() {
+  expr = '';
+  currentVal = '0';
+  isNewCalc = true;
+  updateScreen();
+}
+
+function sciBack() {
+  if (currentVal.length > 1) {
+    currentVal = currentVal.slice(0, -1);
+  } else {
+    currentVal = '0';
+  }
+  updateScreen();
+}
+
+function toRad(x) { return angleMode === 'DEG' ? (x * Math.PI) / 180 : x; }
+function toAngle(x) { return angleMode === 'DEG' ? (x * 180) / Math.PI : x; }
+
+function sciFn(fn) {
+  var x = parseFloat(currentVal) || 0;
+  var res = 0;
+  if (fn === 'sin') res = Math.sin(toRad(x));
+  if (fn === 'cos') res = Math.cos(toRad(x));
+  if (fn === 'tan') res = Math.tan(toRad(x));
+  if (fn === 'asin') res = toAngle(Math.asin(x));
+  if (fn === 'acos') res = toAngle(Math.acos(x));
+  if (fn === 'atan') res = toAngle(Math.atan(x));
+  if (fn === 'log') res = Math.log10(x);
+  if (fn === 'ln') res = Math.log(x);
+  if (fn === 'sqrt') res = Math.sqrt(x);
+  if (fn === 'cbrt') res = Math.cbrt(x);
+  if (fn === 'sq') res = x * x;
+  if (fn === 'abs') res = Math.abs(x);
+  if (fn === 'neg') res = -x;
+  if (fn === 'recip') res = 1 / x;
+  if (fn === 'pct') res = x / 100;
+  if (fn === 'fact') {
+    res = 1;
+    for (var i = 2; i <= Math.min(x, 150); i++) res *= i;
+  }
+
+  currentVal = String(Math.round(res * 1e12) / 1e12);
+  updateScreen();
+}
+
+function memClear() { memoryVal = 0; updateScreen(); }
+function memRecall() { currentVal = String(memoryVal); updateScreen(); }
+function memAdd() { memoryVal += (parseFloat(currentVal) || 0); updateScreen(); }
+function memSub() { memoryVal -= (parseFloat(currentVal) || 0); updateScreen(); }
+function memStore() { memoryVal = parseFloat(currentVal) || 0; updateScreen(); }
+
+function sciEval() {
+  var full = expr + (currentVal || '0');
+  try {
+    var sanitized = full.replace(/×/g, '*').replace(/÷/g, '/').replace(/\^/g, '**');
+    var result = Function('"use strict"; return (' + sanitized + ')')();
+    var cleanRes = String(Math.round(result * 1e12) / 1e12);
+
+    addHistoryItem(full, cleanRes);
+    expr = '';
+    currentVal = cleanRes;
+    isNewCalc = true;
+  } catch (e) {
+    currentVal = 'Error';
+  }
+  updateScreen();
+}
+
+function addHistoryItem(equation, ans) {
+  historyItems.unshift({ eq: equation, ans: ans });
+  renderHistory();
+}
+
+function renderHistory() {
+  var list = document.getElementById('historyList');
+  if (historyItems.length === 0) {
+    list.innerHTML = '<div style="font-size:0.85rem; color:var(--text-muted); text-align:center; padding:30px 0;">No calculations yet.</div>';
+    return;
+  }
+  var html = '';
+  historyItems.forEach(function(item) {
+    html += '<div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:8px 12px; cursor:pointer;" onclick="currentVal=\'' + item.ans + '\'; updateScreen();">';
+    html += '<div style="font-family:monospace; font-size:0.8rem; color:#64748b;">' + item.eq + ' =</div>';
+    html += '<div style="font-family:monospace; font-size:1.1rem; font-weight:700; color:#0d9488;">' + item.ans + '</div>';
+    html += '</div>';
+  });
+  list.innerHTML = html;
+}
+
+function clearHistory() {
+  historyItems = [];
+  renderHistory();
+}
+
+// Keyboard shortcuts
+document.addEventListener('keydown', function(e) {
+  if (e.key >= '0' && e.key <= '9') sciKey(e.key);
+  else if (e.key === '.') sciKey('.');
+  else if (e.key === '+') sciOp('+');
+  else if (e.key === '-') sciOp('-');
+  else if (e.key === '*') sciOp('*');
+  else if (e.key === '/') sciOp('/');
+  else if (e.key === 'Enter' || e.key === '=') { e.preventDefault(); sciEval(); }
+  else if (e.key === 'Backspace') sciBack();
+  else if (e.key === 'Escape') sciClear();
+});
+
+document.addEventListener('DOMContentLoaded', updateScreen);
 </script>
 </body>
 </html>

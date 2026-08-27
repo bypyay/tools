@@ -3,34 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fuel Cost Calculator — Free Online Calculator | Daily1Step</title>
-<meta name="description" content="Free online fuel cost calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.">
-<link rel="canonical" href="https://bypyay.github.io/calculator/tools/fuel-cost-calculator/">
-<link rel="stylesheet" href="../../assets/css/style.css?v=3">
+<title>Gas Mileage & Fuel Cost Calculator | Daily1Step</title>
+<link rel="stylesheet" href="../../assets/css/style.css?v=4">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Fuel Cost Calculator - Daily1Step",
-  "url": "https://bypyay.github.io/calculator/tools/fuel-cost-calculator/",
-  "description": "Free online fuel cost calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All modern web browsers",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
-</script>
 </head>
 <body>
 <!-- Daily1Step FROZEN SUPER-NAVBAR START -->
 <style id="d1s-frozen-bar-style">
-/* ══════════════════════════════════════════════════════════════════
-   Daily1Step FROZEN SUPER-NAVBAR (Sticky, Animated & Click-Magnetic)
-   ══════════════════════════════════════════════════════════════════ */
 .d1s-frozen-topbar-wrap {
   position: sticky !important;
   top: 0 !important;
@@ -155,9 +134,6 @@
   background: rgba(255, 255, 255, 0.16) !important;
   border-color: rgba(255, 255, 255, 0.35) !important;
 }
-.d1s-nav-btn:active {
-  transform: scale(0.96) !important;
-}
 .d1s-nav-btn.btn-home:hover { box-shadow: 0 4px 16px rgba(2, 132, 199, 0.6) !important; border-color: #38bdf8 !important; }
 .d1s-nav-btn.btn-pdf:hover, .d1s-nav-btn.btn-pdf.active { background: rgba(239, 68, 68, 0.24) !important; border-color: #ef4444 !important; color: #fff !important; box-shadow: 0 4px 16px rgba(239, 68, 68, 0.5) !important; }
 .d1s-nav-btn.btn-calc:hover, .d1s-nav-btn.btn-calc.active { background: rgba(59, 130, 246, 0.24) !important; border-color: #3b82f6 !important; color: #fff !important; box-shadow: 0 4px 16px rgba(59, 130, 246, 0.5) !important; }
@@ -238,150 +214,113 @@
 </div>
 <!-- Daily1Step FROZEN SUPER-NAVBAR END -->
 
-
-
 <header class="site-header">
   <div class="header-inner">
-    <a href="../../index.html" class="brand">
-      <div class="brand-icon"><i class="fa-solid fa-calculator"></i></div>
-      <div class="brand-title">Daily1Step <span class="accent">Calc</span></div>
-    </a>
-    <nav class="nav-links">
-      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-grid-2"></i> All 204+ Calculators</a>
-    </nav>
+    <a href="../../index.html" class="brand"><div class="brand-icon"><i class="fa-solid fa-gas-pump"></i></div><div class="brand-title">Daily1Step <span class="accent">Calc</span></div></a>
+    <nav class="nav-links"><a href="../../index.html" class="nav-link"><i class="fa-solid fa-layer-group"></i> All 204+ Calculators</a></nav>
   </div>
 </header>
-
 <main class="calc-workspace-wrap">
   <div class="calc-header-meta">
-    <div class="calc-breadcrumb">
-      <a href="../../index.html">Home</a>
-      <span>/</span>
-      <span>Other Calculators</span>
-      <span>/</span>
-      <span>Fuel Cost Calculator</span>
-    </div>
-    <h1 class="calc-main-title">Fuel Cost Calculator</h1>
-    <p class="calc-main-desc">Free online fuel cost calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.</p>
+    <div class="calc-breadcrumb"><a href="../../index.html">Home</a> / <a href="../../index.html#cat-everyday">Everyday</a> / <span>Gas Mileage Calculator</span></div>
+    <h1 class="calc-main-title">Gas Mileage & Road Trip Fuel Calculator</h1>
+    <p class="calc-main-desc">Calculate fuel consumption, MPG efficiency, total road trip fuel cost, and cost per mile or kilometer.</p>
   </div>
-
   <div class="calc-grid-layout">
-    <!-- Left Inputs Card -->
     <div class="calc-card">
-      <div class="calc-card-title">
-        <span><i class="fa-solid fa-sliders" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
+      <div class="calc-top-controls">
+        <div class="calc-control-group">
+          <span class="calc-control-label">Units:</span>
+          <select id="selFuelUnits" class="calc-select-mini" onchange="changeFuelUnits()">
+            <option value="us">US (Miles &amp; Gallons)</option>
+            <option value="metric">Metric (Km &amp; Liters)</option>
+          </select>
+        </div>
       </div>
-      
-        <div class="form-group">
-          <label class="form-label">Trip Distance (Miles or Km)</label>
-          <input type="number" id="fuelDist" class="calc-input" value="350" min="1" step="10">
+      <div class="form-group">
+        <label class="form-label" id="lblDist">Trip Distance</label>
+        <div class="input-with-affix">
+          <input type="number" id="inpDist" class="calc-input has-suffix" value="350" min="1" step="10">
+          <span class="input-affix suffix" id="sufDist">miles</span>
         </div>
-        <div class="form-group">
-          <label class="form-label">Vehicle Fuel Efficiency (MPG)</label>
-          <input type="number" id="fuelEff" class="calc-input" value="28" min="1" step="1">
+      </div>
+      <div class="form-group">
+        <label class="form-label" id="lblEff">Fuel Efficiency</label>
+        <div class="input-with-affix">
+          <input type="number" id="inpEff" class="calc-input has-suffix" value="28" min="1" step="0.5">
+          <span class="input-affix suffix" id="sufEff">MPG</span>
         </div>
-        <div class="form-group">
-          <label class="form-label">Gas Price Per Gallon</label>
-          <div class="input-with-affix">
-            <span class="input-affix prefix">$</span>
-            <input type="number" id="fuelPrice" class="calc-input has-prefix" value="3.65" min="0.1" step="0.05">
-          </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" id="lblGasPrice">Fuel Price</label>
+        <div class="input-with-affix">
+          <span class="input-affix prefix">$</span>
+          <input type="number" id="inpGasPrice" class="calc-input has-prefix" value="3.65" min="0.1" step="0.05">
+          <span class="input-affix suffix" id="sufPrice">/ gal</span>
         </div>
-        <div class="form-group">
-          <label class="form-label">Passengers (Split Trip)</label>
-          <input type="number" id="fuelPass" class="calc-input" value="2" min="1" step="1">
-        </div>
-        
-      <button type="button" class="btn-calc-primary" onclick="calculate()">
-        <i class="fa-solid fa-calculator"></i> Recalculate
-      </button>
+      </div>
+      <button type="button" class="btn-calc-primary" onclick="calculateFuel()"><i class="fa-solid fa-gas-pump"></i> Calculate Fuel Costs</button>
     </div>
-
-    <!-- Right Results Card -->
     <div class="calc-card">
-      <div class="calc-card-title">
-        <span><i class="fa-solid fa-chart-pie" style="color:var(--primary); margin-right:8px;"></i> Calculation Summary</span>
+      <div class="calc-card-title"><span><i class="fa-solid fa-chart-pie" style="color:var(--primary); margin-right:8px;"></i> Trip Cost Summary</span></div>
+      <div class="result-hero-box">
+        <div class="result-hero-label">Total Trip Fuel Cost</div>
+        <div class="result-hero-val" id="resTripCost">$45.63</div>
       </div>
-      
-        <div class="result-hero-box">
-          <div class="result-hero-label">Total Trip Fuel Cost</div>
-          <div class="result-hero-val" id="resFuelCost">$45.63</div>
-        </div>
-        <div class="result-breakdown-list">
-          <div class="result-row"><span class="label">Cost Per Passenger</span><span class="val" id="resFuelPerPass">$22.81</span></div>
-          <div class="result-row"><span class="label">Total Fuel Required</span><span class="val" id="resFuelGal">12.50 Gallons</span></div>
-          <div class="result-row"><span class="label">Cost Per Mile</span><span class="val" id="resFuelPerMile">$0.13 / mile</span></div>
-        </div>
-        
+      <div class="result-breakdown-list">
+        <div class="result-row"><span class="label">Total Fuel Required</span><span class="val" id="resFuelAmt">12.50 Gallons</span></div>
+        <div class="result-row"><span class="label">Cost Per Distance Unit</span><span class="val" id="resCostPerDist">$0.13 / mile</span></div>
+        <div class="result-row"><span class="label">Round Trip (2x) Cost</span><span class="val" id="resRoundTrip" style="color:var(--primary); font-weight:800;">$91.25</span></div>
+      </div>
     </div>
   </div>
-
-  <!-- Educational Guide & FAQs -->
-  <section class="guide-section">
-    <h2>How the Fuel Cost Calculator Works</h2>
-    <p>
-      The <strong>Fuel Cost Calculator</strong> by Daily1Step provides precise, instant computations directly in your browser. All computations follow standardized formulas and equations without transmitting any sensitive personal data to external servers.
-    </p>
-
-    <h3>Formula &amp; Mathematical Method</h3>
-    <div class="formula-box">
-      Formula: Calculations are evaluated dynamically in high-precision JavaScript with instant updates.
-    </div>
-
-    <h3>Frequently Asked Questions</h3>
-    <div class="faq-card">
-      <div class="faq-q">Is this Fuel Cost Calculator completely free to use?</div>
-      <div class="faq-a">Yes! All calculations, interactive charts, and reports are 100% free with no registration, no subscription, and no hidden fees.</div>
-    </div>
-    <div class="faq-card">
-      <div class="faq-q">Is my personal or financial data private?</div>
-      <div class="faq-a">Absolutely. All calculations happen entirely within your local browser memory. Your data is never uploaded, saved, or shared with third parties.</div>
-    </div>
-    <div class="faq-card">
-      <div class="faq-q">Can I use this calculator on mobile devices?</div>
-      <div class="faq-a">Yes, Daily1Step Calculators are fully responsive and optimized for smartphones, tablets, laptops, and desktop screens.</div>
-    </div>
-  </section>
 </main>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-links">
-      <a href="../../index.html">All Calculators</a>
-      <a href="../../legal/privacy.html">Privacy Policy</a>
-      <a href="../../legal/terms.html">Terms of Service</a>
-      <a href="../../legal/about.html">About Us</a>
-      <a href="../../legal/contact.html">Contact</a>
-      <a href="../../legal/disclaimer.html">Disclaimer</a>
-    </div>
-    <p class="copyright">&copy; 2026 Daily1Step. Free online calculators for finance, health, math, and daily utilities.</p>
-  </div>
-</footer>
-
-<script src="../../vendor/chart.umd.min.js"></script>
-<script src="../../vendor/jspdf.umd.min.js"></script>
+<footer class="site-footer"><div class="footer-inner"><p class="copyright">&copy; 2026 Daily1Step.</p></div></footer>
 <script src="../../assets/js/calculator-core.js"></script>
 <script>
-
-        function calculate() {
-          var dist = parseFloat(document.getElementById('fuelDist').value) || 0;
-          var mpg = parseFloat(document.getElementById('fuelEff').value) || 28;
-          var price = parseFloat(document.getElementById('fuelPrice').value) || 3.65;
-          var pass = Math.max(1, parseInt(document.getElementById('fuelPass').value) || 1);
-
-          var gal = mpg > 0 ? dist / mpg : 0;
-          var totalCost = gal * price;
-          var perPass = totalCost / pass;
-          var perMile = dist > 0 ? totalCost / dist : 0;
-
-          document.getElementById('resFuelCost').textContent = CalcCore.formatCurrency(totalCost);
-          document.getElementById('resFuelPerPass').textContent = CalcCore.formatCurrency(perPass);
-          document.getElementById('resFuelGal').textContent = gal.toFixed(2) + ' Gallons';
-          document.getElementById('resFuelPerMile').textContent = CalcCore.formatCurrency(perMile) + ' / mile';
-        }
-        document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculate); });
-        calculate();
-        
+function changeFuelUnits() {
+  var u = document.getElementById('selFuelUnits').value;
+  if (u === 'metric') {
+    document.getElementById('sufDist').textContent = 'km';
+    document.getElementById('lblEff').textContent = 'Fuel Consumption (L/100km)';
+    document.getElementById('sufEff').textContent = 'L/100km';
+    document.getElementById('inpEff').value = '8.5';
+    document.getElementById('sufPrice').textContent = '/ L';
+    document.getElementById('inpGasPrice').value = '1.65';
+  } else {
+    document.getElementById('sufDist').textContent = 'miles';
+    document.getElementById('lblEff').textContent = 'Fuel Efficiency (MPG)';
+    document.getElementById('sufEff').textContent = 'MPG';
+    document.getElementById('inpEff').value = '28';
+    document.getElementById('sufPrice').textContent = '/ gal';
+    document.getElementById('inpGasPrice').value = '3.65';
+  }
+  calculateFuel();
+}
+function calculateFuel() {
+  var u = document.getElementById('selFuelUnits').value;
+  var d = parseFloat(document.getElementById('inpDist').value) || 0;
+  var eff = parseFloat(document.getElementById('inpEff').value) || 1;
+  var price = parseFloat(document.getElementById('inpGasPrice').value) || 0;
+  var fuel = 0;
+  if (u === 'metric') {
+    fuel = (d / 100) * eff;
+    var total = fuel * price;
+    document.getElementById('resTripCost').textContent = CalcCore.formatCurrency(total);
+    document.getElementById('resFuelAmt').textContent = fuel.toFixed(2) + ' Liters';
+    document.getElementById('resCostPerDist').textContent = CalcCore.formatCurrency(d > 0 ? total/d : 0) + ' / km';
+    document.getElementById('resRoundTrip').textContent = CalcCore.formatCurrency(total * 2);
+  } else {
+    fuel = d / eff;
+    var total = fuel * price;
+    document.getElementById('resTripCost').textContent = CalcCore.formatCurrency(total);
+    document.getElementById('resFuelAmt').textContent = fuel.toFixed(2) + ' Gallons';
+    document.getElementById('resCostPerDist').textContent = CalcCore.formatCurrency(d > 0 ? total/d : 0) + ' / mile';
+    document.getElementById('resRoundTrip').textContent = CalcCore.formatCurrency(total * 2);
+  }
+}
+document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculateFuel); });
+document.addEventListener('DOMContentLoaded', calculateFuel);
 </script>
 </body>
 </html>
