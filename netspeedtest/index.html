@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Free High-Precision Internet Speed Test — Multi-Stream CDN, Ping & Bufferbloat | Daily1Step</title>
+  <meta name="description" content="Test your real-world Internet Speed with multi-stream CDN bandwidth saturation, ping, jitter, bufferbloat loaded latency, gaming grade diagnostics, and shareable speed badge cards. 100% Free & Private.">
+  <link rel="canonical" href="https://bypyay.github.io/netspeedtest/">
+  <meta property="og:title" content="World's Best High-Precision Internet Speed Test | Daily1Step">
+  <meta property="og:description" content="Accurate multi-CDN bandwidth test, real-time speed fluctuation graph, ping, jitter, and gaming diagnostics.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bypyay.github.io/netspeedtest/">
+
+  <!-- Stylesheets & Fonts -->
+  <link rel="stylesheet" href="assets/css/speedtest.css?v=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Daily1Step High-Precision NetSpeedTest PRO",
+    "url": "https://bypyay.github.io/netspeedtest/",
+    "description": "Accurate multi-stream CDN internet speed test tool measuring download, upload, ping, jitter, and bufferbloat.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All modern web browsers (Desktop, Tablet, iOS, Android)",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Ambient Glow Effects -->
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <!-- Daily1Step FROZEN SUPER-NAVBAR START -->
+  <style id="d1s-frozen-bar-style">
+  .d1s-frozen-topbar-wrap {
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 2147483647 !important;
+    background: rgba(11, 17, 33, 0.97) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4) !important;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  }
+  .d1s-frozen-inner {
+    max-width: 1560px !important;
+    margin: 0 auto !important;
+    padding: 0 14px !important;
+    height: 56px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+  }
+  .d1s-brand-group {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+    text-decoration: none !important;
+  }
+  .d1s-logo-badge {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 7px 14px !important;
+    border-radius: 30px !important;
+    background: linear-gradient(135deg, #0284c7 0%, #7c3aed 100%) !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    font-size: 0.92rem !important;
+    letter-spacing: -0.2px !important;
+    box-shadow: 0 2px 12px rgba(2, 132, 199, 0.45) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  .d1s-pulse-tag {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    background: rgba(239, 68, 68, 0.16) !important;
+    border: 1px solid rgba(239, 68, 68, 0.45) !important;
+    color: #fca5a5 !important;
+    padding: 4px 10px !important;
+    border-radius: 14px !important;
+    font-size: 0.72rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.4px !important;
+    text-transform: uppercase !important;
+  }
+  .d1s-live-dot {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    background: #ef4444 !important;
+    box-shadow: 0 0 10px #ef4444 !important;
+    animation: d1s-dot-blink 1.2s infinite ease-in-out !important;
+  }
+  @keyframes d1s-dot-blink {
+    0%, 100% { transform: scale(0.8); opacity: 0.5; }
+    50% { transform: scale(1.35); opacity: 1; }
+  }
+  .d1s-nav-scroll {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+  }
+  .d1s-nav-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 7px 11px !important;
+    border-radius: 9px !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    color: #cbd5e1 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.2s !important;
+  }
+  .d1s-nav-btn:hover {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.16) !important;
+  }
+  .d1s-count {
+    font-size: 0.68rem !important;
+    font-weight: 800 !important;
+    padding: 2px 5px !important;
+    border-radius: 5px !important;
+    background: rgba(255, 255, 255, 0.18) !important;
+    color: #fff !important;
+  }
+  .d1s-mobile-trigger-btn {
+    display: none !important;
+    align-items: center !important;
+    gap: 7px !important;
+    padding: 7px 12px !important;
+    background: linear-gradient(135deg, rgba(2, 132, 199, 0.35), rgba(124, 58, 237, 0.35)) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 20px !important;
+    color: #ffffff !important;
+    font-size: 0.82rem !important;
+    font-weight: 800 !important;
+    cursor: pointer !important;
+  }
+  .d1s-dropdown-overlay {
+    display: none;
+    position: fixed !important;
+    top: 56px !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: rgba(11, 17, 33, 0.85) !important;
+    backdrop-filter: blur(12px) !important;
+    z-index: 2147483646 !important;
+  }
+  .d1s-dropdown-overlay.open { display: block !important; }
+  .d1s-dropdown-panel {
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    background: #0f172a !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-top: none !important;
+    border-radius: 0 0 20px 20px !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7) !important;
+    padding: 16px 14px 20px !important;
+  }
+  .d1s-drop-grid { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+  .d1s-drop-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 10px 12px !important;
+    border-radius: 12px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: #f1f5f9 !important;
+    text-decoration: none !important;
+  }
+  @media (max-width: 992px) {
+    .d1s-pulse-tag, .d1s-nav-scroll { display: none !important; }
+    .d1s-mobile-trigger-btn { display: inline-flex !important; }
+    .d1s-frozen-inner { height: 52px !important; padding: 0 12px !important; }
+  }
+  </style>
+
+  <div class="d1s-frozen-topbar-wrap">
+    <div class="d1s-frozen-inner">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <a href="https://bypyay.github.io/tools/" class="d1s-brand-group" title="Daily1Step All Tools Platform">
+          <div class="d1s-logo-badge">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            <span>Daily1Step</span>
+          </div>
+        </a>
+        <span class="d1s-pulse-tag"><span class="d1s-live-dot"></span> SpeedTest PRO</span>
+      </div>
+
+      <nav class="d1s-nav-scroll">
+        <a href="https://bypyay.github.io/tools/" class="d1s-nav-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> <span>All Tools</span></a>
+        <a href="https://bypyay.github.io/tools/pdf/" class="d1s-nav-btn"><span style="color:#ef4444;">📄</span> PDF <span class="d1s-count">22</span></a>
+        <a href="https://bypyay.github.io/tools/image/" class="d1s-nav-btn"><span style="color:#10b981;">🖼️</span> Images <span class="d1s-count">27</span></a>
+        <a href="https://bypyay.github.io/tools/calculator/" class="d1s-nav-btn"><span style="color:#3b82f6;">🧮</span> Calculators <span class="d1s-count">207+</span></a>
+        <a href="https://bypyay.github.io/tools/audio/" class="d1s-nav-btn"><span style="color:#06b6d4;">🎙️</span> Audio <span class="d1s-count">25</span></a>
+        <a href="https://bypyay.github.io/tools/gif/" class="d1s-nav-btn"><span style="color:#f59e0b;">🎞️</span> GIF <span class="d1s-count">18</span></a>
+        <a href="https://bypyay.github.io/tools/removebg/" class="d1s-nav-btn"><span style="color:#a855f7;">🪄</span> Remove BG <span class="d1s-count" style="background:#a855f7;">AI</span></a>
+        <a href="https://bypyay.github.io/tools/collage/" class="d1s-nav-btn"><span style="color:#ec4899;">🎨</span> Collage <span class="d1s-count" style="background:#ec4899;">PRO</span></a>
+      </nav>
+
+      <button type="button" class="d1s-mobile-trigger-btn" id="d1sMobileTriggerBtn" onclick="toggleD1sMobileMenu()">
+        <span>⚡ 7 Suites</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Drawer Panel -->
+  <div class="d1s-dropdown-overlay" id="d1sDropdownOverlay" onclick="closeD1sMobileMenu(event)">
+    <div class="d1s-dropdown-panel" onclick="event.stopPropagation()">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; padding-bottom:8px; border-bottom:1px solid rgba(255,255,255,0.1);">
+        <div style="font-size:0.86rem; font-weight:800; color:#fff;">⚡ All 7 Specialized Suites</div>
+        <button type="button" onclick="closeD1sMobileMenu()" style="background:none; border:none; color:#94a3b8; font-size:1.3rem; line-height:1; cursor:pointer;" aria-label="Close Menu">&times;</button>
+      </div>
+      <div class="d1s-drop-grid">
+        <a href="https://bypyay.github.io/tools/" class="d1s-drop-item"><div>🌐 All Tools Hub (320+)</div></a>
+        <a href="https://bypyay.github.io/tools/pdf/" class="d1s-drop-item"><div>📄 1. PDF Tools (22)</div></a>
+        <a href="https://bypyay.github.io/tools/image/" class="d1s-drop-item"><div>🖼️ 2. Image Tools (27)</div></a>
+        <a href="https://bypyay.github.io/tools/calculator/" class="d1s-drop-item"><div>🧮 3. Calculators (207+)</div></a>
+        <a href="https://bypyay.github.io/tools/audio/" class="d1s-drop-item"><div>🎙️ 4. Audio Tools (25)</div></a>
+        <a href="https://bypyay.github.io/tools/gif/" class="d1s-drop-item"><div>🎞️ 5. GIF Tools (18)</div></a>
+        <a href="https://bypyay.github.io/tools/removebg/" class="d1s-drop-item"><div>🪄 6. Remove BG (AI)</div></a>
+        <a href="https://bypyay.github.io/tools/collage/" class="d1s-drop-item"><div>🎨 7. Collage Studio (PRO)</div></a>
+      </div>
+    </div>
+  </div>
+
+  <script id="d1s-topbar-script">
+  function toggleD1sMobileMenu() {
+    var overlay = document.getElementById('d1sDropdownOverlay');
+    if (!overlay) return;
+    if (overlay.classList.contains('open')) {
+      closeD1sMobileMenu();
+    } else {
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+  function closeD1sMobileMenu(e) {
+    if (e && e.target && e.target !== document.getElementById('d1sDropdownOverlay') && !e.target.hasAttribute('onclick')) return;
+    var overlay = document.getElementById('d1sDropdownOverlay');
+    if (overlay) overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeD1sMobileMenu();
+  });
+  </script>
+  <!-- Daily1Step FROZEN SUPER-NAVBAR END -->
+
+
+  <!-- Main App Workspace -->
+  <main class="speed-container">
+
+    <!-- Header / Brand Section -->
+    <header class="speed-header">
+      <div class="badge-tag">
+        <span class="badge-pulse-dot"></span>
+        <span>Multi-Stream Gigabit &amp; 5G Engine</span>
+      </div>
+      <h1 class="speed-title">High-Precision <span class="gradient-text">Internet Speed Test</span></h1>
+      <p class="speed-desc">Measure accurate real-world download speed, upload throughput, ping latency, jitter variation, and bufferbloat gaming quality in seconds.</p>
+    </header>
+
+    <!-- Top 4-Metric Live Strip -->
+    <section class="metrics-strip">
+      <!-- 1. Ping -->
+      <div class="metric-strip-card">
+        <div class="metric-icon icon-ping"><i class="fa-solid fa-signal"></i></div>
+        <div class="metric-info">
+          <div class="metric-label">Idle Ping</div>
+          <div class="metric-value"><span id="valPing">--</span></div>
+        </div>
+      </div>
+
+      <!-- 2. Jitter -->
+      <div class="metric-strip-card">
+        <div class="metric-icon icon-jitter"><i class="fa-solid fa-wave-square"></i></div>
+        <div class="metric-info">
+          <div class="metric-label">Jitter</div>
+          <div class="metric-value"><span id="valJitter">--</span></div>
+        </div>
+      </div>
+
+      <!-- 3. Download -->
+      <div class="metric-strip-card">
+        <div class="metric-icon icon-download"><i class="fa-solid fa-download"></i></div>
+        <div class="metric-info">
+          <div class="metric-label">Download Speed</div>
+          <div class="metric-value"><span id="valDownload">--</span> <span class="metric-unit">Mbps</span></div>
+        </div>
+      </div>
+
+      <!-- 4. Upload -->
+      <div class="metric-strip-card">
+        <div class="metric-icon icon-upload"><i class="fa-solid fa-upload"></i></div>
+        <div class="metric-info">
+          <div class="metric-label">Upload Speed</div>
+          <div class="metric-value"><span id="valUpload">--</span> <span class="metric-unit">Mbps</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Master Stage: Speedometer + Waveform Chart -->
+    <section class="main-stage-grid">
+      <!-- Left Card: Speedometer Gauge -->
+      <div class="stage-card">
+        <div class="gauge-stage-wrap">
+          <canvas id="speedGaugeCanvas"></canvas>
+          <div class="gauge-center-hud">
+            <div class="hud-phase-label" id="hudPhase">READY TO TEST</div>
+            <div class="hud-speed-num" id="hudSpeed">0.00</div>
+            <div class="hud-unit-label" id="hudUnit">Mbps</div>
+          </div>
+        </div>
+
+        <div class="test-action-wrap">
+          <button type="button" class="btn-start-test" id="btnStartTest" onclick="SpeedEngine.startSpeedTest()">
+            <i class="fa-solid fa-play"></i> START SPEED TEST
+          </button>
+
+          <div class="test-quick-options">
+            <button type="button" class="opt-pill-btn active" onclick="SpeedEngine.setUnit('Mbps', this)">Mbps</button>
+            <button type="button" class="opt-pill-btn" onclick="SpeedEngine.setUnit('MBps', this)">MB/s</button>
+            <button type="button" class="opt-pill-btn" onclick="SpeedEngine.setUnit('Gbps', this)">Gbps</button>
+            <button type="button" class="opt-pill-btn" onclick="SpeedEngine.openBadgeModal()"><i class="fa-solid fa-share-nodes"></i> Share Card</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Card: Real-time Live Waveform & Quality Grades -->
+      <div class="stage-card chart-stage-card">
+        <div class="chart-header-row">
+          <div class="chart-title"><i class="fa-solid fa-chart-line" style="color:#38bdf8;"></i> Live Bandwidth Waveform</div>
+          <span style="font-size:0.75rem; color:#64748b; font-weight:700;">REAL-TIME (200ms)</span>
+        </div>
+
+        <div class="chart-canvas-container">
+          <canvas id="speedWaveformCanvas"></canvas>
+        </div>
+
+        <!-- Connection Quality Grades -->
+        <div class="grades-grid">
+          <div class="grade-card">
+            <div class="grade-icon" style="color:#10b981;"><i class="fa-solid fa-gamepad"></i></div>
+            <div class="grade-label">Gaming (Ping)</div>
+            <div class="grade-status" id="gradeGaming">READY</div>
+          </div>
+
+          <div class="grade-card">
+            <div class="grade-icon" style="color:#38bdf8;"><i class="fa-solid fa-film"></i></div>
+            <div class="grade-label">4K / 8K Video</div>
+            <div class="grade-status" id="gradeStreaming">READY</div>
+          </div>
+
+          <div class="grade-card">
+            <div class="grade-icon" style="color:#a855f7;"><i class="fa-solid fa-video"></i></div>
+            <div class="grade-label">Zoom &amp; Calls</div>
+            <div class="grade-status" id="gradeCalling">READY</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Network Info & Diagnostics Bar -->
+    <section class="network-info-card">
+      <div class="net-item">
+        <i class="fa-solid fa-network-wired net-icon"></i>
+        <div>
+          <div class="net-lbl">ISP / Provider</div>
+          <div class="net-val" id="netIsp">Detecting Broadband...</div>
+        </div>
+      </div>
+
+      <div class="net-item">
+        <i class="fa-solid fa-location-dot net-icon"></i>
+        <div>
+          <div class="net-lbl">Client Location</div>
+          <div class="net-val" id="netLocation">Detecting City, Country...</div>
+        </div>
+      </div>
+
+      <div class="net-item">
+        <i class="fa-solid fa-globe net-icon"></i>
+        <div>
+          <div class="net-lbl">Public IP Address</div>
+          <div class="net-val" id="netIp">Loading...</div>
+        </div>
+      </div>
+
+      <div class="net-item">
+        <i class="fa-solid fa-server net-icon"></i>
+        <div>
+          <div class="net-lbl">Test Server</div>
+          <div class="net-val" style="color:#10b981;">Cloudflare Global Anycast Edge</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local History Section -->
+    <section class="history-card">
+      <div class="history-header">
+        <div class="history-title"><i class="fa-solid fa-clock-rotate-left" style="color:#38bdf8;"></i> Recent Speed Test History</div>
+        <div class="history-actions">
+          <button type="button" class="btn-hist" onclick="SpeedEngine.exportHistoryCSV()"><i class="fa-solid fa-file-csv"></i> Export CSV</button>
+          <button type="button" class="btn-hist" onclick="SpeedEngine.clearHistory()"><i class="fa-solid fa-trash-can"></i> Clear</button>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="speed-table">
+          <thead>
+            <tr>
+              <th>Date &amp; Time</th>
+              <th>Download Speed</th>
+              <th>Upload Speed</th>
+              <th>Ping</th>
+              <th>Jitter</th>
+              <th>Bufferbloat</th>
+            </tr>
+          </thead>
+          <tbody id="historyTableBody">
+            <!-- Rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SEO Guide & Diagnostic Article -->
+    <article class="seo-guide-section">
+      <h2>Understanding Your Internet Speed &amp; Network Health</h2>
+      <p>Internet speed isn't just about raw download Megabits per second (Mbps). Quality of experience in online gaming, Zoom calls, and 4K streaming depends on multiple critical metrics:</p>
+
+      <div class="seo-grid-3">
+        <div class="seo-card-box">
+          <h4><i class="fa-solid fa-download" style="color:#10b981;"></i> Download Speed</h4>
+          <p>How fast your device receives data from the web. 25 Mbps is sufficient for 4K streaming, while 100-500+ Mbps is optimal for households with multiple devices downloading games and movies.</p>
+        </div>
+        <div class="seo-card-box">
+          <h4><i class="fa-solid fa-upload" style="color:#f59e0b;"></i> Upload Speed</h4>
+          <p>How quickly you send data out. Essential for video conferences, live streaming on YouTube/Twitch, cloud backups (Google Drive/iCloud), and uploading large videos.</p>
+        </div>
+        <div class="seo-card-box">
+          <h4><i class="fa-solid fa-bolt" style="color:#38bdf8;"></i> Ping, Jitter &amp; Bufferbloat</h4>
+          <p>Ping measures reaction time (latency). Jitter measures fluctuation. Bufferbloat measures latency lag when the network is under heavy load. Below 20ms ping with low jitter is the gold standard for competitive gaming.</p>
+        </div>
+      </div>
+
+      <h3>Recommended Speeds by Activity</h3>
+      <ul style="margin-left:20px; color:#94a3b8; font-size:0.95rem; line-height:1.8;">
+        <li><strong>Competitive Online Gaming (Valorant, CS:GO, Fortnite):</strong> 15-30 Mbps Download, &lt; 25ms Ping, &lt; 5ms Jitter.</li>
+        <li><strong>4K UHD &amp; 8K HDR Streaming (Netflix, YouTube):</strong> 25-50 Mbps Download per stream.</li>
+        <li><strong>Work From Home &amp; 1080p Zoom Conferences:</strong> 15 Mbps Download, 5-10 Mbps Upload.</li>
+        <li><strong>Smart Home with 15+ IoT Devices:</strong> 100-300+ Mbps Fiber connection.</li>
+      </ul>
+    </article>
+
+  </main>
+
+  <!-- Shareable Speed Badge Modal -->
+  <div class="badge-modal-overlay" id="badgeModalOverlay" onclick="SpeedEngine.closeBadgeModal()">
+    <div class="badge-modal-card" onclick="event.stopPropagation()">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <h3 style="color:#fff; font-size:1.15rem; font-weight:800;"><i class="fa-solid fa-image" style="color:#38bdf8; margin-right:6px;"></i> Shareable Speed Certificate Card</h3>
+        <button type="button" onclick="SpeedEngine.closeBadgeModal()" style="background:none; border:none; color:#94a3b8; font-size:1.4rem; cursor:pointer;" aria-label="Close Modal">&times;</button>
+      </div>
+      <p style="color:#94a3b8; font-size:0.85rem;">Download this high-resolution badge to share your internet speed result on Twitter, WhatsApp, or LinkedIn.</p>
+
+      <div class="badge-canvas-wrap">
+        <canvas id="socialBadgeCanvas"></canvas>
+      </div>
+
+      <div style="display:flex; gap:10px; justify-content:center; margin-top:16px;">
+        <button type="button" class="btn-start-test" style="padding:12px 28px; font-size:0.95rem;" onclick="SpeedEngine.downloadSocialBadge()">
+          <i class="fa-solid fa-download"></i> Download PNG Image
+        </button>
+        <button type="button" class="opt-pill-btn" style="padding:12px 20px;" onclick="SpeedEngine.closeBadgeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer style="background:#0b1121; border-top:1px solid rgba(255,255,255,0.08); padding:32px 16px; margin-top:40px; text-align:center; color:#64748b; font-size:0.85rem;">
+    <div style="max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+      <div>&copy; 2026 Daily1Step NetSpeedTest. High-Precision Multi-Stream Bandwidth Engine.</div>
+      <div style="display:flex; gap:16px;">
+        <a href="https://bypyay.github.io/tools/" style="color:#94a3b8; text-decoration:none;">All 320+ Tools</a>
+        <a href="https://bypyay.github.io/tools/calculator/" style="color:#94a3b8; text-decoration:none;">Calculators</a>
+        <a href="https://bypyay.github.io/tools/audio/" style="color:#94a3b8; text-decoration:none;">Audio Suite</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core Speed Engine Script -->
+  <script src="assets/js/speedtest-engine.js?v=1"></script>
+</body>
+</html>
