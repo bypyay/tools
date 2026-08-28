@@ -18,7 +18,7 @@
   <meta name="twitter:description" content="High-precision multi-stream CDN speed test tool with instant ping, jitter and bufferbloat scoring.">
 
   <!-- Stylesheets & Fonts -->
-  <link rel="stylesheet" href="assets/css/speedtest.css?v=6">
+  <link rel="stylesheet" href="assets/css/speedtest.css?v=7">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -350,7 +350,7 @@
         </header>
 
         <!-- Top 4-Metric Live Strip (Instantly Visible) -->
-        <section class="metrics-strip">
+        <section class="metrics-strip" id="metricsStrip">
           <div class="metric-strip-card">
             <div class="metric-icon icon-ping"><i class="fa-solid fa-signal"></i></div>
             <div class="metric-info">
@@ -385,9 +385,9 @@
         </section>
 
         <!-- Master Stage: Speedometer + Waveform Chart -->
-        <section class="main-stage-grid">
+        <section class="main-stage-grid" id="mainStageGrid">
           <!-- Left Card: Glowing Speedometer + Pulsing Magnetic Test Button -->
-          <div class="stage-card">
+          <div class="stage-card" id="gaugeStageCard">
             <div class="gauge-stage-wrap">
               <canvas id="speedGaugeCanvas"></canvas>
               <div class="gauge-center-hud">
@@ -413,7 +413,7 @@
           </div>
 
           <!-- Right Card: Real-time Live Waveform & Quality Grades -->
-          <div class="stage-card chart-stage-card">
+          <div class="stage-card chart-stage-card" id="chartStageCard">
             <div class="chart-header-row">
               <div class="chart-title"><i class="fa-solid fa-chart-line" style="color:#38bdf8;"></i> Live Bandwidth Waveform</div>
               <span style="font-size:0.72rem; color:#64748b; font-weight:700;">REAL-TIME (100ms)</span>
@@ -688,6 +688,6 @@
   </script>
 
   <!-- Core Speed Engine Script -->
-  <script src="assets/js/speedtest-engine.js?v=6"></script>
+  <script src="assets/js/speedtest-engine.js?v=7"></script>
 </body>
 </html>

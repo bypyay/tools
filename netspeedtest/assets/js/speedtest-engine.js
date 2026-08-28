@@ -538,6 +538,16 @@ var SpeedEngine = (function() {
 
       generateSocialBadge();
 
+      // Mobile Auto-Scroll: Smoothly scroll down so user immediately sees results & ad
+      if (window.innerWidth <= 860) {
+        setTimeout(function() {
+          var metricsEl = document.getElementById('metricsStrip');
+          if (metricsEl) {
+            metricsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 500);
+      }
+
     } catch (err) {
       if (hudPhase) hudPhase.textContent = 'TEST FINISHED';
     } finally {
