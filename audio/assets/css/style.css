@@ -753,3 +753,98 @@ a:hover {
     display: none !important;
   }
 }
+
+
+/* ══════════════════════════════════════════════════════════════════
+   AUDIO SUITE ZERO-OVERFLOW & PRO MOBILE TOUCH OPTIMIZATION
+   ══════════════════════════════════════════════════════════════════ */
+html, body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box !important;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}
+
+.container, .content-container, .tool-page, .audio-workspace {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
+}
+
+.waveform-wrap {
+  width: 100% !important;
+  max-width: 100% !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  border-radius: var(--radius-md);
+  margin: 14px 0;
+  background: var(--bg-dark);
+}
+
+.waveform-canvas {
+  width: 100% !important;
+  height: 120px !important;
+  display: block;
+}
+
+/* Transport Controls on Mobile */
+@media (max-width: 768px) {
+  .tool-page {
+    padding: 16px 10px 32px !important;
+  }
+  .tool-header h1 {
+    font-size: 1.45rem !important;
+    line-height: 1.25 !important;
+  }
+  .tool-header p {
+    font-size: 0.88rem !important;
+  }
+  .dropzone {
+    padding: 28px 14px !important;
+    border-radius: 16px !important;
+  }
+  .dropzone p {
+    font-size: 0.92rem !important;
+  }
+  .audio-workspace {
+    padding: 16px 12px !important;
+    border-radius: 16px !important;
+  }
+  .transport-bar {
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: stretch !important;
+    padding: 12px !important;
+  }
+  .transport-bar > div:first-child {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+  .time-display {
+    text-align: center !important;
+    font-size: 1.15rem !important;
+  }
+  .btn {
+    min-height: 44px !important;
+    font-size: 16px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .btn.sm {
+    min-height: 38px !important;
+    font-size: 0.85rem !important;
+    padding: 6px 14px !important;
+  }
+  .result-box {
+    padding: 20px 14px !important;
+    border-radius: 16px !important;
+  }
+}
