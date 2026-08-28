@@ -77,8 +77,8 @@ a:hover {
 .site-header {
   background: var(--bg);
   border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
+  position: relative;
+  
   z-index: 100;
   backdrop-filter: blur(8px);
   background-color: rgba(255, 255, 255, 0.95);
@@ -743,5 +743,13 @@ a:hover {
 
   .main-nav {
     display: none; /* Can be toggled or condensed */
+  }
+}
+
+
+/* ── Mobile Responsive Header Cleanliness ── */
+@media (max-width: 992px) {
+  .portal-header, .site-header {
+    display: none !important;
   }
 }

@@ -73,8 +73,8 @@ img {
    ========================================================================== */
 .site-header {
   border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-  position: sticky;
-  top: 0;
+  position: relative;
+  
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -1490,5 +1490,13 @@ img {
 
   .tool-card p {
     display: none;
+  }
+}
+
+
+/* ── Mobile Responsive Header Cleanliness ── */
+@media (max-width: 992px) {
+  .portal-header, .site-header {
+    display: none !important;
   }
 }

@@ -82,8 +82,8 @@ a:hover {
 .site-header {
   background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
+  position: relative;
+  
   z-index: 100;
   backdrop-filter: blur(10px);
 }
@@ -768,5 +768,13 @@ input:focus, select:focus, textarea:focus {
   }
   .main-nav {
     display: none;
+  }
+}
+
+
+/* ── Mobile Responsive Header Cleanliness ── */
+@media (max-width: 992px) {
+  .portal-header, .site-header {
+    display: none !important;
   }
 }

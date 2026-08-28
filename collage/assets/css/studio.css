@@ -448,3 +448,11 @@ body.studio-mode {
     transform: translateY(0);
   }
 }
+
+
+/* ── Mobile Responsive Header Cleanliness ── */
+@media (max-width: 992px) {
+  .portal-header, .site-header {
+    display: none !important;
+  }
+}

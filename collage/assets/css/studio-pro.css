@@ -674,3 +674,11 @@ input[type="range"].pro-range {
     box-shadow: var(--shadow-xl);
   }
 }
+
+
+/* ── Mobile Responsive Header Cleanliness ── */
+@media (max-width: 992px) {
+  .portal-header, .site-header {
+    display: none !important;
+  }
+}
