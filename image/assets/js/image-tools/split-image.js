@@ -1,110 +1,114 @@
-(function () {
+
+(function() {
   var dropzone = document.getElementById('dropzone');
   var fileInput = document.getElementById('fileInput');
   var editorWrap = document.getElementById('editorWrap');
-  var canvas = document.getElementById('previewCanvas');
-  var ctx = canvas.getContext('2d');
   var splitCols = document.getElementById('splitCols');
   var splitRows = document.getElementById('splitRows');
   var downloadZipBtn = document.getElementById('downloadZipBtn');
+  var canvas = document.getElementById('previewCanvas');
+  var ctx = canvas.getContext('2d');
 
   var loadedImg = null;
 
-  function loadFile(file) {
-    if (!file || !file.type.match(/image.*/)) return;
+  function handleFile(f) {
+    if (!f || !f.type.startsWith('image/')) {
+      alert('Please upload an image.');
+      return;
+    }
     var reader = new FileReader();
-    reader.onload = function (e) {
+    reader.onload = function(e) {
       var img = new Image();
-      img.onload = function () {
+      img.onload = function() {
         loadedImg = img;
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
         dropzone.style.display = 'none';
         editorWrap.style.display = 'block';
-        render();
+        draw();
       };
       img.src = e.target.result;
     };
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(f);
   }
 
-  function render() {
-    if (!loadedImg) return;
-    var w = loadedImg.naturalWidth || loadedImg.width;
-    var h = loadedImg.naturalHeight || loadedImg.height;
-    canvas.width = w;
-    canvas.height = h;
-    ctx.drawImage(loadedImg, 0, 0, w, h);
+  dropzone.addEventListener('click', function() { fileInput.click(); });
+  fileInput.addEventListener('change', function(e) { handleFile(e.target.files[0]); fileInput.value = ''; });
 
+  function draw() {
+    if (!loadedImg) return;
     var cols = parseInt(splitCols.value) || 2;
     var rows = parseInt(splitRows.value) || 2;
-    var tW = w / cols, tH = h / rows;
 
-    ctx.strokeStyle = '#e5322d';
-    ctx.lineWidth = Math.max(2, Math.round(w * 0.003));
-    for (var r = 0; r < rows; r++) {
-      for (var c = 0; c < cols; c++) {
-        ctx.strokeRect(c * tW, r * tH, tW, tH);
-      }
+    ctx.drawImage(loadedImg, 0, 0);
+
+    ctx.strokeStyle = '#ef4444';
+    ctx.lineWidth = Math.max(2, Math.round(canvas.width / 300));
+
+    var cellW = canvas.width / cols;
+    var cellH = canvas.height / rows;
+
+    for (var c = 1; c < cols; c++) {
+      ctx.beginPath();
+      ctx.moveTo(c * cellW, 0);
+      ctx.lineTo(c * cellW, canvas.height);
+      ctx.stroke();
+    }
+    for (var r = 1; r < rows; r++) {
+      ctx.beginPath();
+      ctx.moveTo(0, r * cellH);
+      ctx.lineTo(canvas.width, r * cellH);
+      ctx.stroke();
     }
   }
 
-  splitCols.addEventListener('input', render);
-  splitRows.addEventListener('input', render);
+  splitCols.addEventListener('input', draw);
+  splitRows.addEventListener('input', draw);
 
-  dropzone.addEventListener('click', function () { fileInput.click(); });
-  fileInput.addEventListener('change', function (e) { loadFile(e.target.files[0]); fileInput.value = ''; });
-  ['dragenter', 'dragover'].forEach(function (evt) {
-    dropzone.addEventListener(evt, function (e) { e.preventDefault(); dropzone.classList.add('dragover'); });
-  });
-  ['dragleave', 'drop'].forEach(function (evt) {
-    dropzone.addEventListener(evt, function (e) { e.preventDefault(); dropzone.classList.remove('dragover'); });
-  });
-  dropzone.addEventListener('drop', function (e) {
-    if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) loadFile(e.dataTransfer.files[0]);
-  });
-
-  downloadZipBtn.addEventListener('click', function () {
+  downloadZipBtn.addEventListener('click', function() {
     if (!loadedImg || typeof JSZip === 'undefined') return;
+    downloadZipBtn.disabled = true;
+    downloadZipBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Splitting Image...';
+
     var zip = new JSZip();
     var cols = parseInt(splitCols.value) || 2;
     var rows = parseInt(splitRows.value) || 2;
 
-    var fullW = loadedImg.naturalWidth || loadedImg.width;
-    var fullH = loadedImg.naturalHeight || loadedImg.height;
-    var tileW = Math.floor(fullW / cols);
-    var tileH = Math.floor(fullH / rows);
+    var cellW = Math.floor(loadedImg.naturalWidth / cols);
+    var cellH = Math.floor(loadedImg.naturalHeight / rows);
 
     var tileCanvas = document.createElement('canvas');
-    tileCanvas.width = tileW;
-    tileCanvas.height = tileH;
+    tileCanvas.width = cellW;
+    tileCanvas.height = cellH;
     var tCtx = tileCanvas.getContext('2d');
 
     var promises = [];
-    var pieceNum = 1;
+    var count = 1;
 
     for (var r = 0; r < rows; r++) {
       for (var c = 0; c < cols; c++) {
-        (function (row, col, idx) {
-          tCtx.clearRect(0, 0, tileW, tileH);
-          tCtx.drawImage(loadedImg, col * tileW, row * tileH, tileW, tileH, 0, 0, tileW, tileH);
-          var p = new Promise(function (resolve) {
-            tileCanvas.toBlob(function (blob) {
-              zip.file('piece_' + idx + '.jpg', blob);
+        (function(row, col, num) {
+          promises.push(new Promise(function(resolve) {
+            tCtx.clearRect(0, 0, cellW, cellH);
+            tCtx.drawImage(loadedImg, col * cellW, row * cellH, cellW, cellH, 0, 0, cellW, cellH);
+            tileCanvas.toBlob(function(blob) {
+              zip.file('slice_' + num + '.jpg', blob);
               resolve();
             }, 'image/jpeg', 0.95);
-          });
-          promises.push(p);
-          pieceNum++;
-        })(r, c, pieceNum);
+          }));
+        })(r, c, count);
+        count++;
       }
     }
 
-    Promise.all(promises).then(function () {
-      zip.generateAsync({ type: 'blob' }).then(function (zipBlob) {
-        var url = URL.createObjectURL(zipBlob);
+    Promise.all(promises).then(function() {
+      zip.generateAsync({ type: 'blob' }).then(function(content) {
         var a = document.createElement('a');
-        a.href = url;
-        a.download = 'split-image-pieces.zip';
+        a.href = URL.createObjectURL(content);
+        a.download = 'split-slices.zip';
         a.click();
+        downloadZipBtn.disabled = false;
+        downloadZipBtn.innerHTML = '<i class="fa-solid fa-file-zipper"></i> Split &amp; Download Slices (ZIP)';
       });
     });
   });

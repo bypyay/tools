@@ -1,103 +1,96 @@
-(function () {
+
+(function() {
   var dropzone = document.getElementById('dropzone');
   var fileInput = document.getElementById('fileInput');
   var editorWrap = document.getElementById('editorWrap');
-  var canvas = document.getElementById('previewCanvas');
-  var ctx = canvas.getContext('2d');
   var joinHBtn = document.getElementById('joinHBtn');
   var joinVBtn = document.getElementById('joinVBtn');
   var downloadBtn = document.getElementById('downloadBtn');
+  var canvas = document.getElementById('previewCanvas');
+  var ctx = canvas.getContext('2d');
 
   var loadedImages = [];
-  var isHorizontal = true;
+  var direction = 'H'; // 'H' or 'V'
 
-  function loadFiles(files) {
+  function handleFiles(files) {
     if (!files || files.length === 0) return;
     loadedImages = [];
-    var count = files.length;
-    var loadedCount = 0;
-
-    Array.from(files).forEach(function (f) {
-      var reader = new FileReader();
-      reader.onload = function (e) {
-        var img = new Image();
-        img.onload = function () {
-          loadedImages.push(img);
-          loadedCount++;
-          if (loadedCount === count) {
-            dropzone.style.display = 'none';
-            editorWrap.style.display = 'block';
-            render();
-          }
+    var promises = Array.from(files).map(function(f) {
+      return new Promise(function(resolve) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          var img = new Image();
+          img.onload = function() {
+            loadedImages.push(img);
+            resolve();
+          };
+          img.src = e.target.result;
         };
-        img.src = e.target.result;
-      };
-      reader.readAsDataURL(f);
+        reader.readAsDataURL(f);
+      });
+    });
+
+    Promise.all(promises).then(function() {
+      dropzone.style.display = 'none';
+      editorWrap.style.display = 'block';
+      draw();
     });
   }
 
-  function render() {
+  dropzone.addEventListener('click', function() { fileInput.click(); });
+  fileInput.addEventListener('change', function(e) { handleFiles(e.target.files); fileInput.value = ''; });
+
+  function draw() {
     if (loadedImages.length === 0) return;
-    if (isHorizontal) {
-      var totalW = 0, maxH = 0;
-      loadedImages.forEach(function (img) {
-        totalW += img.naturalWidth || img.width;
-        maxH = Math.max(maxH, img.naturalHeight || img.height);
+
+    if (direction === 'H') {
+      var maxH = Math.max.apply(null, loadedImages.map(function(i) { return i.naturalHeight; }));
+      var totalW = 0;
+      var scaledWidths = loadedImages.map(function(img) {
+        var scale = maxH / img.naturalHeight;
+        var w = Math.round(img.naturalWidth * scale);
+        totalW += w;
+        return w;
       });
+
       canvas.width = totalW;
       canvas.height = maxH;
-      ctx.fillStyle = '#ffffff';
-      ctx.fillRect(0, 0, totalW, maxH);
 
       var curX = 0;
-      loadedImages.forEach(function (img) {
-        var w = img.naturalWidth || img.width;
-        var h = img.naturalHeight || img.height;
-        ctx.drawImage(img, curX, (maxH - h) / 2);
-        curX += w;
+      loadedImages.forEach(function(img, idx) {
+        ctx.drawImage(img, curX, 0, scaledWidths[idx], maxH);
+        curX += scaledWidths[idx];
       });
     } else {
-      var maxW = 0, totalH = 0;
-      loadedImages.forEach(function (img) {
-        maxW = Math.max(maxW, img.naturalWidth || img.width);
-        totalH += img.naturalHeight || img.height;
+      var maxW = Math.max.apply(null, loadedImages.map(function(i) { return i.naturalWidth; }));
+      var totalH = 0;
+      var scaledHeights = loadedImages.map(function(img) {
+        var scale = maxW / img.naturalWidth;
+        var h = Math.round(img.naturalHeight * scale);
+        totalH += h;
+        return h;
       });
+
       canvas.width = maxW;
       canvas.height = totalH;
-      ctx.fillStyle = '#ffffff';
-      ctx.fillRect(0, 0, maxW, totalH);
 
       var curY = 0;
-      loadedImages.forEach(function (img) {
-        var w = img.naturalWidth || img.width;
-        var h = img.naturalHeight || img.height;
-        ctx.drawImage(img, (maxW - w) / 2, curY);
-        curY += h;
+      loadedImages.forEach(function(img, idx) {
+        ctx.drawImage(img, 0, curY, maxW, scaledHeights[idx]);
+        curY += scaledHeights[idx];
       });
     }
   }
 
-  joinHBtn.addEventListener('click', function () { isHorizontal = true; joinHBtn.classList.add('active'); joinVBtn.classList.remove('active'); render(); });
-  joinVBtn.addEventListener('click', function () { isHorizontal = false; joinVBtn.classList.add('active'); joinHBtn.classList.remove('active'); render(); });
+  joinHBtn.addEventListener('click', function() { direction = 'H'; draw(); });
+  joinVBtn.addEventListener('click', function() { direction = 'V'; draw(); });
 
-  dropzone.addEventListener('click', function () { fileInput.click(); });
-  fileInput.addEventListener('change', function (e) { loadFiles(e.target.files); fileInput.value = ''; });
-  ['dragenter', 'dragover'].forEach(function (evt) {
-    dropzone.addEventListener(evt, function (e) { e.preventDefault(); dropzone.classList.add('dragover'); });
-  });
-  ['dragleave', 'drop'].forEach(function (evt) {
-    dropzone.addEventListener(evt, function (e) { e.preventDefault(); dropzone.classList.remove('dragover'); });
-  });
-  dropzone.addEventListener('drop', function (e) {
-    if (e.dataTransfer && e.dataTransfer.files) loadFiles(e.dataTransfer.files);
-  });
-
-  downloadBtn.addEventListener('click', function () {
-    canvas.toBlob(function (blob) {
-      var url = URL.createObjectURL(blob);
+  downloadBtn.addEventListener('click', function() {
+    draw();
+    canvas.toBlob(function(blob) {
       var a = document.createElement('a');
-      a.href = url;
-      a.download = 'joined-image.jpg';
+      a.href = URL.createObjectURL(blob);
+      a.download = 'joined-images.jpg';
       a.click();
     }, 'image/jpeg', 0.95);
   });

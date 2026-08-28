@@ -1,106 +1,133 @@
-(function () {
-  var photoDrop = document.getElementById('photoDropzone');
+
+(function() {
+  var photoDropzone = document.getElementById('photoDropzone');
   var photoInput = document.getElementById('photoInput');
   var photoPreview = document.getElementById('photoPreview');
+  var photoPreviewWrap = document.getElementById('photoPreviewWrap');
 
-  var signDrop = document.getElementById('signDropzone');
+  var signDropzone = document.getElementById('signDropzone');
   var signInput = document.getElementById('signInput');
   var signPreview = document.getElementById('signPreview');
+  var signPreviewWrap = document.getElementById('signPreviewWrap');
 
+  var controlsWrap = document.getElementById('controlsWrap');
+  var mergeLayout = document.getElementById('mergeLayout');
+  var cleanSign = document.getElementById('cleanSign');
   var mergeBtn = document.getElementById('mergeBtn');
-  var uploadGrid = document.getElementById('uploadGrid');
   var resultBox = document.getElementById('resultBox');
   var mergedCanvas = document.getElementById('mergedCanvas');
+  var ctx = mergedCanvas.getContext('2d');
   var downloadLink = document.getElementById('downloadLink');
   var resetBtn = document.getElementById('resetBtn');
 
-  var photoImg = null, signImg = null;
+  var photoImg = null;
+  var signImg = null;
 
-  function handleImage(file, isPhoto) {
-    var reader = new FileReader();
-    reader.onload = function (e) {
-      var img = new Image();
-      img.onload = function () {
-        if (isPhoto) {
+  photoDropzone.addEventListener('click', function() { photoInput.click(); });
+  photoInput.addEventListener('change', function(e) {
+    if (e.target.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(evt) {
+        var img = new Image();
+        img.onload = function() {
           photoImg = img;
-          photoPreview.src = e.target.result;
-          photoPreview.style.display = 'inline-block';
-        } else {
-          signImg = img;
-          signPreview.src = e.target.result;
-          signPreview.style.display = 'inline-block';
-        }
-        if (photoImg && signImg) {
-          mergeBtn.disabled = false;
-        }
+          photoPreview.src = evt.target.result;
+          photoPreviewWrap.style.display = 'block';
+          checkBothLoaded();
+        };
+        img.src = evt.target.result;
       };
-      img.src = e.target.result;
-    };
-    reader.readAsDataURL(file);
+      reader.readAsDataURL(e.target.files[0]);
+    }
+  });
+
+  signDropzone.addEventListener('click', function() { signInput.click(); });
+  signInput.addEventListener('change', function(e) {
+    if (e.target.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(evt) {
+        var img = new Image();
+        img.onload = function() {
+          signImg = img;
+          signPreview.src = evt.target.result;
+          signPreviewWrap.style.display = 'block';
+          checkBothLoaded();
+        };
+        img.src = evt.target.result;
+      };
+      reader.readAsDataURL(e.target.files[0]);
+    }
+  });
+
+  function checkBothLoaded() {
+    if (photoImg && signImg) {
+      controlsWrap.style.display = 'block';
+    }
   }
 
-  photoDrop.addEventListener('click', function () { photoInput.click(); });
-  photoInput.addEventListener('change', function (e) { handleImage(e.target.files[0], true); });
-
-  signDrop.addEventListener('click', function () { signInput.click(); });
-  signInput.addEventListener('change', function (e) { handleImage(e.target.files[0], false); });
-
-  mergeBtn.addEventListener('click', function () {
+  mergeBtn.addEventListener('click', function() {
     if (!photoImg || !signImg) return;
+    var layout = mergeLayout.value;
 
-    var targetW = 600;
-    var photoH = Math.round(targetW * 1.25); // 750 px photo height
-    var signH = Math.round(targetW * 0.40);  // 240 px sign height
-    var totalH = photoH + signH + 20;       // margin
+    if (layout === 'vertical') {
+      var w = 400;
+      var photoH = 380;
+      var signH = 140;
+      var totalH = photoH + signH + 10;
 
-    mergedCanvas.width = targetW;
-    mergedCanvas.height = totalH;
-    var ctx = mergedCanvas.getContext('2d');
+      mergedCanvas.width = w;
+      mergedCanvas.height = totalH;
 
-    // Background card
-    ctx.fillStyle = '#ffffff';
-    ctx.fillRect(0, 0, targetW, totalH);
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, w, totalH);
 
-    // Draw photo centered on top
-    ctx.drawImage(photoImg, 0, 0, targetW, photoH);
+      // Draw Photo centered
+      var pScale = Math.min((w - 20) / photoImg.naturalWidth, photoH / photoImg.naturalHeight);
+      var pW = photoImg.naturalWidth * pScale;
+      var pH = photoImg.naturalHeight * pScale;
+      ctx.drawImage(photoImg, (w - pW) / 2, (photoH - pH) / 2 + 5, pW, pH);
 
-    // Divider line
-    ctx.strokeStyle = '#cbd5e1';
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(0, photoH);
-    ctx.lineTo(targetW, photoH);
-    ctx.stroke();
+      // Draw Separator
+      ctx.strokeStyle = '#e2e8f0';
+      ctx.lineWidth = 1;
+      ctx.strokeRect(10, photoH + 5, w - 20, signH);
 
-    // Draw signature in bottom box
-    var sAspect = signImg.naturalWidth / signImg.naturalHeight;
-    var sDrawW = Math.min(targetW - 40, signH * sAspect);
-    var sDrawH = sDrawW / sAspect;
-    if (sDrawH > signH - 20) {
-      sDrawH = signH - 20;
-      sDrawW = sDrawH * sAspect;
+      // Draw Signature centered
+      var sScale = Math.min((w - 40) / signImg.naturalWidth, (signH - 20) / signImg.naturalHeight);
+      var sW = signImg.naturalWidth * sScale;
+      var sH = signImg.naturalHeight * sScale;
+      ctx.drawImage(signImg, (w - sW) / 2, photoH + 5 + (signH - sH) / 2, sW, sH);
+
+    } else {
+      var totalW = 600;
+      var totalH = 300;
+
+      mergedCanvas.width = totalW;
+      mergedCanvas.height = totalH;
+
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, totalW, totalH);
+
+      // Photo left
+      ctx.drawImage(photoImg, 10, 10, 280, 280);
+      // Signature right
+      ctx.drawImage(signImg, 300, 50, 290, 200);
     }
-    var sX = (targetW - sDrawW) / 2;
-    var sY = photoH + (signH - sDrawH) / 2;
 
-    ctx.drawImage(signImg, sX, sY, sDrawW, sDrawH);
-
-    mergedCanvas.toBlob(function (blob) {
+    mergedCanvas.toBlob(function(blob) {
       var url = URL.createObjectURL(blob);
       downloadLink.href = url;
-      downloadLink.download = 'merged-photo-signature.jpg';
-      uploadGrid.style.display = 'none';
+      downloadLink.download = 'photo-and-signature.jpg';
       resultBox.style.display = 'block';
     }, 'image/jpeg', 0.95);
   });
 
-  resetBtn.addEventListener('click', function () {
+  resetBtn.addEventListener('click', function() {
     photoImg = null;
     signImg = null;
-    photoPreview.style.display = 'none';
-    signPreview.style.display = 'none';
-    mergeBtn.disabled = true;
-    uploadGrid.style.display = 'block';
+    photoPreviewWrap.style.display = 'none';
+    signPreviewWrap.style.display = 'none';
+    controlsWrap.style.display = 'none';
     resultBox.style.display = 'none';
   });
 })();

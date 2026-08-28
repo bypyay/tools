@@ -1,98 +1,102 @@
-(function () {
+
+(function() {
   var dropzone = document.getElementById('dropzone');
   var fileInput = document.getElementById('fileInput');
   var editorWrap = document.getElementById('editorWrap');
+  var downloadBtn = document.getElementById('downloadBtn');
+  var undoBtn = document.getElementById('undoBtn');
   var canvas = document.getElementById('previewCanvas');
   var ctx = canvas.getContext('2d');
-  var pixelBtn = document.getElementById('pixelBtn');
-  var blackoutBtn = document.getElementById('blackoutBtn');
-  var clearBtn = document.getElementById('clearBtn');
-  var downloadBtn = document.getElementById('downloadBtn');
 
   var loadedImg = null;
-  var mode = 'pixel'; // 'pixel' or 'blackout'
-  var isDrawing = false, startX = 0, startY = 0;
+  var censorMode = 'blur'; // blur, pixelate, blackout
+  var isDrawing = false;
+  var startX = 0, startY = 0;
 
-  function loadFile(file) {
-    if (!file || !file.type.match(/image.*/)) return;
+  function handleFile(f) {
+    if (!f || !f.type.startsWith('image/')) {
+      alert('Please upload an image.');
+      return;
+    }
     var reader = new FileReader();
-    reader.onload = function (e) {
+    reader.onload = function(e) {
       var img = new Image();
-      img.onload = function () {
+      img.onload = function() {
         loadedImg = img;
-        canvas.width = img.naturalWidth || img.width;
-        canvas.height = img.naturalHeight || img.height;
-        ctx.drawImage(img, 0, 0);
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
         dropzone.style.display = 'none';
         editorWrap.style.display = 'block';
+        ctx.drawImage(loadedImg, 0, 0);
       };
       img.src = e.target.result;
     };
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(f);
   }
 
-  pixelBtn.addEventListener('click', function () { mode = 'pixel'; pixelBtn.classList.add('active'); blackoutBtn.classList.remove('active'); });
-  blackoutBtn.addEventListener('click', function () { mode = 'blackout'; blackoutBtn.classList.add('active'); pixelBtn.classList.remove('active'); });
-  clearBtn.addEventListener('click', function () { if (loadedImg) ctx.drawImage(loadedImg, 0, 0); });
+  dropzone.addEventListener('click', function() { fileInput.click(); });
+  fileInput.addEventListener('change', function(e) { handleFile(e.target.files[0]); fileInput.value = ''; });
 
-  function getCanvasCoords(e) {
-    var rect = canvas.getBoundingClientRect();
-    return {
-      x: (e.clientX - rect.left) * (canvas.width / rect.width),
-      y: (e.clientY - rect.top) * (canvas.height / rect.height)
-    };
-  }
+  window.setMode = function(m) {
+    censorMode = m;
+    document.querySelectorAll('.preset-chip').forEach(function(b) { b.classList.remove('active'); });
+    event.target.classList.add('active');
+  };
 
-  canvas.addEventListener('mousedown', function (e) {
+  canvas.addEventListener('mousedown', function(e) {
     isDrawing = true;
-    var c = getCanvasCoords(e);
-    startX = c.x; startY = c.y;
+    var rect = canvas.getBoundingClientRect();
+    var scaleX = canvas.width / rect.width;
+    var scaleY = canvas.height / rect.height;
+    startX = (e.clientX - rect.left) * scaleX;
+    startY = (e.clientY - rect.top) * scaleY;
   });
 
-  window.addEventListener('mouseup', function (e) {
+  canvas.addEventListener('mouseup', function(e) {
     if (!isDrawing) return;
     isDrawing = false;
-    var c = getCanvasCoords(e);
-    var x = Math.min(startX, c.x);
-    var y = Math.min(startY, c.y);
-    var w = Math.abs(c.x - startX);
-    var h = Math.abs(c.y - startY);
-    if (w < 4 || h < 4) return;
+    var rect = canvas.getBoundingClientRect();
+    var scaleX = canvas.width / rect.width;
+    var scaleY = canvas.height / rect.height;
+    var endX = (e.clientX - rect.left) * scaleX;
+    var endY = (e.clientY - rect.top) * scaleY;
 
-    if (mode === 'blackout') {
+    var x = Math.min(startX, endX);
+    var y = Math.min(startY, endY);
+    var w = Math.abs(endX - startX);
+    var h = Math.abs(endY - startY);
+
+    if (w < 5 || h < 5) return;
+
+    if (censorMode === 'blackout') {
       ctx.fillStyle = '#000000';
       ctx.fillRect(x, y, w, h);
+    } else if (censorMode === 'pixelate') {
+      var blockSize = Math.max(8, Math.round(w / 12));
+      var imgData = ctx.getImageData(x, y, w, h);
+      for (var py = 0; py < h; py += blockSize) {
+        for (var px = 0; px < w; px += blockSize) {
+          var i = (py * w + px) * 4;
+          ctx.fillStyle = 'rgb(' + imgData.data[i] + ',' + imgData.data[i+1] + ',' + imgData.data[i+2] + ')';
+          ctx.fillRect(x + px, y + py, blockSize, blockSize);
+        }
+      }
     } else {
-      // Pixelate effect
-      var pixelSize = Math.max(10, Math.round(w / 12));
-      var sampleCanvas = document.createElement('canvas');
-      sampleCanvas.width = Math.max(1, Math.floor(w / pixelSize));
-      sampleCanvas.height = Math.max(1, Math.floor(h / pixelSize));
-      var sCtx = sampleCanvas.getContext('2d');
-      sCtx.drawImage(canvas, x, y, w, h, 0, 0, sampleCanvas.width, sampleCanvas.height);
-      ctx.imageSmoothingEnabled = false;
-      ctx.drawImage(sampleCanvas, 0, 0, sampleCanvas.width, sampleCanvas.height, x, y, w, h);
-      ctx.imageSmoothingEnabled = true;
+      // Gaussian blur box
+      ctx.filter = 'blur(10px)';
+      ctx.drawImage(canvas, x, y, w, h, x, y, w, h);
+      ctx.filter = 'none';
     }
   });
 
-  dropzone.addEventListener('click', function () { fileInput.click(); });
-  fileInput.addEventListener('change', function (e) { loadFile(e.target.files[0]); fileInput.value = ''; });
-  ['dragenter', 'dragover'].forEach(function (evt) {
-    dropzone.addEventListener(evt, function (e) { e.preventDefault(); dropzone.classList.add('dragover'); });
-  });
-  ['dragleave', 'drop'].forEach(function (evt) {
-    dropzone.addEventListener(evt, function (e) { e.preventDefault(); dropzone.classList.remove('dragover'); });
-  });
-  dropzone.addEventListener('drop', function (e) {
-    if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) loadFile(e.dataTransfer.files[0]);
+  undoBtn.addEventListener('click', function() {
+    if (loadedImg) ctx.drawImage(loadedImg, 0, 0);
   });
 
-  downloadBtn.addEventListener('click', function () {
-    canvas.toBlob(function (blob) {
-      var url = URL.createObjectURL(blob);
+  downloadBtn.addEventListener('click', function() {
+    canvas.toBlob(function(blob) {
       var a = document.createElement('a');
-      a.href = url;
+      a.href = URL.createObjectURL(blob);
       a.download = 'censored-image.jpg';
       a.click();
     }, 'image/jpeg', 0.95);

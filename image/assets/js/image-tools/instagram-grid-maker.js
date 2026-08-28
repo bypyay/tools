@@ -1,134 +1,152 @@
-(function () {
+
+(function() {
   var dropzone = document.getElementById('dropzone');
   var fileInput = document.getElementById('fileInput');
   var editorWrap = document.getElementById('editorWrap');
-  var canvas = document.getElementById('previewCanvas');
+  var gridType = document.getElementById('gridType');
+  var splitBtn = document.getElementById('splitBtn');
+  var canvas = document.getElementById('gridCanvas');
   var ctx = canvas.getContext('2d');
-  var downloadZipBtn = document.getElementById('downloadZipBtn');
 
   var loadedImg = null;
-  var currentFile = null;
-  var cols = 3, rows = 3;
 
-  function loadFile(file) {
-    if (!file || !file.type.match(/image.*/)) return;
-    currentFile = file;
+  function handleFile(f) {
+    if (!f || !f.type.startsWith('image/')) {
+      alert('Please upload an image.');
+      return;
+    }
     var reader = new FileReader();
-    reader.onload = function (e) {
+    reader.onload = function(e) {
       var img = new Image();
-      img.onload = function () {
+      img.onload = function() {
         loadedImg = img;
         dropzone.style.display = 'none';
         editorWrap.style.display = 'block';
-        renderPreview();
+        drawGrid();
       };
       img.src = e.target.result;
     };
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(f);
   }
 
-  function renderPreview() {
+  dropzone.addEventListener('click', function() { fileInput.click(); });
+  fileInput.addEventListener('change', function(e) { handleFile(e.target.files[0]); fileInput.value = ''; });
+
+  ['dragenter', 'dragover'].forEach(function(evt) {
+    dropzone.addEventListener(evt, function(e) { e.preventDefault(); dropzone.classList.add('dragover'); });
+  });
+  ['dragleave', 'drop'].forEach(function(evt) {
+    dropzone.addEventListener(evt, function(e) { e.preventDefault(); dropzone.classList.remove('dragover'); });
+  });
+  dropzone.addEventListener('drop', function(e) {
+    if (e.dataTransfer && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+  });
+
+  function getColsRows() {
+    var val = gridType.value;
+    var parts = val.split('x');
+    return { cols: parseInt(parts[0]), rows: parseInt(parts[1]) };
+  }
+
+  function drawGrid() {
     if (!loadedImg) return;
-    var w = loadedImg.naturalWidth || loadedImg.width;
-    var h = loadedImg.naturalHeight || loadedImg.height;
-    canvas.width = w;
-    canvas.height = h;
+    var dims = getColsRows();
+    var cols = dims.cols, rows = dims.rows;
 
-    ctx.drawImage(loadedImg, 0, 0, w, h);
+    canvas.width = loadedImg.naturalWidth;
+    canvas.height = loadedImg.naturalHeight;
 
-    // Draw grid lines and tile numbers
-    var tileW = w / cols;
-    var tileH = h / rows;
+    ctx.drawImage(loadedImg, 0, 0);
 
-    ctx.strokeStyle = 'rgba(229, 50, 45, 0.9)';
-    ctx.lineWidth = Math.max(2, Math.round(w * 0.004));
+    // Draw grid lines
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.85)';
+    ctx.lineWidth = Math.max(2, Math.round(canvas.width / 300));
 
-    var tileNumber = 1;
+    var cellW = canvas.width / cols;
+    var cellH = canvas.height / rows;
+
+    for (var c = 1; c < cols; c++) {
+      ctx.beginPath();
+      ctx.moveTo(c * cellW, 0);
+      ctx.lineTo(c * cellW, canvas.height);
+      ctx.stroke();
+    }
+    for (var r = 1; r < rows; r++) {
+      ctx.beginPath();
+      ctx.moveTo(0, r * cellH);
+      ctx.lineTo(canvas.width, r * cellH);
+      ctx.stroke();
+    }
+
+    // Number tiles
+    var num = 1;
+    ctx.font = 'bold ' + Math.round(cellW * 0.15) + 'px sans-serif';
+    ctx.fillStyle = '#ffffff';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+
     for (var r = 0; r < rows; r++) {
       for (var c = 0; c < cols; c++) {
-        var x = c * tileW;
-        var y = r * tileH;
-        ctx.strokeRect(x, y, tileW, tileH);
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.45)';
+        var x = c * cellW + cellW / 2;
+        var y = r * cellH + cellH / 2;
+        ctx.beginPath();
+        ctx.arc(x, y, cellW * 0.12, 0, Math.PI * 2);
+        ctx.fill();
 
-        // Tile number badge
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.55)';
-        ctx.fillRect(x + 10, y + 10, 36, 28);
         ctx.fillStyle = '#ffffff';
-        ctx.font = 'bold 16px sans-serif';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText('#' + (rows * cols - tileNumber + 1), x + 28, y + 24);
-        tileNumber++;
+        ctx.fillText(num, x, y);
+        num++;
       }
     }
   }
 
-  document.querySelectorAll('.grid-mode-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      document.querySelectorAll('.grid-mode-btn').forEach(function (b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      cols = parseInt(btn.getAttribute('data-cols')) || 3;
-      rows = parseInt(btn.getAttribute('data-rows')) || 3;
-      renderPreview();
-    });
-  });
+  gridType.addEventListener('change', drawGrid);
 
-  dropzone.addEventListener('click', function () { fileInput.click(); });
-  fileInput.addEventListener('change', function (e) { loadFile(e.target.files[0]); fileInput.value = ''; });
-  ['dragenter', 'dragover'].forEach(function (evt) {
-    dropzone.addEventListener(evt, function (e) { e.preventDefault(); dropzone.classList.add('dragover'); });
-  });
-  ['dragleave', 'drop'].forEach(function (evt) {
-    dropzone.addEventListener(evt, function (e) { e.preventDefault(); dropzone.classList.remove('dragover'); });
-  });
-  dropzone.addEventListener('drop', function (e) {
-    if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) loadFile(e.dataTransfer.files[0]);
-  });
-
-  downloadZipBtn.addEventListener('click', function () {
+  splitBtn.addEventListener('click', function() {
     if (!loadedImg || typeof JSZip === 'undefined') return;
+    splitBtn.disabled = true;
+    splitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Slicing Grid Tiles...';
 
     var zip = new JSZip();
-    var fullW = loadedImg.naturalWidth || loadedImg.width;
-    var fullH = loadedImg.naturalHeight || loadedImg.height;
-    var tileW = Math.floor(fullW / cols);
-    var tileH = Math.floor(fullH / rows);
+    var dims = getColsRows();
+    var cols = dims.cols, rows = dims.rows;
+
+    var cellW = Math.floor(loadedImg.naturalWidth / cols);
+    var cellH = Math.floor(loadedImg.naturalHeight / rows);
 
     var tileCanvas = document.createElement('canvas');
-    tileCanvas.width = tileW;
-    tileCanvas.height = tileH;
+    tileCanvas.width = cellW;
+    tileCanvas.height = cellH;
     var tCtx = tileCanvas.getContext('2d');
 
-    var tileIndex = 1;
-    var promises = [];
+    var tilePromises = [];
+    var tileNum = 1;
 
     for (var r = 0; r < rows; r++) {
       for (var c = 0; c < cols; c++) {
-        (function (row, col, idx) {
-          tCtx.clearRect(0, 0, tileW, tileH);
-          tCtx.drawImage(loadedImg, col * tileW, row * tileH, tileW, tileH, 0, 0, tileW, tileH);
-
-          var promise = new Promise(function (resolve) {
-            tileCanvas.toBlob(function (blob) {
-              // Number tiles in post order (bottom-right first or sequential)
-              var fileName = 'grid_tile_' + idx + '.jpg';
-              zip.file(fileName, blob);
+        (function(row, col, num) {
+          tilePromises.push(new Promise(function(resolve) {
+            tCtx.clearRect(0, 0, cellW, cellH);
+            tCtx.drawImage(loadedImg, col * cellW, row * cellH, cellW, cellH, 0, 0, cellW, cellH);
+            tileCanvas.toBlob(function(blob) {
+              zip.file('tile-' + num + '.jpg', blob);
               resolve();
             }, 'image/jpeg', 0.95);
-          });
-          promises.push(promise);
-          tileIndex++;
-        })(r, c, tileIndex);
+          }));
+        })(r, c, tileNum);
+        tileNum++;
       }
     }
 
-    Promise.all(promises).then(function () {
-      zip.generateAsync({ type: 'blob' }).then(function (zipBlob) {
-        var url = URL.createObjectURL(zipBlob);
+    Promise.all(tilePromises).then(function() {
+      zip.generateAsync({ type: 'blob' }).then(function(content) {
         var a = document.createElement('a');
-        a.href = url;
+        a.href = URL.createObjectURL(content);
         a.download = 'instagram-grid-tiles.zip';
         a.click();
+        splitBtn.disabled = false;
+        splitBtn.innerHTML = '<i class="fa-solid fa-file-zipper"></i> Split &amp; Download Grid Tiles (ZIP)';
       });
     });
   });

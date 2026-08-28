@@ -1,75 +1,65 @@
-(function () {
+
+(function() {
   var dropzone = document.getElementById('dropzone');
   var fileInput = document.getElementById('fileInput');
   var editorWrap = document.getElementById('editorWrap');
   var canvas = document.getElementById('previewCanvas');
   var ctx = canvas.getContext('2d');
   var colorSwatch = document.getElementById('colorSwatch');
-  var hexVal = document.getElementById('hexVal');
-  var rgbVal = document.getElementById('rgbVal');
+  var hexCode = document.getElementById('hexCode');
+  var rgbCode = document.getElementById('rgbCode');
   var copyHexBtn = document.getElementById('copyHexBtn');
-  var copyRgbBtn = document.getElementById('copyRgbBtn');
 
-  function rgbToHex(r, g, b) {
-    return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
-  }
+  var loadedImg = null;
 
-  function loadFile(file) {
-    if (!file || !file.type.match(/image.*/)) return;
+  function handleFile(f) {
+    if (!f || !f.type.startsWith('image/')) {
+      alert('Please upload an image.');
+      return;
+    }
     var reader = new FileReader();
-    reader.onload = function (e) {
+    reader.onload = function(e) {
       var img = new Image();
-      img.onload = function () {
-        canvas.width = img.naturalWidth || img.width;
-        canvas.height = img.naturalHeight || img.height;
-        ctx.drawImage(img, 0, 0);
+      img.onload = function() {
+        loadedImg = img;
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        ctx.drawImage(loadedImg, 0, 0);
         dropzone.style.display = 'none';
         editorWrap.style.display = 'block';
-        sampleAt(Math.floor(canvas.width / 2), Math.floor(canvas.height / 2));
       };
       img.src = e.target.result;
     };
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(f);
   }
 
-  function sampleAt(x, y) {
-    var p = ctx.getImageData(x, y, 1, 1).data;
-    var hex = rgbToHex(p[0], p[1], p[2]);
-    var rgb = 'rgb(' + p[0] + ', ' + p[1] + ', ' + p[2] + ')';
+  dropzone.addEventListener('click', function() { fileInput.click(); });
+  fileInput.addEventListener('change', function(e) { handleFile(e.target.files[0]); fileInput.value = ''; });
 
-    colorSwatch.style.background = hex;
-    hexVal.value = hex;
-    rgbVal.value = rgb;
-  }
-
-  canvas.addEventListener('click', function (e) {
+  function pickColor(e) {
     var rect = canvas.getBoundingClientRect();
-    var x = Math.floor((e.clientX - rect.left) * (canvas.width / rect.width));
-    var y = Math.floor((e.clientY - rect.top) * (canvas.height / rect.height));
-    sampleAt(x, y);
-  });
+    var scaleX = canvas.width / rect.width;
+    var scaleY = canvas.height / rect.height;
+    var x = Math.floor((e.clientX - rect.left) * scaleX);
+    var y = Math.floor((e.clientY - rect.top) * scaleY);
 
-  copyHexBtn.addEventListener('click', function () {
-    navigator.clipboard.writeText(hexVal.value);
-    copyHexBtn.textContent = 'Copied!';
-    setTimeout(function () { copyHexBtn.textContent = 'Copy'; }, 1500);
-  });
+    if (x >= 0 && x < canvas.width && y >= 0 && y < canvas.height) {
+      var pixel = ctx.getImageData(x, y, 1, 1).data;
+      var r = pixel[0], g = pixel[1], b = pixel[2];
+      var hex = '#' + [r, g, b].map(function(v) { return v.toString(16).padStart(2, '0'); }).join('').toUpperCase();
 
-  copyRgbBtn.addEventListener('click', function () {
-    navigator.clipboard.writeText(rgbVal.value);
-    copyRgbBtn.textContent = 'Copied!';
-    setTimeout(function () { copyRgbBtn.textContent = 'Copy'; }, 1500);
-  });
+      colorSwatch.style.background = hex;
+      hexCode.textContent = hex;
+      rgbCode.textContent = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+    }
+  }
 
-  dropzone.addEventListener('click', function () { fileInput.click(); });
-  fileInput.addEventListener('change', function (e) { loadFile(e.target.files[0]); fileInput.value = ''; });
-  ['dragenter', 'dragover'].forEach(function (evt) {
-    dropzone.addEventListener(evt, function (e) { e.preventDefault(); dropzone.classList.add('dragover'); });
-  });
-  ['dragleave', 'drop'].forEach(function (evt) {
-    dropzone.addEventListener(evt, function (e) { e.preventDefault(); dropzone.classList.remove('dragover'); });
-  });
-  dropzone.addEventListener('drop', function (e) {
-    if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) loadFile(e.dataTransfer.files[0]);
+  canvas.addEventListener('mousemove', pickColor);
+  canvas.addEventListener('click', pickColor);
+
+  copyHexBtn.addEventListener('click', function() {
+    navigator.clipboard.writeText(hexCode.textContent).then(function() {
+      alert('Copied ' + hexCode.textContent + ' to clipboard!');
+    });
   });
 })();

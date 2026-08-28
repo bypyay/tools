@@ -1,82 +1,78 @@
-(function () {
+
+(function() {
   var dropzone = document.getElementById('dropzone');
   var fileInput = document.getElementById('fileInput');
   var editorWrap = document.getElementById('editorWrap');
-  var canvas = document.getElementById('previewCanvas');
-  var ctx = canvas.getContext('2d');
   var rotLeftBtn = document.getElementById('rotLeftBtn');
   var rotRightBtn = document.getElementById('rotRightBtn');
   var flipHBtn = document.getElementById('flipHBtn');
   var flipVBtn = document.getElementById('flipVBtn');
   var downloadBtn = document.getElementById('downloadBtn');
+  var canvas = document.getElementById('previewCanvas');
+  var ctx = canvas.getContext('2d');
 
   var loadedImg = null;
-  var currentAngle = 0;
-  var flipH = 1, flipV = 1;
+  var rotation = 0; // 0, 90, 180, 270
+  var flipH = false, flipV = false;
 
-  function loadFile(file) {
-    if (!file || !file.type.match(/image.*/)) return;
+  function handleFile(f) {
+    if (!f || !f.type.startsWith('image/')) {
+      alert('Please upload an image.');
+      return;
+    }
     var reader = new FileReader();
-    reader.onload = function (e) {
+    reader.onload = function(e) {
       var img = new Image();
-      img.onload = function () {
+      img.onload = function() {
         loadedImg = img;
-        currentAngle = 0;
-        flipH = 1; flipV = 1;
+        rotation = 0; flipH = false; flipV = false;
         dropzone.style.display = 'none';
         editorWrap.style.display = 'block';
-        render();
+        draw();
       };
       img.src = e.target.result;
     };
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(f);
   }
 
-  function render() {
-    if (!loadedImg) return;
-    var rad = (currentAngle * Math.PI) / 180;
-    var sin = Math.abs(Math.sin(rad));
-    var cos = Math.abs(Math.cos(rad));
-    var origW = loadedImg.naturalWidth || loadedImg.width;
-    var origH = loadedImg.naturalHeight || loadedImg.height;
+  dropzone.addEventListener('click', function() { fileInput.click(); });
+  fileInput.addEventListener('change', function(e) { handleFile(e.target.files[0]); fileInput.value = ''; });
 
-    var newW = Math.round(origW * cos + origH * sin);
-    var newH = Math.round(origW * sin + origH * cos);
-    canvas.width = newW;
-    canvas.height = newH;
+  ['dragenter', 'dragover'].forEach(function(evt) {
+    dropzone.addEventListener(evt, function(e) { e.preventDefault(); dropzone.classList.add('dragover'); });
+  });
+  ['dragleave', 'drop'].forEach(function(evt) {
+    dropzone.addEventListener(evt, function(e) { e.preventDefault(); dropzone.classList.remove('dragover'); });
+  });
+  dropzone.addEventListener('drop', function(e) {
+    if (e.dataTransfer && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+  });
+
+  function draw() {
+    if (!loadedImg) return;
+    var is90 = (rotation === 90 || rotation === 270);
+    canvas.width = is90 ? loadedImg.naturalHeight : loadedImg.naturalWidth;
+    canvas.height = is90 ? loadedImg.naturalWidth : loadedImg.naturalHeight;
 
     ctx.save();
-    ctx.translate(newW / 2, newH / 2);
-    ctx.rotate(rad);
-    ctx.scale(flipH, flipV);
-    ctx.drawImage(loadedImg, -origW / 2, -origH / 2);
+    ctx.translate(canvas.width / 2, canvas.height / 2);
+    ctx.rotate((rotation * Math.PI) / 180);
+    ctx.scale(flipH ? -1 : 1, flipV ? -1 : 1);
+    ctx.drawImage(loadedImg, -loadedImg.naturalWidth / 2, -loadedImg.naturalHeight / 2);
     ctx.restore();
   }
 
-  rotLeftBtn.addEventListener('click', function () { currentAngle = (currentAngle - 90) % 360; render(); });
-  rotRightBtn.addEventListener('click', function () { currentAngle = (currentAngle + 90) % 360; render(); });
-  flipHBtn.addEventListener('click', function () { flipH *= -1; render(); });
-  flipVBtn.addEventListener('click', function () { flipV *= -1; render(); });
+  rotRightBtn.addEventListener('click', function() { rotation = (rotation + 90) % 360; draw(); });
+  rotLeftBtn.addEventListener('click', function() { rotation = (rotation + 270) % 360; draw(); });
+  flipHBtn.addEventListener('click', function() { flipH = !flipH; draw(); });
+  flipVBtn.addEventListener('click', function() { flipV = !flipV; draw(); });
 
-  dropzone.addEventListener('click', function () { fileInput.click(); });
-  fileInput.addEventListener('change', function (e) { loadFile(e.target.files[0]); fileInput.value = ''; });
-  ['dragenter', 'dragover'].forEach(function (evt) {
-    dropzone.addEventListener(evt, function (e) { e.preventDefault(); dropzone.classList.add('dragover'); });
-  });
-  ['dragleave', 'drop'].forEach(function (evt) {
-    dropzone.addEventListener(evt, function (e) { e.preventDefault(); dropzone.classList.remove('dragover'); });
-  });
-  dropzone.addEventListener('drop', function (e) {
-    if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) loadFile(e.dataTransfer.files[0]);
-  });
-
-  downloadBtn.addEventListener('click', function () {
-    render();
-    canvas.toBlob(function (blob) {
-      var url = URL.createObjectURL(blob);
+  downloadBtn.addEventListener('click', function() {
+    draw();
+    canvas.toBlob(function(blob) {
       var a = document.createElement('a');
-      a.href = url;
-      a.download = 'transformed-image.jpg';
+      a.href = URL.createObjectURL(blob);
+      a.download = 'rotated-image.jpg';
       a.click();
     }, 'image/jpeg', 0.95);
   });

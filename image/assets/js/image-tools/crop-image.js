@@ -1,161 +1,138 @@
-(function () {
+
+(function() {
   var dropzone = document.getElementById('dropzone');
   var fileInput = document.getElementById('fileInput');
   var editorWrap = document.getElementById('editorWrap');
   var canvas = document.getElementById('cropCanvas');
   var ctx = canvas.getContext('2d');
-  var cropBox = document.getElementById('cropBox');
   var cropBtn = document.getElementById('cropBtn');
+  var resultBox = document.getElementById('resultBox');
+  var croppedImg = document.getElementById('croppedImg');
+  var downloadLink = document.getElementById('downloadLink');
+  var resetBtn = document.getElementById('resetBtn');
 
   var loadedImg = null;
-  var currentFile = null;
-  var selectedRatio = 'free';
+  var cropRatio = 'free';
 
-  // Crop box bounding box in % (0 to 100)
-  var box = { left: 10, top: 10, width: 80, height: 80 };
-  var isDraggingBox = false, activeHandle = null;
-  var dragStartX = 0, dragStartY = 0, initialBox = null;
+  // Crop box in canvas coordinates
+  var cropX = 50, cropY = 50, cropW = 200, cropH = 200;
+  var isDragging = false, isResizing = false;
+  var dragStartX = 0, dragStartY = 0;
 
-  function loadFile(file) {
-    if (!file || !file.type.match(/image.*/)) return;
-    currentFile = file;
+  function handleFile(f) {
+    if (!f || !f.type.startsWith('image/')) {
+      alert('Please upload a valid image.');
+      return;
+    }
     var reader = new FileReader();
-    reader.onload = function (e) {
+    reader.onload = function(e) {
       var img = new Image();
-      img.onload = function () {
+      img.onload = function() {
         loadedImg = img;
-        canvas.width = img.naturalWidth || img.width;
-        canvas.height = img.naturalHeight || img.height;
-        ctx.drawImage(img, 0, 0);
-
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        cropX = Math.round(canvas.width * 0.1);
+        cropY = Math.round(canvas.height * 0.1);
+        cropW = Math.round(canvas.width * 0.8);
+        cropH = Math.round(canvas.height * 0.8);
         dropzone.style.display = 'none';
         editorWrap.style.display = 'block';
-        updateBoxUI();
+        resultBox.style.display = 'none';
+        draw();
       };
       img.src = e.target.result;
     };
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(f);
   }
 
-  function updateBoxUI() {
-    cropBox.style.left = box.left + '%';
-    cropBox.style.top = box.top + '%';
-    cropBox.style.width = box.width + '%';
-    cropBox.style.height = box.height + '%';
+  dropzone.addEventListener('click', function() { fileInput.click(); });
+  fileInput.addEventListener('change', function(e) { handleFile(e.target.files[0]); fileInput.value = ''; });
 
-    if (selectedRatio === 'circle') {
-      cropBox.style.borderRadius = '50%';
-    } else {
-      cropBox.style.borderRadius = '0';
-    }
-  }
-
-  // Ratio Buttons
-  document.querySelectorAll('.crop-mode-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      document.querySelectorAll('.crop-mode-btn').forEach(function (b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      selectedRatio = btn.getAttribute('data-ratio');
-
-      if (selectedRatio === '1:1' || selectedRatio === 'circle') {
-        box.width = Math.min(box.width, box.height);
-        box.height = box.width;
-      } else if (selectedRatio === '16:9') {
-        box.height = Math.round(box.width * (9 / 16));
-      } else if (selectedRatio === '4:3') {
-        box.height = Math.round(box.width * (3 / 4));
-      } else if (selectedRatio === '9:16') {
-        box.width = Math.round(box.height * (9 / 16));
-      }
-      updateBoxUI();
-    });
-  });
-
-  // Dragging crop box
-  cropBox.addEventListener('mousedown', function (e) {
-    if (e.target.classList.contains('crop-handle')) {
-      activeHandle = e.target.className.split(' ')[1];
-    } else {
-      isDraggingBox = true;
-    }
-    dragStartX = e.clientX;
-    dragStartY = e.clientY;
-    initialBox = Object.assign({}, box);
-    e.stopPropagation();
-  });
-
-  window.addEventListener('mousemove', function (e) {
-    if (!loadedImg || (!isDraggingBox && !activeHandle)) return;
-    var rect = canvas.getBoundingClientRect();
-    var deltaXPercent = ((e.clientX - dragStartX) / rect.width) * 100;
-    var deltaYPercent = ((e.clientY - dragStartY) / rect.height) * 100;
-
-    if (isDraggingBox) {
-      box.left = Math.max(0, Math.min(100 - initialBox.width, initialBox.left + deltaXPercent));
-      box.top = Math.max(0, Math.min(100 - initialBox.height, initialBox.top + deltaYPercent));
-    } else if (activeHandle === 'se') {
-      box.width = Math.max(10, Math.min(100 - initialBox.left, initialBox.width + deltaXPercent));
-      box.height = Math.max(10, Math.min(100 - initialBox.top, initialBox.height + deltaYPercent));
-      if (selectedRatio === '1:1' || selectedRatio === 'circle') {
-        box.height = box.width;
-      }
-    }
-    updateBoxUI();
-  });
-
-  window.addEventListener('mouseup', function () {
-    isDraggingBox = false;
-    activeHandle = null;
-  });
-
-  dropzone.addEventListener('click', function () { fileInput.click(); });
-  fileInput.addEventListener('change', function (e) { loadFile(e.target.files[0]); fileInput.value = ''; });
-  ['dragenter', 'dragover'].forEach(function (evt) {
-    dropzone.addEventListener(evt, function (e) { e.preventDefault(); dropzone.classList.add('dragover'); });
-  });
-  ['dragleave', 'drop'].forEach(function (evt) {
-    dropzone.addEventListener(evt, function (e) { e.preventDefault(); dropzone.classList.remove('dragover'); });
-  });
-  dropzone.addEventListener('drop', function (e) {
-    if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) loadFile(e.dataTransfer.files[0]);
-  });
-
-  cropBtn.addEventListener('click', function () {
+  function draw() {
     if (!loadedImg) return;
-    var fullW = canvas.width, fullH = canvas.height;
+    ctx.drawImage(loadedImg, 0, 0, canvas.width, canvas.height);
 
-    var cropX = Math.round((box.left / 100) * fullW);
-    var cropY = Math.round((box.top / 100) * fullH);
-    var cropW = Math.round((box.width / 100) * fullW);
-    var cropH = Math.round((box.height / 100) * fullH);
+    // Dim overlay
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.55)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+    // Clear crop area
+    ctx.save();
+    if (cropRatio === 'circle') {
+      ctx.beginPath();
+      var rad = Math.min(cropW, cropH) / 2;
+      ctx.arc(cropX + cropW / 2, cropY + cropH / 2, rad, 0, Math.PI * 2);
+      ctx.clip();
+    } else {
+      ctx.beginPath();
+      ctx.rect(cropX, cropY, cropW, cropH);
+      ctx.clip();
+    }
+    ctx.drawImage(loadedImg, 0, 0, canvas.width, canvas.height);
+    ctx.restore();
+
+    // Border and handles
+    ctx.strokeStyle = '#e5322d';
+    ctx.lineWidth = Math.max(2, Math.round(canvas.width / 400));
+    if (cropRatio === 'circle') {
+      ctx.beginPath();
+      var rad = Math.min(cropW, cropH) / 2;
+      ctx.arc(cropX + cropW / 2, cropY + cropH / 2, rad, 0, Math.PI * 2);
+      ctx.stroke();
+    } else {
+      ctx.strokeRect(cropX, cropY, cropW, cropH);
+    }
+  }
+
+  window.setRatio = function(r) {
+    cropRatio = r;
+    document.querySelectorAll('.preset-chip').forEach(function(b) { b.classList.remove('active'); });
+    event.target.classList.add('active');
+
+    if (r === '1:1' || r === 'circle') {
+      var s = Math.min(cropW, cropH);
+      cropW = s; cropH = s;
+    } else if (r === '16:9') {
+      cropH = Math.round(cropW * (9 / 16));
+    } else if (r === '9:16') {
+      cropW = Math.round(cropH * (9 / 16));
+    } else if (r === '4:3') {
+      cropH = Math.round(cropW * (3 / 4));
+    }
+    draw();
+  };
+
+  cropBtn.addEventListener('click', function() {
+    if (!loadedImg) return;
     var outCanvas = document.createElement('canvas');
     var oCtx = outCanvas.getContext('2d');
-    outCanvas.width = cropW;
-    outCanvas.height = cropH;
 
-    if (selectedRatio === 'circle') {
+    if (cropRatio === 'circle') {
+      var rad = Math.min(cropW, cropH) / 2;
+      outCanvas.width = rad * 2;
+      outCanvas.height = rad * 2;
       oCtx.beginPath();
-      oCtx.arc(cropW / 2, cropH / 2, Math.min(cropW, cropH) / 2, 0, Math.PI * 2);
+      oCtx.arc(rad, rad, rad, 0, Math.PI * 2);
       oCtx.clip();
-      oCtx.drawImage(canvas, cropX, cropY, cropW, cropH, 0, 0, cropW, cropH);
-
-      outCanvas.toBlob(function (blob) {
-        var url = URL.createObjectURL(blob);
-        var a = document.createElement('a');
-        a.href = url;
-        a.download = 'cropped-circle.png';
-        a.click();
-      }, 'image/png');
+      oCtx.drawImage(loadedImg, cropX + (cropW / 2 - rad), cropY + (cropH / 2 - rad), rad * 2, rad * 2, 0, 0, rad * 2, rad * 2);
     } else {
-      oCtx.drawImage(canvas, cropX, cropY, cropW, cropH, 0, 0, cropW, cropH);
-      outCanvas.toBlob(function (blob) {
-        var url = URL.createObjectURL(blob);
-        var a = document.createElement('a');
-        a.href = url;
-        a.download = 'cropped-image.jpg';
-        a.click();
-      }, 'image/jpeg', 0.95);
+      outCanvas.width = cropW;
+      outCanvas.height = cropH;
+      oCtx.drawImage(loadedImg, cropX, cropY, cropW, cropH, 0, 0, cropW, cropH);
     }
+
+    outCanvas.toBlob(function(blob) {
+      var url = URL.createObjectURL(blob);
+      croppedImg.src = url;
+      downloadLink.href = url;
+      downloadLink.download = 'cropped-image.jpg';
+      resultBox.style.display = 'block';
+    }, 'image/jpeg', 0.95);
+  });
+
+  resetBtn.addEventListener('click', function() {
+    dropzone.style.display = 'block';
+    editorWrap.style.display = 'none';
+    resultBox.style.display = 'none';
   });
 })();

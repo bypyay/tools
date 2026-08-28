@@ -1,95 +1,90 @@
-(function () {
+
+(function() {
   var dropzone = document.getElementById('dropzone');
   var fileInput = document.getElementById('fileInput');
-  var fileInfo = document.getElementById('fileInfo');
-  var fileNameEl = document.getElementById('fileName');
-  var fileSizeEl = document.getElementById('fileSize');
-  var removeFileBtn = document.getElementById('removeFile');
-  var imgPreview = document.getElementById('imgPreview');
+  var editorWrap = document.getElementById('editorWrap');
+  var fileName = document.getElementById('fileName');
+  var fileSize = document.getElementById('fileSize');
+  var removeFile = document.getElementById('removeFile');
   var convertBtn = document.getElementById('convertBtn');
+  var imgPreview = document.getElementById('imgPreview');
   var resultBox = document.getElementById('resultBox');
-  var finalImg = document.getElementById('finalImg');
   var downloadLink = document.getElementById('downloadLink');
   var resetBtn = document.getElementById('resetBtn');
 
   var loadedImg = null;
   var currentFile = null;
 
-  function formatSize(bytes) {
-    if (bytes < 1024) return bytes + ' B';
-    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
-    return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+  function fmtSize(b) {
+    if (b < 1024) return b + ' B';
+    if (b < 1048576) return (b / 1024).toFixed(1) + ' KB';
+    return (b / 1048576).toFixed(2) + ' MB';
   }
 
-  function loadFile(file) {
-    if (!file) return;
-    currentFile = file;
-    fileNameEl.textContent = file.name;
-    fileSizeEl.textContent = formatSize(file.size);
+  function handleFile(f) {
+    if (!f || !f.type.startsWith('image/')) {
+      alert('Please upload a valid image file.');
+      return;
+    }
+    currentFile = f;
+    fileName.textContent = f.name;
+    fileSize.textContent = fmtSize(f.size);
 
     var reader = new FileReader();
-    reader.onload = function (e) {
+    reader.onload = function(e) {
       var img = new Image();
-      img.onload = function () {
+      img.onload = function() {
         loadedImg = img;
         imgPreview.src = e.target.result;
         dropzone.style.display = 'none';
-        fileInfo.style.display = 'block';
+        editorWrap.style.display = 'block';
+        resultBox.style.display = 'none';
       };
       img.src = e.target.result;
     };
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(f);
   }
 
-  dropzone.addEventListener('click', function () { fileInput.click(); });
-  fileInput.addEventListener('change', function (e) { loadFile(e.target.files[0]); fileInput.value = ''; });
-  ['dragenter', 'dragover'].forEach(function (evt) {
-    dropzone.addEventListener(evt, function (e) { e.preventDefault(); dropzone.classList.add('dragover'); });
+  dropzone.addEventListener('click', function() { fileInput.click(); });
+  fileInput.addEventListener('change', function(e) { handleFile(e.target.files[0]); fileInput.value = ''; });
+
+  ['dragenter', 'dragover'].forEach(function(evt) {
+    dropzone.addEventListener(evt, function(e) { e.preventDefault(); dropzone.classList.add('dragover'); });
   });
-  ['dragleave', 'drop'].forEach(function (evt) {
-    dropzone.addEventListener(evt, function (e) { e.preventDefault(); dropzone.classList.remove('dragover'); });
+  ['dragleave', 'drop'].forEach(function(evt) {
+    dropzone.addEventListener(evt, function(e) { e.preventDefault(); dropzone.classList.remove('dragover'); });
   });
-  dropzone.addEventListener('drop', function (e) {
-    if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) loadFile(e.dataTransfer.files[0]);
+  dropzone.addEventListener('drop', function(e) {
+    if (e.dataTransfer && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
   });
 
-  removeFileBtn.addEventListener('click', function () {
-    loadedImg = null;
-    dropzone.style.display = 'block';
-    fileInfo.style.display = 'none';
-  });
-
-  convertBtn.addEventListener('click', function () {
+  convertBtn.addEventListener('click', function() {
     if (!loadedImg) return;
     var canvas = document.createElement('canvas');
     var ctx = canvas.getContext('2d');
-    var w = loadedImg.naturalWidth || loadedImg.width;
-    var h = loadedImg.naturalHeight || loadedImg.height;
-    canvas.width = w;
-    canvas.height = h;
+    canvas.width = loadedImg.naturalWidth;
+    canvas.height = loadedImg.naturalHeight;
+    ctx.drawImage(loadedImg, 0, 0);
 
-    
-    ctx.drawImage(loadedImg, 0, 0, w, h);
-
-    
-
-    canvas.toBlob(function (blob) {
+    canvas.toBlob(function(blob) {
       var url = URL.createObjectURL(blob);
-      finalImg.src = url;
       downloadLink.href = url;
-      var outName = currentFile.name.replace(/\.[^/.]+$/, '') + '-converted.png';
+      var outName = currentFile.name.replace(/\.[^/.]+$/, '') + '.png';
       downloadLink.download = outName;
-      downloadLink.textContent = 'Download ' + outName;
-
-      fileInfo.style.display = 'none';
+      downloadLink.textContent = 'Download ' + outName + ' (' + fmtSize(blob.size) + ')';
       resultBox.style.display = 'block';
-    }, 'image/png', 0.95);
+    }, 'image/png');
   });
 
-  resetBtn.addEventListener('click', function () {
-    loadedImg = null;
+  removeFile.addEventListener('click', function() {
     dropzone.style.display = 'block';
-    fileInfo.style.display = 'none';
+    editorWrap.style.display = 'none';
+    resultBox.style.display = 'none';
+  });
+
+  resetBtn.addEventListener('click', function() {
+    dropzone.style.display = 'block';
+    editorWrap.style.display = 'none';
     resultBox.style.display = 'none';
   });
 })();
