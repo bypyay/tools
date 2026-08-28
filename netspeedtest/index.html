@@ -3,34 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Free High-Precision Internet Speed Test — Multi-Stream CDN, Ping & Bufferbloat | Daily1Step</title>
-  <meta name="description" content="Test your real-world Internet Speed with multi-stream CDN bandwidth saturation, ping, jitter, bufferbloat loaded latency, gaming grade diagnostics, and shareable speed badge cards. 100% Free & Private.">
+  <title>Free Accurate Internet Speed Test — Multi-Stream Bandwidth, Ping & Bufferbloat | Daily1Step</title>
+  <meta name="description" content="Test your real-world Internet Speed online with accurate multi-stream CDN bandwidth saturation. Measure download, upload, ping, jitter, and bufferbloat gaming latency. 100% Free, Private & Mobile-Friendly.">
+  <meta name="keywords" content="internet speed test, wifi speed test, broadband speed checker, 5g speed test, ping test, jitter test, bufferbloat test, ookla speedtest alternative, fast.com alternative, daily1step netspeedtest">
   <link rel="canonical" href="https://bypyay.github.io/netspeedtest/">
-  <meta property="og:title" content="World's Best High-Precision Internet Speed Test | Daily1Step">
-  <meta property="og:description" content="Accurate multi-CDN bandwidth test, real-time speed fluctuation graph, ping, jitter, and gaming diagnostics.">
+  
+  <!-- OpenGraph / Social Meta Tags -->
+  <meta property="og:title" content="Accurate Internet Speed Test — Multi-Stream CDN & Bufferbloat | Daily1Step">
+  <meta property="og:description" content="Accurate real-world download speed, upload throughput, ping latency, jitter variation, and bufferbloat gaming quality in seconds.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://bypyay.github.io/netspeedtest/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Accurate Internet Speed Test | Daily1Step">
+  <meta name="twitter:description" content="High-precision multi-stream CDN speed test tool with instant ping, jitter and bufferbloat scoring.">
 
   <!-- Stylesheets & Fonts -->
-  <link rel="stylesheet" href="assets/css/speedtest.css?v=1">
+  <link rel="stylesheet" href="assets/css/speedtest.css?v=5">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <!-- Structured Data JSON-LD -->
+  <!-- Google AdSense Auto Ads Tag Placeholder -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+  <!-- Structured Data JSON-LD (Schema.org) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Daily1Step High-Precision NetSpeedTest PRO",
-    "url": "https://bypyay.github.io/netspeedtest/",
-    "description": "Accurate multi-stream CDN internet speed test tool measuring download, upload, ping, jitter, and bufferbloat.",
-    "applicationCategory": "UtilitiesApplication",
-    "operatingSystem": "All modern web browsers (Desktop, Tablet, iOS, Android)",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Daily1Step High-Precision NetSpeedTest PRO",
+        "url": "https://bypyay.github.io/netspeedtest/",
+        "description": "High-precision multi-stream CDN internet speed test tool measuring download, upload, ping, jitter, and bufferbloat.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All modern web browsers (Windows, Mac, Linux, iOS, Android)",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://bypyay.github.io/tools/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Internet Speed Test",
+            "item": "https://bypyay.github.io/netspeedtest/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How is this speed test different from other speed checkers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Daily1Step NetSpeedTest uses raw uncompressed binary chunk streams across multiple global CDN nodes (Cloudflare, Fastly) and discards initial TCP burst ramp-up (1.8s warmup phase) to deliver 100% true physical wire transfer speeds with zero GZIP/Brotli compression distortion."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Bufferbloat and why is it important?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bufferbloat is the undesirable latency latency lag that occurs when a router or modem buffers excess network packets during heavy download/upload activity. A low bufferbloat grade (A+ or A) ensures lag-free gaming and stutter-free Zoom calls."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What download speed do I need for 4K streaming and gaming?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For 4K UHD streaming on Netflix/YouTube, 25-35 Mbps per stream is recommended. For online gaming (Valorant, CS:GO, Fortnite), low ping (<25ms) and low jitter (<5ms) are far more critical than raw download speed."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -60,7 +119,7 @@
     max-width: 1560px !important;
     margin: 0 auto !important;
     padding: 0 14px !important;
-    height: 56px !important;
+    height: 54px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
@@ -77,15 +136,14 @@
     display: flex !important;
     align-items: center !important;
     gap: 8px !important;
-    padding: 7px 14px !important;
+    padding: 6px 13px !important;
     border-radius: 30px !important;
     background: linear-gradient(135deg, #0284c7 0%, #7c3aed 100%) !important;
     color: #ffffff !important;
     font-weight: 800 !important;
-    font-size: 0.92rem !important;
+    font-size: 0.9rem !important;
     letter-spacing: -0.2px !important;
     box-shadow: 0 2px 12px rgba(2, 132, 199, 0.45) !important;
-    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
     position: relative !important;
     overflow: hidden !important;
   }
@@ -96,7 +154,7 @@
     background: rgba(239, 68, 68, 0.16) !important;
     border: 1px solid rgba(239, 68, 68, 0.45) !important;
     color: #fca5a5 !important;
-    padding: 4px 10px !important;
+    padding: 3px 9px !important;
     border-radius: 14px !important;
     font-size: 0.72rem !important;
     font-weight: 800 !important;
@@ -104,8 +162,8 @@
     text-transform: uppercase !important;
   }
   .d1s-live-dot {
-    width: 8px !important;
-    height: 8px !important;
+    width: 7px !important;
+    height: 7px !important;
     border-radius: 50% !important;
     background: #ef4444 !important;
     box-shadow: 0 0 10px #ef4444 !important;
@@ -126,7 +184,7 @@
     display: inline-flex !important;
     align-items: center !important;
     gap: 6px !important;
-    padding: 7px 11px !important;
+    padding: 6px 11px !important;
     border-radius: 9px !important;
     font-size: 0.82rem !important;
     font-weight: 700 !important;
@@ -153,7 +211,7 @@
     display: none !important;
     align-items: center !important;
     gap: 7px !important;
-    padding: 7px 12px !important;
+    padding: 6px 12px !important;
     background: linear-gradient(135deg, rgba(2, 132, 199, 0.35), rgba(124, 58, 237, 0.35)) !important;
     border: 1px solid rgba(255, 255, 255, 0.25) !important;
     border-radius: 20px !important;
@@ -165,7 +223,7 @@
   .d1s-dropdown-overlay {
     display: none;
     position: fixed !important;
-    top: 56px !important;
+    top: 54px !important;
     left: 0 !important;
     right: 0 !important;
     bottom: 0 !important;
@@ -198,7 +256,7 @@
   @media (max-width: 992px) {
     .d1s-pulse-tag, .d1s-nav-scroll { display: none !important; }
     .d1s-mobile-trigger-btn { display: inline-flex !important; }
-    .d1s-frozen-inner { height: 52px !important; padding: 0 12px !important; }
+    .d1s-frozen-inner { height: 50px !important; padding: 0 10px !important; }
   }
   </style>
 
@@ -276,211 +334,301 @@
   <!-- Daily1Step FROZEN SUPER-NAVBAR END -->
 
 
-  <!-- Main App Workspace -->
+  <!-- Main App Workspace Container -->
   <main class="speed-container">
 
-    <!-- Header / Brand Section -->
-    <header class="speed-header">
-      <div class="badge-tag">
-        <span class="badge-pulse-dot"></span>
-        <span>Multi-Stream Gigabit &amp; 5G Engine</span>
-      </div>
-      <h1 class="speed-title">High-Precision <span class="gradient-text">Internet Speed Test</span></h1>
-      <p class="speed-desc">Measure accurate real-world download speed, upload throughput, ping latency, jitter variation, and bufferbloat gaming quality in seconds.</p>
-    </header>
+    <!-- Top Responsive Ad Slot -->
+    <div class="ad-slot-wrap top-banner">
+      <div class="ad-badge">Advertisement</div>
+      <div class="ad-placeholder-text">Responsive Leaderboard (728x90 / Auto AdSense Slot)</div>
+    </div>
 
-    <!-- Top 4-Metric Live Strip -->
-    <section class="metrics-strip">
-      <!-- 1. Ping -->
-      <div class="metric-strip-card">
-        <div class="metric-icon icon-ping"><i class="fa-solid fa-signal"></i></div>
-        <div class="metric-info">
-          <div class="metric-label">Idle Ping</div>
-          <div class="metric-value"><span id="valPing">--</span></div>
-        </div>
-      </div>
+    <!-- Master 2-Column Layout Grid -->
+    <div class="page-layout-grid">
 
-      <!-- 2. Jitter -->
-      <div class="metric-strip-card">
-        <div class="metric-icon icon-jitter"><i class="fa-solid fa-wave-square"></i></div>
-        <div class="metric-info">
-          <div class="metric-label">Jitter</div>
-          <div class="metric-value"><span id="valJitter">--</span></div>
-        </div>
-      </div>
+      <!-- LEFT COLUMN: Main Speedometer, Live Metrics, Waveform & SEO -->
+      <div class="main-content-col">
 
-      <!-- 3. Download -->
-      <div class="metric-strip-card">
-        <div class="metric-icon icon-download"><i class="fa-solid fa-download"></i></div>
-        <div class="metric-info">
-          <div class="metric-label">Download Speed</div>
-          <div class="metric-value"><span id="valDownload">--</span> <span class="metric-unit">Mbps</span></div>
-        </div>
-      </div>
-
-      <!-- 4. Upload -->
-      <div class="metric-strip-card">
-        <div class="metric-icon icon-upload"><i class="fa-solid fa-upload"></i></div>
-        <div class="metric-info">
-          <div class="metric-label">Upload Speed</div>
-          <div class="metric-value"><span id="valUpload">--</span> <span class="metric-unit">Mbps</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Master Stage: Speedometer + Waveform Chart -->
-    <section class="main-stage-grid">
-      <!-- Left Card: Speedometer Gauge -->
-      <div class="stage-card">
-        <div class="gauge-stage-wrap">
-          <canvas id="speedGaugeCanvas"></canvas>
-          <div class="gauge-center-hud">
-            <div class="hud-phase-label" id="hudPhase">READY TO TEST</div>
-            <div class="hud-speed-num" id="hudSpeed">0.00</div>
-            <div class="hud-unit-label" id="hudUnit">Mbps</div>
+        <!-- Compact Header: Immediate Above-the-Fold Focus -->
+        <header class="speed-header">
+          <div class="badge-tag">
+            <span class="badge-pulse-dot"></span>
+            <span>Ultra-Accurate Multi-Stream CDN</span>
           </div>
-        </div>
+          <h1 class="speed-title">Accurate <span class="gradient-text">Internet Speed Test</span></h1>
+          <p class="speed-desc">Measure download speed, upload rate, ping latency, jitter and bufferbloat in seconds.</p>
+        </header>
 
-        <div class="test-action-wrap">
-          <button type="button" class="btn-start-test" id="btnStartTest" onclick="SpeedEngine.startSpeedTest()">
-            <i class="fa-solid fa-play"></i> START SPEED TEST
-          </button>
-
-          <div class="test-quick-options">
-            <button type="button" class="opt-pill-btn active" onclick="SpeedEngine.setUnit('Mbps', this)">Mbps</button>
-            <button type="button" class="opt-pill-btn" onclick="SpeedEngine.setUnit('MBps', this)">MB/s</button>
-            <button type="button" class="opt-pill-btn" onclick="SpeedEngine.setUnit('Gbps', this)">Gbps</button>
-            <button type="button" class="opt-pill-btn" onclick="SpeedEngine.openBadgeModal()"><i class="fa-solid fa-share-nodes"></i> Share Card</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Card: Real-time Live Waveform & Quality Grades -->
-      <div class="stage-card chart-stage-card">
-        <div class="chart-header-row">
-          <div class="chart-title"><i class="fa-solid fa-chart-line" style="color:#38bdf8;"></i> Live Bandwidth Waveform</div>
-          <span style="font-size:0.75rem; color:#64748b; font-weight:700;">REAL-TIME (200ms)</span>
-        </div>
-
-        <div class="chart-canvas-container">
-          <canvas id="speedWaveformCanvas"></canvas>
-        </div>
-
-        <!-- Connection Quality Grades -->
-        <div class="grades-grid">
-          <div class="grade-card">
-            <div class="grade-icon" style="color:#10b981;"><i class="fa-solid fa-gamepad"></i></div>
-            <div class="grade-label">Gaming (Ping)</div>
-            <div class="grade-status" id="gradeGaming">READY</div>
+        <!-- Top 4-Metric Live Strip (Instantly Visible) -->
+        <section class="metrics-strip">
+          <div class="metric-strip-card">
+            <div class="metric-icon icon-ping"><i class="fa-solid fa-signal"></i></div>
+            <div class="metric-info">
+              <div class="metric-label">Idle Ping</div>
+              <div class="metric-value"><span id="valPing">--</span></div>
+            </div>
           </div>
 
-          <div class="grade-card">
-            <div class="grade-icon" style="color:#38bdf8;"><i class="fa-solid fa-film"></i></div>
-            <div class="grade-label">4K / 8K Video</div>
-            <div class="grade-status" id="gradeStreaming">READY</div>
+          <div class="metric-strip-card">
+            <div class="metric-icon icon-jitter"><i class="fa-solid fa-wave-square"></i></div>
+            <div class="metric-info">
+              <div class="metric-label">Jitter</div>
+              <div class="metric-value"><span id="valJitter">--</span></div>
+            </div>
           </div>
 
-          <div class="grade-card">
-            <div class="grade-icon" style="color:#a855f7;"><i class="fa-solid fa-video"></i></div>
-            <div class="grade-label">Zoom &amp; Calls</div>
-            <div class="grade-status" id="gradeCalling">READY</div>
+          <div class="metric-strip-card">
+            <div class="metric-icon icon-download"><i class="fa-solid fa-download"></i></div>
+            <div class="metric-info">
+              <div class="metric-label">Download</div>
+              <div class="metric-value"><span id="valDownload">--</span> <span class="metric-unit">Mbps</span></div>
+            </div>
           </div>
+
+          <div class="metric-strip-card">
+            <div class="metric-icon icon-upload"><i class="fa-solid fa-upload"></i></div>
+            <div class="metric-info">
+              <div class="metric-label">Upload</div>
+              <div class="metric-value"><span id="valUpload">--</span> <span class="metric-unit">Mbps</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Master Stage: Speedometer + Waveform Chart -->
+        <section class="main-stage-grid">
+          <!-- Left Card: Glowing Speedometer + Pulsing Magnetic Test Button -->
+          <div class="stage-card">
+            <div class="gauge-stage-wrap">
+              <canvas id="speedGaugeCanvas"></canvas>
+              <div class="gauge-center-hud">
+                <div class="hud-phase-label" id="hudPhase">READY TO TEST</div>
+                <div class="hud-speed-num" id="hudSpeed">0.00</div>
+                <div class="hud-unit-label" id="hudUnit">Mbps</div>
+              </div>
+            </div>
+
+            <!-- High-Attention Animated Start Button -->
+            <div class="test-action-wrap">
+              <button type="button" class="btn-start-test" id="btnStartTest" onclick="SpeedEngine.startSpeedTest()" aria-label="Start High-Precision Internet Speed Test">
+                <i class="fa-solid fa-play"></i> START SPEED TEST
+              </button>
+
+              <div class="test-quick-options">
+                <button type="button" class="opt-pill-btn active" onclick="SpeedEngine.setUnit('Mbps', this)">Mbps</button>
+                <button type="button" class="opt-pill-btn" onclick="SpeedEngine.setUnit('MBps', this)">MB/s</button>
+                <button type="button" class="opt-pill-btn" onclick="SpeedEngine.setUnit('Gbps', this)">Gbps</button>
+                <button type="button" class="opt-pill-btn" onclick="SpeedEngine.openBadgeModal()"><i class="fa-solid fa-share-nodes"></i> Share Card</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Card: Real-time Live Waveform & Quality Grades -->
+          <div class="stage-card chart-stage-card">
+            <div class="chart-header-row">
+              <div class="chart-title"><i class="fa-solid fa-chart-line" style="color:#38bdf8;"></i> Live Bandwidth Waveform</div>
+              <span style="font-size:0.72rem; color:#64748b; font-weight:700;">REAL-TIME (100ms)</span>
+            </div>
+
+            <div class="chart-canvas-container">
+              <canvas id="speedWaveformCanvas"></canvas>
+            </div>
+
+            <!-- Connection Quality Grades -->
+            <div class="grades-grid">
+              <div class="grade-card">
+                <div class="grade-icon" style="color:#10b981;"><i class="fa-solid fa-gamepad"></i></div>
+                <div class="grade-label">Gaming (Ping)</div>
+                <div class="grade-status" id="gradeGaming">READY</div>
+              </div>
+
+              <div class="grade-card">
+                <div class="grade-icon" style="color:#38bdf8;"><i class="fa-solid fa-film"></i></div>
+                <div class="grade-label">4K / 8K Video</div>
+                <div class="grade-status" id="gradeStreaming">READY</div>
+              </div>
+
+              <div class="grade-card">
+                <div class="grade-icon" style="color:#a855f7;"><i class="fa-solid fa-video"></i></div>
+                <div class="grade-label">Zoom &amp; Calls</div>
+                <div class="grade-status" id="gradeCalling">READY</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Network Info & ISP Diagnostics Bar -->
+        <section class="network-info-card">
+          <div class="net-item">
+            <i class="fa-solid fa-network-wired net-icon"></i>
+            <div>
+              <div class="net-lbl">ISP / Provider</div>
+              <div class="net-val" id="netIsp">Detecting Network...</div>
+            </div>
+          </div>
+
+          <div class="net-item">
+            <i class="fa-solid fa-location-dot net-icon"></i>
+            <div>
+              <div class="net-lbl">Client Location</div>
+              <div class="net-val" id="netLocation">Detecting City, Country...</div>
+            </div>
+          </div>
+
+          <div class="net-item">
+            <i class="fa-solid fa-globe net-icon"></i>
+            <div>
+              <div class="net-lbl">Public IP Address</div>
+              <div class="net-val" id="netIp">Loading...</div>
+            </div>
+          </div>
+
+          <div class="net-item">
+            <i class="fa-solid fa-server net-icon"></i>
+            <div>
+              <div class="net-lbl">Server Location</div>
+              <div class="net-val" style="color:#10b981;">Cloudflare Global Edge</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- In-Content Ad Slot -->
+        <div class="ad-slot-wrap in-article">
+          <div class="ad-badge">Advertisement</div>
+          <div class="ad-placeholder-text">Responsive Mid-Page Ad Unit (AdSense Native / Display)</div>
         </div>
+
+        <!-- Local Test History Section -->
+        <section class="history-card">
+          <div class="history-header">
+            <div class="history-title"><i class="fa-solid fa-clock-rotate-left" style="color:#38bdf8;"></i> Recent Speed Test History</div>
+            <div class="history-actions">
+              <button type="button" class="btn-hist" onclick="SpeedEngine.exportHistoryCSV()"><i class="fa-solid fa-file-csv"></i> Export CSV</button>
+              <button type="button" class="btn-hist" onclick="SpeedEngine.clearHistory()"><i class="fa-solid fa-trash-can"></i> Clear</button>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="speed-table">
+              <thead>
+                <tr>
+                  <th>Date &amp; Time</th>
+                  <th>Download Speed</th>
+                  <th>Upload Speed</th>
+                  <th>Ping</th>
+                  <th>Jitter</th>
+                  <th>Bufferbloat</th>
+                </tr>
+              </thead>
+              <tbody id="historyTableBody">
+                <!-- Rendered dynamically by JS -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Comprehensive SEO Educational Guide & FAQs (High-Ranking Article) -->
+        <article class="seo-guide-section">
+          <h2>Understanding Your Internet Speed &amp; Network Health Metrics</h2>
+          <p>Internet connection performance is defined by far more than just raw Megabits per second (Mbps). Factors like <strong>Ping (Latency)</strong>, <strong>Jitter (Variation)</strong>, and <strong>Bufferbloat (Loaded Latency)</strong> directly dictate whether your online gaming is lag-free, video calls remain crystal clear, and 4K streams load without buffering.</p>
+
+          <div class="seo-grid-3">
+            <div class="seo-card-box">
+              <h4><i class="fa-solid fa-download" style="color:#10b981;"></i> Download Speed (Mbps)</h4>
+              <p>The rate at which data is transferred from remote servers to your device. 25 Mbps is ideal for 4K streaming, while 100-500+ Mbps handles heavy multi-user households downloading games and streaming simultaneously.</p>
+            </div>
+            <div class="seo-card-box">
+              <h4><i class="fa-solid fa-upload" style="color:#f59e0b;"></i> Upload Speed (Mbps)</h4>
+              <p>The speed at which your device sends data out to the web. Critical for cloud backups (Google Drive, OneDrive), YouTube video uploads, Twitch streaming, and high-definition video conferencing.</p>
+            </div>
+            <div class="seo-card-box">
+              <h4><i class="fa-solid fa-bolt" style="color:#38bdf8;"></i> Ping, Jitter &amp; Bufferbloat</h4>
+              <p>Ping measures reaction round-trip time. Jitter measures timing fluctuations. Bufferbloat measures latency spike under load. Keeping ping &lt; 25ms and jitter &lt; 5ms is the gold standard for competitive gaming.</p>
+            </div>
+          </div>
+
+          <h3>Recommended Speeds by Activity</h3>
+          <ul style="margin-left:20px; color:#94a3b8; font-size:0.92rem; line-height:1.8;">
+            <li><strong>Competitive Online Gaming (Valorant, CS:GO, Fortnite, BGMI):</strong> 15-30 Mbps Download, &lt; 25ms Ping, &lt; 5ms Jitter.</li>
+            <li><strong>4K UHD &amp; 8K HDR Streaming (Netflix, Prime Video, YouTube):</strong> 25-50 Mbps Download per stream.</li>
+            <li><strong>Work From Home &amp; 1080p Zoom / Teams Conferences:</strong> 15 Mbps Download, 5-10 Mbps Upload.</li>
+            <li><strong>Smart Home with 15+ IoT Devices (CCTV, Smart TVs, Alexa):</strong> 100-300+ Mbps Fiber Broadband.</li>
+          </ul>
+
+          <h3>How to Troubleshoot &amp; Boost Slow Internet Speeds</h3>
+          <p>If your speed test results are lower than your ISP plan, try these proven troubleshooting tips:</p>
+          <ol style="margin-left:20px; color:#94a3b8; font-size:0.92rem; line-height:1.8;">
+            <li><strong>Switch to 5 GHz Wi-Fi or Ethernet:</strong> 2.4 GHz Wi-Fi is congested with microwave and Bluetooth interference. 5 GHz or direct Cat6 Ethernet unlocks full Gigabit speeds.</li>
+            <li><strong>Restart Your Router &amp; ONT Modem:</strong> Power cycling your router clears DNS caches and establishes fresh low-latency ISP routing channels.</li>
+            <li><strong>Disable Background Bandwidth Hogs:</strong> Pause heavy torrents, Steam updates, and cloud sync apps while testing.</li>
+            <li><strong>Use Fast Secure DNS (1.1.1.1 or 8.8.8.8):</strong> Switching from slow ISP DNS to Cloudflare (1.1.1.1) or Google DNS (8.8.8.8) accelerates web page resolution.</li>
+          </ol>
+
+          <h3>Frequently Asked Questions (FAQ)</h3>
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>Why is my speed test result different on different apps?</span>
+                <span style="font-size:1.2rem;">+</span>
+              </button>
+              <div class="faq-answer" style="display:none;">
+                <p>Speed tests connect to different server locations and use varying test methodologies. Daily1Step uses multi-stream raw binary CDN saturation that avoids gzip compression distortion, measuring exact physical wire transfer rates.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>What is the difference between Mbps and MB/s?</span>
+                <span style="font-size:1.2rem;">+</span>
+              </button>
+              <div class="faq-answer" style="display:none;">
+                <p>1 Byte = 8 Bits. Internet service providers market speeds in <strong>Megabits per second (Mbps)</strong>. File download speeds in browsers/Steam are shown in <strong>Megabytes per second (MB/s)</strong>. A 100 Mbps internet connection downloads files at 12.5 MB/s.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>Is this internet speed test completely private?</span>
+                <span style="font-size:1.2rem;">+</span>
+              </button>
+              <div class="faq-answer" style="display:none;">
+                <p>Yes, 100%! Daily1Step runs purely in your browser. We never collect or sell your personal data, logs, or speed results.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
       </div>
-    </section>
 
-    <!-- Network Info & Diagnostics Bar -->
-    <section class="network-info-card">
-      <div class="net-item">
-        <i class="fa-solid fa-network-wired net-icon"></i>
-        <div>
-          <div class="net-lbl">ISP / Provider</div>
-          <div class="net-val" id="netIsp">Detecting Broadband...</div>
+      <!-- RIGHT COLUMN: High-RPM AdSense Sticky Sidebar & Utilities -->
+      <aside class="sidebar-ad-col">
+        <!-- 300x250 Medium Rectangle Ad Slot -->
+        <div class="ad-slot-wrap sidebar-box">
+          <div class="ad-badge">Advertisement</div>
+          <div class="ad-placeholder-text">AdSense Medium Rectangle (300x250)</div>
         </div>
-      </div>
 
-      <div class="net-item">
-        <i class="fa-solid fa-location-dot net-icon"></i>
-        <div>
-          <div class="net-lbl">Client Location</div>
-          <div class="net-val" id="netLocation">Detecting City, Country...</div>
+        <!-- Quick Network Tools Widget -->
+        <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-md); padding:18px;">
+          <h4 style="color:#fff; font-size:0.92rem; font-weight:800; margin-bottom:12px; display:flex; align-items:center; gap:8px;">
+            <i class="fa-solid fa-sliders" style="color:#38bdf8;"></i> Popular Tools
+          </h4>
+          <ul style="list-style:none; font-size:0.85rem; line-height:2;">
+            <li><a href="https://bypyay.github.io/tools/calculator/" style="color:#94a3b8; text-decoration:none;">🧮 207+ Online Calculators</a></li>
+            <li><a href="https://bypyay.github.io/tools/audio/" style="color:#94a3b8; text-decoration:none;">🎙️ 25 Audio Editing Tools</a></li>
+            <li><a href="https://bypyay.github.io/tools/pdf/" style="color:#94a3b8; text-decoration:none;">📄 22 PDF Utility Tools</a></li>
+            <li><a href="https://bypyay.github.io/tools/image/" style="color:#94a3b8; text-decoration:none;">🖼️ 27 Image Web Tools</a></li>
+            <li><a href="https://bypyay.github.io/tools/removebg/" style="color:#94a3b8; text-decoration:none;">🪄 AI Background Remover</a></li>
+          </ul>
         </div>
-      </div>
 
-      <div class="net-item">
-        <i class="fa-solid fa-globe net-icon"></i>
-        <div>
-          <div class="net-lbl">Public IP Address</div>
-          <div class="net-val" id="netIp">Loading...</div>
+        <!-- 300x600 Half Page / Skyscraper Sticky Ad Slot -->
+        <div class="ad-slot-wrap sidebar-tall">
+          <div class="ad-badge">Advertisement</div>
+          <div class="ad-placeholder-text">AdSense Half-Page Skyscraper (300x600 Sticky Ad)</div>
         </div>
-      </div>
+      </aside>
 
-      <div class="net-item">
-        <i class="fa-solid fa-server net-icon"></i>
-        <div>
-          <div class="net-lbl">Test Server</div>
-          <div class="net-val" style="color:#10b981;">Cloudflare Global Anycast Edge</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Local History Section -->
-    <section class="history-card">
-      <div class="history-header">
-        <div class="history-title"><i class="fa-solid fa-clock-rotate-left" style="color:#38bdf8;"></i> Recent Speed Test History</div>
-        <div class="history-actions">
-          <button type="button" class="btn-hist" onclick="SpeedEngine.exportHistoryCSV()"><i class="fa-solid fa-file-csv"></i> Export CSV</button>
-          <button type="button" class="btn-hist" onclick="SpeedEngine.clearHistory()"><i class="fa-solid fa-trash-can"></i> Clear</button>
-        </div>
-      </div>
-
-      <div class="table-responsive">
-        <table class="speed-table">
-          <thead>
-            <tr>
-              <th>Date &amp; Time</th>
-              <th>Download Speed</th>
-              <th>Upload Speed</th>
-              <th>Ping</th>
-              <th>Jitter</th>
-              <th>Bufferbloat</th>
-            </tr>
-          </thead>
-          <tbody id="historyTableBody">
-            <!-- Rendered by JS -->
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- SEO Guide & Diagnostic Article -->
-    <article class="seo-guide-section">
-      <h2>Understanding Your Internet Speed &amp; Network Health</h2>
-      <p>Internet speed isn't just about raw download Megabits per second (Mbps). Quality of experience in online gaming, Zoom calls, and 4K streaming depends on multiple critical metrics:</p>
-
-      <div class="seo-grid-3">
-        <div class="seo-card-box">
-          <h4><i class="fa-solid fa-download" style="color:#10b981;"></i> Download Speed</h4>
-          <p>How fast your device receives data from the web. 25 Mbps is sufficient for 4K streaming, while 100-500+ Mbps is optimal for households with multiple devices downloading games and movies.</p>
-        </div>
-        <div class="seo-card-box">
-          <h4><i class="fa-solid fa-upload" style="color:#f59e0b;"></i> Upload Speed</h4>
-          <p>How quickly you send data out. Essential for video conferences, live streaming on YouTube/Twitch, cloud backups (Google Drive/iCloud), and uploading large videos.</p>
-        </div>
-        <div class="seo-card-box">
-          <h4><i class="fa-solid fa-bolt" style="color:#38bdf8;"></i> Ping, Jitter &amp; Bufferbloat</h4>
-          <p>Ping measures reaction time (latency). Jitter measures fluctuation. Bufferbloat measures latency lag when the network is under heavy load. Below 20ms ping with low jitter is the gold standard for competitive gaming.</p>
-        </div>
-      </div>
-
-      <h3>Recommended Speeds by Activity</h3>
-      <ul style="margin-left:20px; color:#94a3b8; font-size:0.95rem; line-height:1.8;">
-        <li><strong>Competitive Online Gaming (Valorant, CS:GO, Fortnite):</strong> 15-30 Mbps Download, &lt; 25ms Ping, &lt; 5ms Jitter.</li>
-        <li><strong>4K UHD &amp; 8K HDR Streaming (Netflix, YouTube):</strong> 25-50 Mbps Download per stream.</li>
-        <li><strong>Work From Home &amp; 1080p Zoom Conferences:</strong> 15 Mbps Download, 5-10 Mbps Upload.</li>
-        <li><strong>Smart Home with 15+ IoT Devices:</strong> 100-300+ Mbps Fiber connection.</li>
-      </ul>
-    </article>
+    </div>
 
   </main>
 
@@ -488,37 +636,68 @@
   <div class="badge-modal-overlay" id="badgeModalOverlay" onclick="SpeedEngine.closeBadgeModal()">
     <div class="badge-modal-card" onclick="event.stopPropagation()">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-        <h3 style="color:#fff; font-size:1.15rem; font-weight:800;"><i class="fa-solid fa-image" style="color:#38bdf8; margin-right:6px;"></i> Shareable Speed Certificate Card</h3>
+        <h3 style="color:#fff; font-size:1.1rem; font-weight:800;"><i class="fa-solid fa-image" style="color:#38bdf8; margin-right:6px;"></i> Shareable Speed Certificate Card</h3>
         <button type="button" onclick="SpeedEngine.closeBadgeModal()" style="background:none; border:none; color:#94a3b8; font-size:1.4rem; cursor:pointer;" aria-label="Close Modal">&times;</button>
       </div>
-      <p style="color:#94a3b8; font-size:0.85rem;">Download this high-resolution badge to share your internet speed result on Twitter, WhatsApp, or LinkedIn.</p>
+      <p style="color:#94a3b8; font-size:0.82rem;">Download this high-resolution badge to share your internet speed result on Twitter, WhatsApp, or LinkedIn.</p>
 
       <div class="badge-canvas-wrap">
         <canvas id="socialBadgeCanvas"></canvas>
       </div>
 
-      <div style="display:flex; gap:10px; justify-content:center; margin-top:16px;">
-        <button type="button" class="btn-start-test" style="padding:12px 28px; font-size:0.95rem;" onclick="SpeedEngine.downloadSocialBadge()">
-          <i class="fa-solid fa-download"></i> Download PNG Image
+      <div style="display:flex; gap:10px; justify-content:center; margin-top:14px;">
+        <button type="button" class="btn-start-test" style="padding:10px 24px; font-size:0.92rem; animation:none;" onclick="SpeedEngine.downloadSocialBadge()">
+          <i class="fa-solid fa-download"></i> Download PNG
         </button>
-        <button type="button" class="opt-pill-btn" style="padding:12px 20px;" onclick="SpeedEngine.closeBadgeModal()">Close</button>
+        <button type="button" class="opt-pill-btn" style="padding:10px 18px;" onclick="SpeedEngine.closeBadgeModal()">Close</button>
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer style="background:#0b1121; border-top:1px solid rgba(255,255,255,0.08); padding:32px 16px; margin-top:40px; text-align:center; color:#64748b; font-size:0.85rem;">
-    <div style="max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-      <div>&copy; 2026 Daily1Step NetSpeedTest. High-Precision Multi-Stream Bandwidth Engine.</div>
-      <div style="display:flex; gap:16px;">
-        <a href="https://bypyay.github.io/tools/" style="color:#94a3b8; text-decoration:none;">All 320+ Tools</a>
-        <a href="https://bypyay.github.io/tools/calculator/" style="color:#94a3b8; text-decoration:none;">Calculators</a>
-        <a href="https://bypyay.github.io/tools/audio/" style="color:#94a3b8; text-decoration:none;">Audio Suite</a>
+  <!-- Google AdSense Compliant Footer -->
+  <footer style="background:#0b1121; border-top:1px solid rgba(255,255,255,0.08); padding:36px 16px 24px; margin-top:40px; color:#64748b; font-size:0.85rem;">
+    <div style="max-width:1400px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:24px; margin-bottom:28px; text-align:left;">
+      <div>
+        <h4 style="color:#fff; font-size:0.95rem; font-weight:800; margin-bottom:10px;">Daily1Step NetSpeedTest</h4>
+        <p style="line-height:1.6; font-size:0.82rem;">Free high-precision internet bandwidth speed testing suite. Measure download, upload, ping, jitter, and bufferbloat quality directly inside your browser with 0 server logs.</p>
       </div>
+      <div>
+        <h4 style="color:#fff; font-size:0.95rem; font-weight:800; margin-bottom:10px;">Popular Suites</h4>
+        <ul style="list-style:none; line-height:2; font-size:0.82rem;">
+          <li><a href="https://bypyay.github.io/tools/calculator/" style="color:#94a3b8; text-decoration:none;">207+ Free Calculators</a></li>
+          <li><a href="https://bypyay.github.io/tools/audio/" style="color:#94a3b8; text-decoration:none;">Audio Cutter &amp; Transcriber</a></li>
+          <li><a href="https://bypyay.github.io/tools/pdf/" style="color:#94a3b8; text-decoration:none;">PDF Merge, Split &amp; Convert</a></li>
+          <li><a href="https://bypyay.github.io/tools/image/" style="color:#94a3b8; text-decoration:none;">Image Resizer &amp; Compressor</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:#fff; font-size:0.95rem; font-weight:800; margin-bottom:10px;">Legal &amp; Policy</h4>
+        <ul style="list-style:none; line-height:2; font-size:0.82rem;">
+          <li><a href="https://bypyay.github.io/tools/privacy-policy.html" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a></li>
+          <li><a href="https://bypyay.github.io/tools/terms.html" style="color:#94a3b8; text-decoration:none;">Terms of Service</a></li>
+          <li><a href="https://bypyay.github.io/tools/about.html" style="color:#94a3b8; text-decoration:none;">About Us</a></li>
+          <li><a href="https://bypyay.github.io/tools/contact.html" style="color:#94a3b8; text-decoration:none;">Contact Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.06); padding-top:18px; text-align:center; font-size:0.8rem;">
+      &copy; 2026 Daily1Step NetSpeedTest. All rights reserved. 100% Client-Side In-Browser Processing.
     </div>
   </footer>
 
+  <!-- FAQ Accordion Script -->
+  <script>
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var ans = btn.nextElementSibling;
+      var isOpen = ans.style.display === 'block';
+      ans.style.display = isOpen ? 'none' : 'block';
+      btn.querySelector('span:last-child').textContent = isOpen ? '+' : '−';
+    });
+  });
+  </script>
+
   <!-- Core Speed Engine Script -->
-  <script src="assets/js/speedtest-engine.js?v=4"></script>
+  <script src="assets/js/speedtest-engine.js?v=5"></script>
 </body>
 </html>
