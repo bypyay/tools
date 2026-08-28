@@ -598,3 +598,76 @@ a { color: inherit; text-decoration: none; }
 }
 .footer-bottom-links a { margin-left: 16px; color: #94a3b8; }
 .footer-bottom-links a:hover { color: #fff; }
+
+
+/* ── Super Responsive Mobile Tweaks for Portal ── */
+@media (max-width: 768px) {
+  .portal-header {
+    display: none !important;
+  }
+  .header-container {
+    padding: 8px 14px;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+  .portal-brand {
+    gap: 8px;
+  }
+  .brand-logo {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+  .brand-title {
+    font-size: 1.05rem;
+  }
+  .brand-subtitle {
+    font-size: 0.62rem;
+  }
+  .btn-portal-search {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    gap: 6px;
+  }
+  .btn-portal-search kbd {
+    display: none;
+  }
+  .portal-hero {
+    padding: 40px 14px 30px;
+  }
+  .portal-hero h1 {
+    font-size: 2.1rem;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  .hero-subtitle {
+    font-size: 0.96rem;
+    line-height: 1.55;
+    margin-bottom: 24px;
+  }
+  .hero-search-wrapper {
+    margin-bottom: 24px;
+  }
+  #masterSearchInput {
+    height: 52px;
+    font-size: 0.92rem;
+    padding: 0 46px 0 46px;
+  }
+  .search-leading-icon {
+    left: 16px;
+    font-size: 1.05rem;
+  }
+  .hero-stats-row {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .stat-item strong {
+    font-size: 1.3rem;
+  }
+  .stat-item span {
+    font-size: 0.72rem;
+  }
+  .stat-divider {
+    height: 22px;
+  }
+}
