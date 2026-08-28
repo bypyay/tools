@@ -806,3 +806,37 @@ input:focus, select:focus, textarea:focus {
     display: none !important;
   }
 }
+
+
+/* ── Mobile Responsive Enhancements for Image Suite ── */
+@media (max-width: 768px) {
+  .workspace-layout {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .workspace-container, .tool-page-container {
+    padding: 12px !important;
+  }
+  .drop-zone {
+    padding: 30px 16px !important;
+  }
+  .drop-zone h3 {
+    font-size: 1.1rem !important;
+  }
+  .preview-wrapper {
+    max-height: 300px !important;
+  }
+  .btn-action-primary, .btn-action-secondary {
+    width: 100% !important;
+    height: 48px !important;
+    font-size: 0.95rem !important;
+  }
+  .controls-card {
+    padding: 16px 14px !important;
+    border-radius: 16px !important;
+  }
+  .exam-preset-grid, .ratio-preset-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6px !important;
+  }
+}

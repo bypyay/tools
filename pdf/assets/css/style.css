@@ -1500,3 +1500,29 @@ img {
     display: none !important;
   }
 }
+
+
+/* ── Mobile Responsive Enhancements for PDF Suite ── */
+@media (max-width: 768px) {
+  .tool-workspace {
+    padding: 12px !important;
+  }
+  .pdf-upload-box {
+    padding: 30px 16px !important;
+  }
+  .pdf-upload-box h3 {
+    font-size: 1.15rem !important;
+  }
+  .pdf-pages-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)) !important;
+    gap: 10px !important;
+  }
+  .btn-pdf-action {
+    width: 100% !important;
+    height: 48px !important;
+  }
+  .pdf-action-bar {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+}
