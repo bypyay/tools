@@ -1053,3 +1053,198 @@ body {
     display: none !important;
   }
 }
+
+
+/* ==========================================================================
+   PRO Graphic Components: Stack Bars, Gauge Meters & Action Bars
+   ========================================================================== */
+/* Visual Stack Bar */
+.calc-stack-bar-wrap {
+  margin: 18px 0;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+}
+.calc-stack-bar {
+  display: flex;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+  background: #f1f5f9;
+}
+.calc-stack-seg {
+  height: 100%;
+  transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+.calc-stack-seg:hover {
+  filter: brightness(1.1);
+}
+.calc-stack-legend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.calc-stack-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.86rem;
+}
+.calc-stack-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.calc-stack-lbl {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.calc-stack-val {
+  color: var(--text-main);
+  font-weight: 800;
+  margin-left: auto;
+}
+
+/* Visual Gauge Meter */
+.calc-gauge-wrap {
+  margin: 18px 0;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+}
+.calc-gauge-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+.calc-gauge-track {
+  position: relative;
+  height: 18px;
+  border-radius: 9px;
+  overflow: visible;
+  display: flex;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+.calc-gauge-zone {
+  height: 100%;
+}
+.calc-gauge-zone:first-child { border-radius: 9px 0 0 9px; }
+.calc-gauge-zone:last-child { border-radius: 0 9px 9px 0; }
+.calc-gauge-needle {
+  position: absolute;
+  top: -6px;
+  width: 6px;
+  height: 30px;
+  background: #0f172a;
+  border: 2px solid #ffffff;
+  border-radius: 3px;
+  transform: translateX(-50%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  transition: left 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 5;
+}
+.calc-gauge-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* 1-Click Action Bar */
+.calc-action-bar-wrap {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.btn-calc-action {
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: #ffffff;
+  color: var(--text-main);
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: all 0.18s ease;
+  font-family: inherit;
+}
+.btn-calc-action:hover {
+  background: var(--bg-subtle);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+.btn-calc-action:active {
+  transform: scale(0.97);
+}
+.btn-action-copy {
+  background: #f0fdfa;
+  border-color: #99f6e4;
+  color: #0f766e;
+}
+.btn-action-copy:hover {
+  background: #ccfbf1;
+  border-color: #0d9488;
+  color: #0f766e;
+}
+.btn-action-csv {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1d4ed8;
+}
+.btn-action-csv:hover {
+  background: #dbeafe;
+  border-color: #3b82f6;
+  color: #1d4ed8;
+}
+.btn-action-print {
+  background: #f8fafc;
+  color: var(--text-muted);
+}
+
+/* Currency Selector Pills */
+.calc-currency-pills {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  padding: 10px;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+.curr-pill {
+  padding: 5px 12px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.curr-pill:hover, .curr-pill.active {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 2px 8px var(--primary-glow);
+}

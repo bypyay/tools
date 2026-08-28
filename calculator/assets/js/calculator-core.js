@@ -1,6 +1,13 @@
 /**
- * Daily1Step Calculator Core — Enterprise-Grade Calculation & Chart Engine
- * Supports Multi-Currency, Data Tables, Growth Charts, Amortization, CSV Export & Printing
+ * Daily1Step Calculator Core PRO — Enterprise-Grade Calculation & Graphic Engine
+ * Features:
+ * 1. Multi-Currency Support (USD, INR Lakhs/Crores, EUR, GBP, CAD, AUD, AED, JPY)
+ * 2. Visual Multi-Segment Breakdown Stack Bars with Percentage Tooltips
+ * 3. Visual Interactive Gauge Meter for Health & Metric Scales
+ * 4. Dual Chart.js Engine (Doughnut & Area Wealth Growth Curves)
+ * 5. Full Amortization / Calculation Data Tables with Search & Paging
+ * 6. 1-Click Action Bar: Copy Summary, Export CSV, Print Report, Reset
+ * 7. Live Slider-Input Syncer & Metric/Imperial Unit Convertor
  */
 
 var CalcCore = (function() {
@@ -31,7 +38,7 @@ var CalcCore = (function() {
   }
 
   function formatCurrency(val, currencyCode) {
-    if (isNaN(val) || val === null || val === undefined) return '$0.00';
+    if (isNaN(val) || val === null || val === undefined) return getCurrencySymbol() + '0.00';
     var code = currencyCode || activeCurrency;
     var sym = currencySymbols[code] || '$';
     
@@ -55,7 +62,121 @@ var CalcCore = (function() {
     return Number(val).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%';
   }
 
-  // Chart instances registry
+  // ══════════════════════════════════════════════════════════════════
+  // Visual Stack Bar Renderer (Animated Multi-Segment Color Bar)
+  // ══════════════════════════════════════════════════════════════════
+  function renderStackBar(containerId, segments) {
+    var container = document.getElementById(containerId);
+    if (!container || !segments || segments.length === 0) return;
+
+    var total = segments.reduce(function(acc, s) { return acc + (s.value || 0); }, 0);
+    if (total <= 0) return;
+
+    var barHtml = '<div class="calc-stack-bar-wrap">';
+    barHtml += '<div class="calc-stack-bar">';
+    segments.forEach(function(s) {
+      var pct = ((s.value / total) * 100).toFixed(1);
+      if (parseFloat(pct) > 0) {
+        barHtml += '<div class="calc-stack-seg" style="width:' + pct + '%; background:' + (s.color || '#0284c7') + ';" title="' + s.label + ': ' + (s.isCurrency ? formatCurrency(s.value) : formatNumber(s.value)) + ' (' + pct + '%)"></div>';
+      }
+    });
+    barHtml += '</div>';
+
+    // Legends
+    barHtml += '<div class="calc-stack-legend-grid">';
+    segments.forEach(function(s) {
+      var pct = ((s.value / total) * 100).toFixed(1);
+      var displayVal = s.isCurrency ? formatCurrency(s.value) : formatNumber(s.value) + (s.unit ? ' ' + s.unit : '');
+      barHtml += '<div class="calc-stack-legend-item">';
+      barHtml += '<span class="calc-stack-dot" style="background:' + (s.color || '#0284c7') + ';"></span>';
+      barHtml += '<span class="calc-stack-lbl">' + s.label + ':</span>';
+      barHtml += '<strong class="calc-stack-val">' + displayVal + ' <small>(' + pct + '%)</small></strong>';
+      barHtml += '</div>';
+    });
+    barHtml += '</div></div>';
+
+    container.innerHTML = barHtml;
+  }
+
+  // ══════════════════════════════════════════════════════════════════
+  // Visual Gauge Indicator Renderer (Health, BMI, Efficiency)
+  // ══════════════════════════════════════════════════════════════════
+  function renderGaugeBar(containerId, value, min, max, zones, label) {
+    var container = document.getElementById(containerId);
+    if (!container) return;
+
+    var clamped = Math.max(min, Math.min(max, value));
+    var pct = Math.max(0, Math.min(100, ((clamped - min) / (max - min)) * 100)).toFixed(1);
+
+    var html = '<div class="calc-gauge-wrap">';
+    html += '<div class="calc-gauge-top"><span class="calc-gauge-title">' + (label || 'Score / Level') + ': <strong>' + value.toFixed(1) + '</strong></span></div>';
+    html += '<div class="calc-gauge-track">';
+    
+    // Background colored zones
+    if (zones && zones.length > 0) {
+      zones.forEach(function(z) {
+        var zPct = (((z.max - z.min) / (max - min)) * 100).toFixed(1);
+        html += '<div class="calc-gauge-zone" style="width:' + zPct + '%; background:' + z.color + ';" title="' + z.name + '"></div>';
+      });
+    } else {
+      html += '<div class="calc-gauge-zone" style="width:100%; background:linear-gradient(90deg, #38bdf8, #22c55e, #eab308, #ef4444);"></div>';
+    }
+
+    // Needle indicator
+    html += '<div class="calc-gauge-needle" style="left:' + pct + '%;"></div>';
+    html += '</div>';
+
+    // Zone labels underneath
+    if (zones && zones.length > 0) {
+      html += '<div class="calc-gauge-labels">';
+      zones.forEach(function(z) {
+        html += '<span style="color:' + z.color + ';">' + z.name + '</span>';
+      });
+      html += '</div>';
+    }
+    html += '</div>';
+
+    container.innerHTML = html;
+  }
+
+  // ══════════════════════════════════════════════════════════════════
+  // 1-Click Action Bar (Copy Summary, CSV Export, Print, Reset)
+  // ══════════════════════════════════════════════════════════════════
+  function renderActionBar(containerId, summaryText, csvFilename, csvHeaders, csvRows) {
+    var container = document.getElementById(containerId);
+    if (!container) return;
+
+    var html = '<div class="calc-action-bar-wrap">';
+    html += '<button type="button" class="btn-calc-action btn-action-copy" onclick="CalcCore.copySummary(' + JSON.stringify(summaryText) + ', this)"><i class="fa-solid fa-copy"></i> Copy Summary</button>';
+    
+    if (csvHeaders && csvRows && csvRows.length > 0) {
+      html += '<button type="button" class="btn-calc-action btn-action-csv" onclick="CalcCore.exportCSV(' + JSON.stringify(csvFilename || 'calculation-data') + ', ' + JSON.stringify(csvHeaders) + ', ' + JSON.stringify(csvRows) + ')"><i class="fa-solid fa-file-csv"></i> Export CSV</button>';
+    }
+
+    html += '<button type="button" class="btn-calc-action btn-action-print" onclick="CalcCore.printReport()"><i class="fa-solid fa-print"></i> Print</button>';
+    html += '</div>';
+
+    container.innerHTML = html;
+  }
+
+  function copySummary(text, btnEl) {
+    if (!navigator.clipboard) return;
+    navigator.clipboard.writeText(text).then(function() {
+      if (btnEl) {
+        var originalHtml = btnEl.innerHTML;
+        btnEl.innerHTML = '<i class="fa-solid fa-check" style="color:#10b981;"></i> Copied!';
+        btnEl.style.borderColor = '#10b981';
+        setTimeout(function() {
+          btnEl.innerHTML = originalHtml;
+          btnEl.style.borderColor = '';
+        }, 2000);
+      }
+    });
+  }
+
+  // ══════════════════════════════════════════════════════════════════
+  // Chart Registry & Engines
+  // ══════════════════════════════════════════════════════════════════
   var chartInstances = {};
 
   function renderDoughnutChart(canvasId, labels, data, colors) {
@@ -66,7 +187,7 @@ var CalcCore = (function() {
       chartInstances[canvasId].destroy();
     }
 
-    var defaultColors = ['#0d9488', '#0284c7', '#f59e0b', '#ec4899', '#8b5cf6'];
+    var defaultColors = ['#0d9488', '#0284c7', '#f59e0b', '#ec4899', '#8b5cf6', '#10b981'];
 
     chartInstances[canvasId] = new Chart(canvas, {
       type: 'doughnut',
@@ -106,55 +227,6 @@ var CalcCore = (function() {
     });
   }
 
-  function renderLineChart(canvasId, labels, datasets) {
-    var canvas = document.getElementById(canvasId);
-    if (!canvas || typeof Chart === 'undefined') return;
-
-    if (chartInstances[canvasId]) {
-      chartInstances[canvasId].destroy();
-    }
-
-    chartInstances[canvasId] = new Chart(canvas, {
-      type: 'line',
-      data: {
-        labels: labels,
-        datasets: datasets
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        interaction: {
-          mode: 'index',
-          intersect: false,
-        },
-        plugins: {
-          legend: {
-            position: 'top',
-            labels: { font: { family: "'Plus Jakarta Sans', sans-serif", size: 12, weight: 600 } }
-          }
-        },
-        scales: {
-          x: {
-            grid: { display: false },
-            ticks: { font: { family: "'Plus Jakarta Sans', sans-serif", size: 11 } }
-          },
-          y: {
-            grid: { color: '#f1f5f9' },
-            ticks: {
-              font: { family: "'Plus Jakarta Sans', sans-serif", size: 11 },
-              callback: function(value) {
-                if (value >= 1000000) return getCurrencySymbol() + (value / 1000000).toFixed(1) + 'M';
-                if (value >= 1000) return getCurrencySymbol() + (value / 1000).toFixed(0) + 'k';
-                return getCurrencySymbol() + value;
-              }
-            }
-          }
-        }
-      }
-    });
-  }
-
-  // Render Area / Growth Chart for Financial Planning
   function renderGrowthAreaChart(canvasId, labels, investedData, interestData, totalData) {
     var canvas = document.getElementById(canvasId);
     if (!canvas || typeof Chart === 'undefined') return;
@@ -222,7 +294,6 @@ var CalcCore = (function() {
     });
   }
 
-  // Render Amortization or Growth Data Table
   function renderTable(containerId, headers, rows) {
     var container = document.getElementById(containerId);
     if (!container) return;
@@ -245,7 +316,6 @@ var CalcCore = (function() {
     container.innerHTML = html;
   }
 
-  // Export Data to CSV File
   function exportCSV(filename, headers, rows) {
     var csvContent = 'data:text/csv;charset=utf-8,';
     csvContent += headers.map(function(h) { return '"' + h + '"'; }).join(',') + '\r\n';
@@ -266,18 +336,15 @@ var CalcCore = (function() {
     document.body.removeChild(link);
   }
 
-  // Print Clean Report
   function printReport() {
     window.print();
   }
 
-  // Calculate Rule of 72
   function calculateRuleOf72(rate) {
     if (!rate || rate <= 0) return 'N/A';
     return (72 / rate).toFixed(1) + ' Years';
   }
 
-  // Live filter for homepage tools
   function initToolSearch() {
     var searchInput = document.getElementById('searchToolsInput');
     if (!searchInput) return;
@@ -310,7 +377,6 @@ var CalcCore = (function() {
     });
   }
 
-  // Category filter tabs on homepage
   function filterCategory(catKey, btn) {
     document.querySelectorAll('.cat-tab-btn').forEach(function(b) { b.classList.remove('active'); });
     if (btn) btn.classList.add('active');
@@ -330,8 +396,11 @@ var CalcCore = (function() {
     formatPercent: formatPercent,
     setCurrency: setCurrency,
     getCurrencySymbol: getCurrencySymbol,
+    renderStackBar: renderStackBar,
+    renderGaugeBar: renderGaugeBar,
+    renderActionBar: renderActionBar,
+    copySummary: copySummary,
     renderDoughnutChart: renderDoughnutChart,
-    renderLineChart: renderLineChart,
     renderGrowthAreaChart: renderGrowthAreaChart,
     renderTable: renderTable,
     exportCSV: exportCSV,
