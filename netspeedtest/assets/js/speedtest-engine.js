@@ -643,7 +643,10 @@ var SpeedEngine = (function() {
     var totalAngle = endAngle - startAngle;
 
     var maxDisplaySpeed = 500;
-    var speedRatio = Math.min(1, Math.log10(Math.max(1, speedVal) + 1) / Math.log10(maxDisplaySpeed + 1));
+    var speedRatio = 0;
+    if (speedVal > 0.05) {
+      speedRatio = Math.min(1, Math.log10(speedVal + 1) / Math.log10(maxDisplaySpeed + 1));
+    }
     var currentAngle = startAngle + (totalAngle * speedRatio);
 
     // Background track
@@ -654,8 +657,8 @@ var SpeedEngine = (function() {
     gaugeCtx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
     gaugeCtx.stroke();
 
-    // Active speed glowing arc
-    if (speedRatio > 0.01) {
+    // Active speed glowing arc (Only when speed is actively measured)
+    if (speedRatio > 0.005) {
       var gradient = gaugeCtx.createLinearGradient(centerX - radius, centerY, centerX + radius, centerY);
       gradient.addColorStop(0, '#06b6d4');
       gradient.addColorStop(0.5, '#3b82f6');
