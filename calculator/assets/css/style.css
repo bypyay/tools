@@ -49,6 +49,11 @@
   padding: 0;
 }
 
+html, body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box;
+}
 body {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg-page);
@@ -1462,5 +1467,170 @@ body {
   }
   .btn-action-print {
     grid-column: span 1 !important;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   ZERO-OVERFLOW & PERFECT SYMMETRICAL MOBILE RESPONSIVENESS
+   ══════════════════════════════════════════════════════════════════ */
+html, body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}
+
+.calc-workspace-wrap, .tools-container, .hero-section, .guide-section, .schedule-section {
+  width: 100% !important;
+  max-width: 1400px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
+}
+
+.calc-grid-layout {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.calc-card, .schedule-section, .guide-section {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+/* Data Table Responsive Scrolling Container */
+.calc-table-responsive {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  display: block !important;
+  box-sizing: border-box !important;
+  border-radius: var(--radius-md);
+  margin-top: 12px;
+}
+
+.calc-data-table {
+  width: 100% !important;
+  min-width: 480px; /* Allows smooth horizontal swipe inside container only */
+  border-collapse: collapse;
+}
+
+/* Milestone Boxes Responsive Sizing */
+.milestones-wrap {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+.milestones-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 8px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.milestone-box {
+  min-width: 0 !important; /* Prevents grid blowout */
+  padding: 10px 6px !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+  overflow: hidden !important;
+}
+
+.milestone-val {
+  font-size: clamp(0.85rem, 3.5vw, 1.15rem) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.milestone-label {
+  font-size: 0.68rem !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Charts & Doughnut Wrappers */
+.chart-canvas-wrap, .doughnut-wrap {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 250px !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+}
+
+canvas {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Mobile Breakpoint < 768px Symmetrical Balancing */
+@media (max-width: 768px) {
+  .calc-workspace-wrap {
+    padding: 14px 12px 28px !important;
+    margin: 0 auto !important;
+  }
+  .calc-card {
+    padding: 16px 12px !important;
+    border-radius: 14px !important;
+    margin-bottom: 16px !important;
+  }
+  .schedule-section {
+    padding: 16px 12px !important;
+    border-radius: 14px !important;
+  }
+  .calc-main-title {
+    font-size: 1.4rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+  }
+  .calc-main-desc {
+    font-size: 0.85rem !important;
+    line-height: 1.45 !important;
+  }
+  .calc-top-controls {
+    flex-direction: column !important;
+    gap: 8px !important;
+    align-items: stretch !important;
+  }
+  .calc-control-group {
+    justify-content: space-between !important;
+  }
+  .calc-mode-bar {
+    flex-direction: column !important;
+  }
+  .calc-mode-btn {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .calc-workspace-wrap {
+    padding: 10px 8px 24px !important;
+  }
+  .calc-card, .schedule-section {
+    padding: 14px 10px !important;
+  }
+  .milestones-grid {
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 5px !important;
+  }
+  .milestone-box {
+    padding: 8px 3px !important;
   }
 }

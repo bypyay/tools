@@ -679,3 +679,34 @@ a { color: inherit; text-decoration: none; }
     display: none !important;
   }
 }
+
+
+/* Zero-Overflow Global Fix */
+html, body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box !important;
+}
+.portal-hero, .portal-directory, .suite-hubs-container, .portal-footer {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
+}
+@media (max-width: 640px) {
+  .portal-hero {
+    padding: 28px 12px 24px !important;
+  }
+  .suite-hubs-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .suite-hub-card {
+    padding: 14px 12px !important;
+  }
+  .tools-directory-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+}
