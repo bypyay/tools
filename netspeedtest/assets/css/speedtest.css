@@ -290,12 +290,11 @@ html, body {
   overflow: hidden;
 }
 
-/* Speedometer Gauge Stage */
 .gauge-stage-wrap {
   position: relative;
   width: 100%;
-  max-width: 400px;
-  height: 270px;
+  max-width: 420px;
+  height: 290px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -310,16 +309,19 @@ html, body {
 
 .gauge-center-hud {
   position: absolute;
-  top: 55%;
+  top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   pointer-events: none;
-  width: 100%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hud-phase-label {
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -329,7 +331,7 @@ html, body {
 
 .hud-speed-num {
   font-family: 'JetBrains Mono', monospace;
-  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  font-size: clamp(2.2rem, 5.5vw, 3.2rem);
   font-weight: 900;
   line-height: 1;
   color: #ffffff;
@@ -337,10 +339,25 @@ html, body {
 }
 
 .hud-unit-label {
-  font-size: 0.88rem;
+  font-size: 0.80rem;
   font-weight: 800;
   color: var(--text-muted);
-  margin-top: 4px;
+  margin-top: 2px;
+}
+
+/* In-Gauge Live Waveform Embed */
+.gauge-waveform-embed {
+  width: 100%;
+  max-width: 240px;
+  height: 55px;
+  margin-top: 6px;
+  position: relative;
+}
+
+#speedWaveformCanvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
 }
 
 /* ══════════════════════════════════════════════════════════════════

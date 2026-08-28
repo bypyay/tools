@@ -18,7 +18,7 @@
   <meta name="twitter:description" content="High-precision multi-stream CDN speed test tool with instant ping, jitter and bufferbloat scoring.">
 
   <!-- Stylesheets & Fonts -->
-  <link rel="stylesheet" href="assets/css/speedtest.css?v=8">
+  <link rel="stylesheet" href="assets/css/speedtest.css?v=9">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -384,9 +384,9 @@
           </div>
         </section>
 
-        <!-- Master Stage: Speedometer + Waveform Chart -->
+        <!-- Master Stage: Speedometer (with In-Gauge Waveform) + Diagnostics Card -->
         <section class="main-stage-grid" id="mainStageGrid">
-          <!-- Left Card: Glowing Speedometer + Pulsing Magnetic Test Button -->
+          <!-- Left Card: Glowing Speedometer + Integrated Live Waveform + Pulsing Start Button -->
           <div class="stage-card" id="gaugeStageCard">
             <div class="gauge-stage-wrap">
               <canvas id="speedGaugeCanvas"></canvas>
@@ -394,6 +394,11 @@
                 <div class="hud-phase-label" id="hudPhase">READY TO TEST</div>
                 <div class="hud-speed-num" id="hudSpeed">0.00</div>
                 <div class="hud-unit-label" id="hudUnit">Mbps</div>
+
+                <!-- Seamlessly Integrated In-Gauge Live Waveform Stream -->
+                <div class="gauge-waveform-embed" id="gaugeWaveformEmbed">
+                  <canvas id="speedWaveformCanvas"></canvas>
+                </div>
               </div>
             </div>
 
@@ -412,19 +417,15 @@
             </div>
           </div>
 
-          <!-- Right Card: Real-time Live Waveform & Quality Grades -->
+          <!-- Right Card: Real-time Connection Quality & Bufferbloat Diagnostics -->
           <div class="stage-card chart-stage-card" id="chartStageCard">
-            <div class="chart-header-row">
-              <div class="chart-title"><i class="fa-solid fa-chart-line" style="color:#38bdf8;"></i> Live Bandwidth Waveform</div>
-              <span style="font-size:0.72rem; color:#64748b; font-weight:700;">REAL-TIME (100ms)</span>
-            </div>
-
-            <div class="chart-canvas-container">
-              <canvas id="speedWaveformCanvas"></canvas>
+            <div class="chart-header-row" style="width:100%;">
+              <div class="chart-title"><i class="fa-solid fa-shield-halved" style="color:#38bdf8;"></i> Real-Time Quality Score</div>
+              <span style="font-size:0.72rem; color:#10b981; font-weight:800;"><i class="fa-solid fa-circle-check"></i> LIVE</span>
             </div>
 
             <!-- Connection Quality Grades -->
-            <div class="grades-grid">
+            <div class="grades-grid" style="width:100%; margin-top:14px;">
               <div class="grade-card">
                 <div class="grade-icon" style="color:#10b981;"><i class="fa-solid fa-gamepad"></i></div>
                 <div class="grade-label">Gaming (Ping)</div>
@@ -442,6 +443,12 @@
                 <div class="grade-label">Zoom &amp; Calls</div>
                 <div class="grade-status" id="gradeCalling">READY</div>
               </div>
+            </div>
+
+            <!-- Bufferbloat & Real-time Jitter Indicator -->
+            <div class="bb-status-box" style="margin-top:16px; width:100%; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:12px 14px; display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:0.8rem; color:#94a3b8; font-weight:700;"><i class="fa-solid fa-gauge-high" style="color:#f59e0b; margin-right:6px;"></i> Bufferbloat Rating</span>
+              <span id="bbSummaryGrade" style="font-size:0.85rem; font-weight:800; color:#10b981;">A+ (Optimal)</span>
             </div>
           </div>
         </section>
@@ -688,6 +695,6 @@
   </script>
 
   <!-- Core Speed Engine Script -->
-  <script src="assets/js/speedtest-engine.js?v=7"></script>
+  <script src="assets/js/speedtest-engine.js?v=9"></script>
 </body>
 </html>

@@ -706,7 +706,7 @@ var SpeedEngine = (function() {
   }
 
   // ══════════════════════════════════════════════════════════════════
-  // 9. Real-time Live Speed Waveform Chart
+  // 9. Real-time Live Speed Waveform Chart (In-Gauge Stream)
   // ══════════════════════════════════════════════════════════════════
   function initWaveformChart() {
     var canvas = document.getElementById('speedWaveformCanvas');
@@ -718,23 +718,23 @@ var SpeedEngine = (function() {
         labels: [],
         datasets: [
           {
-            label: 'Download Speed (' + activeUnit + ')',
+            label: 'Download Speed',
             data: [],
             borderColor: '#38bdf8',
-            backgroundColor: 'rgba(56, 189, 248, 0.15)',
-            borderWidth: 2.5,
+            backgroundColor: 'rgba(56, 189, 248, 0.22)',
+            borderWidth: 2.2,
             fill: true,
-            tension: 0.35,
+            tension: 0.4,
             pointRadius: 0
           },
           {
-            label: 'Upload Speed (' + activeUnit + ')',
+            label: 'Upload Speed',
             data: [],
             borderColor: '#a855f7',
-            backgroundColor: 'rgba(168, 85, 247, 0.15)',
-            borderWidth: 2.5,
+            backgroundColor: 'rgba(168, 85, 247, 0.22)',
+            borderWidth: 2.2,
             fill: true,
-            tension: 0.35,
+            tension: 0.4,
             pointRadius: 0
           }
         ]
@@ -744,16 +744,14 @@ var SpeedEngine = (function() {
         maintainAspectRatio: false,
         animation: false,
         plugins: {
-          legend: {
-            position: 'top',
-            labels: { color: '#94a3b8', font: { family: "'Plus Jakarta Sans', sans-serif", size: 11, weight: 700 } }
-          }
+          legend: { display: false },
+          tooltip: { enabled: false }
         },
         scales: {
           x: { display: false },
           y: {
-            grid: { color: 'rgba(255, 255, 255, 0.05)' },
-            ticks: { color: '#64748b', font: { family: "'JetBrains Mono', monospace", size: 10 } }
+            display: false,
+            beginAtZero: true
           }
         }
       }
