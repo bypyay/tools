@@ -94,15 +94,28 @@ const ContentScraper = (function() {
   }
 
   // ══════════════════════════════════════════════════════════════════
-  // 2. Dedicated AstroSage Multi-Sign Crawler
+  // 2. Dedicated AstroSage Multi-Sign Crawler (Daily, Weekly, Monthly, Yearly)
   // ══════════════════════════════════════════════════════════════════
-  async function scrapeAstroSage(url) {
-    const isTomorrow = url.includes('kal-ka-rashifal') || url.includes('kal');
-    const prefix = isTomorrow ? 'kal-ka-rashifal.asp' : 'aaj-ka-rashifal.asp';
+  function getAstroSageUrlForSign(inputUrl, sign) {
+    if (inputUrl.includes('2026') || inputUrl.includes('2027') || inputUrl.includes('2025') || inputUrl.includes('2028') || inputUrl.includes('2029')) {
+      const yearMatch = inputUrl.match(/202[5-9]/);
+      const year = yearMatch ? yearMatch[0] : '2026';
+      return `https://www.astrosage.com/${year}/${sign.astroSlug}-rashifal-${year}.asp`;
+    } else if (inputUrl.includes('saptahik') || inputUrl.includes('weekly')) {
+      return `https://www.astrosage.com/rashifal/saptahik/${sign.astroSlug}-rashifal.asp`;
+    } else if (inputUrl.includes('masik') || inputUrl.includes('monthly') || inputUrl.includes('mahine')) {
+      return `https://www.astrosage.com/rashifal/${sign.astroSlug}-masik-rashifal.asp`;
+    } else if (inputUrl.includes('kal-ka-rashifal') || inputUrl.includes('kal')) {
+      return `https://www.astrosage.com/rashifal/${sign.astroSlug}-kal-ka-rashifal.asp`;
+    } else {
+      return `https://www.astrosage.com/rashifal/${sign.astroSlug}-aaj-ka-rashifal.asp`;
+    }
+  }
 
+  async function scrapeAstroSage(url) {
     const results = {};
 
-    // 1. Direct fetch if user entered a specific sign page (e.g. mesh-kal-ka-rashifal.asp)
+    // 1. Direct fetch if user entered a specific sign page (e.g. mesh-kal-ka-rashifal.asp or mesh-rashifal-2026.asp)
     const specificSign = ZODIAC_SIGNS.find(s => url.includes(s.astroSlug) || url.includes(s.id) || url.toLowerCase().includes(s.nameEn.toLowerCase()));
     if (specificSign) {
       const content = await fetchCleanContent(url);
@@ -112,13 +125,13 @@ const ContentScraper = (function() {
       results[specificSign.id] = parseAstroSageSignContent(content, specificSign);
     }
 
-    // 2. Fetch remaining signs with batching
+    // 2. Fetch remaining signs with batching using dynamic URL per sign
     for (let i = 0; i < ZODIAC_SIGNS.length; i += 3) {
       const chunk = ZODIAC_SIGNS.slice(i, i + 3);
       await Promise.all(chunk.map(async (sign) => {
         if (results[sign.id] && results[sign.id].isScraped) return;
 
-        const signUrl = `https://www.astrosage.com/rashifal/${sign.astroSlug}-${prefix}`;
+        const signUrl = getAstroSageUrlForSign(url, sign);
         try {
           const content = await fetchCleanContent(signUrl);
           if (content && content.length > 300) {
@@ -152,15 +165,21 @@ const ContentScraper = (function() {
       upay = '';
     }
 
-    // Extract Exact Prediction
+    // Extract Exact Prediction (Supports Daily, Weekly, Monthly, Yearly)
     const dateMatch = text.match(/(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)[^\n\r]*\n+([\s\S]+?)(?=(उपाय|##|\*\*कल का दिन|\n\n\n\n|$))/i) ||
                       text.match(/\*\*(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)[^\*]+\*\*\s*\n+([\s\S]+?)(?=(\*\*उपाय|उपाय|##|\n\n\n|$))/i);
     if (dateMatch && dateMatch[2]) {
       prediction = dateMatch[2].replace(/[\*\_]/g, ' ').replace(/\s+/g, ' ').trim();
     } else {
-      const signMatch = text.match(new RegExp(`(${sign.nameHi}|${sign.nameEn})[\\s\\S]{1,800}?(?=(उपाय|##|\n\n\n|$))`, 'i'));
-      if (signMatch) {
-        prediction = signMatch[0].replace(/[\*\_]/g, ' ').replace(/\s+/g, ' ').trim();
+      // For Weekly / Monthly / Yearly headers (e.g. मेष राशिफल 2026 or मेष साप्ताहिक राशिफल)
+      const yearlyMatch = text.match(new RegExp(`(${sign.nameHi}\\s*(?:राशिफल|साप्ताहिक|मासिक|राशि)[^\\n]*)\\n+([\\s\\S]+?)(?=(उपाय|##|\\n\\n\\n\\n|$))`, 'i'));
+      if (yearlyMatch && yearlyMatch[2]) {
+        prediction = yearlyMatch[2].replace(/[\*\_]/g, ' ').replace(/\s+/g, ' ').trim();
+      } else {
+        const signMatch = text.match(new RegExp(`(${sign.nameHi}|${sign.nameEn})[\\s\\S]{1,800}?(?=(उपाय|##|\\n\\n\\n|$))`, 'i'));
+        if (signMatch) {
+          prediction = signMatch[0].replace(/[\*\_]/g, ' ').replace(/\s+/g, ' ').trim();
+        }
       }
     }
 
