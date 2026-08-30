@@ -782,7 +782,7 @@ const TemplateEngine = (function() {
       // 5. Update local sign dataset if not scraped
       const hasScraped = Object.values(currentSignsData).some(s => s && s.isScraped);
       if (!hasScraped) {
-        currentSignsData = ContentScraper.generateAllDailySigns(targetDateObj, currentLengthMode);
+        currentSignsData = ContentScraper.generateAllDailySigns(targetDateObj, currentLengthMode, currentHorizon);
         VideoEngine.setAllSignsData(currentSignsData);
       }
       loadSignIntoStudio(selectedSignId);
@@ -893,7 +893,7 @@ const TemplateEngine = (function() {
 
         const hasScraped = Object.values(currentSignsData).some(s => s && s.isScraped);
         if (!hasScraped) {
-          currentSignsData = ContentScraper.generateAllDailySigns(targetDateObj, currentLengthMode);
+          currentSignsData = ContentScraper.generateAllDailySigns(targetDateObj, currentLengthMode, currentHorizon);
           VideoEngine.setAllSignsData(currentSignsData);
         }
         loadSignIntoStudio(selectedSignId);
