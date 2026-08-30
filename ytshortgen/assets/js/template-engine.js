@@ -698,14 +698,6 @@ const TemplateEngine = (function() {
   let currentHorizon = 'daily'; // 'daily' | 'weekly' | 'monthly' | 'yearly'
   let currentSubPeriod = 'tomorrow'; // 'today' | 'tomorrow' | 'this_week' | 'next_week' | 'this_month' | 'next_month' | 'this_year' | 'next_year'
 
-  function formatLocalDate(d) {
-    if (!d) return new Date().toISOString().slice(0, 10);
-    const y = d.getFullYear();
-    const m = String(d.getMonth() + 1).padStart(2, '0');
-    const day = String(d.getDate()).padStart(2, '0');
-    return `${y}-${m}-${day}`;
-  }
-
   function setupDateControls() {
     const horizonButtons = document.querySelectorAll('.horizon-btn');
     const horizonBadge = document.getElementById('currentHorizonBadge');
@@ -713,39 +705,31 @@ const TemplateEngine = (function() {
     const inpCustomDate = document.getElementById('inpCustomDate');
 
     const updateHorizonAndPeriod = () => {
-      const now = new Date();
-
-      // 1. Calculate targetDateObj precisely without UTC timezone drift
+      // 1. Calculate targetDateObj based on currentHorizon & currentSubPeriod
       if (currentHorizon === 'daily') {
         if (currentSubPeriod === 'tomorrow') {
-          targetDateObj = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+          targetDateObj = new Date(Date.now() + 86400000);
           if (inpCustomDate) inpCustomDate.style.display = 'none';
         } else if (currentSubPeriod === 'today') {
-          targetDateObj = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+          targetDateObj = new Date();
           if (inpCustomDate) inpCustomDate.style.display = 'none';
         } else if (currentSubPeriod === 'custom') {
           if (inpCustomDate) {
             inpCustomDate.style.display = 'block';
-            if (inpCustomDate.value) {
-              const parts = inpCustomDate.value.split('-');
-              if (parts.length === 3) {
-                targetDateObj = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
-              } else {
-                targetDateObj = new Date(inpCustomDate.value);
-              }
-            }
+            if (inpCustomDate.value) targetDateObj = new Date(inpCustomDate.value);
           }
         }
       } else if (currentHorizon === 'weekly') {
         if (currentSubPeriod === 'this_week') {
-          targetDateObj = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+          targetDateObj = new Date();
         } else if (currentSubPeriod === 'next_week') {
-          targetDateObj = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 7);
+          targetDateObj = new Date(Date.now() + 7 * 86400000);
         }
       } else if (currentHorizon === 'monthly') {
         if (currentSubPeriod === 'this_month') {
-          targetDateObj = new Date(now.getFullYear(), now.getMonth(), 1);
+          targetDateObj = new Date();
         } else if (currentSubPeriod === 'next_month') {
+          const now = new Date();
           targetDateObj = new Date(now.getFullYear(), now.getMonth() + 1, 1);
         }
       } else if (currentHorizon === 'yearly') {
@@ -756,8 +740,8 @@ const TemplateEngine = (function() {
         }
       }
 
-      // 2. Update Video Engine State with formatted local date (avoids UTC shift!)
-      const isoDate = formatLocalDate(targetDateObj);
+      // 2. Update Video Engine State
+      const isoDate = targetDateObj.toISOString().slice(0, 10);
       VideoEngine.setHorizon(currentHorizon, currentSubPeriod, isoDate);
 
       // 3. Update Text Display Badge in Left Panel
@@ -782,7 +766,7 @@ const TemplateEngine = (function() {
       // 5. Update local sign dataset if not scraped
       const hasScraped = Object.values(currentSignsData).some(s => s && s.isScraped);
       if (!hasScraped) {
-        currentSignsData = ContentScraper.generateAllDailySigns(targetDateObj, currentLengthMode, currentHorizon);
+        currentSignsData = ContentScraper.generateAllDailySigns(targetDateObj, currentLengthMode);
         VideoEngine.setAllSignsData(currentSignsData);
       }
       loadSignIntoStudio(selectedSignId);
@@ -815,24 +799,11 @@ const TemplateEngine = (function() {
         if (pnlMonthly) pnlMonthly.style.display = currentHorizon === 'monthly' ? 'block' : 'none';
         if (pnlYearly) pnlYearly.style.display = currentHorizon === 'yearly' ? 'block' : 'none';
 
-        // Set default subperiod and check corresponding radio
-        if (currentHorizon === 'daily') {
-          currentSubPeriod = 'tomorrow';
-          const r = document.getElementById('dailyModeTomorrow');
-          if (r) r.checked = true;
-        } else if (currentHorizon === 'weekly') {
-          currentSubPeriod = 'this_week';
-          const r = document.getElementById('weeklyModeThis');
-          if (r) r.checked = true;
-        } else if (currentHorizon === 'monthly') {
-          currentSubPeriod = 'this_month';
-          const r = document.getElementById('monthlyModeThis');
-          if (r) r.checked = true;
-        } else if (currentHorizon === 'yearly') {
-          currentSubPeriod = 'this_year';
-          const r = document.getElementById('yearlyModeThis');
-          if (r) r.checked = true;
-        }
+        // Set default subperiod for selected horizon
+        if (currentHorizon === 'daily') currentSubPeriod = 'tomorrow';
+        else if (currentHorizon === 'weekly') currentSubPeriod = 'this_week';
+        else if (currentHorizon === 'monthly') currentSubPeriod = 'this_month';
+        else if (currentHorizon === 'yearly') currentSubPeriod = 'this_year';
 
         updateHorizonAndPeriod();
       });
@@ -852,9 +823,9 @@ const TemplateEngine = (function() {
 
     // Date radio pill click delegates
     document.querySelectorAll('.date-radio-pill').forEach(pill => {
-      pill.addEventListener('click', (e) => {
+      pill.addEventListener('click', () => {
         const radio = pill.querySelector('input[type="radio"]');
-        if (radio && !radio.checked) {
+        if (radio) {
           radio.checked = true;
           currentSubPeriod = radio.value;
           updateHorizonAndPeriod();
@@ -863,7 +834,7 @@ const TemplateEngine = (function() {
     });
 
     if (inpCustomDate) {
-      inpCustomDate.value = formatLocalDate(new Date(Date.now() + 86400000));
+      inpCustomDate.value = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
       inpCustomDate.addEventListener('change', updateHorizonAndPeriod);
     }
 
@@ -893,7 +864,7 @@ const TemplateEngine = (function() {
 
         const hasScraped = Object.values(currentSignsData).some(s => s && s.isScraped);
         if (!hasScraped) {
-          currentSignsData = ContentScraper.generateAllDailySigns(targetDateObj, currentLengthMode, currentHorizon);
+          currentSignsData = ContentScraper.generateAllDailySigns(targetDateObj, currentLengthMode);
           VideoEngine.setAllSignsData(currentSignsData);
         }
         loadSignIntoStudio(selectedSignId);

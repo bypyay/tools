@@ -94,68 +94,35 @@ const ContentScraper = (function() {
   }
 
   // ══════════════════════════════════════════════════════════════════
-  // 2. Dedicated AstroSage Multi-Sign Crawler (Daily, Weekly, Monthly, Yearly)
+  // 2. Dedicated AstroSage Multi-Sign Crawler
   // ══════════════════════════════════════════════════════════════════
-  function sanitizePredictionText(raw) {
-    if (!raw) return '';
-    return raw
-      .replace(/\[[^\]]*\]\([^\)]*\)/g, ' ') // Strip markdown links [Title](url)
-      .replace(/https?:\/\/[^\s\)\"\']+/gi, ' ') // Strip bare URLs
-      .replace(/[\*\_#\`\>]/g, ' ')
-      .replace(/\s+/g, ' ')
-      .trim();
-  }
-
-  function isValidHindiPrediction(text) {
-    if (!text || text.length < 25) return false;
-    const hindiChars = text.match(/[\u0900-\u097F]/g);
-    // Must contain at least 25 Devanagari Hindi characters
-    return Boolean(hindiChars && hindiChars.length >= 25);
-  }
-
-  function getAstroSageUrlForSign(inputUrl, sign) {
-    if (inputUrl.includes('2026') || inputUrl.includes('2027') || inputUrl.includes('2025') || inputUrl.includes('2028') || inputUrl.includes('2029')) {
-      const yearMatch = inputUrl.match(/202[5-9]/);
-      const year = yearMatch ? yearMatch[0] : '2026';
-      return `https://www.astrosage.com/${year}/${sign.astroSlug}-rashifal-${year}.asp`;
-    } else if (inputUrl.includes('saptahik') || inputUrl.includes('weekly')) {
-      return `https://www.astrosage.com/rashifal/saptahik/${sign.astroSlug}-rashifal.asp`;
-    } else if (inputUrl.includes('masik') || inputUrl.includes('monthly') || inputUrl.includes('mahine')) {
-      return `https://www.astrosage.com/rashifal/${sign.astroSlug}-masik-rashifal.asp`;
-    } else if (inputUrl.includes('kal-ka-rashifal') || inputUrl.includes('kal')) {
-      return `https://www.astrosage.com/rashifal/${sign.astroSlug}-kal-ka-rashifal.asp`;
-    } else {
-      return `https://www.astrosage.com/rashifal/${sign.astroSlug}-aaj-ka-rashifal.asp`;
-    }
-  }
-
   async function scrapeAstroSage(url) {
+    const isTomorrow = url.includes('kal-ka-rashifal') || url.includes('kal');
+    const prefix = isTomorrow ? 'kal-ka-rashifal.asp' : 'aaj-ka-rashifal.asp';
+
     const results = {};
 
-    // 1. Direct fetch if user entered a specific sign page (e.g. mesh-kal-ka-rashifal.asp or mesh-rashifal-2026.asp)
+    // 1. Direct fetch if user entered a specific sign page (e.g. mesh-kal-ka-rashifal.asp)
     const specificSign = ZODIAC_SIGNS.find(s => url.includes(s.astroSlug) || url.includes(s.id) || url.toLowerCase().includes(s.nameEn.toLowerCase()));
     if (specificSign) {
       const content = await fetchCleanContent(url);
-      if (content && content.length > 300) {
-        const parsed = parseAstroSageSignContent(content, specificSign);
-        if (parsed && parsed.prediction) results[specificSign.id] = parsed;
+      if (!content || content.length < 300) {
+        throw new Error(`AstroSage लिंक (${url}) से डेटा प्राप्त नहीं हो सका। कृपया लिंक जांचें या '📋 पेस्ट टेक्स्ट' का उपयोग करें।`);
       }
+      results[specificSign.id] = parseAstroSageSignContent(content, specificSign);
     }
 
-    // 2. Fetch remaining signs with batching using dynamic URL per sign
+    // 2. Fetch remaining signs with batching
     for (let i = 0; i < ZODIAC_SIGNS.length; i += 3) {
       const chunk = ZODIAC_SIGNS.slice(i, i + 3);
       await Promise.all(chunk.map(async (sign) => {
         if (results[sign.id] && results[sign.id].isScraped) return;
 
-        const signUrl = getAstroSageUrlForSign(url, sign);
+        const signUrl = `https://www.astrosage.com/rashifal/${sign.astroSlug}-${prefix}`;
         try {
           const content = await fetchCleanContent(signUrl);
           if (content && content.length > 300) {
-            const parsed = parseAstroSageSignContent(content, sign);
-            if (parsed && parsed.prediction) {
-              results[sign.id] = parsed;
-            }
+            results[sign.id] = parseAstroSageSignContent(content, sign);
           }
         } catch (e) {
           console.warn(`Could not scrape ${sign.id}:`, e);
@@ -165,7 +132,7 @@ const ContentScraper = (function() {
 
     const scrapedCount = Object.values(results).filter(s => s && s.isScraped && s.prediction).length;
     if (scrapedCount === 0) {
-      throw new Error('❌ इस लिंक से हिंदी राशिफल प्राप्त नहीं हो सका (वेबसाइट पर यह पेज उपलब्ध नहीं है या एन्कोडिंग समर्थित नहीं है)। कृपया "📋 पेस्ट टेक्स्ट" का उपयोग करें या दूसरा लिंक डालें।');
+      throw new Error('AstroSage से डेटा फेच नहीं हो सका (नेटवर्क/प्रॉक्सी समस्या)। कृपया लिंक जांचें या "📋 पेस्ट टेक्स्ट" का उपयोग करें।');
     }
 
     return results;
@@ -180,33 +147,21 @@ const ContentScraper = (function() {
                       text.match(/उपाय\s*:?[\-–]+\s*([^\n\r]+)/i) ||
                       text.match(/उपाय[:\s\-]+([^\n\r]+)/i);
     if (upayMatch && upayMatch[1]) {
-      upay = sanitizePredictionText(upayMatch[1]);
+      upay = upayMatch[1].replace(/[\*\_]/g, '').trim();
     } else {
       upay = '';
     }
 
-    // Extract Exact Prediction (Supports Daily, Weekly, Monthly, Yearly)
+    // Extract Exact Prediction
     const dateMatch = text.match(/(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)[^\n\r]*\n+([\s\S]+?)(?=(उपाय|##|\*\*कल का दिन|\n\n\n\n|$))/i) ||
                       text.match(/\*\*(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)[^\*]+\*\*\s*\n+([\s\S]+?)(?=(\*\*उपाय|उपाय|##|\n\n\n|$))/i);
     if (dateMatch && dateMatch[2]) {
-      prediction = sanitizePredictionText(dateMatch[2]);
+      prediction = dateMatch[2].replace(/[\*\_]/g, ' ').replace(/\s+/g, ' ').trim();
     } else {
-      // For Weekly / Monthly / Yearly headers (e.g. मेष राशिफल 2026 or मेष साप्ताहिक राशिफल)
-      const yearlyMatch = text.match(new RegExp(`(${sign.nameHi}\\s*(?:राशिफल|साप्ताहिक|मासिक|राशि)[^\\n]*)\\n+([\\s\\S]+?)(?=(उपाय|##|\\n\\n\\n\\n|$))`, 'i'));
-      if (yearlyMatch && yearlyMatch[2]) {
-        prediction = sanitizePredictionText(yearlyMatch[2]);
-      } else {
-        const signMatch = text.match(new RegExp(`(${sign.nameHi}|${sign.nameEn})[\\s\\S]{1,800}?(?=(उपाय|##|\\n\\n\\n|$))`, 'i'));
-        if (signMatch) {
-          prediction = sanitizePredictionText(signMatch[0]);
-        }
+      const signMatch = text.match(new RegExp(`(${sign.nameHi}|${sign.nameEn})[\\s\\S]{1,800}?(?=(उपाय|##|\n\n\n|$))`, 'i'));
+      if (signMatch) {
+        prediction = signMatch[0].replace(/[\*\_]/g, ' ').replace(/\s+/g, ' ').trim();
       }
-    }
-
-    // Validate that prediction is genuinely Hindi and contains no junk English URLs
-    if (!isValidHindiPrediction(prediction)) {
-      prediction = '';
-      return null;
     }
 
     // Extract Star Ratings from AstroSage HTML/Markdown (Counting star2.gif filled stars)
@@ -390,9 +345,9 @@ const ContentScraper = (function() {
   }
 
   // ══════════════════════════════════════════════════════════════════
-  // 5. Built-In Algorithmic Daily Rashifal Generator (Multi-Length & Multi-Horizon)
+  // 5. Built-In Algorithmic Daily Rashifal Generator (Multi-Length)
   // ══════════════════════════════════════════════════════════════════
-  function generateDailySignData(sign, dateObj = new Date(), lengthMode = 'detailed', horizonType = 'daily') {
+  function generateDailySignData(sign, dateObj = new Date(), lengthMode = 'detailed') {
     const daySeed = dateObj.getFullYear() * 10000 + (dateObj.getMonth() + 1) * 100 + dateObj.getDate();
     const signIndex = ZODIAC_SIGNS.findIndex(s => s.id === sign.id);
     const pseudoRandom = Math.abs(Math.sin(daySeed + signIndex * 13.37));
@@ -402,22 +357,17 @@ const ContentScraper = (function() {
     const luckPercent = 75 + Math.floor(pseudoRandom * 23);
     const upay = UPAY_BANK[(daySeed + signIndex) % UPAY_BANK.length];
 
-    let timeWord = 'आज';
-    if (horizonType === 'weekly') timeWord = 'इस सप्ताह';
-    else if (horizonType === 'monthly') timeWord = 'इस माह';
-    else if (horizonType === 'yearly') timeWord = `वर्ष ${dateObj.getFullYear()}`;
-
     // Career & Business Sentences
     const careers = [
-      `कार्यक्षेत्र में ${timeWord} आपके मान-सम्मान व प्रभाव में वृद्धि होगी। उच्च अधिकारियों व सहकर्मियों का पूर्ण सहयोग प्राप्त होगा।`,
-      `व्यापार और नौकरी में नए लाभदायक अवसर सामने आएंगे। सोची हुई योजनाओं को ${timeWord} गति मिलेगी और सफलता सुनिश्चित होगी।`,
+      `कार्यक्षेत्र में आज आपके मान-सम्मान व प्रभाव में वृद्धि होगी। उच्च अधिकारियों व सहकर्मियों का पूर्ण सहयोग प्राप्त होगा।`,
+      `व्यापार और नौकरी में नए लाभदायक अवसर सामने आएंगे। सोची हुई योजनाओं को आज गति मिलेगी और सफलता सुनिश्चित होगी।`,
       `नौकरीपेशा लोगों के लिए पदोन्नति अथवा वेतन वृद्धि के अच्छे संकेत हैं। व्यावसायिक यात्रा लाभकारी रहेगी।`,
       `कार्यक्षेत्र में आपकी कार्यकुशलता और सूझबूझ की सराहना होगी। किसी बड़े प्रोजेक्ट की नई जिम्मेदारी मिल सकती है।`
     ];
 
     // Finance & Wealth Sentences
     const finances = [
-      `आर्थिक दृष्टिकोण से यह समय बेहद शुभ है। रुका हुआ धन वापस मिलेगा और आय के नए स्रोत विकसित होंगे।`,
+      `आर्थिक दृष्टिकोण से दिन बेहद शुभ है। रुका हुआ धन वापस मिलेगा और आय के नए स्रोत विकसित होंगे।`,
       `वित्तीय मामलों में अप्रत्याशित लाभ के योग बन रहे हैं। निवेश के लिए समय अनुकूल है और बचत में वृद्धि होगी।`,
       `धन आगमन निरंतर बना रहेगा। किसी पुराने कर्ज या देनदारी से मुक्ति मिलने की प्रबल संभावना है।`
     ];
@@ -478,10 +428,10 @@ const ContentScraper = (function() {
   }
 
   // Generate All 12 Signs for Given Date & Length Mode
-  function generateAllDailySigns(dateObj = new Date(), lengthMode = 'detailed', horizonType = 'daily') {
+  function generateAllDailySigns(dateObj = new Date(), lengthMode = 'detailed') {
     const result = {};
     ZODIAC_SIGNS.forEach(sign => {
-      result[sign.id] = generateDailySignData(sign, dateObj, lengthMode, horizonType);
+      result[sign.id] = generateDailySignData(sign, dateObj, lengthMode);
     });
     return result;
   }
